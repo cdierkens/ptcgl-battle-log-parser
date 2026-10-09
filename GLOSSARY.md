@@ -58,3 +58,9 @@ resolved at the seam; re-matching `plainTextPhaseTitle` downstream is not.
 (`{ ok: true, value }` or `{ ok: false, error }`). There are no `*OrThrow`
 twins; `unwrap` is the throwing surface. See
 [ADR-0001](./adr/0001-no-orthrow-twins.md).
+
+**Tier 1 / Tier 2** — the two stability tiers of the public API. Tier 1 is the
+frozen contract: type shapes *and* observable behaviour are promised. Tier 2 is
+advanced, stable but uncovered — it may change in a minor when the game client's
+strings move, though never silently. See
+[ADR-0002](./adr/0002-two-tier-api-contract.md).
