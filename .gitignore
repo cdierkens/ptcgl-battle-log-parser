@@ -3,6 +3,10 @@ dist/
 coverage/
 *.tgz
 
+# Vendored agent-skill install. Reproducible from skills-lock.json, which is
+# committed; the installed copy is not.
+.agents/
+
 # Stray log output, but never the battle-log fixtures under src/__tests__.
 /*.log
 
