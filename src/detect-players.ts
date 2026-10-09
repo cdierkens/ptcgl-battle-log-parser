@@ -24,10 +24,11 @@
  * `playerName` explicitly to `analyzeBattleLog` and this step is skipped.
  */
 
-import type { BattleLog, MainEntry, SubEntry } from "./types.js";
+import type { BattleLog } from "./types.js";
 
 import { PlayerDetectionError } from "./errors.js";
 import { err, ok, type Result } from "./result.js";
+import { walkEntries } from "./walk.js";
 
 /** The two players, as named in the log. */
 export interface DetectedPlayers {
@@ -65,8 +66,10 @@ function addName(names: Set<string>, value: null | string | undefined): void {
   if (trimmed !== undefined && trimmed.length > 0) names.add(trimmed);
 }
 
-function collectNamesFromEvent(names: Set<string>, node: MainEntry | SubEntry): void {
-  const groups = node.event.groups;
+function collectNamesFromGroups(
+  names: Set<string>,
+  groups: Readonly<Record<string, string>>,
+): void {
   addName(names, groups["playerName"]);
   addName(names, groups["opponentName"]);
   addName(names, groups["sourcePlayerName"]);
@@ -84,33 +87,34 @@ function collectNamesFromEvent(names: Set<string>, node: MainEntry | SubEntry): 
  */
 function collectOpeningHandRevealOwners(parsed: BattleLog): Set<string> {
   const candidates = new Set<string>();
-  for (const phase of parsed.phases) {
-    for (const main of phase.mainEntries) {
-      const playerName = main.event.groups["playerName"];
-      if (main.event.templateKey === "blog_loc_draw_opening_hand" && playerName !== undefined) {
-        const revealed = main.subEntries.some(
-          (sub) =>
-            sub.event.templateKey === "blog_loc_drawn_cards_grid_header" &&
-            sub.subString !== null,
-        );
-        if (revealed) addName(candidates, playerName);
-      }
+  for (const walked of walkEntries(parsed)) {
+    if (walked.isSubEntry) continue;
+    const playerName = walked.event.groups["playerName"];
+    if (walked.event.templateKey !== "blog_loc_draw_opening_hand" || playerName === undefined) {
+      continue;
     }
+    const revealed = walked.mainEntry.subEntries.some(
+      (sub) =>
+        sub.event.templateKey === "blog_loc_drawn_cards_grid_header" &&
+        sub.subString !== null,
+    );
+    if (revealed) addName(candidates, playerName);
   }
   return candidates;
 }
 
 function collectPlayerNames(parsed: BattleLog): Set<string> {
   const names = new Set<string>();
+  // Read per phase, not per entry: a turn with no entries still names the
+  // player whose turn it was.
   for (const phase of parsed.phases) {
     // `phase.playerName` was resolved from the header at parse time, against
     // the source locale's bundle. Re-matching `phase.plainTextPhaseTitle` here
     // would need that same bundle and silently find nothing without it.
     addName(names, phase.playerName);
-    for (const main of phase.mainEntries) {
-      collectNamesFromEvent(names, main);
-      for (const sub of main.subEntries) collectNamesFromEvent(names, sub);
-    }
+  }
+  for (const walked of walkEntries(parsed)) {
+    collectNamesFromGroups(names, walked.event.groups);
   }
   return names;
 }

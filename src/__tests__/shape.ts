@@ -9,6 +9,8 @@
 
 import type { BattleLog } from "../types.js";
 
+import { walkEntries } from "../walk.js";
+
 /**
  * A compact, human-reviewable projection of a parsed log.
  *
@@ -31,15 +33,9 @@ export interface LogShape {
 
 export function shapeOf(log: BattleLog): LogShape {
   const templateKeyCounts: Record<string, number> = {};
-  for (const phase of log.phases) {
-    for (const main of phase.mainEntries) {
-      templateKeyCounts[main.event.templateKey] =
-        (templateKeyCounts[main.event.templateKey] ?? 0) + 1;
-      for (const sub of main.subEntries) {
-        templateKeyCounts[sub.event.templateKey] =
-          (templateKeyCounts[sub.event.templateKey] ?? 0) + 1;
-      }
-    }
+  for (const walked of walkEntries(log)) {
+    const key = walked.event.templateKey;
+    templateKeyCounts[key] = (templateKeyCounts[key] ?? 0) + 1;
   }
   return {
     phases: log.phases.map((phase) => ({

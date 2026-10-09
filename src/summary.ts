@@ -17,7 +17,9 @@
  * in hand". Build richer analysis on top of the parsed log, not here.
  */
 
-import type { BattleLog, Credit, CreditCounts, GameSummary, MainEntry, SubEntry } from "./types.js";
+import type { BattleLog, Credit, CreditCounts, GameSummary, TemplateEvent } from "./types.js";
+
+import { walkEntries } from "./walk.js";
 
 /** Which perspective every count in a {@link GameSummary} is measured from. */
 export interface DeriveGameSummaryOptions {
@@ -127,10 +129,10 @@ export function deriveGameSummary(
         ? "self"
         : "opponent";
 
-  const applyEvent = (node: MainEntry | SubEntry): void => {
-    const rule = summaryRules[node.event.templateKey];
+  const applyEvent = (event: TemplateEvent): void => {
+    const rule = summaryRules[event.templateKey];
     if (rule === undefined) return;
-    const delta = rule(node.event.groups, { creditOf });
+    const delta = rule(event.groups, { creditOf });
     if (delta === null) return;
     switch (delta.kind) {
       case "winner":
@@ -148,11 +150,10 @@ export function deriveGameSummary(
 
   for (const phase of log.phases) {
     if (phase.battlePhase === "Player" || phase.battlePhase === "Opponent") turnCount += 1;
-    for (const main of phase.mainEntries) {
-      totalEntries += 1 + main.subEntries.length;
-      applyEvent(main);
-      for (const sub of main.subEntries) applyEvent(sub);
-    }
+  }
+  for (const walked of walkEntries(log)) {
+    totalEntries += 1;
+    applyEvent(walked.event);
   }
 
   const prizesByPlayer: CreditCounts = prizes;
