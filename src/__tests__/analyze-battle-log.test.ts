@@ -15,6 +15,8 @@ import { unwrap } from "../errors.js";
 import { parseBattleLog } from "../parse-battle-log.js";
 import { isErr, isOk } from "../result.js";
 import { deriveGameSummary, summaryRules } from "../summary.js";
+import { createTemplateMatcher } from "../template-matcher.js";
+import { english } from "./bundles.js";
 
 const ME = "cdierkens";
 
@@ -26,6 +28,7 @@ const ALL_FIXTURES = readdirSync(new URL("./fixtures/", import.meta.url));
 describe("deriveGameSummary", () => {
   it("summarises the Slowking vs Beedrill fixture", () => {
     const log = unwrap(parseBattleLog(loadFixture("slowking-vs-beedrill.log"), {
+      matcher: english,
       playerName: ME,
     }));
     expect(deriveGameSummary(log, { playerName: ME })).toEqual({
@@ -41,7 +44,7 @@ describe("deriveGameSummary", () => {
   it("returns a null winner for an unfinished game", () => {
     const log = unwrap(parseBattleLog(
       "Setup\ncdierkens chose tails for the opening coin flip.\ncdierkens decided to go first.\n",
-      { playerName: ME },
+      { matcher: english, playerName: ME },
     ));
     const summary = deriveGameSummary(log, { playerName: ME });
     expect(summary.winner).toBeNull();
@@ -55,6 +58,7 @@ describe("deriveGameSummary", () => {
     // mis-supplied name does not fail loudly, it inverts the summary. That
     // is worth knowing before you trust `summary.winner`.
     const log = unwrap(parseBattleLog(loadFixture("slowking-vs-beedrill.log"), {
+      matcher: english,
       playerName: ME,
     }));
     const correct = deriveGameSummary(log, { playerName: ME });
@@ -77,6 +81,7 @@ describe("deriveGameSummary", () => {
 
   it("counts only Player and Opponent phases as turns", () => {
     const log = unwrap(parseBattleLog(loadFixture("slowking-vs-greninja.log"), {
+      matcher: english,
       playerName: ME,
     }));
     const summary = deriveGameSummary(log, { playerName: ME });
@@ -88,6 +93,7 @@ describe("deriveGameSummary", () => {
 
   it("counts every main and sub entry in totalEntries", () => {
     const log = unwrap(parseBattleLog(loadFixture("slowking-vs-beedrill.log"), {
+      matcher: english,
       playerName: ME,
     }));
     const expected = log.phases.reduce(
@@ -175,38 +181,37 @@ describe("deriveGameSummary — unattributable names", () => {
 
 describe("analyzeBattleLog", () => {
   it("resolves the local player from the opening-hand reveal when no name is given", () => {
-    const result = analyzeBattleLog(loadFixture("slowking-vs-beedrill.log"));
+    const result = analyzeBattleLog(loadFixture("slowking-vs-beedrill.log"), { matcher: english });
     expect(isOk(result)).toBe(true);
     if (!isOk(result)) return;
-    expect(result.value.locale).toBe("en");
     expect(result.value.playerName).toBe(ME);
     expect(result.value.opponentName).toBe("Wonder_Squid");
     expect(result.value.summary.winner).toBe("self");
   });
 
   it.each(ALL_FIXTURES)("analyses %s with an explicit player name", (fixture) => {
-    const result = analyzeBattleLog(loadFixture(fixture), { playerName: ME });
+    const result = analyzeBattleLog(loadFixture(fixture), { matcher: english, playerName: ME });
     expect(isOk(result)).toBe(true);
     if (!isOk(result)) return;
-    expect(result.value.locale).toBe("en");
     expect(result.value.playerName).toBe(ME);
     expect(result.value.opponentName).not.toBeNull();
     expect(result.value.opponentName).not.toBe(ME);
     expect(result.value.summary.turnCount).toBeGreaterThan(0);
   });
 
-  it("honours an explicit locale over detection", () => {
+  it("uses the matcher it is handed, with no hidden default", () => {
+    // This package ships no templates, so a matcher that knows nothing must
+    // fail rather than quietly fall back to something the caller did not ask
+    // for. There is no `english` default to find.
+    const empty = createTemplateMatcher({});
     const result = analyzeBattleLog(loadFixture("slowking-vs-beedrill.log"), {
-      locale: "en",
-      playerName: ME,
+      matcher: empty,
     });
-    expect(isOk(result)).toBe(true);
-    if (!isOk(result)) return;
-    expect(result.value.locale).toBe("en");
+    expect(isErr(result)).toBe(true);
   });
 
   it("fails with UnmatchedBattleLogLineError on non-log input", () => {
-    const result = analyzeBattleLog("Setup\ncdierkens performed some unknown ritual.\n");
+    const result = analyzeBattleLog("Setup\ncdierkens performed some unknown ritual.\n", { matcher: english });
     expect(isErr(result)).toBe(true);
     if (!isErr(result)) return;
     expect(result.error._tag).toBe("UnmatchedBattleLogLineError");
@@ -227,7 +232,7 @@ cdierkens's Turn
 cdierkens drew a card.
 cdierkens ended their turn.
 `;
-    const result = analyzeBattleLog(log);
+    const result = analyzeBattleLog(log, { matcher: english });
     expect(isErr(result)).toBe(true);
     if (!isErr(result)) return;
     expect(result.error._tag).toBe("PlayerDetectionError");
@@ -235,8 +240,8 @@ cdierkens ended their turn.
 
   it("is deterministic — the same log analyses identically twice", () => {
     const raw = loadFixture("dipplin-vs-mega-excadrill.log");
-    const a = analyzeBattleLog(raw, { playerName: ME });
-    const b = analyzeBattleLog(raw, { playerName: ME });
+    const a = analyzeBattleLog(raw, { matcher: english, playerName: ME });
+    const b = analyzeBattleLog(raw, { matcher: english, playerName: ME });
     expect(a).toEqual(b);
   });
 });

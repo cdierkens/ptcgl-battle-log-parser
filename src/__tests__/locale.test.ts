@@ -24,11 +24,11 @@ import { detectPlayers } from "../detect-players.js";
 import { unwrap } from "../errors.js";
 import { parseBattleLog } from "../parse-battle-log.js";
 import { isOk } from "../result.js";
-import {
-  blogTemplateBundles,
-  detectBattleLogLanguage,
-} from "../locales.js";
+import { detectBattleLogLanguage } from "../template-matcher.js";
 import { ALL_BLOG_LOCALES, type BlogLocale } from "../types.js";
+
+// The package ships no templates, so the suite supplies its own.
+import { bundles, matchers } from "./bundles.js";
 
 /**
  * Placeholder values substituted into templates to build synthetic lines.
@@ -79,7 +79,7 @@ function renderNamed(
   templateKey: string,
   overrides: Readonly<Record<string, string>> = {},
 ): string {
-  const entry = blogTemplateBundles[locale][templateKey];
+  const entry = bundles[locale][templateKey];
   if (entry === undefined) throw new Error(`no ${templateKey} in ${locale}`);
   let line = entry.template;
   for (const name of entry.placeholders) {
@@ -135,16 +135,16 @@ function syntheticLog(locale: BlogLocale): string {
 
 describe("template bundle parity", () => {
   it("every locale bundle has exactly the English key set", () => {
-    const enKeys = Object.keys(blogTemplateBundles["en"]).sort();
+    const enKeys = Object.keys(bundles["en"]).sort();
     expect(enKeys).toHaveLength(228);
     for (const locale of ALL_BLOG_LOCALES) {
-      expect(Object.keys(blogTemplateBundles[locale]).sort(), locale).toEqual(enKeys);
+      expect(Object.keys(bundles[locale]).sort(), locale).toEqual(enKeys);
     }
   });
 
   it("every declared placeholder appears in its template, and vice versa", () => {
     for (const locale of ALL_BLOG_LOCALES) {
-      for (const [key, entry] of Object.entries(blogTemplateBundles[locale])) {
+      for (const [key, entry] of Object.entries(bundles[locale])) {
         const derived = [...entry.template.matchAll(/\[([a-zA-Z][a-zA-Z0-9_]*)\]/g)].map((m) => m[1]);
         expect([...new Set(derived)].sort(), `${locale}/${key}`).toEqual([...entry.placeholders].sort());
       }
@@ -152,13 +152,13 @@ describe("template bundle parity", () => {
   });
 
   it("es and es_la are distinct bundles", () => {
-    expect(blogTemplateBundles["es"]).not.toEqual(blogTemplateBundles["es_la"]);
+    expect(bundles["es"]).not.toEqual(bundles["es_la"]);
   });
 
   it("no locale is identical to English", () => {
     for (const locale of ALL_BLOG_LOCALES) {
       if (locale === "en") continue;
-      expect(blogTemplateBundles[locale], locale).not.toEqual(blogTemplateBundles["en"]);
+      expect(bundles[locale], locale).not.toEqual(bundles["en"]);
     }
   });
 });
@@ -166,7 +166,7 @@ describe("template bundle parity", () => {
 describe("detectBattleLogLanguage", () => {
   it("detects every supported locale from a synthetic log", () => {
     for (const locale of ALL_BLOG_LOCALES) {
-      expect(detectBattleLogLanguage(syntheticLog(locale)), locale).toBe(locale);
+      expect(detectBattleLogLanguage(syntheticLog(locale), matchers), locale).toBe(locale);
     }
   });
 
@@ -180,16 +180,18 @@ describe("detectBattleLogLanguage", () => {
       lineFor("es_la", "blog_loc_phase_setup"),
       lineFor("es_la", "blog_loc_applied_damage"),
     ].join("\n");
-    expect(detectBattleLogLanguage(european)).toBe("es");
-    expect(detectBattleLogLanguage(latin)).toBe("es_la");
+    expect(detectBattleLogLanguage(european, matchers)).toBe("es");
+    expect(detectBattleLogLanguage(latin, matchers)).toBe("es_la");
   });
 
-  it("defaults to English for an unrecognisable log", () => {
-    expect(detectBattleLogLanguage("gibberish that matches nothing")).toBe("en");
+  it("returns null for a log that matches nothing", () => {
+    // There is no fallback to pick: the package does not know which bundles
+    // you handed it, so "no idea" has to be sayable.
+    expect(detectBattleLogLanguage("gibberish that matches nothing", matchers)).toBeNull();
   });
 
-  it("defaults to English for an empty log", () => {
-    expect(detectBattleLogLanguage("")).toBe("en");
+  it("returns null for an empty log", () => {
+    expect(detectBattleLogLanguage("", matchers)).toBeNull();
   });
 });
 
@@ -210,12 +212,12 @@ describe("Phase.playerName — resolved at parse time, per locale", () => {
   }
 
   it.each(ALL_BLOG_LOCALES)("captures the header name on each %s phase", (locale) => {
-    const parsed = unwrap(parseBattleLog(syntheticLog(locale), { locale }));
+    const parsed = unwrap(parseBattleLog(syntheticLog(locale), { matcher: matchers[locale] }));
     expect(parsed.phases.map((p) => p.playerName)).toEqual([null, ME, THEM]);
   });
 
   it.each(ALL_BLOG_LOCALES)("leaves playerName null on Setup and Checkup (%s)", (locale) => {
-    const parsed = unwrap(parseBattleLog(syntheticLog(locale), { locale }));
+    const parsed = unwrap(parseBattleLog(syntheticLog(locale), { matcher: matchers[locale] }));
     const nonTurns = parsed.phases.filter(
       (p) => p.battlePhase === "Setup" || p.battlePhase === "Checkup",
     );
@@ -230,7 +232,7 @@ describe("Phase.playerName — resolved at parse time, per locale", () => {
   it.each(ALL_BLOG_LOCALES)(
     "detectPlayers sees names that appear only in %s headers",
     (locale) => {
-      const result = detectPlayers(unwrap(parseBattleLog(headersOnlyLog(locale), { locale })));
+      const result = detectPlayers(unwrap(parseBattleLog(headersOnlyLog(locale), { matcher: matchers[locale] })));
       expect(result.ok, locale).toBe(false);
       if (result.ok) return;
       expect(result.error.reason, locale).toBe("ambiguous");
@@ -238,15 +240,15 @@ describe("Phase.playerName — resolved at parse time, per locale", () => {
   );
 
   it.each(ALL_BLOG_LOCALES)("detectPlayers resolves a full %s log end to end", (locale) => {
-    const result = detectPlayers(unwrap(parseBattleLog(syntheticLog(locale), { locale })));
+    const result = detectPlayers(unwrap(parseBattleLog(syntheticLog(locale), { matcher: matchers[locale] })));
     expect(result.ok, locale).toBe(true);
     if (!result.ok) return;
     expect(result.value, locale).toEqual({ playerName: ME, opponentName: THEM });
   });
 
-  it("detectPlayers does not need a locale argument", () => {
+  it("detectPlayers needs no bundle — the parser resolved the names", () => {
     // The parser resolved the names, so detection is locale-independent.
-    const parsed = unwrap(parseBattleLog(syntheticLog("fr"), { locale: "fr" }));
+    const parsed = unwrap(parseBattleLog(syntheticLog("fr"), { matcher: matchers.fr }));
     const result = detectPlayers(parsed);
     expect(result.ok).toBe(true);
     if (!result.ok) return;
@@ -256,7 +258,7 @@ describe("Phase.playerName — resolved at parse time, per locale", () => {
 
 describe("parseBattleLog — every locale", () => {
   it.each(ALL_BLOG_LOCALES)("parses a synthetic %s log into 3 phases", (locale) => {
-    const result = parseBattleLog(syntheticLog(locale), { locale });
+    const result = parseBattleLog(syntheticLog(locale), { matcher: matchers[locale] });
     expect(isOk(result)).toBe(true);
     if (!isOk(result)) return;
 
@@ -278,7 +280,7 @@ describe("parseBattleLog — every locale", () => {
 
   it.each(ALL_BLOG_LOCALES)("resolves Player/Opponent phases correctly for %s", (locale) => {
     const result = parseBattleLog(syntheticLog(locale), {
-      locale,
+      matcher: matchers[locale],
       playerName: VALUES["playerName"],
     });
     expect(isOk(result)).toBe(true);
@@ -288,13 +290,13 @@ describe("parseBattleLog — every locale", () => {
     expect(result.value.phases[2]?.battlePhase).toBe("Opponent");
   });
 
-  it("rejects an English line when forced to German", () => {
+  it("rejects an English line matched against the German bundle", () => {
     const enLog = "Setup\nWonder_Squid drew 7 cards for the opening hand.\n";
-    expect(isOk(parseBattleLog(enLog, { locale: "de" }))).toBe(false);
+    expect(isOk(parseBattleLog(enLog, { matcher: matchers.de }))).toBe(false);
   });
 
-  it("rejects a German line when forced to English", () => {
+  it("rejects a German line matched against the English bundle", () => {
     const deLog = `${lineFor("de", "blog_loc_phase_setup")}\n${lineFor("de", "blog_loc_drew_card")}\n`;
-    expect(isOk(parseBattleLog(deLog, { locale: "en" }))).toBe(false);
+    expect(isOk(parseBattleLog(deLog, { matcher: matchers.en }))).toBe(false);
   });
 });

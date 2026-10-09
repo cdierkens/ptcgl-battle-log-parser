@@ -7,16 +7,24 @@
  * and returns a typed AST where every line is tagged with the `blog_loc_*`
  * localization template it came from.
  *
- * ```ts
- * import { analyzeBattleLog } from "@dierkens.dev/ptcgl-battle-log-parser";
+ * This package ships **no game data**. The parser is original code, and the
+ * templates it matches against are supplied by you — see the README's
+ * *Supplying a bundle*. There is no runtime dependency of any kind.
  *
- * const result = analyzeBattleLog(raw);
+ * ```ts
+ * import {
+ *   analyzeBattleLog,
+ *   createTemplateMatcher,
+ * } from "@dierkens.dev/ptcgl-battle-log-parser";
+ *
+ * const matcher = createTemplateMatcher(myBundle);
+ * const result = analyzeBattleLog(raw, { matcher });
  * if (!result.ok) throw result.error;
- * console.log(result.value.locale, result.value.summary.winner);
+ * console.log(result.value.playerName, result.value.summary.winner);
  * ```
  *
  * Everything is a plain function returning a value. There is no effect
- * system, no schema validator, and no runtime dependency of any kind.
+ * system and no schema validator.
  *
  * @packageDocumentation
  */
@@ -46,20 +54,15 @@ export {
   type DeriveGameSummaryOptions,
 } from "./summary.js";
 
-// --- Locales ---
-// `defaultTemplateMatcher` and `englishBlogTemplates` are deliberately *not*
-// re-exported: they are exactly `blogTemplateMatchers["en"]` and
-// `blogTemplateBundles["en"]`, and exporting both spellings would freeze two
-// names for one thing. See ADR-0002.
-export { ALL_BLOG_LOCALES } from "./types.js";
-export {
-  blogTemplateBundles,
-  blogTemplateMatchers,
-  detectBattleLogLanguage,
-} from "./locales.js";
-
 // --- Template matching (advanced) ---
-export { compileTemplate, createTemplateMatcher } from "./template-matcher.js";
+// `blogTemplateBundles`, `blogTemplateMatchers`, `englishBlogTemplates` and
+// `defaultTemplateMatcher` no longer exist: this package ships no templates, so
+// there is no shipped data to expose. Match against a bundle you supply.
+export {
+  compileTemplate,
+  createTemplateMatcher,
+  detectBattleLogLanguage,
+} from "./template-matcher.js";
 
 // --- Errors ---
 export {
@@ -74,6 +77,10 @@ export {
 export { err, type Err, isErr, isOk, ok, type Ok, type Result } from "./result.js";
 
 // --- Types ---
+// `ALL_BLOG_LOCALES` is the set of locale codes the game ships bundles for —
+// our own constants, not game content, and the natural key set for the
+// matchers you hand to `detectBattleLogLanguage`.
+export { ALL_BLOG_LOCALES } from "./types.js";
 export type {
   BattleLog,
   BattleLogAnalysis,

@@ -8,13 +8,11 @@
 
 import { describe, expect, it } from "vitest";
 
-import {
-  blogTemplateBundles,
-  defaultTemplateMatcher,
-  englishBlogTemplates,
-} from "../locales.js";
 import { compileTemplate, createTemplateMatcher } from "../template-matcher.js";
 import { ALL_BLOG_LOCALES } from "../types.js";
+
+// The package ships no templates, so the suite supplies its own.
+import { bundles, english } from "./bundles.js";
 
 describe("compileTemplate", () => {
   it("compiles a single-placeholder template into an anchored regex", () => {
@@ -70,7 +68,7 @@ describe("compileTemplate", () => {
     // Every capture is `.+?`, so every declared placeholder always
     // participates. This is what keeps TemplateEvent.groups total.
     for (const line of ["cdierkens played Slowpoke to the Bench."]) {
-      const match = defaultTemplateMatcher.match(line);
+      const match = english.match(line);
       expect(match).not.toBeNull();
       for (const value of Object.values(match?.groups ?? {})) {
         expect(typeof value).toBe("string");
@@ -154,13 +152,13 @@ describe("createTemplateMatcher", () => {
 
 describe("shipped bundles", () => {
   it("load without validation errors", () => {
-    expect(defaultTemplateMatcher.size).toBeGreaterThan(200);
-    expect(Object.keys(englishBlogTemplates).length).toBe(defaultTemplateMatcher.size);
+    expect(english.size).toBeGreaterThan(200);
+    expect(Object.keys(bundles["en"]).length).toBe(english.size);
   });
 
   it("ship 228 templates per locale", () => {
     for (const locale of ALL_BLOG_LOCALES) {
-      expect(Object.keys(blogTemplateBundles[locale]).length, locale).toBe(228);
+      expect(Object.keys(bundles[locale]).length, locale).toBe(228);
     }
   });
 
@@ -170,25 +168,25 @@ describe("shipped bundles", () => {
     // when the rock-paper-scissors coin flip is drawn. A drawn flip would
     // then fail to parse. See scripts/refresh-templates.ts.
     for (const locale of ALL_BLOG_LOCALES) {
-      const entry = blogTemplateBundles[locale]["battle_draw"];
+      const entry = bundles[locale]["battle_draw"];
       expect(entry, locale).toBeDefined();
       expect(entry?.placeholders, locale).toEqual([]);
       expect(entry?.template.length, locale).toBeGreaterThan(0);
     }
-    expect(defaultTemplateMatcher.match("Draw!")?.templateKey).toBe("battle_draw");
+    expect(english.match("Draw!")?.templateKey).toBe("battle_draw");
   });
 
   it("keep the three rock-paper-scissors strings that share the prefix", () => {
     for (const key of ["blog_loc_rock", "blog_loc_paper", "blog_loc_scissors"]) {
-      expect(englishBlogTemplates[key], key).toBeDefined();
+      expect(bundles["en"][key], key).toBeDefined();
     }
-    expect(defaultTemplateMatcher.match("rock")?.templateKey).toBe("blog_loc_rock");
-    expect(defaultTemplateMatcher.match("scissors")?.templateKey).toBe("blog_loc_scissors");
+    expect(english.match("rock")?.templateKey).toBe("blog_loc_rock");
+    expect(english.match("scissors")?.templateKey).toBe("blog_loc_scissors");
   });
 
   it("declare no duplicate placeholders", () => {
     for (const locale of ALL_BLOG_LOCALES) {
-      for (const [key, entry] of Object.entries(blogTemplateBundles[locale])) {
+      for (const [key, entry] of Object.entries(bundles[locale])) {
         expect(new Set(entry.placeholders).size, `${locale}/${key}`).toBe(
           entry.placeholders.length,
         );
@@ -229,7 +227,7 @@ describe("shipped bundles", () => {
       },
     ];
     for (const { expectedGroup, expectedKey, line } of cases) {
-      const result = defaultTemplateMatcher.match(line);
+      const result = english.match(line);
       expect(result, `line: ${line}`).not.toBeNull();
       expect(result?.templateKey, `line: ${line}`).toBe(expectedKey);
       const [name, value] = expectedGroup;
@@ -248,14 +246,14 @@ describe("shipped bundles", () => {
       ["Kingofslowbros drew a card.", "blog_loc_drew_card"],
     ];
     for (const [line, expectedKey] of hardLines) {
-      expect(defaultTemplateMatcher.match(line)?.templateKey, `line: ${line}`).toBe(expectedKey);
+      expect(english.match(line)?.templateKey, `line: ${line}`).toBe(expectedKey);
     }
   });
 
   it("matches compound-attack lines with full damage-modifier capture", () => {
     const line =
       "Kingofslowbros's Greninja ex used Shinobi Blade on cdierkens’s Mega Kangaskhan ex for 340 damage. cdierkens's Mega Kangaskhan ex took 170 more damage because of Fighting Weakness.";
-    const result = defaultTemplateMatcher.match(line);
+    const result = english.match(line);
     expect(result?.templateKey).toBe("blog_loc_weak_attack");
     expect(result?.groups).toMatchObject({
       attackingPokemonCardName: "Greninja ex",
@@ -282,7 +280,7 @@ describe("shipped bundles", () => {
         const trimmed = line.replace(/\s+$/u, "");
         if (trimmed === "" || trimmed.startsWith("- ") || trimmed.startsWith("   • ")) continue;
         const bare = trimmed.startsWith("- ") ? trimmed.slice(2) : trimmed;
-        expect(defaultTemplateMatcher.match(bare), `${file}:${i + 1} → ${bare}`).not.toBeNull();
+        expect(english.match(bare), `${file}:${i + 1} → ${bare}`).not.toBeNull();
       }
     }
   });

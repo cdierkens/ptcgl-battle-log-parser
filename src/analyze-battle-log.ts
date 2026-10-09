@@ -1,30 +1,29 @@
 /**
- * analyzeBattleLog — the one-call entry point.
+ * analyzeBattleLog — parse, identify the players, and summarise, in one call.
  *
- * Chains locale detection → parsing → player identification → summarisation.
- * Use this unless you already know all three inputs; if you do, call
- * {@link parseBattleLog} and {@link deriveGameSummary} directly and skip the
- * locale-detection pass, which scores the log against all 7 bundles.
+ * Chains parsing → player identification → summarisation, and is the entry
+ * point most callers want. It does not detect a locale: that would require
+ * knowing which bundles you have, so it is a separate primitive. Build one
+ * matcher once and pass it to everything.
+ *
+ * See the README's *Supplying a bundle* for how to get a bundle, and
+ * `detectBattleLogLanguage` if you have several and need to pick.
  */
 
-import type { BattleLog, BattleLogAnalysis, BlogLocale } from "./types.js";
+import type { BattleLog, BattleLogAnalysis, TemplateMatcher } from "./types.js";
 
 import { detectPlayers } from "./detect-players.js";
 import type { AnalyzeBattleLogError } from "./errors.js";
-import { detectBattleLogLanguage } from "./locales.js";
 import { err, ok, type Result } from "./result.js";
 import { parseBattleLog } from "./parse-battle-log.js";
 import { deriveGameSummary } from "./summary.js";
 
 export interface AnalyzeBattleLogOptions {
   /**
-   * Locale of the source log. Detected automatically when omitted.
-   *
-   * Detection is a scoring heuristic over 7 bundles. If you already know the
-   * locale — you read it off the game settings, or you are replaying a batch
-   * from one client — pass it and skip the guess.
+   * The matcher to parse against. **Required** — this package ships no
+   * templates, so there is nothing to fall back to.
    */
-  readonly locale?: BlogLocale | undefined;
+  readonly matcher: TemplateMatcher;
   /**
    * The local player's name.
    *
@@ -41,18 +40,20 @@ export interface AnalyzeBattleLogOptions {
  * Parse and summarise a battle-log export.
  *
  * @example
- * const result = analyzeBattleLog(raw, { playerName: "cdierkens" });
+ * const result = analyzeBattleLog(raw, { matcher, playerName: "cdierkens" });
  * if (result.ok) {
- *   const { summary, locale } = result.value;
- *   console.log(locale, summary.winner, summary.prizesByPlayer);
+ *   const { summary } = result.value;
+ *   console.log(summary.winner, summary.prizesByPlayer);
  * }
  */
 export function analyzeBattleLog(
   raw: string,
-  options: AnalyzeBattleLogOptions = {},
+  options: AnalyzeBattleLogOptions,
 ): Result<BattleLogAnalysis, AnalyzeBattleLogError> {
-  const locale = options.locale ?? detectBattleLogLanguage(raw);
-  const parsed = parseBattleLog(raw, { locale, playerName: options.playerName });
+  const parsed = parseBattleLog(raw, {
+    matcher: options.matcher,
+    playerName: options.playerName,
+  });
   if (!parsed.ok) return parsed;
 
   let playerName: string;
@@ -72,7 +73,7 @@ export function analyzeBattleLog(
 
   const summary = deriveGameSummary(parsed.value, { playerName });
 
-  return ok({ locale, opponentName, playerName, summary });
+  return ok({ opponentName, playerName, summary });
 }
 
 /**

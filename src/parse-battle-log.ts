@@ -24,7 +24,7 @@
  * appearing on a fresh line.
  *
  * @example
- * const result = parseBattleLog(raw, { locale: "de" });
+ * const result = parseBattleLog(raw, { matcher });
  * if (result.ok) {
  *   for (const phase of result.value.phases) {
  *     console.log(phase.battlePhase, phase.displayTurnNumber);
@@ -33,11 +33,9 @@
  */
 
 import { UnmatchedBattleLogLineError } from "./errors.js";
-import { blogTemplateMatchers, defaultTemplateMatcher } from "./locales.js";
 import { err, ok, type Result } from "./result.js";
 import type {
   BattleLog,
-  BlogLocale,
   MainEntry,
   Phase,
   PhaseType,
@@ -54,14 +52,14 @@ const SUB_STRING_PREFIX = "   • ";
  */
 export interface ParseBattleLogOptions {
   /**
-   * Locale whose template bundle to match against. Defaults to English.
+   * The matcher to parse against. **Required** — this package ships no
+   * templates, so there is nothing to fall back to.
    *
-   * Omit it only when you know the log is English, or when the parse failure
-   * you get back is not worth a re-try — passing the wrong locale surfaces as
-   * {@link UnmatchedBattleLogLineError} on the first non-English line. If you
-   * don't know the locale, use `analyzeBattleLog`, which detects it.
+   * Build one with `createTemplateMatcher` from a bundle you supply; see the
+   * README's *Supplying a bundle*. Compiling a bundle is the expensive part of
+   * a parse, so build the matcher once and reuse it across calls.
    */
-  readonly locale?: BlogLocale | undefined;
+  readonly matcher: TemplateMatcher;
   /**
    * Name of the player whose perspective "Player" phases are resolved
    * against.
@@ -77,12 +75,6 @@ export interface ParseBattleLogOptions {
    * they did not, so pass the name whenever you know it.
    */
   readonly playerName?: string | undefined;
-  /**
-   * A matcher to use instead of a locale bundle — for matching a custom or
-   * user-supplied bundle, or for reusing one you built yourself. Takes
-   * precedence over {@link ParseBattleLogOptions.locale}.
-   */
-  readonly matcher?: TemplateMatcher | undefined;
 }
 
 interface MutableMainEntry {
@@ -118,17 +110,13 @@ interface PhaseHeader {
  *
  * @example Throwing instead of branching
  * import { unwrap } from "@dierkens.dev/ptcgl-battle-log-parser";
- * const log = unwrap(parseBattleLog(raw, { locale: "fr" }));
+ * const log = unwrap(parseBattleLog(raw, { matcher }));
  */
 export function parseBattleLog(
   raw: string,
-  options: ParseBattleLogOptions = {},
+  options: ParseBattleLogOptions,
 ): Result<BattleLog, UnmatchedBattleLogLineError> {
-  const matcher =
-    options.matcher ??
-    (options.locale === undefined
-      ? defaultTemplateMatcher
-      : blogTemplateMatchers[options.locale]);
+  const { matcher } = options;
   const lines = raw.split(/\r?\n/u);
   const phases: MutablePhase[] = [];
   let currentPhase: MutablePhase | null = null;

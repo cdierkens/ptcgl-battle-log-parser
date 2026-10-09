@@ -71,21 +71,21 @@ export type SummaryRule = (
  * implementation detail, not an extension point. See ADR-0002.
  */
 export const summaryRules: Readonly<Record<string, SummaryRule>> = {
-  // "[gameEndReason]. [playerName] wins." — playerName IS the winner.
+  // The end-of-game line names the winner directly, so the credit is theirs.
   blog_loc_end_game: (groups, { creditOf }) => {
     const credit = creditOf(groups["playerName"]);
     return credit === null ? null : { credit, kind: "winner" };
   },
 
-  // "[playerName]'s [cardName] was Knocked Out!" — playerName owns the
-  // Pokémon that died, so the credit belongs to the *other* side.
+  // The named player owns the Pokémon that died, so the credit belongs to
+  // the *other* side.
   blog_loc_knockout: (groups, { creditOf }) => {
     const owner = creditOf(groups["playerName"]);
     if (owner === null) return null;
     return { credit: owner === "self" ? "opponent" : "self", kind: "knockout" };
   },
 
-  // "[playerName] took [numCards] Prize cards."
+  // A counted prize take.
   blog_loc_took_prize_cards: (groups, { creditOf }) => {
     const credit = creditOf(groups["playerName"]);
     if (credit === null) return null;
@@ -94,7 +94,7 @@ export const summaryRules: Readonly<Record<string, SummaryRule>> = {
     return { count, credit, kind: "prizes" };
   },
 
-  // "[playerName] took a Prize card."
+  // A single, uncounted prize take.
   blog_loc_took_single_prize_card: (groups, { creditOf }) => {
     const credit = creditOf(groups["playerName"]);
     return credit === null ? null : { count: 1, credit, kind: "prizes" };

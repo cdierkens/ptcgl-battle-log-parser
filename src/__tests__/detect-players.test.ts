@@ -15,6 +15,8 @@ import { PlayerDetectionError, unwrap } from "../errors.js";
 import { parseBattleLog } from "../parse-battle-log.js";
 import { isErr, isOk } from "../result.js";
 
+import { english } from "./bundles.js";
+
 /** Local player went second: mulligans reveal the local hand. */
 const REVEAL_LOG = `Setup
 Izunzun chose tails for the opening coin flip.
@@ -74,7 +76,7 @@ cdierkens ended their turn.
 
 describe("detectPlayers", () => {
   it("identifies the local player from the opening-hand reveal", () => {
-    const result = detectPlayers(unwrap(parseBattleLog(REVEAL_LOG)));
+    const result = detectPlayers(unwrap(parseBattleLog(REVEAL_LOG, { matcher: english })));
     expect(isOk(result)).toBe(true);
     if (!isOk(result)) return;
     expect(result.value).toEqual({
@@ -84,7 +86,7 @@ describe("detectPlayers", () => {
   });
 
   it("returns ambiguous when two players are present but no local hand is revealed", () => {
-    const result = detectPlayers(unwrap(parseBattleLog(NO_REVEAL_LOG)));
+    const result = detectPlayers(unwrap(parseBattleLog(NO_REVEAL_LOG, { matcher: english })));
     expect(isErr(result)).toBe(true);
     if (!isErr(result)) return;
     expect(result.error).toBeInstanceOf(PlayerDetectionError);
@@ -93,7 +95,7 @@ describe("detectPlayers", () => {
   });
 
   it("returns single-player when only one name appears", () => {
-    const result = detectPlayers(unwrap(parseBattleLog(SINGLE_PLAYER_LOG)));
+    const result = detectPlayers(unwrap(parseBattleLog(SINGLE_PLAYER_LOG, { matcher: english })));
     expect(isErr(result)).toBe(true);
     if (!isErr(result)) return;
     expect(result.error.reason).toBe("single-player");
@@ -110,7 +112,7 @@ describe("detectPlayers", () => {
     // The grid header alone is printed for every opening draw. Only the
     // card list underneath marks an actual reveal — treating the header as
     // a reveal would make every player a candidate.
-    const result = detectPlayers(unwrap(parseBattleLog(NO_REVEAL_LOG)));
+    const result = detectPlayers(unwrap(parseBattleLog(NO_REVEAL_LOG, { matcher: english })));
     if (!isErr(result)) throw new Error("expected failure");
     expect(result.error.reason).toBe("ambiguous");
   });
