@@ -4,7 +4,8 @@ Date: 2026-10-09
 
 ## Status
 
-Accepted.
+Accepted. Amended by [ADR-0005](./0005-phase-kind-and-side.md): `PhaseType` and
+`Credit` are replaced by `PhaseKind`, `Phase` and `Side` in the Tier 1 list.
 
 ## Context
 
