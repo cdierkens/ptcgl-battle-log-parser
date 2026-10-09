@@ -68,10 +68,12 @@ import { homedir } from "node:os";
 import { basename, dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { ALL_BLOG_LOCALES } from "../src/types.js";
+
 const HERE = dirname(fileURLToPath(import.meta.url));
 const TEMPLATE_DIR = join(HERE, "..", "src", "templates");
 
-const LOCALES = ["de", "en", "es", "es_la", "fr", "it", "ptbr"] as const;
+const LOCALES = ALL_BLOG_LOCALES;
 
 /**
  * Which localization keys become battle-log templates.
@@ -334,7 +336,7 @@ async function main(): Promise<void> {
     console.log("refresh-templates --check: bundles are up to date");
   }
   if (changed > 0 && !options.check) {
-    console.log("\nNow run: npm run templates:build && npm test");
+    console.log("\nNow run: pnpm run test && pnpm run build");
   }
 }
 

@@ -99,23 +99,12 @@ interface MutablePhase {
   displayTurnNumber: null | number;
   mainEntries: MutableMainEntry[];
   plainTextPhaseTitle: string;
+  playerName: null | string;
 }
 
 interface MutableSubEntry {
   event: TemplateEvent;
   subString: null | string;
-}
-
-/**
- * Player/Opponent resolution needs to read and write the local player name as
- * the log is walked — the name may first become knowable *inside* a turn
- * header. Threaded through rather than captured so `openPhase` stays a pure
- * function of its arguments.
- */
-interface OpenPhaseCallbacks {
-  readonly bumpTurnCounter: () => number;
-  readonly getLocalPlayerName: () => null | string;
-  readonly setLocalPlayerName: (name: string) => void;
 }
 
 type PhaseHeaderKind = "Checkup" | "Setup" | "Turn";
@@ -131,8 +120,9 @@ interface PhaseHeader {
  * Returns `err(new UnmatchedBattleLogLineError(...))` — never throws — if any
  * content line fails to template-match.
  *
- * @example Catching instead of branching
- * const log = parseBattleLogOrThrow(raw, { locale: "fr" });
+ * @example Throwing instead of branching
+ * import { unwrap } from "@dierkens.dev/ptcgl-battle-log-parser";
+ * const log = unwrap(parseBattleLog(raw, { locale: "fr" }));
  */
 export function parseBattleLog(
   raw: string,
@@ -158,16 +148,13 @@ export function parseBattleLog(
 
     const phaseHeader = tryPhaseHeader(line, matcher);
     if (phaseHeader !== null) {
-      currentPhase = openPhase(line, phaseHeader, {
-        bumpTurnCounter: () => {
-          phaseTurnCounter++;
-          return phaseTurnCounter;
-        },
-        getLocalPlayerName: () => localPlayerName,
-        setLocalPlayerName: (name) => {
-          localPlayerName = name;
-        },
+      const opened = openPhase(line, phaseHeader, {
+        localPlayerName,
+        turnCount: phaseTurnCounter,
       });
+      localPlayerName = opened.localPlayerName;
+      phaseTurnCounter = opened.turnCount;
+      currentPhase = opened.phase;
       phases.push(currentPhase);
       continue;
     }
@@ -220,26 +207,6 @@ export function parseBattleLog(
   return ok({ phases: phases.map(freezePhase) });
 }
 
-/**
- * Parse a battle log, throwing {@link UnmatchedBattleLogLineError} instead of
- * returning a `Result`.
- *
- * Identical to {@link parseBattleLog}; use it when an unmatched line is
- * genuinely exceptional in your call site and you would rather not thread a
- * result through. Same error instance, so `instanceof` and `_tag` narrowing
- * both work on the thrown value.
- *
- * @throws {UnmatchedBattleLogLineError}
- */
-export function parseBattleLogOrThrow(
-  raw: string,
-  options: ParseBattleLogOptions = {},
-): BattleLog {
-  const result = parseBattleLog(raw, options);
-  if (result.ok) return result.value;
-  throw result.error;
-}
-
 function freezeMainEntry(entry: MutableMainEntry): MainEntry {
   return { event: entry.event, subEntries: entry.subEntries.map(freezeSubEntry) };
 }
@@ -250,11 +217,31 @@ function freezePhase(phase: MutablePhase): Phase {
     displayTurnNumber: phase.displayTurnNumber,
     mainEntries: phase.mainEntries.map(freezeMainEntry),
     plainTextPhaseTitle: phase.plainTextPhaseTitle,
+    playerName: phase.playerName,
   };
 }
 
 function freezeSubEntry(entry: MutableSubEntry): SubEntry {
   return { event: entry.event, subString: entry.subString };
+}
+
+/**
+ * What `openPhase` needs from the loop, and what it hands back.
+ *
+ * The local player name may first become knowable *inside* a turn header, and
+ * the turn counter advances once per turn header — both are loop state. Passing
+ * them in and returning the advanced values keeps `openPhase` a pure function
+ * of its arguments without a callback bag.
+ */
+interface OpenPhaseInput {
+  readonly localPlayerName: null | string;
+  readonly turnCount: number;
+}
+
+interface OpenPhaseResult {
+  readonly localPlayerName: null | string;
+  readonly phase: MutablePhase;
+  readonly turnCount: number;
 }
 
 /**
@@ -267,25 +254,54 @@ function freezeSubEntry(entry: MutableSubEntry): SubEntry {
 function openPhase(
   titleLine: string,
   header: PhaseHeader,
-  cb: OpenPhaseCallbacks,
-): MutablePhase {
+  input: OpenPhaseInput,
+): OpenPhaseResult {
   if (header.kind === "Setup") {
-    return { battlePhase: "Setup", displayTurnNumber: null, mainEntries: [], plainTextPhaseTitle: titleLine };
+    return {
+      localPlayerName: input.localPlayerName,
+      phase: {
+        battlePhase: "Setup",
+        displayTurnNumber: null,
+        mainEntries: [],
+        plainTextPhaseTitle: titleLine,
+        playerName: null,
+      },
+      turnCount: input.turnCount,
+    };
   }
   if (header.kind === "Checkup") {
-    return { battlePhase: "Checkup", displayTurnNumber: null, mainEntries: [], plainTextPhaseTitle: titleLine };
+    return {
+      localPlayerName: input.localPlayerName,
+      phase: {
+        battlePhase: "Checkup",
+        displayTurnNumber: null,
+        mainEntries: [],
+        plainTextPhaseTitle: titleLine,
+        playerName: null,
+      },
+      turnCount: input.turnCount,
+    };
   }
-  let localName = cb.getLocalPlayerName();
+  let localName = input.localPlayerName;
   if (localName === null && header.playerName !== null) {
-    cb.setLocalPlayerName(header.playerName);
     localName = header.playerName;
   }
   const battlePhase: PhaseType = header.playerName === localName ? "Player" : "Opponent";
-  const turnNumber = cb.bumpTurnCounter();
+  const turnCount = input.turnCount + 1;
   // Player and Opponent turns alternate, so every second turn starts a new
   // round: this is the game's own (TurnNumber + 1) / 2 derivation.
-  const displayTurnNumber = Math.floor((turnNumber + 1) / 2);
-  return { battlePhase, displayTurnNumber, mainEntries: [], plainTextPhaseTitle: titleLine };
+  const displayTurnNumber = Math.floor((turnCount + 1) / 2);
+  return {
+    localPlayerName: localName,
+    phase: {
+      battlePhase,
+      displayTurnNumber,
+      mainEntries: [],
+      plainTextPhaseTitle: titleLine,
+      playerName: header.playerName,
+    },
+    turnCount,
+  };
 }
 
 /**

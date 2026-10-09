@@ -113,7 +113,8 @@
           "subEntries": []
         }
       ],
-      "plainTextPhaseTitle": "Setup"
+      "plainTextPhaseTitle": "Setup",
+      "playerName": null
     },
     {
       "battlePhase": "Opponent",
@@ -230,7 +231,8 @@
           "subEntries": []
         }
       ],
-      "plainTextPhaseTitle": "Kingofslowbros's Turn"
+      "plainTextPhaseTitle": "Kingofslowbros's Turn",
+      "playerName": "Kingofslowbros"
     },
     {
       "battlePhase": "Player",
@@ -348,7 +350,8 @@
           "subEntries": []
         }
       ],
-      "plainTextPhaseTitle": "cdierkens's Turn"
+      "plainTextPhaseTitle": "cdierkens's Turn",
+      "playerName": "cdierkens"
     },
     {
       "battlePhase": "Opponent",
@@ -530,7 +533,8 @@
           "subEntries": []
         }
       ],
-      "plainTextPhaseTitle": "Kingofslowbros's Turn"
+      "plainTextPhaseTitle": "Kingofslowbros's Turn",
+      "playerName": "Kingofslowbros"
     },
     {
       "battlePhase": "Player",
@@ -767,7 +771,8 @@
           ]
         }
       ],
-      "plainTextPhaseTitle": "cdierkens's Turn"
+      "plainTextPhaseTitle": "cdierkens's Turn",
+      "playerName": "cdierkens"
     },
     {
       "battlePhase": "Opponent",
@@ -1095,7 +1100,8 @@
           "subEntries": []
         }
       ],
-      "plainTextPhaseTitle": "Kingofslowbros's Turn"
+      "plainTextPhaseTitle": "Kingofslowbros's Turn",
+      "playerName": "Kingofslowbros"
     },
     {
       "battlePhase": "Player",
@@ -1434,7 +1440,8 @@
           "subEntries": []
         }
       ],
-      "plainTextPhaseTitle": "cdierkens's Turn"
+      "plainTextPhaseTitle": "cdierkens's Turn",
+      "playerName": "cdierkens"
     },
     {
       "battlePhase": "Opponent",
@@ -1627,7 +1634,8 @@
           "subEntries": []
         }
       ],
-      "plainTextPhaseTitle": "Kingofslowbros's Turn"
+      "plainTextPhaseTitle": "Kingofslowbros's Turn",
+      "playerName": "Kingofslowbros"
     },
     {
       "battlePhase": "Player",
@@ -1871,7 +1879,8 @@
           "subEntries": []
         }
       ],
-      "plainTextPhaseTitle": "cdierkens's Turn"
+      "plainTextPhaseTitle": "cdierkens's Turn",
+      "playerName": "cdierkens"
     },
     {
       "battlePhase": "Opponent",
@@ -2038,7 +2047,8 @@
           "subEntries": []
         }
       ],
-      "plainTextPhaseTitle": "Kingofslowbros's Turn"
+      "plainTextPhaseTitle": "Kingofslowbros's Turn",
+      "playerName": "Kingofslowbros"
     }
   ]
 }

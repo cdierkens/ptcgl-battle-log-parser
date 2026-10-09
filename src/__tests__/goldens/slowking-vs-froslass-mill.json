@@ -113,7 +113,8 @@
           "subEntries": []
         }
       ],
-      "plainTextPhaseTitle": "Setup"
+      "plainTextPhaseTitle": "Setup",
+      "playerName": null
     },
     {
       "battlePhase": "Opponent",
@@ -232,7 +233,8 @@
           "subEntries": []
         }
       ],
-      "plainTextPhaseTitle": "TSLAUJ's Turn"
+      "plainTextPhaseTitle": "TSLAUJ's Turn",
+      "playerName": "TSLAUJ"
     },
     {
       "battlePhase": "Player",
@@ -508,7 +510,8 @@
           ]
         }
       ],
-      "plainTextPhaseTitle": "cdierkens's Turn"
+      "plainTextPhaseTitle": "cdierkens's Turn",
+      "playerName": "cdierkens"
     },
     {
       "battlePhase": "Opponent",
@@ -664,7 +667,8 @@
           ]
         }
       ],
-      "plainTextPhaseTitle": "TSLAUJ's Turn"
+      "plainTextPhaseTitle": "TSLAUJ's Turn",
+      "playerName": "TSLAUJ"
     },
     {
       "battlePhase": "Checkup",
@@ -696,7 +700,8 @@
           ]
         }
       ],
-      "plainTextPhaseTitle": "Pokémon Checkup"
+      "plainTextPhaseTitle": "Pokémon Checkup",
+      "playerName": null
     },
     {
       "battlePhase": "Player",
@@ -758,7 +763,8 @@
           "subEntries": []
         }
       ],
-      "plainTextPhaseTitle": "cdierkens's Turn"
+      "plainTextPhaseTitle": "cdierkens's Turn",
+      "playerName": "cdierkens"
     },
     {
       "battlePhase": "Checkup",
@@ -802,7 +808,8 @@
           ]
         }
       ],
-      "plainTextPhaseTitle": "Pokémon Checkup"
+      "plainTextPhaseTitle": "Pokémon Checkup",
+      "playerName": null
     },
     {
       "battlePhase": "Opponent",
@@ -1121,7 +1128,8 @@
           "subEntries": []
         }
       ],
-      "plainTextPhaseTitle": "TSLAUJ's Turn"
+      "plainTextPhaseTitle": "TSLAUJ's Turn",
+      "playerName": "TSLAUJ"
     },
     {
       "battlePhase": "Checkup",
@@ -1165,7 +1173,8 @@
           ]
         }
       ],
-      "plainTextPhaseTitle": "Pokémon Checkup"
+      "plainTextPhaseTitle": "Pokémon Checkup",
+      "playerName": null
     },
     {
       "battlePhase": "Player",
@@ -1205,7 +1214,8 @@
           "subEntries": []
         }
       ],
-      "plainTextPhaseTitle": "cdierkens's Turn"
+      "plainTextPhaseTitle": "cdierkens's Turn",
+      "playerName": "cdierkens"
     },
     {
       "battlePhase": "Checkup",
@@ -1249,7 +1259,8 @@
           ]
         }
       ],
-      "plainTextPhaseTitle": "Pokémon Checkup"
+      "plainTextPhaseTitle": "Pokémon Checkup",
+      "playerName": null
     },
     {
       "battlePhase": "Opponent",
@@ -1430,7 +1441,8 @@
           "subEntries": []
         }
       ],
-      "plainTextPhaseTitle": "TSLAUJ's Turn"
+      "plainTextPhaseTitle": "TSLAUJ's Turn",
+      "playerName": "TSLAUJ"
     },
     {
       "battlePhase": "Checkup",
@@ -1498,7 +1510,8 @@
           ]
         }
       ],
-      "plainTextPhaseTitle": "Pokémon Checkup"
+      "plainTextPhaseTitle": "Pokémon Checkup",
+      "playerName": null
     },
     {
       "battlePhase": "Player",
@@ -1642,7 +1655,8 @@
           "subEntries": []
         }
       ],
-      "plainTextPhaseTitle": "cdierkens's Turn"
+      "plainTextPhaseTitle": "cdierkens's Turn",
+      "playerName": "cdierkens"
     },
     {
       "battlePhase": "Checkup",
@@ -1734,7 +1748,8 @@
           ]
         }
       ],
-      "plainTextPhaseTitle": "Pokémon Checkup"
+      "plainTextPhaseTitle": "Pokémon Checkup",
+      "playerName": null
     },
     {
       "battlePhase": "Opponent",
@@ -1868,7 +1883,8 @@
           ]
         }
       ],
-      "plainTextPhaseTitle": "TSLAUJ's Turn"
+      "plainTextPhaseTitle": "TSLAUJ's Turn",
+      "playerName": "TSLAUJ"
     },
     {
       "battlePhase": "Checkup",
@@ -1996,7 +2012,8 @@
           ]
         }
       ],
-      "plainTextPhaseTitle": "Pokémon Checkup"
+      "plainTextPhaseTitle": "Pokémon Checkup",
+      "playerName": null
     },
     {
       "battlePhase": "Player",
@@ -2305,7 +2322,8 @@
           "subEntries": []
         }
       ],
-      "plainTextPhaseTitle": "cdierkens's Turn"
+      "plainTextPhaseTitle": "cdierkens's Turn",
+      "playerName": "cdierkens"
     },
     {
       "battlePhase": "Checkup",
@@ -2361,7 +2379,8 @@
           ]
         }
       ],
-      "plainTextPhaseTitle": "Pokémon Checkup"
+      "plainTextPhaseTitle": "Pokémon Checkup",
+      "playerName": null
     },
     {
       "battlePhase": "Opponent",
@@ -2686,7 +2705,8 @@
           "subEntries": []
         }
       ],
-      "plainTextPhaseTitle": "TSLAUJ's Turn"
+      "plainTextPhaseTitle": "TSLAUJ's Turn",
+      "playerName": "TSLAUJ"
     },
     {
       "battlePhase": "Checkup",
@@ -2754,7 +2774,8 @@
           ]
         }
       ],
-      "plainTextPhaseTitle": "Pokémon Checkup"
+      "plainTextPhaseTitle": "Pokémon Checkup",
+      "playerName": null
     },
     {
       "battlePhase": "Player",
@@ -3128,7 +3149,8 @@
           "subEntries": []
         }
       ],
-      "plainTextPhaseTitle": "cdierkens's Turn"
+      "plainTextPhaseTitle": "cdierkens's Turn",
+      "playerName": "cdierkens"
     }
   ]
 }

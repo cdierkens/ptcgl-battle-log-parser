@@ -1,0 +1,177 @@
+{
+  "phases": [
+    {
+      "battlePhase": "Setup",
+      "displayTurnNumber": null,
+      "mainEntryCount": 8,
+      "playerName": null
+    },
+    {
+      "battlePhase": "Opponent",
+      "displayTurnNumber": 1,
+      "mainEntryCount": 7,
+      "playerName": "TSLAUJ"
+    },
+    {
+      "battlePhase": "Player",
+      "displayTurnNumber": 1,
+      "mainEntryCount": 10,
+      "playerName": "cdierkens"
+    },
+    {
+      "battlePhase": "Opponent",
+      "displayTurnNumber": 2,
+      "mainEntryCount": 6,
+      "playerName": "TSLAUJ"
+    },
+    {
+      "battlePhase": "Checkup",
+      "displayTurnNumber": null,
+      "mainEntryCount": 1,
+      "playerName": null
+    },
+    {
+      "battlePhase": "Player",
+      "displayTurnNumber": 2,
+      "mainEntryCount": 5,
+      "playerName": "cdierkens"
+    },
+    {
+      "battlePhase": "Checkup",
+      "displayTurnNumber": null,
+      "mainEntryCount": 1,
+      "playerName": null
+    },
+    {
+      "battlePhase": "Opponent",
+      "displayTurnNumber": 3,
+      "mainEntryCount": 13,
+      "playerName": "TSLAUJ"
+    },
+    {
+      "battlePhase": "Checkup",
+      "displayTurnNumber": null,
+      "mainEntryCount": 1,
+      "playerName": null
+    },
+    {
+      "battlePhase": "Player",
+      "displayTurnNumber": 3,
+      "mainEntryCount": 3,
+      "playerName": "cdierkens"
+    },
+    {
+      "battlePhase": "Checkup",
+      "displayTurnNumber": null,
+      "mainEntryCount": 1,
+      "playerName": null
+    },
+    {
+      "battlePhase": "Opponent",
+      "displayTurnNumber": 4,
+      "mainEntryCount": 11,
+      "playerName": "TSLAUJ"
+    },
+    {
+      "battlePhase": "Checkup",
+      "displayTurnNumber": null,
+      "mainEntryCount": 1,
+      "playerName": null
+    },
+    {
+      "battlePhase": "Player",
+      "displayTurnNumber": 4,
+      "mainEntryCount": 8,
+      "playerName": "cdierkens"
+    },
+    {
+      "battlePhase": "Checkup",
+      "displayTurnNumber": null,
+      "mainEntryCount": 1,
+      "playerName": null
+    },
+    {
+      "battlePhase": "Opponent",
+      "displayTurnNumber": 5,
+      "mainEntryCount": 6,
+      "playerName": "TSLAUJ"
+    },
+    {
+      "battlePhase": "Checkup",
+      "displayTurnNumber": null,
+      "mainEntryCount": 1,
+      "playerName": null
+    },
+    {
+      "battlePhase": "Player",
+      "displayTurnNumber": 5,
+      "mainEntryCount": 17,
+      "playerName": "cdierkens"
+    },
+    {
+      "battlePhase": "Checkup",
+      "displayTurnNumber": null,
+      "mainEntryCount": 1,
+      "playerName": null
+    },
+    {
+      "battlePhase": "Opponent",
+      "displayTurnNumber": 6,
+      "mainEntryCount": 14,
+      "playerName": "TSLAUJ"
+    },
+    {
+      "battlePhase": "Checkup",
+      "displayTurnNumber": null,
+      "mainEntryCount": 1,
+      "playerName": null
+    },
+    {
+      "battlePhase": "Player",
+      "displayTurnNumber": 6,
+      "mainEntryCount": 19,
+      "playerName": "cdierkens"
+    }
+  ],
+  "templateKeyCounts": {
+    "blog_loc_added_prize": 7,
+    "blog_loc_applied_damage": 5,
+    "blog_loc_attach_card_active": 3,
+    "blog_loc_attach_card_bench": 10,
+    "blog_loc_card_activated": 3,
+    "blog_loc_discarded_attachment": 8,
+    "blog_loc_discarded_attachment_multi": 3,
+    "blog_loc_discarded_from_board": 7,
+    "blog_loc_draw_opening_hand": 2,
+    "blog_loc_drawn_cards_grid_header": 2,
+    "blog_loc_drew_card": 33,
+    "blog_loc_drew_then_play_bench": 2,
+    "blog_loc_drew_then_play_bench_multi": 1,
+    "blog_loc_end_game": 1,
+    "blog_loc_evolved_bench": 7,
+    "blog_loc_going_first": 1,
+    "blog_loc_knockout": 7,
+    "blog_loc_manual_end": 4,
+    "blog_loc_move_on_top_deck": 2,
+    "blog_loc_move_to_hand": 1,
+    "blog_loc_play_to_active": 2,
+    "blog_loc_play_to_bench": 9,
+    "blog_loc_played_card": 26,
+    "blog_loc_played_to_stadium": 3,
+    "blog_loc_player_moved_dc": 1,
+    "blog_loc_player_placed_dc": 8,
+    "blog_loc_player_placed_single_dc": 33,
+    "blog_loc_promote_to_active": 8,
+    "blog_loc_retreated": 4,
+    "blog_loc_secondary_damage": 5,
+    "blog_loc_selected_coinface": 1,
+    "blog_loc_selected_option": 2,
+    "blog_loc_shuffled_card_into_deck": 5,
+    "blog_loc_shuffled_deck": 16,
+    "blog_loc_switched_active": 2,
+    "blog_loc_took_prize_cards": 2,
+    "blog_loc_took_single_prize_card": 1,
+    "blog_loc_used_attack": 18,
+    "blog_loc_won_coin_toss": 1
+  }
+}

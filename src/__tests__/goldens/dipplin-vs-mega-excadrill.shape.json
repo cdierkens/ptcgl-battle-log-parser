@@ -1,0 +1,123 @@
+{
+  "phases": [
+    {
+      "battlePhase": "Setup",
+      "displayTurnNumber": null,
+      "mainEntryCount": 8,
+      "playerName": null
+    },
+    {
+      "battlePhase": "Opponent",
+      "displayTurnNumber": 1,
+      "mainEntryCount": 2,
+      "playerName": "Flyfrod"
+    },
+    {
+      "battlePhase": "Player",
+      "displayTurnNumber": 1,
+      "mainEntryCount": 8,
+      "playerName": "cdierkens"
+    },
+    {
+      "battlePhase": "Opponent",
+      "displayTurnNumber": 2,
+      "mainEntryCount": 6,
+      "playerName": "Flyfrod"
+    },
+    {
+      "battlePhase": "Player",
+      "displayTurnNumber": 2,
+      "mainEntryCount": 9,
+      "playerName": "cdierkens"
+    },
+    {
+      "battlePhase": "Opponent",
+      "displayTurnNumber": 3,
+      "mainEntryCount": 16,
+      "playerName": "Flyfrod"
+    },
+    {
+      "battlePhase": "Player",
+      "displayTurnNumber": 3,
+      "mainEntryCount": 10,
+      "playerName": "cdierkens"
+    },
+    {
+      "battlePhase": "Opponent",
+      "displayTurnNumber": 4,
+      "mainEntryCount": 16,
+      "playerName": "Flyfrod"
+    },
+    {
+      "battlePhase": "Player",
+      "displayTurnNumber": 4,
+      "mainEntryCount": 17,
+      "playerName": "cdierkens"
+    },
+    {
+      "battlePhase": "Opponent",
+      "displayTurnNumber": 5,
+      "mainEntryCount": 11,
+      "playerName": "Flyfrod"
+    },
+    {
+      "battlePhase": "Player",
+      "displayTurnNumber": 5,
+      "mainEntryCount": 17,
+      "playerName": "cdierkens"
+    },
+    {
+      "battlePhase": "Opponent",
+      "displayTurnNumber": 6,
+      "mainEntryCount": 13,
+      "playerName": "Flyfrod"
+    },
+    {
+      "battlePhase": "Player",
+      "displayTurnNumber": 6,
+      "mainEntryCount": 8,
+      "playerName": "cdierkens"
+    }
+  ],
+  "templateKeyCounts": {
+    "blog_loc_added_prize": 9,
+    "blog_loc_applied_damage": 6,
+    "blog_loc_attach_card_active": 5,
+    "blog_loc_attach_card_bench": 11,
+    "blog_loc_discarded_attachment": 1,
+    "blog_loc_discarded_attachment_multi": 3,
+    "blog_loc_discarded_from_board": 4,
+    "blog_loc_draw_opening_hand": 2,
+    "blog_loc_drawn_cards_grid_header": 2,
+    "blog_loc_drew_card": 33,
+    "blog_loc_drew_then_play_bench": 1,
+    "blog_loc_drew_then_play_bench_multi": 3,
+    "blog_loc_end_game": 1,
+    "blog_loc_evolved_active": 2,
+    "blog_loc_evolved_bench": 12,
+    "blog_loc_export_damage_breakdown_label": 4,
+    "blog_loc_going_second": 1,
+    "blog_loc_knockout": 6,
+    "blog_loc_manual_end": 5,
+    "blog_loc_move_to_bottom_deck": 1,
+    "blog_loc_move_to_discard": 3,
+    "blog_loc_move_to_hand": 3,
+    "blog_loc_play_to_active": 2,
+    "blog_loc_play_to_bench": 8,
+    "blog_loc_played_card": 27,
+    "blog_loc_played_to_stadium": 3,
+    "blog_loc_promote_to_active": 9,
+    "blog_loc_resistant_attack": 2,
+    "blog_loc_selected_coinface": 1,
+    "blog_loc_selected_option": 2,
+    "blog_loc_shuffled_card_into_deck": 7,
+    "blog_loc_shuffled_deck": 21,
+    "blog_loc_shuffled_fallback": 6,
+    "blog_loc_shuffled_hand": 1,
+    "blog_loc_switched_active": 3,
+    "blog_loc_took_prize_cards": 2,
+    "blog_loc_took_single_prize_card": 4,
+    "blog_loc_used_attack": 18,
+    "blog_loc_won_coin_toss": 1
+  }
+}

@@ -4,8 +4,12 @@
  * Everything here is expressed in the game's own vocabulary: the
  * `blog_loc_*` template keys that appear in `MainEntry.event` and
  * `SubEntry.event`. No invented enum, no card database, no rules engine. If
- * the client ships a new template we care about, the change is one new
- * `case` here and nothing else.
+ * the client ships a new template we care about, the change is one entry in
+ * {@link summaryRules} and nothing else.
+ *
+ * Each rule is a pure function of one event's placeholder groups, so it can be
+ * tested without constructing a log. {@link deriveGameSummary} is the fold that
+ * walks the AST and applies them.
  *
  * That constraint is also the limit of what this can tell you. It counts
  * knockouts and prizes because the game prints them as discrete lines; it
@@ -25,6 +29,77 @@ export interface DeriveGameSummaryOptions {
 }
 
 /**
+ * One credited change produced by a single event.
+ *
+ * Rules return these rather than mutating shared state, so a rule is a pure
+ * function of its event and can be asserted in isolation.
+ */
+export type SummaryDelta =
+  | { readonly kind: "knockout"; readonly credit: Credit }
+  | { readonly kind: "prizes"; readonly count: number; readonly credit: Credit }
+  | { readonly credit: Credit; readonly kind: "winner" };
+
+/**
+ * Resolve a player name to a side, or `null` when the name is unusable.
+ *
+ * Returning `null` for a missing name is deliberate: the previous behaviour
+ * treated `undefined` as "opponent", which silently miscredited a count to the
+ * wrong player. A rule that cannot attribute its event now skips it instead.
+ */
+export type CreditResolver = (playerName: string | undefined) => Credit | null;
+
+/** What a rule is given beyond the event's own placeholder groups. */
+export interface SummaryRuleContext {
+  readonly creditOf: CreditResolver;
+}
+
+/**
+ * A rule for one `blog_loc_*` template key: read the groups, name the change,
+ * or return `null` to contribute nothing.
+ */
+export type SummaryRule = (
+  groups: Readonly<Record<string, string>>,
+  context: SummaryRuleContext,
+) => null | SummaryDelta;
+
+/**
+ * Every template the summary understands, keyed by its `blog_loc_*` key.
+ *
+ * Adding a semantic case is one entry here. Exported so a new rule can be
+ * tested directly, without building a log that exercises it.
+ */
+export const summaryRules: Readonly<Record<string, SummaryRule>> = {
+  // "[gameEndReason]. [playerName] wins." — playerName IS the winner.
+  blog_loc_end_game: (groups, { creditOf }) => {
+    const credit = creditOf(groups["playerName"]);
+    return credit === null ? null : { credit, kind: "winner" };
+  },
+
+  // "[playerName]'s [cardName] was Knocked Out!" — playerName owns the
+  // Pokémon that died, so the credit belongs to the *other* side.
+  blog_loc_knockout: (groups, { creditOf }) => {
+    const owner = creditOf(groups["playerName"]);
+    if (owner === null) return null;
+    return { credit: owner === "self" ? "opponent" : "self", kind: "knockout" };
+  },
+
+  // "[playerName] took [numCards] Prize cards."
+  blog_loc_took_prize_cards: (groups, { creditOf }) => {
+    const credit = creditOf(groups["playerName"]);
+    if (credit === null) return null;
+    const count = Number.parseInt(groups["numCards"] ?? "", 10);
+    if (!Number.isFinite(count)) return null;
+    return { count, credit, kind: "prizes" };
+  },
+
+  // "[playerName] took a Prize card."
+  blog_loc_took_single_prize_card: (groups, { creditOf }) => {
+    const credit = creditOf(groups["playerName"]);
+    return credit === null ? null : { count: 1, credit, kind: "prizes" };
+  },
+};
+
+/**
  * Summarise a parsed log from the local player's perspective.
  *
  * `winner` is `null` for a log that ended without a result line, which
@@ -42,9 +117,32 @@ export function deriveGameSummary(
   let totalEntries = 0;
   let winner: Credit | null = null;
 
-  const creditOf = (playerName: string | undefined): Credit =>
-    playerName === localPlayerName ? "self" : "opponent";
-  const otherOf = (credit: Credit): Credit => (credit === "self" ? "opponent" : "self");
+  // A name that is absent or blank is not the opponent — it is unattributable.
+  const creditOf: CreditResolver = (playerName) =>
+    playerName === undefined || playerName.trim().length === 0
+      ? null
+      : playerName === localPlayerName
+        ? "self"
+        : "opponent";
+
+  const applyEvent = (node: MainEntry | SubEntry): void => {
+    const rule = summaryRules[node.event.templateKey];
+    if (rule === undefined) return;
+    const delta = rule(node.event.groups, { creditOf });
+    if (delta === null) return;
+    switch (delta.kind) {
+      case "winner":
+        winner = delta.credit;
+        return;
+      case "knockout":
+        knockouts[delta.credit] += 1;
+        if (firstKnockoutBy === null) firstKnockoutBy = delta.credit;
+        return;
+      case "prizes":
+        prizes[delta.credit] += delta.count;
+        return;
+    }
+  };
 
   for (const phase of log.phases) {
     if (phase.battlePhase === "Player" || phase.battlePhase === "Opponent") turnCount += 1;
@@ -66,38 +164,4 @@ export function deriveGameSummary(
     turnCount,
     winner,
   };
-
-  function applyEvent(node: MainEntry | SubEntry): void {
-    const { groups, templateKey } = node.event;
-    switch (templateKey) {
-      case "blog_loc_end_game": {
-        // "[gameEndReason]. [playerName] wins." — playerName IS the winner.
-        winner = creditOf(groups["playerName"]);
-        return;
-      }
-      case "blog_loc_knockout": {
-        // "[playerName]'s [cardName] was Knocked Out!" — playerName owns the
-        // Pokémon that died, so the credit belongs to the *other* side.
-        const owner = creditOf(groups["playerName"]);
-        const credited = otherOf(owner);
-        knockouts[credited] += 1;
-        if (firstKnockoutBy === null) firstKnockoutBy = credited;
-        return;
-      }
-      case "blog_loc_took_prize_cards": {
-        // "[playerName] took [numCards] Prize cards."
-        const count = Number.parseInt(groups["numCards"] ?? "0", 10);
-        if (Number.isFinite(count)) prizes[creditOf(groups["playerName"])] += count;
-        return;
-      }
-      case "blog_loc_took_single_prize_card": {
-        // "[playerName] took a Prize card."
-        prizes[creditOf(groups["playerName"])] += 1;
-        return;
-      }
-      default:
-        // Every other template is irrelevant to the summary.
-        return;
-    }
-  }
 }

@@ -89,6 +89,18 @@ export interface Phase {
   readonly battlePhase: PhaseType;
   readonly displayTurnNumber: null | number;
   readonly mainEntries: readonly MainEntry[];
+  /**
+   * The player this phase belongs to, resolved from the header at parse time.
+   *
+   * `null` for `Setup` and `Checkup`, whose headers name no player.
+   *
+   * This is the value that decides {@link Phase.battlePhase}, captured at the
+   * seam where it is known. Consumers should read it here rather than
+   * re-matching {@link Phase.plainTextPhaseTitle} against a locale bundle: the
+   * title is in the source language, so re-matching it needs a matcher for the
+   * right locale, and getting that wrong silently yields no player at all.
+   */
+  readonly playerName: null | string;
   /** The raw header line, e.g. `"TSLAUJ's Turn"`. */
   readonly plainTextPhaseTitle: string;
 }
@@ -115,17 +127,29 @@ export interface TemplateEntry {
 export type TemplateBundle = Readonly<Record<string, TemplateEntry>>;
 
 /**
- * Locale codes PTCG Live ships battle-log bundles for.
+ * Every locale PTCG Live ships a battle-log bundle for, in detection-
+ * preference order (English first, so an unscoreable log falls back to it).
  *
- * Declared here rather than in `template-matcher.ts` because
- * {@link BattleLogAnalysis} reports one — a data type should not have to
- * import from the module that happens to compile it. The runtime list lives
- * in `template-matcher.ts` as {@link ALL_BLOG_LOCALES}.
+ * This is the single source of truth for the locale list. `BlogLocale` is
+ * derived from it, the matcher registry is built from it, and
+ * `scripts/refresh-templates.ts` imports it rather than keeping its own copy.
+ * Add a locale here and the type widens with it.
  *
  * `es` (Spain) and `es_la` (Latin America) share most templates and are
  * separated only by body strings.
  */
-export type BlogLocale = "de" | "en" | "es" | "es_la" | "fr" | "it" | "ptbr";
+export const ALL_BLOG_LOCALES = [
+  "en",
+  "de",
+  "es",
+  "es_la",
+  "fr",
+  "it",
+  "ptbr",
+] as const;
+
+/** Locale codes PTCG Live ships battle-log bundles for. */
+export type BlogLocale = (typeof ALL_BLOG_LOCALES)[number];
 
 /** A successful template match: which key matched, and what it captured. */
 export interface TemplateMatch {

@@ -30,7 +30,6 @@ export {
 // --- Parsing ---
 export {
   parseBattleLog,
-  parseBattleLogOrThrow,
   type ParseBattleLogOptions,
 } from "./parse-battle-log.js";
 
@@ -38,7 +37,15 @@ export {
 export { detectPlayers, type DetectedPlayers } from "./detect-players.js";
 
 // --- Summarisation ---
-export { deriveGameSummary, type DeriveGameSummaryOptions } from "./summary.js";
+export {
+  type CreditResolver,
+  deriveGameSummary,
+  type DeriveGameSummaryOptions,
+  type SummaryDelta,
+  type SummaryRule,
+  type SummaryRuleContext,
+  summaryRules,
+} from "./summary.js";
 
 // --- Template matching (advanced) ---
 export {

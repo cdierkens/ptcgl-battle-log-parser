@@ -16,9 +16,7 @@ import { parseBattleLog } from "./parse-battle-log.js";
 import { deriveGameSummary } from "./summary.js";
 import {
   type BlogLocale,
-  blogTemplateMatchers,
   detectBattleLogLanguage,
-  type TemplateMatcher,
 } from "./template-matcher.js";
 
 export interface AnalyzeBattleLogOptions {
@@ -65,9 +63,9 @@ export function analyzeBattleLog(
 
   if (options.playerName !== undefined) {
     playerName = options.playerName;
-    // The phase title is in the *source* language, so it has to be matched
-    // against the source locale's bundle — not the English default.
-    opponentName = deriveOpponentName(parsed.value, blogTemplateMatchers[locale]);
+    // Each phase carries the name it was resolved from, so the opponent is
+    // the name on the first Opponent phase — no re-matching required.
+    opponentName = deriveOpponentName(parsed.value);
   } else {
     const players = detectPlayers(parsed.value);
     if (!players.ok) return err(players.error);
@@ -83,17 +81,15 @@ export function analyzeBattleLog(
 /**
  * Read the opponent's name off the first `Opponent` phase header.
  *
- * `phase.plainTextPhaseTitle` is the raw, untranslated header line, so it can
- * only be re-matched with the bundle it was written in. Note this consults the
- * phase's already-resolved `battlePhase`, which the parser only assigns
- * correctly when `localPlayerName` was supplied — which is always true on
- * this path, since `options.playerName` is defined here.
+ * The parser resolved this from the header when it opened the phase, so the
+ * name is already on the phase — there is nothing to re-match. This is why
+ * reading it works for every locale, including ones whose header strings are
+ * not in the English bundle.
  */
-function deriveOpponentName(parsed: BattleLog, matcher: TemplateMatcher): null | string {
+function deriveOpponentName(parsed: BattleLog): null | string {
   for (const phase of parsed.phases) {
     if (phase.battlePhase !== "Opponent") continue;
-    const name = matcher.match(phase.plainTextPhaseTitle)?.groups["playerName"];
-    if (name !== undefined) return name;
+    if (phase.playerName !== null) return phase.playerName;
   }
   return null;
 }

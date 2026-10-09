@@ -34,6 +34,8 @@ import type {
   TemplateMatcher,
 } from "./types.js";
 
+import { ALL_BLOG_LOCALES } from "./types.js";
+
 export type {
   BlogLocale,
   TemplateBundle,
@@ -148,21 +150,21 @@ function escapeLiteral(text: string): string {
 
 // --- Locale support ---
 
-/** Every supported locale, in detection-preference order. */
-export const ALL_BLOG_LOCALES = [
-  "en",
-  "de",
-  "es",
-  "es_la",
-  "fr",
-  "it",
-  "ptbr",
-] as const satisfies readonly BlogLocale[];
+/**
+ * Every supported locale, in detection-preference order.
+ *
+ * Re-exported from `types.ts`, which owns the list; the `BlogLocale` type is
+ * derived from the same array, so the two cannot drift.
+ */
+export { ALL_BLOG_LOCALES } from "./types.js";
 
 /**
  * The raw `blog_loc_*` bundle per locale, exactly as extracted from the
  * client. Prefer a precompiled matcher from {@link blogTemplateMatchers}
  * unless you are inspecting the strings themselves.
+ *
+ * The `Record<BlogLocale, …>` type makes this exhaustive: adding a locale to
+ * `ALL_BLOG_LOCALES` turns a missing bundle here into a compile error.
  */
 export const blogTemplateBundles: Readonly<Record<BlogLocale, TemplateBundle>> = {
   de: blogTemplatesDe,
@@ -176,7 +178,7 @@ export const blogTemplateBundles: Readonly<Record<BlogLocale, TemplateBundle>> =
 
 /** Precompiled matcher per locale, built once at module load. */
 export const blogTemplateMatchers: Readonly<Record<BlogLocale, TemplateMatcher>> =
-  createCachedMatcher(blogTemplateBundles);
+  createCachedMatchers(blogTemplateBundles);
 
 /**
  * The English bundle, which is the parser's default when no locale is given.
@@ -195,11 +197,14 @@ export const defaultTemplateMatcher: TemplateMatcher =
   blogTemplateMatchers["en"];
 
 /**
- * Build matchers for every locale in a bundle record, sharing one compiled
- * matcher per distinct bundle object. Extracted so the memo table below is
- * obviously keyed by bundle rather than by locale.
+ * Build one matcher per locale, sharing a compiled matcher per distinct bundle
+ * object.
+ *
+ * Driven by {@link ALL_BLOG_LOCALES} rather than a hand-written key list, so
+ * adding a locale is a one-line change in `types.ts` plus its bundle — there is
+ * no parallel list here to forget.
  */
-function createCachedMatcher(
+function createCachedMatchers(
   bundles: Readonly<Record<BlogLocale, TemplateBundle>>,
 ): Readonly<Record<BlogLocale, TemplateMatcher>> {
   const byBundle = new WeakMap<TemplateBundle, TemplateMatcher>();
@@ -210,15 +215,10 @@ function createCachedMatcher(
     byBundle.set(bundle, matcher);
     return matcher;
   };
-  return {
-    de: get(bundles["de"]),
-    en: get(bundles["en"]),
-    es: get(bundles["es"]),
-    es_la: get(bundles["es_la"]),
-    fr: get(bundles["fr"]),
-    it: get(bundles["it"]),
-    ptbr: get(bundles["ptbr"]),
-  };
+  const entries = ALL_BLOG_LOCALES.map((locale) => [locale, get(bundles[locale])] as const);
+  // `Object.fromEntries` widens the key type to `string`; the locale set is
+  // exactly ALL_BLOG_LOCALES, so the narrower record type is sound.
+  return Object.fromEntries(entries) as Readonly<Record<BlogLocale, TemplateMatcher>>;
 }
 
 /**

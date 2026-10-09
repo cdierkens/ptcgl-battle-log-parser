@@ -113,7 +113,8 @@
           "subEntries": []
         }
       ],
-      "plainTextPhaseTitle": "Setup"
+      "plainTextPhaseTitle": "Setup",
+      "playerName": null
     },
     {
       "battlePhase": "Opponent",
@@ -141,7 +142,8 @@
           "subEntries": []
         }
       ],
-      "plainTextPhaseTitle": "Flyfrod's Turn"
+      "plainTextPhaseTitle": "Flyfrod's Turn",
+      "playerName": "Flyfrod"
     },
     {
       "battlePhase": "Player",
@@ -281,7 +283,8 @@
           "subEntries": []
         }
       ],
-      "plainTextPhaseTitle": "cdierkens's Turn"
+      "plainTextPhaseTitle": "cdierkens's Turn",
+      "playerName": "cdierkens"
     },
     {
       "battlePhase": "Opponent",
@@ -431,7 +434,8 @@
           "subEntries": []
         }
       ],
-      "plainTextPhaseTitle": "Flyfrod's Turn"
+      "plainTextPhaseTitle": "Flyfrod's Turn",
+      "playerName": "Flyfrod"
     },
     {
       "battlePhase": "Player",
@@ -586,7 +590,8 @@
           "subEntries": []
         }
       ],
-      "plainTextPhaseTitle": "cdierkens's Turn"
+      "plainTextPhaseTitle": "cdierkens's Turn",
+      "playerName": "cdierkens"
     },
     {
       "battlePhase": "Opponent",
@@ -918,7 +923,8 @@
           "subEntries": []
         }
       ],
-      "plainTextPhaseTitle": "Flyfrod's Turn"
+      "plainTextPhaseTitle": "Flyfrod's Turn",
+      "playerName": "Flyfrod"
     },
     {
       "battlePhase": "Player",
@@ -1118,7 +1124,8 @@
           "subEntries": []
         }
       ],
-      "plainTextPhaseTitle": "cdierkens's Turn"
+      "plainTextPhaseTitle": "cdierkens's Turn",
+      "playerName": "cdierkens"
     },
     {
       "battlePhase": "Opponent",
@@ -1427,7 +1434,8 @@
           "subEntries": []
         }
       ],
-      "plainTextPhaseTitle": "Flyfrod's Turn"
+      "plainTextPhaseTitle": "Flyfrod's Turn",
+      "playerName": "Flyfrod"
     },
     {
       "battlePhase": "Player",
@@ -1769,7 +1777,8 @@
           "subEntries": []
         }
       ],
-      "plainTextPhaseTitle": "cdierkens's Turn"
+      "plainTextPhaseTitle": "cdierkens's Turn",
+      "playerName": "cdierkens"
     },
     {
       "battlePhase": "Opponent",
@@ -1975,7 +1984,8 @@
           "subEntries": []
         }
       ],
-      "plainTextPhaseTitle": "Flyfrod's Turn"
+      "plainTextPhaseTitle": "Flyfrod's Turn",
+      "playerName": "Flyfrod"
     },
     {
       "battlePhase": "Player",
@@ -2315,7 +2325,8 @@
           "subEntries": []
         }
       ],
-      "plainTextPhaseTitle": "cdierkens's Turn"
+      "plainTextPhaseTitle": "cdierkens's Turn",
+      "playerName": "cdierkens"
     },
     {
       "battlePhase": "Opponent",
@@ -2621,7 +2632,8 @@
           "subEntries": []
         }
       ],
-      "plainTextPhaseTitle": "Flyfrod's Turn"
+      "plainTextPhaseTitle": "Flyfrod's Turn",
+      "playerName": "Flyfrod"
     },
     {
       "battlePhase": "Player",
@@ -2777,7 +2789,8 @@
           "subEntries": []
         }
       ],
-      "plainTextPhaseTitle": "cdierkens's Turn"
+      "plainTextPhaseTitle": "cdierkens's Turn",
+      "playerName": "cdierkens"
     }
   ]
 }

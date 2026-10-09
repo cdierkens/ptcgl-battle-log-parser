@@ -5,6 +5,11 @@
  * is you. That has to be inferred, and the game's own output gives exactly
  * one hook: the **opening-hand reveal**.
  *
+ * Names are collected from the resolved {@link Phase.playerName} on every
+ * phase and from the placeholder groups of every entry. Neither depends on a
+ * locale bundle, so this works for a log in any language — the parser already
+ * resolved the header against the right bundle.
+ *
  * When the local player goes second, the client renders a mulligan, and the
  * cards revealed on a mulligan are printed back to the log — those are the
  * *local* player's cards. So the player who owns a
@@ -23,7 +28,6 @@ import type { BattleLog, MainEntry, SubEntry } from "./types.js";
 
 import { PlayerDetectionError } from "./errors.js";
 import { err, ok, type Result } from "./result.js";
-import { defaultTemplateMatcher } from "./template-matcher.js";
 
 /** The two players, as named in the log. */
 export interface DetectedPlayers {
@@ -56,7 +60,7 @@ export function detectPlayers(parsed: BattleLog): Result<DetectedPlayers, Player
   return ok({ localPlayerName, opponentName });
 }
 
-function addName(names: Set<string>, value: string | undefined): void {
+function addName(names: Set<string>, value: null | string | undefined): void {
   const trimmed = value?.trim();
   if (trimmed !== undefined && trimmed.length > 0) names.add(trimmed);
 }
@@ -99,8 +103,10 @@ function collectOpeningHandRevealOwners(parsed: BattleLog): Set<string> {
 function collectPlayerNames(parsed: BattleLog): Set<string> {
   const names = new Set<string>();
   for (const phase of parsed.phases) {
-    const phaseMatch = defaultTemplateMatcher.match(phase.plainTextPhaseTitle);
-    addName(names, phaseMatch?.groups["playerName"]);
+    // `phase.playerName` was resolved from the header at parse time, against
+    // the source locale's bundle. Re-matching `phase.plainTextPhaseTitle` here
+    // would need that same bundle and silently find nothing without it.
+    addName(names, phase.playerName);
     for (const main of phase.mainEntries) {
       collectNamesFromEvent(names, main);
       for (const sub of main.subEntries) collectNamesFromEvent(names, sub);

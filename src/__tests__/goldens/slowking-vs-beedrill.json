@@ -135,7 +135,8 @@
           "subEntries": []
         }
       ],
-      "plainTextPhaseTitle": "Setup"
+      "plainTextPhaseTitle": "Setup",
+      "playerName": null
     },
     {
       "battlePhase": "Player",
@@ -253,7 +254,8 @@
           "subEntries": []
         }
       ],
-      "plainTextPhaseTitle": "cdierkens's Turn"
+      "plainTextPhaseTitle": "cdierkens's Turn",
+      "playerName": "cdierkens"
     },
     {
       "battlePhase": "Opponent",
@@ -524,7 +526,8 @@
           "subEntries": []
         }
       ],
-      "plainTextPhaseTitle": "Wonder_Squid's Turn"
+      "plainTextPhaseTitle": "Wonder_Squid's Turn",
+      "playerName": "Wonder_Squid"
     },
     {
       "battlePhase": "Player",
@@ -802,7 +805,8 @@
           "subEntries": []
         }
       ],
-      "plainTextPhaseTitle": "cdierkens's Turn"
+      "plainTextPhaseTitle": "cdierkens's Turn",
+      "playerName": "cdierkens"
     },
     {
       "battlePhase": "Opponent",
@@ -1314,7 +1318,8 @@
           "subEntries": []
         }
       ],
-      "plainTextPhaseTitle": "Wonder_Squid's Turn"
+      "plainTextPhaseTitle": "Wonder_Squid's Turn",
+      "playerName": "Wonder_Squid"
     },
     {
       "battlePhase": "Player",
@@ -1423,7 +1428,8 @@
           ]
         }
       ],
-      "plainTextPhaseTitle": "cdierkens's Turn"
+      "plainTextPhaseTitle": "cdierkens's Turn",
+      "playerName": "cdierkens"
     },
     {
       "battlePhase": "Opponent",
@@ -1788,7 +1794,8 @@
           "subEntries": []
         }
       ],
-      "plainTextPhaseTitle": "Wonder_Squid's Turn"
+      "plainTextPhaseTitle": "Wonder_Squid's Turn",
+      "playerName": "Wonder_Squid"
     },
     {
       "battlePhase": "Player",
@@ -2123,7 +2130,8 @@
           ]
         }
       ],
-      "plainTextPhaseTitle": "cdierkens's Turn"
+      "plainTextPhaseTitle": "cdierkens's Turn",
+      "playerName": "cdierkens"
     },
     {
       "battlePhase": "Opponent",
@@ -2366,7 +2374,8 @@
           "subEntries": []
         }
       ],
-      "plainTextPhaseTitle": "Wonder_Squid's Turn"
+      "plainTextPhaseTitle": "Wonder_Squid's Turn",
+      "playerName": "Wonder_Squid"
     },
     {
       "battlePhase": "Player",
@@ -2796,7 +2805,8 @@
           ]
         }
       ],
-      "plainTextPhaseTitle": "cdierkens's Turn"
+      "plainTextPhaseTitle": "cdierkens's Turn",
+      "playerName": "cdierkens"
     }
   ]
 }

@@ -20,7 +20,8 @@ import {
   analyzeBattleLog,
   blogTemplateBundles,
   UnmatchedBattleLogLineError,
-  parseBattleLogOrThrow,
+  parseBattleLog,
+  unwrap,
 } from "@dierkens.dev/ptcgl-battle-log-parser";
 
 const EXPECTED_TEMPLATES = 228;
@@ -70,11 +71,11 @@ if (!analysis.ok) {
 
 console.log("errors:");
 try {
-  parseBattleLogOrThrow("Setup\nthis is not a battle log line\n");
-  check("parseBattleLogOrThrow throws", false, "it returned instead");
+  unwrap(parseBattleLog("Setup\nthis is not a battle log line\n"));
+  check("unwrap(parseBattleLog(...)) throws", false, "it returned instead");
 } catch (error) {
   check(
-    "parseBattleLogOrThrow throws UnmatchedBattleLogLineError",
+    "unwrap throws UnmatchedBattleLogLineError",
     error instanceof UnmatchedBattleLogLineError && error.lineNumber === 2,
     String(error),
   );

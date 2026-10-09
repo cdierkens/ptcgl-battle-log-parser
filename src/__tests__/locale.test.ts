@@ -20,8 +20,10 @@
 
 import { describe, expect, it } from "vitest";
 
-import { isOk } from "../result.js";
+import { detectPlayers } from "../detect-players.js";
+import { unwrap } from "../errors.js";
 import { parseBattleLog } from "../parse-battle-log.js";
+import { isOk } from "../result.js";
 import {
   ALL_BLOG_LOCALES,
   type BlogLocale,
@@ -190,6 +192,67 @@ describe("detectBattleLogLanguage", () => {
 
   it("defaults to English for an empty log", () => {
     expect(detectBattleLogLanguage("")).toBe("en");
+  });
+});
+
+describe("Phase.playerName — resolved at parse time, per locale", () => {
+  /**
+   * A log whose player names appear *only* in phase headers.
+   *
+   * This is the shape that broke: `detectPlayers` used to re-match headers
+   * with the English bundle, so for any other locale it found no names at all.
+   * Complete logs mask this, because names repeat in body entries.
+   */
+  function headersOnlyLog(locale: BlogLocale): string {
+    return [
+      lineFor(locale, "blog_loc_phase_setup"),
+      renderNamed(locale, "blog_loc_phase_turn", { playerName: ME }),
+      renderNamed(locale, "blog_loc_phase_turn", { playerName: THEM }),
+    ].join("\n");
+  }
+
+  it.each(ALL_BLOG_LOCALES)("captures the header name on each %s phase", (locale) => {
+    const parsed = unwrap(parseBattleLog(syntheticLog(locale), { locale }));
+    expect(parsed.phases.map((p) => p.playerName)).toEqual([null, ME, THEM]);
+  });
+
+  it.each(ALL_BLOG_LOCALES)("leaves playerName null on Setup and Checkup (%s)", (locale) => {
+    const parsed = unwrap(parseBattleLog(syntheticLog(locale), { locale }));
+    const nonTurns = parsed.phases.filter(
+      (p) => p.battlePhase === "Setup" || p.battlePhase === "Checkup",
+    );
+    expect(nonTurns.length).toBeGreaterThan(0);
+    for (const phase of nonTurns) expect(phase.playerName, locale).toBeNull();
+  });
+
+  // The regression. Before this fix every non-English locale reported
+  // "no-players-found" here — both names are in the text, plainly visible.
+  // (The correct answer is "ambiguous": two names seen, no reveal to pick the
+  // local one. The point is that the names were found at all.)
+  it.each(ALL_BLOG_LOCALES)(
+    "detectPlayers sees names that appear only in %s headers",
+    (locale) => {
+      const result = detectPlayers(unwrap(parseBattleLog(headersOnlyLog(locale), { locale })));
+      expect(result.ok, locale).toBe(false);
+      if (result.ok) return;
+      expect(result.error.reason, locale).toBe("ambiguous");
+    },
+  );
+
+  it.each(ALL_BLOG_LOCALES)("detectPlayers resolves a full %s log end to end", (locale) => {
+    const result = detectPlayers(unwrap(parseBattleLog(syntheticLog(locale), { locale })));
+    expect(result.ok, locale).toBe(true);
+    if (!result.ok) return;
+    expect(result.value, locale).toEqual({ localPlayerName: ME, opponentName: THEM });
+  });
+
+  it("detectPlayers does not need a locale argument", () => {
+    // The parser resolved the names, so detection is locale-independent.
+    const parsed = unwrap(parseBattleLog(syntheticLog("fr"), { locale: "fr" }));
+    const result = detectPlayers(parsed);
+    expect(result.ok).toBe(true);
+    if (!result.ok) return;
+    expect(result.value.localPlayerName).toBe(ME);
   });
 });
 

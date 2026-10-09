@@ -31,7 +31,7 @@ const EXPECTED_EXPORTS = [
   "isOk",
   "ok",
   "parseBattleLog",
-  "parseBattleLogOrThrow",
+  "summaryRules",
   "unwrap",
 ] as const;
 
@@ -53,7 +53,8 @@ describe("public API", () => {
         name === "blogTemplateBundles" ||
         name === "blogTemplateMatchers" ||
         name === "defaultTemplateMatcher" ||
-        name === "englishBlogTemplates"
+        name === "englishBlogTemplates" ||
+        name === "summaryRules"
       ) {
         expect(typeof value, name).toBe("object");
         continue;

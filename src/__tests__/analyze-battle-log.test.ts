@@ -11,9 +11,10 @@ import { readFileSync, readdirSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 
 import { analyzeBattleLog } from "../analyze-battle-log.js";
-import { parseBattleLogOrThrow } from "../parse-battle-log.js";
+import { unwrap } from "../errors.js";
+import { parseBattleLog } from "../parse-battle-log.js";
 import { isErr, isOk } from "../result.js";
-import { deriveGameSummary } from "../summary.js";
+import { deriveGameSummary, summaryRules } from "../summary.js";
 
 const ME = "cdierkens";
 
@@ -24,9 +25,9 @@ const ALL_FIXTURES = readdirSync(new URL("./fixtures/", import.meta.url));
 
 describe("deriveGameSummary", () => {
   it("summarises the Slowking vs Beedrill fixture", () => {
-    const log = parseBattleLogOrThrow(loadFixture("slowking-vs-beedrill.log"), {
+    const log = unwrap(parseBattleLog(loadFixture("slowking-vs-beedrill.log"), {
       localPlayerName: ME,
-    });
+    }));
     expect(deriveGameSummary(log, { localPlayerName: ME })).toEqual({
       firstKnockoutBy: "self",
       knockoutsByPlayer: { opponent: 3, self: 5 },
@@ -38,10 +39,10 @@ describe("deriveGameSummary", () => {
   });
 
   it("returns a null winner for an unfinished game", () => {
-    const log = parseBattleLogOrThrow(
+    const log = unwrap(parseBattleLog(
       "Setup\ncdierkens chose tails for the opening coin flip.\ncdierkens decided to go first.\n",
       { localPlayerName: ME },
-    );
+    ));
     const summary = deriveGameSummary(log, { localPlayerName: ME });
     expect(summary.winner).toBeNull();
     expect(summary.firstKnockoutBy).toBeNull();
@@ -53,9 +54,9 @@ describe("deriveGameSummary", () => {
     // Pins that every credit is decided purely by name comparison — a
     // mis-supplied name does not fail loudly, it inverts the summary. That
     // is worth knowing before you trust `summary.winner`.
-    const log = parseBattleLogOrThrow(loadFixture("slowking-vs-beedrill.log"), {
+    const log = unwrap(parseBattleLog(loadFixture("slowking-vs-beedrill.log"), {
       localPlayerName: ME,
-    });
+    }));
     const correct = deriveGameSummary(log, { localPlayerName: ME });
     const flipped = deriveGameSummary(log, { localPlayerName: "Wonder_Squid" });
 
@@ -75,9 +76,9 @@ describe("deriveGameSummary", () => {
   });
 
   it("counts only Player and Opponent phases as turns", () => {
-    const log = parseBattleLogOrThrow(loadFixture("slowking-vs-greninja.log"), {
+    const log = unwrap(parseBattleLog(loadFixture("slowking-vs-greninja.log"), {
       localPlayerName: ME,
-    });
+    }));
     const summary = deriveGameSummary(log, { localPlayerName: ME });
     const turnPhases = log.phases.filter(
       (p) => p.battlePhase === "Player" || p.battlePhase === "Opponent",
@@ -86,9 +87,9 @@ describe("deriveGameSummary", () => {
   });
 
   it("counts every main and sub entry in totalEntries", () => {
-    const log = parseBattleLogOrThrow(loadFixture("slowking-vs-beedrill.log"), {
+    const log = unwrap(parseBattleLog(loadFixture("slowking-vs-beedrill.log"), {
       localPlayerName: ME,
-    });
+    }));
     const expected = log.phases.reduce(
       (sum, phase) =>
         sum + phase.mainEntries.reduce((s, main) => s + 1 + main.subEntries.length, 0),
@@ -96,6 +97,79 @@ describe("deriveGameSummary", () => {
     );
     expect(deriveGameSummary(log, { localPlayerName: ME }).totalEntries).toBe(expected);
     expect(expected).toBeGreaterThan(200);
+  });
+});
+
+describe("summaryRules", () => {
+  // Each rule is a pure function of one event's groups, so it can be tested
+  // directly — no log needs to be constructed to exercise a single template.
+  const selfCreditOf = (name: string | undefined) => (name === undefined ? null : "self" as const);
+  const ctx = { creditOf: selfCreditOf };
+
+  it("names the winner from blog_loc_end_game", () => {
+    const rule = summaryRules["blog_loc_end_game"];
+    expect(rule?.({ playerName: "me" }, ctx)).toEqual({ credit: "self", kind: "winner" });
+  });
+
+  it("credits a knockout to the other side", () => {
+    // playerName owns the Pokémon that died, so the credit is the opponent's.
+    const rule = summaryRules["blog_loc_knockout"];
+    expect(rule?.({ playerName: "me", cardName: "Slowpoke" }, ctx)).toEqual({
+      credit: "opponent",
+      kind: "knockout",
+    });
+  });
+
+  it("reads the prize count from blog_loc_took_prize_cards", () => {
+    const rule = summaryRules["blog_loc_took_prize_cards"];
+    expect(rule?.({ numCards: "3", playerName: "me" }, ctx)).toEqual({
+      count: 3,
+      credit: "self",
+      kind: "prizes",
+    });
+  });
+
+  it("returns null for a non-numeric prize count rather than NaN", () => {
+    const rule = summaryRules["blog_loc_took_prize_cards"];
+    expect(rule?.({ numCards: "many", playerName: "me" }, ctx)).toBeNull();
+    expect(rule?.({ playerName: "me" }, ctx)).toBeNull();
+  });
+
+  it("contributes a single prize for blog_loc_took_single_prize_card", () => {
+    const rule = summaryRules["blog_loc_took_single_prize_card"];
+    expect(rule?.({ playerName: "me" }, ctx)).toEqual({
+      count: 1,
+      credit: "self",
+      kind: "prizes",
+    });
+  });
+
+  it("returns null from every rule when the player name is unattributable", () => {
+    // A missing name used to be treated as the opponent, silently miscrediting
+    // the count. It now contributes nothing.
+    const unresolvable = { creditOf: () => null };
+    for (const [key, rule] of Object.entries(summaryRules)) {
+      expect(rule({}, unresolvable), key).toBeNull();
+    }
+  });
+
+  it("is keyed by blog_loc_* template keys only", () => {
+    for (const key of Object.keys(summaryRules)) {
+      expect(key.startsWith("blog_loc_")).toBe(true);
+    }
+  });
+});
+
+describe("deriveGameSummary — unattributable names", () => {
+  it("does not credit a prize to the opponent when playerName is absent", () => {
+    // Guards the silent-miscredit bug directly through the public interface.
+    const log = { phases: [
+      { battlePhase: "Player" as const, displayTurnNumber: 1, mainEntries: [
+        { event: { groups: {}, raw: "x", templateKey: "blog_loc_took_single_prize_card" }, subEntries: [] },
+      ], plainTextPhaseTitle: "Turn", playerName: "me" },
+    ] };
+    const summary = deriveGameSummary(log, { localPlayerName: "me" });
+    expect(summary.prizesByPlayer).toEqual({ opponent: 0, self: 0 });
   });
 });
 
