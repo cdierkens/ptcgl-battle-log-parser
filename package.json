@@ -1,5 +1,5 @@
 {
-  "name": "@pokedojo/battle-log",
+  "name": "@dierkens.dev/battle-log",
   "version": "0.1.0",
   "description": "Zero-dependency parser for Pokémon TCG Live battle-log exports. 7 locales, structured AST, no runtime deps.",
   "keywords": [

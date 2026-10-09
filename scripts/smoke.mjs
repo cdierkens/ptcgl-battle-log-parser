@@ -21,7 +21,7 @@ import {
   blogTemplateBundles,
   UnmatchedBattleLogLineError,
   parseBattleLogOrThrow,
-} from "@pokedojo/battle-log";
+} from "@dierkens.dev/battle-log";
 
 const EXPECTED_TEMPLATES = 228;
 
