@@ -1,7 +1,7 @@
 {
   "name": "@dierkens.dev/ptcgl-battle-log-parser",
-  "version": "1.0.0",
-  "description": "Zero-dependency parser for Pok\u00e9mon TCG Live battle-log exports. 7 locales, structured AST, no runtime deps.",
+  "version": "1.1.0",
+  "description": "Zero-dependency parser for Pokémon TCG Live battle-log exports. 7 locales, structured AST, no runtime deps.",
   "keywords": [
     "pokemon",
     "ptcg",
