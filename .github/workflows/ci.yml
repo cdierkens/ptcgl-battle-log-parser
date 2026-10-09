@@ -14,9 +14,9 @@ permissions:
 
 jobs:
   verify:
-    # 22 is the declared floor; 24 is current. macOS is in the matrix because
-    # the package reads the game's localization cache from a platform-specific
-    # path, and `scripts/refresh-templates.ts` branches on platform.
+    # 22 is the declared floor; 24 is current. No code in the package branches
+    # on platform, so macOS is insurance rather than coverage of a known path —
+    # it is here because the fixtures were captured on it.
     strategy:
       fail-fast: false
       matrix:
@@ -39,18 +39,15 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
-      # templates:check re-derives all seven locale bundles from a Pokémon TCG
-      # Live install and diffs them against what is committed. It cannot run
-      # on a CI runner with no game install, so instead assert the invariant it
-      # protects: every bundle has the same 228 keys and no duplicate
-      # placeholders. The full extraction check runs locally via
-      # `pnpm run verify` before a tag.
+      # The bundles are hand-maintained data, so assert the invariants that
+      # keep them trustworthy: every bundle has the same 228 keys and no
+      # duplicate placeholders. Its own step so a failure is not buried.
       - name: Assert locale bundle invariants
         run: pnpm exec vitest run src/__tests__/locale.test.ts
 
       # typecheck + lint + test:coverage (which enforces the coverage floor)
       # + build.
-      - run: pnpm run verify:ci
+      - run: pnpm run verify
 
   # Proves the published artefact actually loads in a plain Node process —
   # the JSON import attributes are the part a bundler-based test run can mask.

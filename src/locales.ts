@@ -5,11 +5,9 @@
  * mechanics of matching — turning a template into a regex — live in
  * `./template-matcher.ts`, which knows nothing about locales.
  *
- * The bundles in `./templates/` are the game's own `blog_loc_*` strings,
- * extracted from a local PTCG Live installation. `scripts/refresh-templates.ts`
- * re-derives them and `pnpm run templates:check` verifies they are unchanged;
- * see the README's "Provenance of the template bundles" for why that is
- * reproducible rather than asserted.
+ * The bundles in `./templates/` are the game's own `blog_loc_*` strings, not
+ * this project's work. They are checked in because the parser cannot match a
+ * battle log without them. See LICENSE.
  */
 
 import type { BlogLocale, TemplateBundle, TemplateMatcher } from "./types.js";

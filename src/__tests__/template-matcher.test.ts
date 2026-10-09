@@ -168,7 +168,7 @@ describe("shipped bundles", () => {
     // Regression: filtering the extracted keys on the `blog_loc_` prefix
     // alone drops `battle_draw`, which the client emits as a real log line
     // when the rock-paper-scissors coin flip is drawn. A drawn flip would
-    // then fail to parse. See scripts/refresh-templates.ts.
+    // then fail to parse.
     for (const locale of ALL_BLOG_LOCALES) {
       const entry = blogTemplateBundles[locale]["battle_draw"];
       expect(entry, locale).toBeDefined();

@@ -72,6 +72,23 @@ original plan: the authentication path no longer depends on pnpm's delegation
 behaviour, and `--no-git-checks` becomes unnecessary rather than a documented
 compromise, because npm has no publish-branch check for a detached HEAD to trip.
 
+### Amendment: the gate collapses back to one command
+
+The decision below split the gate — `verify:ci` for `prepublishOnly`, and
+`verify` (with `templates:check`) as a heavier local-only step. That split
+existed for exactly one reason: `templates:check` re-derived the locale bundles
+from a local PTCG Live install, so it could not run on a CI runner.
+
+The bundle-extraction tool has since been removed — the bundles are now
+hand-maintained repository data, and the project does not document or ship the
+process that produced them. With that tool gone, nothing in the repository
+needs a game install, and the split has no reason to exist. There is one gate
+again, `pnpm run verify` (`typecheck`, `lint`, `test:coverage`, `build`), run by
+both CI and `prepublishOnly`.
+
+The reasoning recorded below is left as written; this note supersedes the parts
+of it that describe the split.
+
 ## Consequences
 
 - Releases are reproducible and attested, and the human action is one tag push.

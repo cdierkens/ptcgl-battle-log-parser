@@ -25,12 +25,14 @@ SOFTWARE.
 
 NOTE ON src/templates/
 
-The files in src/templates/ (blog-templates.<locale>.json) contain
-localization strings extracted from the Pokémon TCG Live client, covered by
-the MIT licence above. They are short functional UI strings and are treated
-as data about the game rather than as original work of this project. See the
-"Provenance of the template bundles" section of README.md for the extraction
-method and the licence rationale.
+The MIT licence above covers this project's code.
+
+The files in src/templates/ (blog-templates.<locale>.json) are not this
+project's work. They are the localization strings from the Pokémon TCG Live
+client, included because the parser cannot match a battle log without them.
+No licence is asserted over them here, and none should be inferred. Treat them
+as data about the game. See the "About the template bundles" section of
+README.md.
 
 Pokémon and Pokémon TCG Live are trademarks of The Pokémon Company. This
 project is not affiliated with or endorsed by them.

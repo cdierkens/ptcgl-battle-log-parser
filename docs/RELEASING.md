@@ -11,7 +11,7 @@ provenance-signed by CI (`.github/workflows/release.yml`).
 ```
 changeset  →  pnpm run version  →  commit  →  git tag  →  git push --tags
                                                               ↓
-                              CI: guards → verify:ci → publish
+                              CI: guards → verify → publish
 ```
 
 The dist-tag is derived from the version: anything with a prerelease suffix
@@ -31,7 +31,7 @@ otherwise ship without provenance).
    npm publish --access public
    ```
 
-   `prepublishOnly` runs `verify:ci` here; that is fine and fast. Revert the
+   `prepublishOnly` runs the gate here; that is fine and fast. Revert the
    version afterwards — do not commit it. Note that this works with a dirty
    working tree: npm has no publish-branch check, unlike pnpm. Your npm must be
    >= 11.5.1 (check with `npm -v`).
@@ -89,13 +89,9 @@ git add -A && git commit -m "chore: release v1.0.0"
 git tag v1.0.0 && git push origin main --tags
 ```
 
-`pnpm run verify` is the full local gate: it runs `templates:check` (which
-re-derives all seven locale bundles from a local PTCG Live install) **plus**
-`verify:ci`. Run it before tagging. CI cannot run `templates:check` — it has no
-game install — so it asserts the 228-key invariant instead.
-
-`pnpm run verify:ci` is `typecheck && lint && test:coverage && build`, and is
-what `prepublishOnly` runs.
+`pnpm run verify` is `typecheck && lint && test:coverage && build`. It is what
+CI runs and what `prepublishOnly` runs, so the same gate runs locally and in
+the pipeline.
 
 ## What is automated, and what is not
 

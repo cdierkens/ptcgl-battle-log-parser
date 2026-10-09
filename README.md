@@ -98,8 +98,8 @@ interface TemplateEvent {
 ```
 
 The AST mirrors the client's own `BattleLog → Phase[] → MainEntry[] →
-SubEntry[]` tree. `parseBattleLog` is the mathematical inverse of
-`BattleLogExporter.ExportBattleLog`.
+SubEntry[]` tree. `parseBattleLog` is the mathematical inverse of the client's
+export.
 
 ## API
 
@@ -258,90 +258,31 @@ strings only. Detection always returns a usable locale — unrecognisable input
 falls back to `"en"` — so it is a heuristic, not a guarantee. Pass `locale`
 explicitly when you already know it.
 
-## Provenance of the template bundles
+## About the template bundles
 
-**Where these strings come from.** The 7 JSON bundles in `src/templates/` are
-the game's own `blog_loc_*` localization strings, extracted from a local
-Pokémon TCG Live installation. They are not written by hand and they are not
-translations produced by this project.
+`src/templates/` holds the `blog_loc_*` strings for each supported locale. They
+are the game's own, not this project's work: the parser cannot match a battle
+log without them, and they are checked in so that `npm install` gives you a
+package that works out of the box. Treat them as *data about* the game. See
+`LICENSE`.
 
-The client fetches a per-locale string table and caches it decompressed on
-disk. From `TPCI.RainierClient`'s `_Rainier.Scripts.Localization.GZipLocalizationTableProvider`:
-
-1. Read manifest key `localization-bundle-manifest_0.0` → `{"directories": [...]}`.
-2. For each directory, fetch `<directory>/<locale>.gzip`.
-3. Decompress; the payload is a flat `Record<string, string>`.
-4. Write the **decompressed** text to `localization-cache/<directory>/<locale>`.
-
-On macOS that lands at:
-
-```
-~/Library/Application Support/com.pokemon.pokemontcgl/
-  config-cache/localization-bundle-manifest_0.0.json
-  localization-cache/<directory>/<locale>
-```
-
-Those cache files are a few hundred bytes each — a session only loads the keys
-it actually rendered, so **no single file holds a complete bundle**. The
-complete set is the union across every snapshot ever written.
-
-**Reproducing the bundles.** `scripts/refresh-templates.ts` performs exactly
-that union and rewrites `src/templates/`. It is verifiable, not a claim:
-
-```sh
-pnpm run templates:refresh        # rewrite the bundles from your local install
-pnpm run templates:check          # verify they are up to date (needs a game install)
-```
-
-`pnpm run templates:check` re-derives all 7 bundles and compares them to what
-is committed. It passes only if they are byte-identical, which is the proof
-that the shipped data really is the client's. **It needs a local PTCG Live
-install, so it cannot run on a CI runner.** CI asserts the invariant it protects
-instead: every bundle has the same 228 keys and no duplicate placeholders.
-
-**Why fetching directly isn't the default.** It would be nicer to download
-`<directory>/<locale>.gzip` over the network, and the path shape above is known
-exactly. The base URL is the blocker:
-`LegacyLocalizationManifestUrlProvider.GetManifestUrl()` composes
-`valueProvider.GetValue(keyProvider.GetContentPath())`, and
-`KeyProvider.GetContentPath()` returns the *settings key*
-`"{platform}_contentpath"` — not a URL. That key is resolved at runtime from a
-remote game-settings payload, and the resulting CDN host appears nowhere in the
-decompiled assembly, the on-disk config cache, or the game logs. So the cache
-union is the reliable path. If you know your install's content path, the script
-supports it:
-
-```sh
-pnpm run templates:refresh -- --content-path https://<cdn-host>/
-```
-
-**On the MIT licence.** The parser is MIT. The template bundles are MIT too —
-they are short functional UI strings extracted from a shipped game client, not
-creative expression in PokeDojo's code, and The Pokémon Company / TPC grants no
-warranty over them. Shipping them under MIT alongside the parser, with this
-documented extraction path, is a deliberate choice: it makes the licence
-traceable and reproducible instead of asserted. Treat the strings as *data
-about* the game, not as PokeDojo's work, and don't present them as such.
+All seven bundles share the same 228 keys; only the values differ, which is what
+lets a `templateKey` mean the same thing in every locale.
 
 ### Why `blog_loc_`
 
-The prefix is the game's own, not this project's. Decompiling
-`TPCI.RainierClient` finds `_Rainier.Scripts.BattleLog.BattleLogLocStrings`,
-which declares the whole set as `public const string blog_loc_* = "blog_loc_*"`.
-"blog" is the team's contraction for **BattleLog**, not blogging.
+The prefix is the game's own, not this project's. "blog" is the team's
+contraction for **BattleLog**, not blogging.
 
 Keeping their vocabulary means every `templateKey` in the AST ties back to a
-constant the client itself defines — you can grep the disassembly for any key
-this package emits.
+name the game itself defines, so any key this package emits is traceable to the
+client's own table.
 
-The convention has exactly one exception, and it used to break this parser:
-`BattleLogLocStrings` also declares `battle_draw`, and
-`ClientUiTriggerSubEvent.GetWinningPlayerString` emits it as a real
-`BattleLogString` when the rock-paper-scissors coin flip is drawn. Its siblings
-`blog_loc_rock` / `_paper` / `_scissors` carry the prefix, so filtering on the
-prefix alone dropped the one string marking a draw — and a drawn flip produced
-an unparseable log. `refresh-templates.ts` now carries an explicit exceptions
-list with that decomp citation, and a regression test guards it.
+The convention has exactly one exception, and it used to break this parser: the
+string that marks a drawn rock-paper-scissors flip does not carry the prefix,
+while its siblings `blog_loc_rock` / `_paper` / `_scissors` do. Filtering on the
+prefix alone dropped that one string, and a drawn flip produced an unparseable
+log. There is an explicit exceptions list, and a regression test guards it.
 
 ## Adding non-English fixtures
 
@@ -441,7 +382,7 @@ Two behavioural differences from the PokeDojo implementation, both fixes:
 
 ```sh
 pnpm install
-pnpm run verify     # templates:check + typecheck + test + build
+pnpm run verify     # typecheck + lint + test:coverage + build
 ```
 
 Individual steps:

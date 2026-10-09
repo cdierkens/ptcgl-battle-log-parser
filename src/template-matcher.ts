@@ -11,11 +11,9 @@
  *
  * A "template" is any string with `[placeholderName]` slots. The set that
  * ships with this package is the `blog_loc_*` bundle for each supported
- * locale, extracted from PTCG Live's own public localization cache — the
- * strings the client renders when you tap the in-app "Copy Log" button. All
- * locales share the same 228 keys; only the string values differ.
- * See `scripts/refresh-templates.ts` for how the bundles are re-extracted
- * and why they can be MIT-licensed.
+ * locale — the strings the client renders when you tap the in-app "Copy Log"
+ * button. All locales share the same 228 keys; only the string values differ.
+ * They are the game's data, not this project's; see LICENSE.
  *
  * Specificity: templates are sorted by the number of *literal* (non-
  * placeholder) characters, descending. That way `[X] is now in the Active

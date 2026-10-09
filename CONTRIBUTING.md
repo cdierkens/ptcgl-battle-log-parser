@@ -46,14 +46,8 @@ handles for you.
 pnpm run verify
 ```
 
-That is `templates:check`, then `typecheck`, `lint`, `test:coverage` and `build`.
-
-`templates:check` **needs a local Pokémon TCG Live install** — it re-derives the
-seven locale bundles from the game's own cache and diffs them against what is
-committed, which is what makes the shipped data reproducible rather than
-claimed. If you don't have the game installed, run `pnpm run verify:ci` instead
-and say so in the PR. CI cannot run `templates:check` either; it asserts the
-bundles' 228-key invariant instead.
+That is `typecheck`, `lint`, `test:coverage` and `build` — the same thing CI
+runs. Nothing here needs a Pokémon TCG Live install.
 
 Releases are automated from a tag; contributors never publish. See
 [docs/RELEASING.md](./docs/RELEASING.md).

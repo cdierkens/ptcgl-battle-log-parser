@@ -94,7 +94,7 @@ jobs:
             *)   echo "tag=latest" >> "$GITHUB_OUTPUT" ;;
           esac
 
-      # `prepublishOnly` runs `verify:ci` (typecheck + lint + test:coverage +
+      # `prepublishOnly` runs the gate (typecheck + lint + test:coverage +
       # build) on publish, so nothing unverified can reach the registry.
       #
       # `npm publish`, not `pnpm publish`. pnpm just shells out to npm for this

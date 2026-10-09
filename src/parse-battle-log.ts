@@ -1,27 +1,26 @@
 /**
- * parseBattleLog — the inverse of PTCG Live's `BattleLogExporter.ExportBattleLog`.
+ * parseBattleLog — the inverse of the client's battle-log export.
  *
  * The client serialises its in-memory battle-log tree as:
  *
  *   foreach Phase:
- *     writeLine(phase.PlainTextPhaseTitle)             // blog_loc_phase_*
+ *     writeLine(phase title)                            // blog_loc_phase_*
  *     foreach MainEntry:
- *       writeLine(mainEntry.PlainTextDisplayString)    // blog_loc_*
+ *       writeLine(main entry text)                      // blog_loc_*
  *       foreach SubEntry:
- *         writeLine("- " + subEntry.PlainTextDisplayString)   // blog_loc_*
- *         if subEntry.PlainTextSubString:
- *           writeLine("   • " + subEntry.PlainTextSubString)  // free-form
- *     writeLine("")                                    // trailing blank
+ *         writeLine("- " + sub entry text)              // blog_loc_*
+ *         if the sub entry has a sub-string:
+ *           writeLine("   • " + sub-string)             // free-form
+ *     writeLine("")                                     // trailing blank
  *
  * This module reverses that process. Every non-blank line is either a phase
  * header, a main entry, a sub-entry (`"- "` prefix), or a sub-string
  * (`"   • "` prefix). Everything except the sub-string must template-match a
  * shipped `blog_loc_*` key.
  *
- * Blank lines are decorative and skipped: `DamageBreakdownEntryInfo.GetString`
- * embeds newlines inside a sub-entry's display string, so blank lines appear
- * mid-phase. Phase transitions are detected purely by a phase-header template
- * appearing on a fresh line.
+ * Blank lines are decorative and skipped: a sub-entry's text can itself embed
+ * newlines, so blank lines appear mid-phase. Phase transitions are detected
+ * purely by a phase-header template appearing on a fresh line.
  *
  * @example
  * const result = parseBattleLog(raw, { locale: "de" });

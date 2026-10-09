@@ -8,13 +8,8 @@ Public API and provenance: see `README.md`.
 
 ## Commands
 
-- `pnpm run verify` — the full **local** gate: `templates:check` + `verify:ci`.
-  Run it before tagging a release. Not CI-safe: `templates:check` needs a game install.
-- `pnpm run verify:ci` — `typecheck` + `test` + `build`. CI-safe; this is what
-  `prepublishOnly` runs.
-- `pnpm run templates:check` — re-derives the locale bundles from a local PTCG Live
-  install. **Fails on a machine that has never run the game.** Don't reach for
-  `verify` expecting it to pass anywhere; `templates:refresh` regenerates the bundles.
+- `pnpm run verify` — the gate: `typecheck`, `lint`, `test:coverage`, `build`.
+  This is what CI runs, and what `prepublishOnly` runs.
 - `pnpm run test` — `vitest run`.
 - **Releasing is automated from a tag.** `docs/RELEASING.md` is the procedure;
   `docs/adr/0003-tag-triggered-oidc-releases.md` is the reasoning.
