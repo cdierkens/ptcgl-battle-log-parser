@@ -1,0 +1,10 @@
+{
+  "mode": "pre",
+  "tag": "rc",
+  "initialVersions": {
+    "@dierkens.dev/ptcgl-battle-log-parser": "0.1.0"
+  },
+  "changesets": [
+    "one-point-oh"
+  ]
+}
