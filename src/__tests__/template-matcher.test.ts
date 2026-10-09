@@ -9,11 +9,7 @@
 import { describe, expect, it } from "vitest";
 
 import { contentLine } from "../content-line.js";
-import {
-  blogTemplateBundles,
-  defaultTemplateMatcher,
-  englishBlogTemplates,
-} from "../locales.js";
+import { blogTemplateBundles, defaultTemplateMatcher } from "../locales.js";
 import { compileTemplate, createTemplateMatcher } from "../template-matcher.js";
 import { ALL_BLOG_LOCALES } from "../types.js";
 
@@ -156,7 +152,6 @@ describe("createTemplateMatcher", () => {
 describe("shipped bundles", () => {
   it("load without validation errors", () => {
     expect(defaultTemplateMatcher.size).toBeGreaterThan(200);
-    expect(Object.keys(englishBlogTemplates).length).toBe(defaultTemplateMatcher.size);
   });
 
   it("ship 228 templates per locale", () => {
@@ -181,7 +176,7 @@ describe("shipped bundles", () => {
 
   it("keep the three rock-paper-scissors strings that share the prefix", () => {
     for (const key of ["blog_loc_rock", "blog_loc_paper", "blog_loc_scissors"]) {
-      expect(englishBlogTemplates[key], key).toBeDefined();
+      expect(blogTemplateBundles["en"][key], key).toBeDefined();
     }
     expect(defaultTemplateMatcher.match("rock")?.templateKey).toBe("blog_loc_rock");
     expect(defaultTemplateMatcher.match("scissors")?.templateKey).toBe("blog_loc_scissors");

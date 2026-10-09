@@ -14,8 +14,6 @@
  * The `_tag` values are part of the public API and will not change.
  */
 
-import type { BattleLog, BattleLogAnalysis } from "./types.js";
-
 /**
  * A line in the log does not resolve to any shipped `blog_loc_*` template.
  *
@@ -81,6 +79,3 @@ export function unwrap<T, E>(result: { ok: true; value: T } | { ok: false; error
   if (result.ok) return result.value;
   throw result.error;
 }
-
-/** Re-exported for callers that only import the error surface. */
-export type { BattleLog, BattleLogAnalysis };

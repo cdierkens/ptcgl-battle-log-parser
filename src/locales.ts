@@ -71,20 +71,14 @@ export const blogTemplateMatchers: Readonly<Record<BlogLocale, TemplateMatcher>>
 };
 
 /**
- * The English bundle, which is the parser's default when no locale is given.
- *
- * Not part of the public API — it is exactly `blogTemplateBundles["en"]`, and
- * exporting both spellings would freeze two names for one thing. See ADR-0002.
- */
-export const englishBlogTemplates: TemplateBundle = blogTemplateBundles["en"];
-
-/**
  * Matcher backed by the shipped English bundle.
  *
  * This is the default for `parseBattleLog` when no `locale` is passed. It
  * matches an English log out of the box, but it cannot read a log in any
  * other language — pass the right `locale`, or let `analyzeBattleLog` detect
- * it. Not part of the public API; see {@link englishBlogTemplates}.
+ * it. Not part of the public API: it is exactly `blogTemplateMatchers["en"]`,
+ * and exporting both spellings would freeze two names for one thing. See
+ * ADR-0002.
  */
 export const defaultTemplateMatcher: TemplateMatcher = blogTemplateMatchers["en"];
 

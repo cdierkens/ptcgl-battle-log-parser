@@ -47,9 +47,8 @@ export {
 } from "./summary.js";
 
 // --- Locales ---
-// `defaultTemplateMatcher` and `englishBlogTemplates` are deliberately *not*
-// re-exported: they are exactly `blogTemplateMatchers["en"]` and
-// `blogTemplateBundles["en"]`, and exporting both spellings would freeze two
+// `defaultTemplateMatcher` is deliberately *not* re-exported: it is exactly
+// `blogTemplateMatchers["en"]`, and exporting both spellings would freeze two
 // names for one thing. See ADR-0002.
 export { ALL_BLOG_LOCALES } from "./types.js";
 export {
