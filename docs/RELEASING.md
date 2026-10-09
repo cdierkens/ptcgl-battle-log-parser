@@ -57,6 +57,36 @@ git add -A && git commit -m "chore: release vX.Y.Z"
 git tag vX.Y.Z && git push origin main --tags
 ```
 
+## Rehearsing on a prerelease
+
+A first release should be exercised on a prerelease, so that a mistake lands on
+`next` rather than on `latest`. Changesets drives the whole thing:
+
+```sh
+pnpm exec changeset pre enter rc
+pnpm run version                    # consumes the changesets → 1.0.0-rc.0
+pnpm run verify
+git add -A && git commit -m "chore: version 1.0.0-rc.0"
+git tag v1.0.0-rc.0 && git push origin main --tags
+```
+
+CI publishes `1.0.0-rc.0` to `next`. **Check that it did what it claims** before
+going further — the point of the rehearsal is to find out here:
+
+```sh
+npm view @dierkens.dev/ptcgl-battle-log-parser dist-tags   # next → 1.0.0-rc.0, latest untouched
+npm view @dierkens.dev/ptcgl-battle-log-parser@1.0.0-rc.0 dist.attestations
+```
+
+The npm page should show a provenance attestation on the version. Then promote:
+
+```sh
+pnpm exec changeset pre exit
+pnpm run version                    # → 1.0.0
+git add -A && git commit -m "chore: release v1.0.0"
+git tag v1.0.0 && git push origin main --tags
+```
+
 `pnpm run verify` is the full local gate: it runs `templates:check` (which
 re-derives all seven locale bundles from a local PTCG Live install) **plus**
 `verify:ci`. Run it before tagging. CI cannot run `templates:check` — it has no
