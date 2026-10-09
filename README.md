@@ -43,7 +43,7 @@ pnpm add @pokedojo/battle-log
 npm  install @pokedojo/battle-log
 ```
 
-Requires Node **>= 20.11**. ESM only — no CommonJS build.
+Requires Node **>= 22**. ESM only — no CommonJS build.
 
 ## What you get
 

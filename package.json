@@ -14,7 +14,7 @@
   "packageManager": "pnpm@11.11.0",
   "type": "module",
   "engines": {
-    "node": ">=20.11"
+    "node": ">=22"
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -51,7 +51,8 @@
     "verify": "pnpm run templates:check && pnpm run typecheck && pnpm run test && pnpm run build",
     "prepublishOnly": "pnpm run verify",
     "version": "changeset version",
-    "release": "pnpm run build && pnpm publish --provenance --no-git-checks"
+    "release": "pnpm run build && pnpm publish --no-git-checks",
+    "release:provenance": "pnpm run build && pnpm publish --provenance --no-git-checks"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.10",
