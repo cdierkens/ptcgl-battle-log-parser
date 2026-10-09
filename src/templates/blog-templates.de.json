@@ -1,0 +1,1513 @@
+{
+  "battle_draw": {
+    "placeholders": [],
+    "template": "Unentschieden!"
+  },
+  "blog_loc_a_card": {
+    "placeholders": [],
+    "template": "eine Karte"
+  },
+  "blog_loc_added_prize": {
+    "placeholders": [
+      "cardName",
+      "playerName"
+    ],
+    "template": "[cardName] wurde zu der Hand von [playerName] hinzugefügt."
+  },
+  "blog_loc_an_ability": {
+    "placeholders": [],
+    "template": "eine Fähigkeit"
+  },
+  "blog_loc_an_action": {
+    "placeholders": [],
+    "template": "eine Aktion"
+  },
+  "blog_loc_an_attack": {
+    "placeholders": [],
+    "template": "eine Attacke"
+  },
+  "blog_loc_another_card": {
+    "placeholders": [],
+    "template": "eine andere Karte"
+  },
+  "blog_loc_applied_damage": {
+    "placeholders": [
+      "attackName",
+      "attackingPlayerName",
+      "attackingPokemonCardName",
+      "defendingPlayerName",
+      "numDamage",
+      "targetPokemonCardName"
+    ],
+    "template": "[attackingPokemonCardName] von [attackingPlayerName] hat [attackName] gegen [targetPokemonCardName] von [defendingPlayerName] für [numDamage] Schadenspunkte eingesetzt."
+  },
+  "blog_loc_attach_card_active": {
+    "placeholders": [
+      "playerName",
+      "sourceCardName",
+      "targetCardName"
+    ],
+    "template": "[playerName] hat [sourceCardName] an [targetCardName] in der Aktiven Position angelegt."
+  },
+  "blog_loc_attach_card_bench": {
+    "placeholders": [
+      "playerName",
+      "sourceCardName",
+      "targetCardName"
+    ],
+    "template": "[playerName] hat [sourceCardName] an [targetCardName] auf der Bank angelegt."
+  },
+  "blog_loc_attach_card_fallback": {
+    "placeholders": [
+      "playerName",
+      "sourceCardName",
+      "targetCardName"
+    ],
+    "template": "[playerName] hat [sourceCardName] an [targetCardName] angelegt."
+  },
+  "blog_loc_battle_log": {
+    "placeholders": [],
+    "template": "Kampf-Protokoll"
+  },
+  "blog_loc_card_activated": {
+    "placeholders": [
+      "cardName"
+    ],
+    "template": "[cardName] wurde aktiviert."
+  },
+  "blog_loc_coin_flip_multi": {
+    "placeholders": [
+      "coinFace",
+      "numCoinFlips",
+      "numCoinMeasured",
+      "playerName"
+    ],
+    "template": "[playerName] hat [numCoinFlips] Münzwürfe durchgeführt und [numCoinMeasured]-mal das Ergebnis [coinFace] erhalten."
+  },
+  "blog_loc_coin_flip_single": {
+    "placeholders": [
+      "coinFace",
+      "playerName"
+    ],
+    "template": "Der Münzwurf von [playerName] hatte das Ergebnis [coinFace]."
+  },
+  "blog_loc_condition_asleep": {
+    "placeholders": [],
+    "template": "Schlaf"
+  },
+  "blog_loc_condition_burned": {
+    "placeholders": [],
+    "template": "Verbrennung"
+  },
+  "blog_loc_condition_confused": {
+    "placeholders": [],
+    "template": "Verwirrung"
+  },
+  "blog_loc_condition_damage_many": {
+    "placeholders": [
+      "numDamageCounters",
+      "specialConditionName",
+      "targetPlayerName",
+      "targetPokemonCardName"
+    ],
+    "template": "[numDamageCounters] Schadensmarken wurden für den Speziellen Zustand [specialConditionName] auf [targetPokemonCardName] von [targetPlayerName] gelegt."
+  },
+  "blog_loc_condition_damage_single": {
+    "placeholders": [
+      "specialConditionName",
+      "targetPlayerName",
+      "targetPokemonCardName"
+    ],
+    "template": "1 Schadensmarke wurde für den Speziellen Zustand [specialConditionName] auf [targetPokemonCardName] von [targetPlayerName] gelegt."
+  },
+  "blog_loc_condition_paralyzed": {
+    "placeholders": [],
+    "template": "Paralyse"
+  },
+  "blog_loc_condition_poisoned": {
+    "placeholders": [],
+    "template": "Vergiftung"
+  },
+  "blog_loc_damage_blocked": {
+    "placeholders": [
+      "targetPokemonCardName"
+    ],
+    "template": "Schaden für [targetPokemonCardName] wurde verhindert."
+  },
+  "blog_loc_damage_detail_ability": {
+    "placeholders": [
+      "attackName",
+      "numDamage"
+    ],
+    "template": "(Fähigkeit) [attackName]: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_attack": {
+    "placeholders": [
+      "attackName",
+      "numDamage"
+    ],
+    "template": "(Attacke) [attackName]: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_base": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "Grundschaden: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_conditional_condition": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "Hat Spezielle Zustände: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_conditional_condition_s": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "Hat Speziellen Zustand: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_conditional_evolved_this_turn": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "In diesem Zug entwickelt: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_conditional_healed": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "Wurde geheilt: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_conditional_is_basic": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "Basis Pokémon: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_conditional_is_evolution": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "Entwicklungs-Pokémon: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_conditional_is_property": {
+    "placeholders": [
+      "numDamage",
+      "pokemonProperty"
+    ],
+    "template": "[pokemonProperty]: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_conditional_is_type": {
+    "placeholders": [
+      "numDamage",
+      "pokemonType"
+    ],
+    "template": "[pokemonType]: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_conditional_knockedout": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "Pokémon kampfunfähig gemacht: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_conditional_more_prize_cards": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "Mehr Preiskarten als der Gegner: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_conditional_played_supporter": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "Gespielte Unterstützerkarte: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_attached_energy": {
+    "placeholders": [
+      "numCounted",
+      "numDamage"
+    ],
+    "template": "[numCounted] angelegte Energien: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_attached_energy_s": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "1 angelegte Energie: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_attached_tool": {
+    "placeholders": [
+      "numCounted",
+      "numDamage"
+    ],
+    "template": "[numCounted] angelegte Pokémon-Ausrüstungen: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_attached_tool_s": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "1 angelegte Pokémon-Ausrüstung: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_benched": {
+    "placeholders": [
+      "numCounted",
+      "numDamage"
+    ],
+    "template": "[numCounted] Pokémon auf der Bank: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_benched_s": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "1 Pokémon auf der Bank: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_card": {
+    "placeholders": [
+      "numCounted",
+      "numDamage"
+    ],
+    "template": "[numCounted] Karten: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_card_in_discard": {
+    "placeholders": [
+      "numCounted",
+      "numDamage"
+    ],
+    "template": "([numCounted]) Karten im Ablagestapel: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_card_in_discard_s": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "1 Karte im Ablagestapel: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_card_s": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "1 Karte: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_cards_in_deck": {
+    "placeholders": [
+      "numCounted",
+      "numDamage"
+    ],
+    "template": "[numCounted] Karten im Deck: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_cards_in_deck_s": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "1 Karte im Deck: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_cards_in_hand": {
+    "placeholders": [
+      "numCounted",
+      "numDamage"
+    ],
+    "template": "[numCounted] Karten auf der Hand: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_cards_in_hand_s": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "1 Karte auf der Hand: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_damage_counters": {
+    "placeholders": [
+      "numCounted",
+      "numDamage"
+    ],
+    "template": "[numCounted] Schadensmarken: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_damage_counters_s": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "1 Schadensmarke: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_discarded_energy": {
+    "placeholders": [
+      "numCounted",
+      "numDamage"
+    ],
+    "template": "[numCounted] abgelegte Energien: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_discarded_energy_s": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "1 abgelegte Energie: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_discarded_pokemon": {
+    "placeholders": [
+      "numCounted",
+      "numDamage"
+    ],
+    "template": "[numCounted] abgelegte Pokémon: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_discarded_pokemon_s": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "1 abgelegtes Pokémon: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_discarded_stadium": {
+    "placeholders": [
+      "numCounted",
+      "numDamage"
+    ],
+    "template": "[numCounted] abgelegte Stadionkarten: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_discarded_stadium_s": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "1 abgelegte Stadionkarte: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_discarded_tool": {
+    "placeholders": [
+      "numCounted",
+      "numDamage"
+    ],
+    "template": "[numCounted] abgelegte Pokémon-Ausrüstungen: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_discarded_tool_s": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "1 abgelegte Pokémon-Ausrüstung: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_energy": {
+    "placeholders": [
+      "numCounted",
+      "numDamage"
+    ],
+    "template": "[numCounted] Energien: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_energy_s": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "1 Energie: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_has_ability": {
+    "placeholders": [
+      "numCounted",
+      "numDamage"
+    ],
+    "template": "[numCounted] Pokémon mit Fähigkeiten: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_has_ability_s": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "1 Pokémon mit einer Fähigkeit: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_heads": {
+    "placeholders": [
+      "numCounted",
+      "numDamage"
+    ],
+    "template": "[numCounted] Kopf: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_heads_s": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "1 Kopf: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_item": {
+    "placeholders": [
+      "numCounted",
+      "numDamage"
+    ],
+    "template": "[numCounted] Itemkarten: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_item_s": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "1 Itemkarte: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_pokemon": {
+    "placeholders": [
+      "numCounted",
+      "numDamage"
+    ],
+    "template": "[numCounted] Pokémon: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_pokemon_s": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "1 Pokémon: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_pokemon_types": {
+    "placeholders": [
+      "numCounted",
+      "numDamage"
+    ],
+    "template": "[numCounted] Pokémon-Typen: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_pokemon_types_s": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "1 Pokémon-Typ: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_prize_cards": {
+    "placeholders": [
+      "numCounted",
+      "numDamage"
+    ],
+    "template": "[numCounted] Preiskarten: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_prize_cards_s": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "1 Preiskarte: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_selected_card": {
+    "placeholders": [
+      "numCounted",
+      "numDamage"
+    ],
+    "template": "[numCounted] ausgewählte Karten: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_selected_card_s": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "1 ausgewählte Karte: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_selected_energy": {
+    "placeholders": [
+      "numCounted",
+      "numDamage"
+    ],
+    "template": "[numCounted] ausgewählte Energien: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_selected_energy_s": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "1 ausgewählte Energie: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_selected_item": {
+    "placeholders": [
+      "numCounted",
+      "numDamage"
+    ],
+    "template": "[numCounted] ausgewählte Itemkarten: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_selected_item_s": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "1 ausgewählte Itemkarte: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_selected_pokemon": {
+    "placeholders": [
+      "numCounted",
+      "numDamage"
+    ],
+    "template": "[numCounted] ausgewählte Pokémon: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_selected_pokemon_s": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "1 ausgewähltes Pokémon: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_selected_stadium": {
+    "placeholders": [
+      "numCounted",
+      "numDamage"
+    ],
+    "template": "[numCounted] ausgewählte Stadionkarten: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_selected_stadium_s": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "1 ausgewählte Stadionkarte: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_selected_supporter": {
+    "placeholders": [
+      "numCounted",
+      "numDamage"
+    ],
+    "template": "[numCounted] ausgewählte Unterstützerkarten: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_selected_supporter_s": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "1 ausgewählte Unterstützerkarte: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_selected_tool": {
+    "placeholders": [
+      "numCounted",
+      "numDamage"
+    ],
+    "template": "[numCounted] ausgewählte Pokémon-Ausrüstungen: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_selected_tool_s": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "1 ausgewählte Pokémon-Ausrüstung: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_stadium": {
+    "placeholders": [
+      "numCounted",
+      "numDamage"
+    ],
+    "template": "[numCounted] Stadionkarten: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_stadium_s": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "1 Stadionkarte: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_supporter": {
+    "placeholders": [
+      "numCounted",
+      "numDamage"
+    ],
+    "template": "[numCounted] Unterstützerkarten: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_supporter_s": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "1 Unterstützerkarte: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_tails": {
+    "placeholders": [
+      "numCounted",
+      "numDamage"
+    ],
+    "template": "[numCounted] Zahl: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_tails_s": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "1 Zahl: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_tool": {
+    "placeholders": [
+      "numCounted",
+      "numDamage"
+    ],
+    "template": "[numCounted] Pokémon-Ausrüstungen: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_count_tool_s": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "1 Pokémon-Ausrüstung: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_energy": {
+    "placeholders": [
+      "cardName",
+      "numDamage"
+    ],
+    "template": "(Energie) [cardName]: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_fallback": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "Schaden: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_item": {
+    "placeholders": [
+      "cardName",
+      "numDamage"
+    ],
+    "template": "(Item) [cardName]: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_resistance": {
+    "placeholders": [
+      "numDamage",
+      "pokemonType"
+    ],
+    "template": "Resistenz gegen [pokemonType]: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_stadium": {
+    "placeholders": [
+      "cardName",
+      "numDamage"
+    ],
+    "template": "(Stadion) [cardName]: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_supporter": {
+    "placeholders": [
+      "cardName",
+      "numDamage"
+    ],
+    "template": "(Unterstützer) [cardName]: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_tool": {
+    "placeholders": [
+      "cardName",
+      "numDamage"
+    ],
+    "template": "(Pokémon-Ausrüstung) [cardName]: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_total": {
+    "placeholders": [
+      "numDamage"
+    ],
+    "template": "Gesamtschaden: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_damage_detail_weakness": {
+    "placeholders": [
+      "numDamage",
+      "pokemonType"
+    ],
+    "template": "Schwäche gegen [pokemonType]: [numDamage] Schadenspunkte"
+  },
+  "blog_loc_devolved_active": {
+    "placeholders": [
+      "playerName",
+      "sourcePlayerName",
+      "sourcePokemonCardName",
+      "targetPokemonCardName"
+    ],
+    "template": "[playerName] hat [sourcePokemonCardName] in der Aktiven Position von [sourcePlayerName] zu [targetPokemonCardName] rückentwickelt."
+  },
+  "blog_loc_devolved_bench": {
+    "placeholders": [
+      "playerName",
+      "sourcePlayerName",
+      "sourcePokemonCardName",
+      "targetPokemonCardName"
+    ],
+    "template": "[playerName] hat [sourcePokemonCardName] auf der Bank von [sourcePlayerName] zu [targetPokemonCardName] rückentwickelt."
+  },
+  "blog_loc_devolved_fallback": {
+    "placeholders": [
+      "playerName",
+      "sourcePlayerName",
+      "sourcePokemonCardName",
+      "targetPokemonCardName"
+    ],
+    "template": "[playerName] hat [sourcePokemonCardName] von [sourcePlayerName] zu [targetPokemonCardName] rückentwickelt."
+  },
+  "blog_loc_discarded_attachment": {
+    "placeholders": [
+      "cardName",
+      "playerName",
+      "pokemonCardName"
+    ],
+    "template": "[pokemonCardName] von [playerName] hat [cardName] auf den Ablagestapel gelegt."
+  },
+  "blog_loc_discarded_attachment_multi": {
+    "placeholders": [
+      "numCards",
+      "playerName",
+      "pokemonCardName"
+    ],
+    "template": "[numCards] Karten wurden von [pokemonCardName] von [playerName] auf den Ablagestapel gelegt."
+  },
+  "blog_loc_discarded_from_board": {
+    "placeholders": [
+      "cardName",
+      "playerName"
+    ],
+    "template": "[playerName] hat [cardName] auf den Ablagestapel gelegt."
+  },
+  "blog_loc_discarded_from_hand": {
+    "placeholders": [
+      "cardName",
+      "playerName"
+    ],
+    "template": "[playerName] hat [cardName] auf den Ablagestapel gelegt."
+  },
+  "blog_loc_draw_opening_hand": {
+    "placeholders": [
+      "numCards",
+      "playerName"
+    ],
+    "template": "[playerName] hat für die Starthand [numCards] Karten gezogen."
+  },
+  "blog_loc_drawn_cards_grid_header": {
+    "placeholders": [
+      "numCards"
+    ],
+    "template": "[numCards] gezogene Karten"
+  },
+  "blog_loc_drew_card": {
+    "placeholders": [
+      "cardName",
+      "playerName"
+    ],
+    "template": "[playerName] hat [cardName] gezogen."
+  },
+  "blog_loc_drew_then_play_active": {
+    "placeholders": [
+      "cardName",
+      "playerName"
+    ],
+    "template": "[playerName] hat [cardName] gezogen und in die Aktive Position gelegt."
+  },
+  "blog_loc_drew_then_play_bench": {
+    "placeholders": [
+      "cardName",
+      "playerName"
+    ],
+    "template": "[playerName] hat [cardName] gezogen und auf die Bank gelegt."
+  },
+  "blog_loc_drew_then_play_bench_multi": {
+    "placeholders": [
+      "numCards",
+      "playerName"
+    ],
+    "template": "[playerName] hat [numCards] Karten gezogen und auf die Bank gespielt."
+  },
+  "blog_loc_drew_then_play_fallback": {
+    "placeholders": [
+      "cardName",
+      "playerName"
+    ],
+    "template": "[playerName] hat [cardName] gezogen und gespielt."
+  },
+  "blog_loc_drew_then_play_stadium": {
+    "placeholders": [
+      "cardName",
+      "playerName"
+    ],
+    "template": "[playerName] hat [cardName] gezogen und auf das Stadion-Feld gespielt."
+  },
+  "blog_loc_effect_prevention_allactioneffects": {
+    "placeholders": [
+      "attackName",
+      "targetPokemonCardName"
+    ],
+    "template": "Effekte von [attackName] hatten keine Auswirkung auf [targetPokemonCardName]."
+  },
+  "blog_loc_effect_prevention_allcardeffects": {
+    "placeholders": [
+      "cardName",
+      "targetPokemonCardName"
+    ],
+    "template": "Effekte von [cardName] hatten keine Auswirkung auf [targetPokemonCardName]."
+  },
+  "blog_loc_effect_prevention_allsubactions": {
+    "placeholders": [
+      "targetPokemonCardName"
+    ],
+    "template": "[targetPokemonCardName] wurde nicht beeinträchtigt."
+  },
+  "blog_loc_effect_prevention_blockmovement": {
+    "placeholders": [
+      "targetPokemonCardName"
+    ],
+    "template": "[targetPokemonCardName] wurde nicht bewegt."
+  },
+  "blog_loc_effect_prevention_blockplayerselections": {
+    "placeholders": [
+      "targetPlayerName"
+    ],
+    "template": "[targetPlayerName] konnte keine Auswahl treffen."
+  },
+  "blog_loc_effect_prevention_blockstatuseffects": {
+    "placeholders": [
+      "targetPokemonCardName"
+    ],
+    "template": "[targetPokemonCardName] kann nicht von Speziellen Zuständen betroffen werden."
+  },
+  "blog_loc_effect_prevention_burnrecovery": {
+    "placeholders": [
+      "targetPokemonCardName"
+    ],
+    "template": "[targetPokemonCardName] kann sich nicht vom Speziellen Zustand Verbrennung erholen."
+  },
+  "blog_loc_effect_prevention_damage": {
+    "placeholders": [
+      "targetPokemonCardName"
+    ],
+    "template": "Schaden für [targetPokemonCardName] wurde verhindert."
+  },
+  "blog_loc_effect_prevention_damagecounters": {
+    "placeholders": [
+      "targetPokemonCardName"
+    ],
+    "template": "Schaden für [targetPokemonCardName] wurde verhindert."
+  },
+  "blog_loc_effect_prevention_fallback": {
+    "placeholders": [],
+    "template": "Der Effekt wurde verhindert."
+  },
+  "blog_loc_effect_prevention_heal": {
+    "placeholders": [
+      "targetPokemonCardName"
+    ],
+    "template": "[targetPokemonCardName] wurde nicht geheilt."
+  },
+  "blog_loc_effect_prevention_onlyeffects": {
+    "placeholders": [
+      "targetPokemonCardName"
+    ],
+    "template": "[targetPokemonCardName] wurde nicht beeinträchtigt."
+  },
+  "blog_loc_end_game": {
+    "placeholders": [
+      "gameEndReason",
+      "playerName"
+    ],
+    "template": "[gameEndReason]. [playerName] hat gewonnen."
+  },
+  "blog_loc_evolved_active": {
+    "placeholders": [
+      "playerName",
+      "sourcePokemonCardName",
+      "targetPokemonCardName"
+    ],
+    "template": "[playerName] hat [sourcePokemonCardName] in der Aktiven Position zu [targetPokemonCardName] entwickelt."
+  },
+  "blog_loc_evolved_bench": {
+    "placeholders": [
+      "playerName",
+      "sourcePokemonCardName",
+      "targetPokemonCardName"
+    ],
+    "template": "[playerName] hat [sourcePokemonCardName] auf der Bank zu [targetPokemonCardName] entwickelt."
+  },
+  "blog_loc_evolved_fallback": {
+    "placeholders": [
+      "playerName",
+      "sourcePokemonCardName",
+      "targetPokemonCardName"
+    ],
+    "template": "[playerName] hat [sourcePokemonCardName] zu [targetPokemonCardName] entwickelt."
+  },
+  "blog_loc_export_copied": {
+    "placeholders": [],
+    "template": "Export kopiert!"
+  },
+  "blog_loc_export_damage_breakdown_label": {
+    "placeholders": [],
+    "template": "Schadensaufteilung:"
+  },
+  "blog_loc_generic_reveal": {
+    "placeholders": [
+      "cardName",
+      "playerName"
+    ],
+    "template": "[playerName] hat [cardName] gezeigt."
+  },
+  "blog_loc_going_first": {
+    "placeholders": [
+      "playerName"
+    ],
+    "template": "[playerName] möchte als Erster dran sein."
+  },
+  "blog_loc_going_second": {
+    "placeholders": [
+      "playerName"
+    ],
+    "template": "[playerName] möchte als Zweiter dran sein."
+  },
+  "blog_loc_gx_moves": {
+    "placeholders": [],
+    "template": "<i>GX</i>-Attacken"
+  },
+  "blog_loc_heads": {
+    "placeholders": [],
+    "template": "Kopf"
+  },
+  "blog_loc_healed": {
+    "placeholders": [
+      "numDamage",
+      "playerName",
+      "pokemonCardName"
+    ],
+    "template": "[pokemonCardName] von [playerName] hat [numDamage] Schadenspunkte geheilt."
+  },
+  "blog_loc_healed_dc": {
+    "placeholders": [
+      "numDamageCounters",
+      "sourcePlayerName",
+      "sourcePokemonCardName"
+    ],
+    "template": "[numDamageCounters] Schadenspunkte wurden bei [sourcePokemonCardName] von [sourcePlayerName] geheilt."
+  },
+  "blog_loc_hidden_card": {
+    "placeholders": [],
+    "template": "(nicht einsehbar)"
+  },
+  "blog_loc_knockout": {
+    "placeholders": [
+      "cardName",
+      "playerName"
+    ],
+    "template": "[cardName] von [playerName] wurde kampfunfähig gemacht!"
+  },
+  "blog_loc_manual_end": {
+    "placeholders": [
+      "playerName"
+    ],
+    "template": "[playerName] hat den eigenen Zug beendet."
+  },
+  "blog_loc_move_blocked": {
+    "placeholders": [],
+    "template": "Es wurden keine Karten bewegt."
+  },
+  "blog_loc_move_on_top_deck": {
+    "placeholders": [
+      "cardName",
+      "playerName"
+    ],
+    "template": "[playerName] hat [cardName] auf das eigene Deck gelegt."
+  },
+  "blog_loc_move_to_active": {
+    "placeholders": [
+      "cardName",
+      "playerName",
+      "targetPlayerName"
+    ],
+    "template": "[playerName] hat [cardName] von [targetPlayerName] in die Aktive Position von [targetPlayerName] verschoben."
+  },
+  "blog_loc_move_to_bench": {
+    "placeholders": [
+      "cardName",
+      "playerName",
+      "targetPlayerName"
+    ],
+    "template": "[playerName] hat [cardName] von [targetPlayerName] auf die Bank von [targetPlayerName] verschoben."
+  },
+  "blog_loc_move_to_bottom_deck": {
+    "placeholders": [
+      "cardName",
+      "playerName"
+    ],
+    "template": "[playerName] hat [cardName] unter das eigene Deck gelegt."
+  },
+  "blog_loc_move_to_deck": {
+    "placeholders": [
+      "cardName",
+      "playerName",
+      "targetPlayerName"
+    ],
+    "template": "[playerName] hat [cardName] von [targetPlayerName] in das Deck von [targetPlayerName] verschoben."
+  },
+  "blog_loc_move_to_discard": {
+    "placeholders": [
+      "cardName",
+      "playerName",
+      "targetPlayerName"
+    ],
+    "template": "[playerName] hat [cardName] von [targetPlayerName] auf den Ablagestapel von [targetPlayerName] gelegt."
+  },
+  "blog_loc_move_to_fallback": {
+    "placeholders": [
+      "cardName",
+      "playerName",
+      "targetPlayerName"
+    ],
+    "template": "[playerName] hat [cardName] von [targetPlayerName] verschoben."
+  },
+  "blog_loc_move_to_hand": {
+    "placeholders": [
+      "cardName",
+      "playerName",
+      "targetPlayerName"
+    ],
+    "template": "[playerName] hat [cardName] von [targetPlayerName] auf die Hand von [targetPlayerName] gegeben."
+  },
+  "blog_loc_move_to_lostzone": {
+    "placeholders": [
+      "cardName",
+      "playerName",
+      "targetPlayerName"
+    ],
+    "template": "[playerName] hat [cardName] von [targetPlayerName] ins Nirgendwo von [targetPlayerName] gelegt."
+  },
+  "blog_loc_move_to_prizes": {
+    "placeholders": [
+      "cardName",
+      "playerName",
+      "targetPlayerName"
+    ],
+    "template": "[playerName] hat [cardName] von [targetPlayerName] zu den Preiskarten von [targetPlayerName] gelegt."
+  },
+  "blog_loc_move_to_stadium": {
+    "placeholders": [
+      "cardName",
+      "playerName",
+      "targetPlayerName"
+    ],
+    "template": "[playerName] hat [cardName] von [targetPlayerName] auf das Stadion-Feld von [targetPlayerName] verschoben."
+  },
+  "blog_loc_mulligan_draw_multi": {
+    "placeholders": [
+      "numCards",
+      "opponentName",
+      "playerName"
+    ],
+    "template": "[playerName] hat [numCards] zusätzliche Karten gezogen, weil [opponentName] mindestens 1 Neustart hatte."
+  },
+  "blog_loc_mulligan_draw_single": {
+    "placeholders": [
+      "opponentName",
+      "playerName"
+    ],
+    "template": "[playerName] hat 1 zusätzliche Karte gezogen, weil [opponentName] mindestens 1 Neustart hatte."
+  },
+  "blog_loc_mulligan_revealed": {
+    "placeholders": [
+      "numMulligans"
+    ],
+    "template": "Enthüllte Karten vom Neustart: [numMulligans]"
+  },
+  "blog_loc_number_of_cards": {
+    "placeholders": [
+      "numCards"
+    ],
+    "template": "[numCards] Karten"
+  },
+  "blog_loc_oncepergame_used": {
+    "placeholders": [
+      "playerName",
+      "specialMove"
+    ],
+    "template": "[playerName] kann [specialMove] nicht mehr einsetzen."
+  },
+  "blog_loc_paper": {
+    "placeholders": [],
+    "template": "Papier"
+  },
+  "blog_loc_performed_action": {
+    "placeholders": [
+      "playerName"
+    ],
+    "template": "[playerName] hat eine Aktion ausgeführt."
+  },
+  "blog_loc_phase_checkup": {
+    "placeholders": [],
+    "template": "Pokémon-Check"
+  },
+  "blog_loc_phase_setup": {
+    "placeholders": [],
+    "template": "Vorbereitung"
+  },
+  "blog_loc_phase_turn": {
+    "placeholders": [
+      "playerName"
+    ],
+    "template": "Zug von [playerName]"
+  },
+  "blog_loc_play_to_active": {
+    "placeholders": [
+      "cardName",
+      "playerName"
+    ],
+    "template": "[playerName] hat [cardName] in die Aktive Position gelegt."
+  },
+  "blog_loc_play_to_bench": {
+    "placeholders": [
+      "cardName",
+      "playerName"
+    ],
+    "template": "[playerName] hat [cardName] auf die Bank gelegt."
+  },
+  "blog_loc_played_card": {
+    "placeholders": [
+      "cardName",
+      "playerName"
+    ],
+    "template": "[playerName] hat [cardName] gespielt."
+  },
+  "blog_loc_played_to_active": {
+    "placeholders": [
+      "cardName",
+      "playerName"
+    ],
+    "template": "[playerName] hat [cardName] in die Aktive Position gelegt."
+  },
+  "blog_loc_played_to_bench": {
+    "placeholders": [
+      "cardName",
+      "playerName"
+    ],
+    "template": "[playerName] hat [cardName] auf die Bank gelegt."
+  },
+  "blog_loc_played_to_fallback": {
+    "placeholders": [
+      "cardName",
+      "playerName"
+    ],
+    "template": "[playerName] hat [cardName] gespielt."
+  },
+  "blog_loc_played_to_stadium": {
+    "placeholders": [
+      "cardName",
+      "playerName"
+    ],
+    "template": "[playerName] hat [cardName] auf das Stadion-Feld gespielt."
+  },
+  "blog_loc_player_moved_dc": {
+    "placeholders": [
+      "cardName",
+      "numDamageCounters",
+      "sourcePlayerName",
+      "sourcePokemonCardName",
+      "targetPlayerName",
+      "targetPokemonCardName"
+    ],
+    "template": "[cardName] hat [numDamageCounters] Schadensmarken von dem [sourcePokemonCardName] von [sourcePlayerName] auf das [targetPokemonCardName] von [targetPlayerName] verschoben."
+  },
+  "blog_loc_player_moved_single_dc": {
+    "placeholders": [
+      "cardName",
+      "sourcePlayerName",
+      "sourcePokemonCardName",
+      "targetPlayerName",
+      "targetPokemonCardName"
+    ],
+    "template": "[cardName] hat 1 Schadensmarke von dem [sourcePokemonCardName] von [sourcePlayerName] auf das [targetPokemonCardName] von [targetPlayerName] verschoben."
+  },
+  "blog_loc_player_placed_dc": {
+    "placeholders": [
+      "cardName",
+      "numDamageCounters",
+      "targetPlayerName",
+      "targetPokemonCardName"
+    ],
+    "template": "[cardName] hat [numDamageCounters] Schadensmarken auf [targetPokemonCardName] von [targetPlayerName] gelegt."
+  },
+  "blog_loc_player_placed_single_dc": {
+    "placeholders": [
+      "cardName",
+      "targetPlayerName",
+      "targetPokemonCardName"
+    ],
+    "template": "[cardName] hat 1 Schadensmarke auf [targetPokemonCardName] von [targetPlayerName] gelegt."
+  },
+  "blog_loc_promote_to_active": {
+    "placeholders": [
+      "cardName",
+      "playerName"
+    ],
+    "template": "[cardName] von [playerName] ist jetzt in der Aktiven Position."
+  },
+  "blog_loc_reconnect": {
+    "placeholders": [
+      "playerName"
+    ],
+    "template": "[playerName] hat die Verbindung verloren und sich wieder mit dem Server verbunden."
+  },
+  "blog_loc_remove_all_effects": {
+    "placeholders": [
+      "playerName",
+      "pokemonCardName"
+    ],
+    "template": "[pokemonCardName] von [playerName] hat sich von allen Speziellen Zuständen erholt."
+  },
+  "blog_loc_remove_condition": {
+    "placeholders": [
+      "playerName",
+      "pokemonCardName",
+      "specialConditionName"
+    ],
+    "template": "[pokemonCardName] von [playerName] hat sich von dem Speziellen Zustand [specialConditionName] erholt."
+  },
+  "blog_loc_resistant_attack": {
+    "placeholders": [
+      "attackName",
+      "attackingPlayerName",
+      "attackingPokemonCardName",
+      "defendingPlayerName",
+      "energyType",
+      "numDamage",
+      "numReducedDamage",
+      "targetPokemonCardName"
+    ],
+    "template": "[attackingPokemonCardName] von [attackingPlayerName] hat [attackName] gegen [targetPokemonCardName] von [defendingPlayerName] für [numDamage] Schadenspunkte eingesetzt. [targetPokemonCardName] von [defendingPlayerName] hat [numReducedDamage] Schadenspunkte weniger erhalten, weil es Resistenz gegen [energyType] hat."
+  },
+  "blog_loc_retreated": {
+    "placeholders": [
+      "cardName",
+      "playerName"
+    ],
+    "template": "[playerName] hat [cardName] auf die Bank zurückgezogen."
+  },
+  "blog_loc_reveal_multi": {
+    "placeholders": [
+      "numCards",
+      "playerName"
+    ],
+    "template": "[playerName] hat [numCards] Karten gezeigt."
+  },
+  "blog_loc_rock": {
+    "placeholders": [],
+    "template": "Stein"
+  },
+  "blog_loc_rps_choice": {
+    "placeholders": [
+      "playerName",
+      "rpsChoice"
+    ],
+    "template": "Schere, Stein, Papier: [playerName] hat [rpsChoice] gewählt."
+  },
+  "blog_loc_rps_won": {
+    "placeholders": [
+      "playerName"
+    ],
+    "template": "[playerName] hat Schere, Stein, Papier gewonnen."
+  },
+  "blog_loc_scissors": {
+    "placeholders": [],
+    "template": "Schere"
+  },
+  "blog_loc_secondary_damage": {
+    "placeholders": [
+      "defendingPlayerName",
+      "numDamage",
+      "targetPokemonCardName"
+    ],
+    "template": "[targetPokemonCardName] von [defendingPlayerName] hat [numDamage] Schadenspunkte erhalten."
+  },
+  "blog_loc_secondary_resistance_attack": {
+    "placeholders": [
+      "defendingPlayerName",
+      "energyType",
+      "numDamage",
+      "numReducedDamage",
+      "targetPokemonCardName"
+    ],
+    "template": "[targetPokemonCardName] von [defendingPlayerName] hat [numDamage] Schadenspunkte erhalten. [targetPokemonCardName] von [defendingPlayerName] hat [numReducedDamage] Schadenspunkte weniger erhalten, weil es Resistenz gegen [energyType] hat."
+  },
+  "blog_loc_secondary_weak_and_resistant": {
+    "placeholders": [
+      "defendingPlayerName",
+      "energyType",
+      "numAdditionalDamage",
+      "numDamage",
+      "numReducedDamage",
+      "targetPokemonCardName"
+    ],
+    "template": "[targetPokemonCardName] von [defendingPlayerName] hat [numDamage] Schadenspunkte erhalten. [targetPokemonCardName] von [defendingPlayerName] hat [numAdditionalDamage] Schadenspunkte mehr erhalten, weil es Schwäche gegen [energyType] hat. [targetPokemonCardName] von [defendingPlayerName] hat [numReducedDamage] Schadenspunkte weniger erhalten, weil es Resistenz gegen [energyType] hat."
+  },
+  "blog_loc_secondary_weak_attack": {
+    "placeholders": [
+      "defendingPlayerName",
+      "energyType",
+      "numAdditionalDamage",
+      "numDamage",
+      "targetPokemonCardName"
+    ],
+    "template": "[targetPokemonCardName] von [defendingPlayerName] hat [numDamage] Schadenspunkte erhalten. [targetPokemonCardName] von [defendingPlayerName] hat [numAdditionalDamage] Schadenspunkte mehr erhalten, weil es Schwäche gegen [energyType] hat."
+  },
+  "blog_loc_selected_coinface": {
+    "placeholders": [
+      "coinFace",
+      "playerName"
+    ],
+    "template": "[playerName] hat [coinFace] für den Münzwurf am Anfang gewählt."
+  },
+  "blog_loc_selected_option": {
+    "placeholders": [
+      "playerName",
+      "selectedOption"
+    ],
+    "template": "[playerName] hat [selectedOption] gewählt"
+  },
+  "blog_loc_settings_category_label": {
+    "placeholders": [],
+    "template": "Kampf-Protokoll-Einstellungen"
+  },
+  "blog_loc_settings_disable_vfx": {
+    "placeholders": [],
+    "template": "Effekte deaktivieren"
+  },
+  "blog_loc_settings_entry_sort_order": {
+    "placeholders": [],
+    "template": "Umgedrehte Anzeigenreihenfolge"
+  },
+  "blog_loc_settings_hide_card_ids": {
+    "placeholders": [],
+    "template": "Karten-IDs beim Export ausblenden "
+  },
+  "blog_loc_shuffled_card_into_deck": {
+    "placeholders": [
+      "cardName",
+      "playerName"
+    ],
+    "template": "[playerName] hat [cardName] in das eigene Deck gemischt."
+  },
+  "blog_loc_shuffled_card_into_hand": {
+    "placeholders": [
+      "cardName",
+      "playerName"
+    ],
+    "template": "[playerName] hat [cardName] in die eigene Hand gemischt."
+  },
+  "blog_loc_shuffled_card_into_prizes": {
+    "placeholders": [
+      "cardName",
+      "playerName"
+    ],
+    "template": "[playerName] hat [cardName] in die eigenen Preiskarten gemischt."
+  },
+  "blog_loc_shuffled_deck": {
+    "placeholders": [
+      "playerName"
+    ],
+    "template": "[playerName] hat das eigene Deck gemischt."
+  },
+  "blog_loc_shuffled_fallback": {
+    "placeholders": [
+      "playerName"
+    ],
+    "template": "[playerName] hat die eigenen Karten gemischt."
+  },
+  "blog_loc_shuffled_hand": {
+    "placeholders": [
+      "playerName"
+    ],
+    "template": "[playerName] hat die eigenen Handkarten gemischt."
+  },
+  "blog_loc_shuffled_prizes": {
+    "placeholders": [
+      "playerName"
+    ],
+    "template": "[playerName] hat die eigenen Preiskarten gemischt."
+  },
+  "blog_loc_special_condition": {
+    "placeholders": [
+      "playerName",
+      "pokemonCardName",
+      "specialConditionName"
+    ],
+    "template": "[pokemonCardName] von [playerName] hat jetzt den Speziellen Zustand [specialConditionName]."
+  },
+  "blog_loc_sudden_death": {
+    "placeholders": [],
+    "template": "Sudden-Death beginnt."
+  },
+  "blog_loc_switched_active": {
+    "placeholders": [
+      "sourceCardName",
+      "sourcePlayerName",
+      "targetCardName",
+      "targetPlayerName"
+    ],
+    "template": "[targetCardName] von [targetPlayerName] wurde mit [sourceCardName] von [sourcePlayerName] ausgetauscht, um das Aktive Pokémon zu sein."
+  },
+  "blog_loc_switched_fallback": {
+    "placeholders": [
+      "sourceCardName",
+      "sourcePlayerName",
+      "targetCardName",
+      "targetPlayerName"
+    ],
+    "template": "[sourceCardName] von [sourcePlayerName] wurde mit [targetCardName] von [targetPlayerName] ausgetauscht."
+  },
+  "blog_loc_tails": {
+    "placeholders": [],
+    "template": "Zahl"
+  },
+  "blog_loc_tera_effect": {
+    "placeholders": [
+      "cardName",
+      "playerName"
+    ],
+    "template": "[playerName] hat den Terakristall-Effekt von [cardName] aktiviert."
+  },
+  "blog_loc_timeout": {
+    "placeholders": [
+      "playerName"
+    ],
+    "template": "[playerName] hat nicht schnell genug gehandelt."
+  },
+  "blog_loc_took_mulligan_multi": {
+    "placeholders": [
+      "numMulligans",
+      "playerName"
+    ],
+    "template": "[playerName] hat [numMulligans] Neustarts gemacht."
+  },
+  "blog_loc_took_mulligan_single": {
+    "placeholders": [
+      "playerName"
+    ],
+    "template": "[playerName] hat einen Neustart gemacht."
+  },
+  "blog_loc_took_mulligans": {
+    "placeholders": [
+      "numMulligans",
+      "playerName"
+    ],
+    "template": "[playerName] hat [numMulligans] Neustart(s) gemacht."
+  },
+  "blog_loc_took_prize_cards": {
+    "placeholders": [
+      "numCards",
+      "playerName"
+    ],
+    "template": "[playerName] hat [numCards] Preiskarten aufgenommen."
+  },
+  "blog_loc_took_single_prize_card": {
+    "placeholders": [
+      "playerName"
+    ],
+    "template": "[playerName] hat eine Preiskarte aufgenommen."
+  },
+  "blog_loc_unspecified_pokemon": {
+    "placeholders": [],
+    "template": "Pokémon"
+  },
+  "blog_loc_used_attack": {
+    "placeholders": [
+      "attackName",
+      "attackingPokemonCardName",
+      "playerName"
+    ],
+    "template": "[attackingPokemonCardName] von [playerName] hat [attackName] eingesetzt."
+  },
+  "blog_loc_vstar_abilities": {
+    "placeholders": [],
+    "template": "VSTAR-Power"
+  },
+  "blog_loc_weak_and_resistant_attack": {
+    "placeholders": [
+      "attackName",
+      "attackingPlayerName",
+      "attackingPokemonCardName",
+      "defendingPlayerName",
+      "energyType",
+      "numAdditionalDamage",
+      "numDamage",
+      "numReducedDamage",
+      "targetPokemonCardName"
+    ],
+    "template": "[attackingPokemonCardName] von [attackingPlayerName] hat [attackName] gegen [targetPokemonCardName] von [defendingPlayerName] für [numDamage] Schadenspunkte eingesetzt. [targetPokemonCardName] von [defendingPlayerName] hat [numAdditionalDamage] Schadenspunkte mehr erhalten, weil es Schwäche gegen [energyType] hat. [targetPokemonCardName] von [defendingPlayerName] hat [numReducedDamage] Schadenspunkte weniger erhalten, weil es Resistenz gegen [energyType] hat."
+  },
+  "blog_loc_weak_attack": {
+    "placeholders": [
+      "attackName",
+      "attackingPlayerName",
+      "attackingPokemonCardName",
+      "defendingPlayerName",
+      "energyType",
+      "numAdditionalDamage",
+      "numDamage",
+      "targetPokemonCardName"
+    ],
+    "template": "[attackingPokemonCardName] von [attackingPlayerName] hat [attackName] gegen [targetPokemonCardName] von [defendingPlayerName] für [numDamage] Schadenspunkte eingesetzt. [targetPokemonCardName] von [defendingPlayerName] hat [numAdditionalDamage] Schadenspunkte mehr erhalten, weil es Schwäche gegen [energyType] hat."
+  },
+  "blog_loc_won_coin_toss": {
+    "placeholders": [
+      "playerName"
+    ],
+    "template": "[playerName] hat den Münzwurf gewonnen."
+  }
+}

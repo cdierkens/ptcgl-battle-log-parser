@@ -1,0 +1,2783 @@
+{
+  "phases": [
+    {
+      "battlePhase": "Setup",
+      "displayTurnNumber": null,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "coinFace": "heads"
+            },
+            "raw": "cdierkens chose heads for the opening coin flip.",
+            "templateKey": "blog_loc_selected_coinface"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens"
+            },
+            "raw": "cdierkens won the coin toss.",
+            "templateKey": "blog_loc_won_coin_toss"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens"
+            },
+            "raw": "cdierkens decided to go second.",
+            "templateKey": "blog_loc_going_second"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "numCards": "7"
+            },
+            "raw": "cdierkens drew 7 cards for the opening hand.",
+            "templateKey": "blog_loc_draw_opening_hand"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "numCards": "7"
+                },
+                "raw": "7 drawn cards.",
+                "templateKey": "blog_loc_drawn_cards_grid_header"
+              },
+              "subString": "Goldeen, Grookey, Festival Grounds, Basic Grass Energy, Poké Pad, Brave Bangle, Forest of Vitality"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "numCards": "7"
+            },
+            "raw": "Flyfrod drew 7 cards for the opening hand.",
+            "templateKey": "blog_loc_draw_opening_hand"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "numCards": "7"
+                },
+                "raw": "7 drawn cards.",
+                "templateKey": "blog_loc_drawn_cards_grid_header"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Goldeen"
+            },
+            "raw": "cdierkens played Goldeen to the Active Spot.",
+            "templateKey": "blog_loc_play_to_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Grookey"
+            },
+            "raw": "cdierkens played Grookey to the Bench.",
+            "templateKey": "blog_loc_play_to_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "cardName": "Drilbur"
+            },
+            "raw": "Flyfrod played Drilbur to the Active Spot.",
+            "templateKey": "blog_loc_play_to_active"
+          },
+          "subEntries": []
+        }
+      ],
+      "plainTextPhaseTitle": "Setup"
+    },
+    {
+      "battlePhase": "Opponent",
+      "displayTurnNumber": 1,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "cardName": "a card"
+            },
+            "raw": "Flyfrod drew a card.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod"
+            },
+            "raw": "Flyfrod ended their turn.",
+            "templateKey": "blog_loc_manual_end"
+          },
+          "subEntries": []
+        }
+      ],
+      "plainTextPhaseTitle": "Flyfrod's Turn"
+    },
+    {
+      "battlePhase": "Player",
+      "displayTurnNumber": 1,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Bug Catching Set"
+            },
+            "raw": "cdierkens drew Bug Catching Set.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Poké Pad"
+            },
+            "raw": "cdierkens played Poké Pad.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "Applin"
+                },
+                "raw": "cdierkens drew Applin.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Applin"
+            },
+            "raw": "cdierkens played Applin to the Bench.",
+            "templateKey": "blog_loc_play_to_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Bug Catching Set"
+            },
+            "raw": "cdierkens played Bug Catching Set.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "2 cards"
+                },
+                "raw": "cdierkens drew 2 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": "Applin, Thwackey"
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Applin"
+            },
+            "raw": "cdierkens played Applin to the Bench.",
+            "templateKey": "blog_loc_play_to_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "sourceCardName": "Brave Bangle",
+              "targetCardName": "Applin"
+            },
+            "raw": "cdierkens attached Brave Bangle to Applin on the Bench.",
+            "templateKey": "blog_loc_attach_card_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "sourceCardName": "Basic Grass Energy",
+              "targetCardName": "Applin"
+            },
+            "raw": "cdierkens attached Basic Grass Energy to Applin on the Bench.",
+            "templateKey": "blog_loc_attach_card_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens"
+            },
+            "raw": "cdierkens ended their turn.",
+            "templateKey": "blog_loc_manual_end"
+          },
+          "subEntries": []
+        }
+      ],
+      "plainTextPhaseTitle": "cdierkens's Turn"
+    },
+    {
+      "battlePhase": "Opponent",
+      "displayTurnNumber": 2,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "cardName": "a card"
+            },
+            "raw": "Flyfrod drew a card.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "cardName": "Team Rocket's Petrel"
+            },
+            "raw": "Flyfrod played Team Rocket's Petrel.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Flyfrod",
+                  "cardName": "Secret Box"
+                },
+                "raw": "Flyfrod drew Secret Box.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Flyfrod"
+                },
+                "raw": "Flyfrod shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "cardName": "Secret Box"
+            },
+            "raw": "Flyfrod played Secret Box.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Flyfrod",
+                  "cardName": "3 cards"
+                },
+                "raw": "Flyfrod discarded 3 cards.",
+                "templateKey": "blog_loc_discarded_from_board"
+              },
+              "subString": "Metang, Mega Excadrill ex, Gravity Mountain"
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Flyfrod",
+                  "cardName": "4 cards"
+                },
+                "raw": "Flyfrod drew 4 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": "Buddy-Buddy Poffin, Air Balloon, Lillie's Determination, Gravity Mountain"
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Flyfrod"
+                },
+                "raw": "Flyfrod shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "cardName": "Buddy-Buddy Poffin"
+            },
+            "raw": "Flyfrod played Buddy-Buddy Poffin.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Flyfrod",
+                  "numCards": "2"
+                },
+                "raw": "Flyfrod drew 2 cards and played them to the Bench.",
+                "templateKey": "blog_loc_drew_then_play_bench_multi"
+              },
+              "subString": "Beldum, Beldum"
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Flyfrod"
+                },
+                "raw": "Flyfrod shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "sourcePokemonCardName": "Drilbur",
+              "targetPokemonCardName": "Mega Excadrill ex"
+            },
+            "raw": "Flyfrod evolved Drilbur to Mega Excadrill ex in the Active Spot.",
+            "templateKey": "blog_loc_evolved_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod"
+            },
+            "raw": "Flyfrod ended their turn.",
+            "templateKey": "blog_loc_manual_end"
+          },
+          "subEntries": []
+        }
+      ],
+      "plainTextPhaseTitle": "Flyfrod's Turn"
+    },
+    {
+      "battlePhase": "Player",
+      "displayTurnNumber": 2,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Dipplin"
+            },
+            "raw": "cdierkens drew Dipplin.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "sourcePokemonCardName": "Applin",
+              "targetPokemonCardName": "Dipplin"
+            },
+            "raw": "cdierkens evolved Applin to Dipplin on the Bench.",
+            "templateKey": "blog_loc_evolved_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "sourcePokemonCardName": "Grookey",
+              "targetPokemonCardName": "Thwackey"
+            },
+            "raw": "cdierkens evolved Grookey to Thwackey on the Bench.",
+            "templateKey": "blog_loc_evolved_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Festival Grounds"
+            },
+            "raw": "cdierkens played Festival Grounds to the Stadium spot.",
+            "templateKey": "blog_loc_played_to_stadium"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "attackingPokemonCardName": "Thwackey",
+              "attackName": "Boom Boom Groove"
+            },
+            "raw": "cdierkens's Thwackey used Boom Boom Groove.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "Lillie's Determination"
+                },
+                "raw": "cdierkens drew Lillie's Determination.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Lillie's Determination"
+            },
+            "raw": "cdierkens played Lillie's Determination.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "Forest of Vitality"
+                },
+                "raw": "cdierkens shuffled Forest of Vitality into their deck.",
+                "templateKey": "blog_loc_shuffled_card_into_deck"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "8 cards"
+                },
+                "raw": "cdierkens drew 8 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": "Rabsca, Thwackey, Dipplin, Ultra Ball, Sacred Ash, Lillie's Determination, Seaking, Gladion's Final Battle"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "sourcePokemonCardName": "Applin",
+              "targetPokemonCardName": "Dipplin"
+            },
+            "raw": "cdierkens evolved Applin to Dipplin on the Bench.",
+            "templateKey": "blog_loc_evolved_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "sourcePokemonCardName": "Goldeen",
+              "targetPokemonCardName": "Seaking"
+            },
+            "raw": "cdierkens evolved Goldeen to Seaking in the Active Spot.",
+            "templateKey": "blog_loc_evolved_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens"
+            },
+            "raw": "cdierkens ended their turn.",
+            "templateKey": "blog_loc_manual_end"
+          },
+          "subEntries": []
+        }
+      ],
+      "plainTextPhaseTitle": "cdierkens's Turn"
+    },
+    {
+      "battlePhase": "Opponent",
+      "displayTurnNumber": 3,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "cardName": "a card"
+            },
+            "raw": "Flyfrod drew a card.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "cardName": "Buddy-Buddy Poffin"
+            },
+            "raw": "Flyfrod played Buddy-Buddy Poffin.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Flyfrod",
+                  "numCards": "2"
+                },
+                "raw": "Flyfrod drew 2 cards and played them to the Bench.",
+                "templateKey": "blog_loc_drew_then_play_bench_multi"
+              },
+              "subString": "Beldum, Drilbur"
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Flyfrod"
+                },
+                "raw": "Flyfrod shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "sourcePokemonCardName": "Beldum",
+              "targetPokemonCardName": "Metang"
+            },
+            "raw": "Flyfrod evolved Beldum to Metang on the Bench.",
+            "templateKey": "blog_loc_evolved_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "cardName": "Gravity Mountain"
+            },
+            "raw": "Flyfrod played Gravity Mountain to the Stadium spot.",
+            "templateKey": "blog_loc_played_to_stadium"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Flyfrod",
+                  "cardName": "Festival Grounds"
+                },
+                "raw": "Flyfrod discarded Festival Grounds.",
+                "templateKey": "blog_loc_discarded_from_board"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "cardName": "Lillie's Determination"
+            },
+            "raw": "Flyfrod played Lillie's Determination.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Flyfrod",
+                  "cardName": "3 cards"
+                },
+                "raw": "Flyfrod shuffled 3 cards into their deck.",
+                "templateKey": "blog_loc_shuffled_card_into_deck"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Flyfrod",
+                  "cardName": "8 cards"
+                },
+                "raw": "Flyfrod drew 8 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "sourceCardName": "Basic Metal Energy",
+              "targetCardName": "Mega Excadrill ex"
+            },
+            "raw": "Flyfrod attached Basic Metal Energy to Mega Excadrill ex in the Active Spot.",
+            "templateKey": "blog_loc_attach_card_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "cardName": "Night Stretcher"
+            },
+            "raw": "Flyfrod played Night Stretcher.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Flyfrod",
+                  "targetPlayerName": "Flyfrod",
+                  "cardName": "Metang"
+                },
+                "raw": "Flyfrod moved Flyfrod's Metang to their hand.",
+                "templateKey": "blog_loc_move_to_hand"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "sourcePokemonCardName": "Beldum",
+              "targetPokemonCardName": "Metang"
+            },
+            "raw": "Flyfrod evolved Beldum to Metang on the Bench.",
+            "templateKey": "blog_loc_evolved_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "attackingPokemonCardName": "Metang",
+              "attackName": "Metal Maker"
+            },
+            "raw": "Flyfrod's Metang used Metal Maker.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Flyfrod",
+                  "sourceCardName": "Basic Metal Energy",
+                  "targetCardName": "Mega Excadrill ex"
+                },
+                "raw": "Flyfrod attached Basic Metal Energy to Mega Excadrill ex in the Active Spot.",
+                "templateKey": "blog_loc_attach_card_active"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Flyfrod",
+                  "sourceCardName": "Basic Metal Energy",
+                  "targetCardName": "Mega Excadrill ex"
+                },
+                "raw": "Flyfrod attached Basic Metal Energy to Mega Excadrill ex in the Active Spot.",
+                "templateKey": "blog_loc_attach_card_active"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Flyfrod",
+                  "sourceCardName": "Basic Metal Energy",
+                  "targetCardName": "Mega Excadrill ex"
+                },
+                "raw": "Flyfrod attached Basic Metal Energy to Mega Excadrill ex in the Active Spot.",
+                "templateKey": "blog_loc_attach_card_active"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their cards.",
+                "templateKey": "blog_loc_shuffled_fallback"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "attackingPokemonCardName": "Metang",
+              "attackName": "Metal Maker"
+            },
+            "raw": "Flyfrod's Metang used Metal Maker.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Flyfrod",
+                  "sourceCardName": "Basic Metal Energy",
+                  "targetCardName": "Drilbur"
+                },
+                "raw": "Flyfrod attached Basic Metal Energy to Drilbur on the Bench.",
+                "templateKey": "blog_loc_attach_card_bench"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their cards.",
+                "templateKey": "blog_loc_shuffled_fallback"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "attackingPlayerName": "Flyfrod",
+              "attackingPokemonCardName": "Mega Excadrill ex",
+              "attackName": "Maximum Drilling",
+              "defendingPlayerName": "cdierkens",
+              "targetPokemonCardName": "Seaking",
+              "numDamage": "200"
+            },
+            "raw": "Flyfrod's Mega Excadrill ex used Maximum Drilling on cdierkens’s Seaking for 200 damage.",
+            "templateKey": "blog_loc_applied_damage"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Seaking"
+            },
+            "raw": "cdierkens's Seaking was Knocked Out!",
+            "templateKey": "blog_loc_knockout"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "Goldeen",
+              "playerName": "cdierkens",
+              "pokemonCardName": "Seaking"
+            },
+            "raw": "Goldeen was discarded from cdierkens's Seaking.",
+            "templateKey": "blog_loc_discarded_attachment"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod"
+            },
+            "raw": "Flyfrod took a Prize card.",
+            "templateKey": "blog_loc_took_single_prize_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "A card",
+              "playerName": "Flyfrod"
+            },
+            "raw": "A card was added to Flyfrod's hand.",
+            "templateKey": "blog_loc_added_prize"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Dipplin"
+            },
+            "raw": "cdierkens's Dipplin is now in the Active Spot.",
+            "templateKey": "blog_loc_promote_to_active"
+          },
+          "subEntries": []
+        }
+      ],
+      "plainTextPhaseTitle": "Flyfrod's Turn"
+    },
+    {
+      "battlePhase": "Player",
+      "displayTurnNumber": 3,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Applin"
+            },
+            "raw": "cdierkens drew Applin.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Applin"
+            },
+            "raw": "cdierkens played Applin to the Bench.",
+            "templateKey": "blog_loc_play_to_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Lillie's Determination"
+            },
+            "raw": "cdierkens played Lillie's Determination.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "5 cards"
+                },
+                "raw": "cdierkens shuffled 5 cards into their deck.",
+                "templateKey": "blog_loc_shuffled_card_into_deck"
+              },
+              "subString": "Rabsca, Thwackey, Ultra Ball, Sacred Ash, Gladion's Final Battle"
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "8 cards"
+                },
+                "raw": "cdierkens drew 8 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": "Dipplin, Buddy-Buddy Poffin, Ultra Ball, Basic Grass Energy, Lillie's Determination, Thwackey, Kieran, Switch"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Buddy-Buddy Poffin"
+            },
+            "raw": "cdierkens played Buddy-Buddy Poffin.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "numCards": "2"
+                },
+                "raw": "cdierkens drew 2 cards and played them to the Bench.",
+                "templateKey": "blog_loc_drew_then_play_bench_multi"
+              },
+              "subString": "Applin, Grookey"
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "attackingPokemonCardName": "Thwackey",
+              "attackName": "Boom Boom Groove"
+            },
+            "raw": "cdierkens's Thwackey used Boom Boom Groove.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "Brave Bangle"
+                },
+                "raw": "cdierkens drew Brave Bangle.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "sourceCardName": "Basic Grass Energy",
+              "targetCardName": "Dipplin"
+            },
+            "raw": "cdierkens attached Basic Grass Energy to Dipplin on the Bench.",
+            "templateKey": "blog_loc_attach_card_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "sourceCardName": "Brave Bangle",
+              "targetCardName": "Dipplin"
+            },
+            "raw": "cdierkens attached Brave Bangle to Dipplin on the Bench.",
+            "templateKey": "blog_loc_attach_card_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Switch"
+            },
+            "raw": "cdierkens played Switch.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "targetPlayerName": "cdierkens",
+                  "targetCardName": "Applin",
+                  "sourcePlayerName": "cdierkens",
+                  "sourceCardName": "Dipplin"
+                },
+                "raw": "cdierkens's Applin was switched with cdierkens's Dipplin to become the Active Pokémon.",
+                "templateKey": "blog_loc_switched_active"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Applin"
+            },
+            "raw": "cdierkens's Applin is now in the Active Spot.",
+            "templateKey": "blog_loc_promote_to_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens"
+            },
+            "raw": "cdierkens ended their turn.",
+            "templateKey": "blog_loc_manual_end"
+          },
+          "subEntries": []
+        }
+      ],
+      "plainTextPhaseTitle": "cdierkens's Turn"
+    },
+    {
+      "battlePhase": "Opponent",
+      "displayTurnNumber": 4,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "cardName": "a card"
+            },
+            "raw": "Flyfrod drew a card.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "sourceCardName": "Basic Metal Energy",
+              "targetCardName": "Drilbur"
+            },
+            "raw": "Flyfrod attached Basic Metal Energy to Drilbur on the Bench.",
+            "templateKey": "blog_loc_attach_card_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "cardName": "Night Stretcher"
+            },
+            "raw": "Flyfrod played Night Stretcher.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Flyfrod",
+                  "targetPlayerName": "Flyfrod",
+                  "cardName": "Mega Excadrill ex"
+                },
+                "raw": "Flyfrod moved Flyfrod's Mega Excadrill ex to their hand.",
+                "templateKey": "blog_loc_move_to_hand"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "sourcePokemonCardName": "Drilbur",
+              "targetPokemonCardName": "Mega Excadrill ex"
+            },
+            "raw": "Flyfrod evolved Drilbur to Mega Excadrill ex on the Bench.",
+            "templateKey": "blog_loc_evolved_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "cardName": "Lillie's Determination"
+            },
+            "raw": "Flyfrod played Lillie's Determination.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Flyfrod",
+                  "cardName": "5 cards"
+                },
+                "raw": "Flyfrod shuffled 5 cards into their deck.",
+                "templateKey": "blog_loc_shuffled_card_into_deck"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Flyfrod",
+                  "cardName": "6 cards"
+                },
+                "raw": "Flyfrod drew 6 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "cardName": "Genesect ex"
+            },
+            "raw": "Flyfrod played Genesect ex to the Bench.",
+            "templateKey": "blog_loc_play_to_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "attackingPokemonCardName": "Genesect ex",
+              "attackName": "Metallic Signal"
+            },
+            "raw": "Flyfrod's Genesect ex used Metallic Signal.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Flyfrod",
+                  "cardName": "2 cards"
+                },
+                "raw": "Flyfrod drew 2 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": "Metang, Metagross"
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Flyfrod"
+                },
+                "raw": "Flyfrod shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "sourcePokemonCardName": "Beldum",
+              "targetPokemonCardName": "Metang"
+            },
+            "raw": "Flyfrod evolved Beldum to Metang on the Bench.",
+            "templateKey": "blog_loc_evolved_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "attackingPokemonCardName": "Metang",
+              "attackName": "Metal Maker"
+            },
+            "raw": "Flyfrod's Metang used Metal Maker.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Flyfrod",
+                  "sourceCardName": "Basic Metal Energy",
+                  "targetCardName": "Mega Excadrill ex"
+                },
+                "raw": "Flyfrod attached Basic Metal Energy to Mega Excadrill ex on the Bench.",
+                "templateKey": "blog_loc_attach_card_bench"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their cards.",
+                "templateKey": "blog_loc_shuffled_fallback"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "attackingPokemonCardName": "Metang",
+              "attackName": "Metal Maker"
+            },
+            "raw": "Flyfrod's Metang used Metal Maker.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their cards.",
+                "templateKey": "blog_loc_shuffled_fallback"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "attackingPokemonCardName": "Metang",
+              "attackName": "Metal Maker"
+            },
+            "raw": "Flyfrod's Metang used Metal Maker.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their cards.",
+                "templateKey": "blog_loc_shuffled_fallback"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "attackingPlayerName": "Flyfrod",
+              "attackingPokemonCardName": "Mega Excadrill ex",
+              "attackName": "Undermine",
+              "defendingPlayerName": "cdierkens",
+              "targetPokemonCardName": "Applin",
+              "numDamage": "90"
+            },
+            "raw": "Flyfrod's Mega Excadrill ex used Undermine on cdierkens’s Applin for 90 damage.",
+            "templateKey": "blog_loc_applied_damage"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Flyfrod",
+                  "targetPlayerName": "cdierkens",
+                  "cardName": "2 cards"
+                },
+                "raw": "Flyfrod moved cdierkens's 2 cards to the discard pile.",
+                "templateKey": "blog_loc_move_to_discard"
+              },
+              "subString": "Ultra Ball, Gladion's Final Battle"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Applin"
+            },
+            "raw": "cdierkens's Applin was Knocked Out!",
+            "templateKey": "blog_loc_knockout"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod"
+            },
+            "raw": "Flyfrod took a Prize card.",
+            "templateKey": "blog_loc_took_single_prize_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "A card",
+              "playerName": "Flyfrod"
+            },
+            "raw": "A card was added to Flyfrod's hand.",
+            "templateKey": "blog_loc_added_prize"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Dipplin"
+            },
+            "raw": "cdierkens's Dipplin is now in the Active Spot.",
+            "templateKey": "blog_loc_promote_to_active"
+          },
+          "subEntries": []
+        }
+      ],
+      "plainTextPhaseTitle": "Flyfrod's Turn"
+    },
+    {
+      "battlePhase": "Player",
+      "displayTurnNumber": 4,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Rellor"
+            },
+            "raw": "cdierkens drew Rellor.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Rellor"
+            },
+            "raw": "cdierkens played Rellor to the Bench.",
+            "templateKey": "blog_loc_play_to_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "sourcePokemonCardName": "Grookey",
+              "targetPokemonCardName": "Thwackey"
+            },
+            "raw": "cdierkens evolved Grookey to Thwackey on the Bench.",
+            "templateKey": "blog_loc_evolved_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "sourcePokemonCardName": "Applin",
+              "targetPokemonCardName": "Dipplin"
+            },
+            "raw": "cdierkens evolved Applin to Dipplin on the Bench.",
+            "templateKey": "blog_loc_evolved_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "attackingPokemonCardName": "Thwackey",
+              "attackName": "Boom Boom Groove"
+            },
+            "raw": "cdierkens's Thwackey used Boom Boom Groove.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "Gladion's Final Battle"
+                },
+                "raw": "cdierkens drew Gladion's Final Battle.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Ultra Ball"
+            },
+            "raw": "cdierkens played Ultra Ball.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "2 cards"
+                },
+                "raw": "cdierkens discarded 2 cards.",
+                "templateKey": "blog_loc_discarded_from_board"
+              },
+              "subString": "Lillie's Determination, Kieran"
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Gladion's Final Battle"
+            },
+            "raw": "cdierkens played Gladion's Final Battle.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "attackingPokemonCardName": "Thwackey",
+              "attackName": "Boom Boom Groove"
+            },
+            "raw": "cdierkens's Thwackey used Boom Boom Groove.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "Festival Grounds"
+                },
+                "raw": "cdierkens drew Festival Grounds.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Festival Grounds"
+            },
+            "raw": "cdierkens played Festival Grounds to the Stadium spot.",
+            "templateKey": "blog_loc_played_to_stadium"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "Gravity Mountain"
+                },
+                "raw": "cdierkens discarded Gravity Mountain.",
+                "templateKey": "blog_loc_discarded_from_board"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "attackingPlayerName": "cdierkens",
+              "attackingPokemonCardName": "Dipplin",
+              "attackName": "Do the Wave",
+              "defendingPlayerName": "Flyfrod",
+              "targetPokemonCardName": "Mega Excadrill ex",
+              "numDamage": "180",
+              "numReducedDamage": "-30",
+              "energyType": "Grass"
+            },
+            "raw": "cdierkens's Dipplin used Do the Wave on Flyfrod’s Mega Excadrill ex for 180 damage. Flyfrod's Mega Excadrill ex took -30 less damage because of Grass Resistance.",
+            "templateKey": "blog_loc_resistant_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {},
+                "raw": "Damage breakdown:",
+                "templateKey": "blog_loc_export_damage_breakdown_label"
+              },
+              "subString": "(Pokémon Tool) Brave Bangle: 30 damage\n(Supporter) Gladion's Final Battle: 80 damage\n5 Benched Pokémon: 100 damage\nResistance to Grass: -30 damage"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "attackingPokemonCardName": "Dipplin",
+              "attackName": "Festival Lead"
+            },
+            "raw": "cdierkens's Dipplin used Festival Lead.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {},
+                "raw": "Damage breakdown:",
+                "templateKey": "blog_loc_export_damage_breakdown_label"
+              },
+              "subString": "(Pokémon Tool) Brave Bangle: 30 damage\n(Supporter) Gladion's Final Battle: 80 damage\n5 Benched Pokémon: 100 damage\nResistance to Grass: -30 damage"
+            },
+            {
+              "event": {
+                "groups": {
+                  "attackingPlayerName": "cdierkens",
+                  "attackingPokemonCardName": "Dipplin",
+                  "attackName": "Do the Wave",
+                  "defendingPlayerName": "Flyfrod",
+                  "targetPokemonCardName": "Mega Excadrill ex",
+                  "numDamage": "180",
+                  "numReducedDamage": "-30",
+                  "energyType": "Grass"
+                },
+                "raw": "cdierkens's Dipplin used Do the Wave on Flyfrod’s Mega Excadrill ex for 180 damage. Flyfrod's Mega Excadrill ex took -30 less damage because of Grass Resistance.",
+                "templateKey": "blog_loc_resistant_attack"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "selectedOption": "Do the Wave"
+                },
+                "raw": "cdierkens chose Do the Wave",
+                "templateKey": "blog_loc_selected_option"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "cardName": "Mega Excadrill ex"
+            },
+            "raw": "Flyfrod's Mega Excadrill ex was Knocked Out!",
+            "templateKey": "blog_loc_knockout"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "numCards": "5",
+                  "playerName": "Flyfrod",
+                  "pokemonCardName": "Mega Excadrill ex"
+                },
+                "raw": "5 cards were discarded from Flyfrod's Mega Excadrill ex.",
+                "templateKey": "blog_loc_discarded_attachment_multi"
+              },
+              "subString": "Basic Metal Energy, Basic Metal Energy, Basic Metal Energy, Basic Metal Energy, Drilbur"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "numCards": "3"
+            },
+            "raw": "cdierkens took 3 Prize cards.",
+            "templateKey": "blog_loc_took_prize_cards"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "Boss's Orders",
+              "playerName": "cdierkens"
+            },
+            "raw": "Boss's Orders was added to cdierkens's hand.",
+            "templateKey": "blog_loc_added_prize"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "Night Stretcher",
+              "playerName": "cdierkens"
+            },
+            "raw": "Night Stretcher was added to cdierkens's hand.",
+            "templateKey": "blog_loc_added_prize"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "Buddy-Buddy Poffin",
+              "playerName": "cdierkens"
+            },
+            "raw": "Buddy-Buddy Poffin was added to cdierkens's hand.",
+            "templateKey": "blog_loc_added_prize"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "cardName": "Mega Excadrill ex"
+            },
+            "raw": "Flyfrod's Mega Excadrill ex is now in the Active Spot.",
+            "templateKey": "blog_loc_promote_to_active"
+          },
+          "subEntries": []
+        }
+      ],
+      "plainTextPhaseTitle": "cdierkens's Turn"
+    },
+    {
+      "battlePhase": "Opponent",
+      "displayTurnNumber": 5,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "cardName": "a card"
+            },
+            "raw": "Flyfrod drew a card.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "cardName": "Energy Recycler"
+            },
+            "raw": "Flyfrod played Energy Recycler.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Flyfrod",
+                  "cardName": "4 cards"
+                },
+                "raw": "Flyfrod shuffled 4 cards into their deck.",
+                "templateKey": "blog_loc_shuffled_card_into_deck"
+              },
+              "subString": "Basic Metal Energy, Basic Metal Energy, Basic Metal Energy, Basic Metal Energy"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "cardName": "Fezandipiti ex"
+            },
+            "raw": "Flyfrod played Fezandipiti ex to the Bench.",
+            "templateKey": "blog_loc_play_to_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "attackingPokemonCardName": "Fezandipiti ex",
+              "attackName": "Flip the Script"
+            },
+            "raw": "Flyfrod's Fezandipiti ex used Flip the Script.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Flyfrod",
+                  "cardName": "3 cards"
+                },
+                "raw": "Flyfrod drew 3 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "sourceCardName": "Basic Metal Energy",
+              "targetCardName": "Metang"
+            },
+            "raw": "Flyfrod attached Basic Metal Energy to Metang on the Bench.",
+            "templateKey": "blog_loc_attach_card_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "cardName": "Lillie's Determination"
+            },
+            "raw": "Flyfrod played Lillie's Determination.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Flyfrod",
+                  "cardName": "7 cards"
+                },
+                "raw": "Flyfrod shuffled 7 cards into their deck.",
+                "templateKey": "blog_loc_shuffled_card_into_deck"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Flyfrod",
+                  "cardName": "6 cards"
+                },
+                "raw": "Flyfrod drew 6 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "attackingPlayerName": "Flyfrod",
+              "attackingPokemonCardName": "Mega Excadrill ex",
+              "attackName": "Undermine",
+              "defendingPlayerName": "cdierkens",
+              "targetPokemonCardName": "Dipplin",
+              "numDamage": "90"
+            },
+            "raw": "Flyfrod's Mega Excadrill ex used Undermine on cdierkens’s Dipplin for 90 damage.",
+            "templateKey": "blog_loc_applied_damage"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Flyfrod",
+                  "targetPlayerName": "cdierkens",
+                  "cardName": "2 cards"
+                },
+                "raw": "Flyfrod moved cdierkens's 2 cards to the discard pile.",
+                "templateKey": "blog_loc_move_to_discard"
+              },
+              "subString": "Goldeen, Secret Box"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Dipplin"
+            },
+            "raw": "cdierkens's Dipplin was Knocked Out!",
+            "templateKey": "blog_loc_knockout"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "numCards": "3",
+                  "playerName": "cdierkens",
+                  "pokemonCardName": "Dipplin"
+                },
+                "raw": "3 cards were discarded from cdierkens's Dipplin.",
+                "templateKey": "blog_loc_discarded_attachment_multi"
+              },
+              "subString": "Basic Grass Energy, Applin, Brave Bangle"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod"
+            },
+            "raw": "Flyfrod took a Prize card.",
+            "templateKey": "blog_loc_took_single_prize_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "A card",
+              "playerName": "Flyfrod"
+            },
+            "raw": "A card was added to Flyfrod's hand.",
+            "templateKey": "blog_loc_added_prize"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Dipplin"
+            },
+            "raw": "cdierkens's Dipplin is now in the Active Spot.",
+            "templateKey": "blog_loc_promote_to_active"
+          },
+          "subEntries": []
+        }
+      ],
+      "plainTextPhaseTitle": "Flyfrod's Turn"
+    },
+    {
+      "battlePhase": "Player",
+      "displayTurnNumber": 5,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Lillie's Determination"
+            },
+            "raw": "cdierkens drew Lillie's Determination.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Buddy-Buddy Poffin"
+            },
+            "raw": "cdierkens played Buddy-Buddy Poffin.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Night Stretcher"
+            },
+            "raw": "cdierkens played Night Stretcher.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "targetPlayerName": "cdierkens",
+                  "cardName": "Applin"
+                },
+                "raw": "cdierkens moved cdierkens's Applin to their hand.",
+                "templateKey": "blog_loc_move_to_hand"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Applin"
+            },
+            "raw": "cdierkens played Applin to the Bench.",
+            "templateKey": "blog_loc_play_to_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "attackingPokemonCardName": "Thwackey",
+              "attackName": "Boom Boom Groove"
+            },
+            "raw": "cdierkens's Thwackey used Boom Boom Groove.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "Sacred Ash"
+                },
+                "raw": "cdierkens drew Sacred Ash.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Sacred Ash"
+            },
+            "raw": "cdierkens played Sacred Ash.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "5 cards"
+                },
+                "raw": "cdierkens shuffled 5 cards into their deck.",
+                "templateKey": "blog_loc_shuffled_card_into_deck"
+              },
+              "subString": "Applin, Dipplin, Goldeen, Goldeen, Seaking"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "attackingPokemonCardName": "Thwackey",
+              "attackName": "Boom Boom Groove"
+            },
+            "raw": "cdierkens's Thwackey used Boom Boom Groove.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "Rabsca"
+                },
+                "raw": "cdierkens drew Rabsca.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "sourcePokemonCardName": "Rellor",
+              "targetPokemonCardName": "Rabsca"
+            },
+            "raw": "cdierkens evolved Rellor to Rabsca on the Bench.",
+            "templateKey": "blog_loc_evolved_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Boss's Orders"
+            },
+            "raw": "cdierkens played Boss's Orders.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "targetPlayerName": "Flyfrod",
+                  "targetCardName": "Fezandipiti ex",
+                  "sourcePlayerName": "Flyfrod",
+                  "sourceCardName": "Mega Excadrill ex"
+                },
+                "raw": "Flyfrod's Fezandipiti ex was switched with Flyfrod's Mega Excadrill ex to become the Active Pokémon.",
+                "templateKey": "blog_loc_switched_active"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "cardName": "Fezandipiti ex"
+            },
+            "raw": "Flyfrod's Fezandipiti ex is now in the Active Spot.",
+            "templateKey": "blog_loc_promote_to_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "attackingPlayerName": "cdierkens",
+              "attackingPokemonCardName": "Dipplin",
+              "attackName": "Do the Wave",
+              "defendingPlayerName": "Flyfrod",
+              "targetPokemonCardName": "Fezandipiti ex",
+              "numDamage": "130"
+            },
+            "raw": "cdierkens's Dipplin used Do the Wave on Flyfrod’s Fezandipiti ex for 130 damage.",
+            "templateKey": "blog_loc_applied_damage"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {},
+                "raw": "Damage breakdown:",
+                "templateKey": "blog_loc_export_damage_breakdown_label"
+              },
+              "subString": "(Pokémon Tool) Brave Bangle: 30 damage\n5 Benched Pokémon: 100 damage"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "attackingPokemonCardName": "Dipplin",
+              "attackName": "Festival Lead"
+            },
+            "raw": "cdierkens's Dipplin used Festival Lead.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {},
+                "raw": "Damage breakdown:",
+                "templateKey": "blog_loc_export_damage_breakdown_label"
+              },
+              "subString": "(Pokémon Tool) Brave Bangle: 30 damage\n5 Benched Pokémon: 100 damage"
+            },
+            {
+              "event": {
+                "groups": {
+                  "attackingPlayerName": "cdierkens",
+                  "attackingPokemonCardName": "Dipplin",
+                  "attackName": "Do the Wave",
+                  "defendingPlayerName": "Flyfrod",
+                  "targetPokemonCardName": "Fezandipiti ex",
+                  "numDamage": "130"
+                },
+                "raw": "cdierkens's Dipplin used Do the Wave on Flyfrod’s Fezandipiti ex for 130 damage.",
+                "templateKey": "blog_loc_applied_damage"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "selectedOption": "Do the Wave"
+                },
+                "raw": "cdierkens chose Do the Wave",
+                "templateKey": "blog_loc_selected_option"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "cardName": "Fezandipiti ex"
+            },
+            "raw": "Flyfrod's Fezandipiti ex was Knocked Out!",
+            "templateKey": "blog_loc_knockout"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "numCards": "2"
+            },
+            "raw": "cdierkens took 2 Prize cards.",
+            "templateKey": "blog_loc_took_prize_cards"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "Festival Grounds",
+              "playerName": "cdierkens"
+            },
+            "raw": "Festival Grounds was added to cdierkens's hand.",
+            "templateKey": "blog_loc_added_prize"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "Grookey",
+              "playerName": "cdierkens"
+            },
+            "raw": "Grookey was added to cdierkens's hand.",
+            "templateKey": "blog_loc_added_prize"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "cardName": "Mega Excadrill ex"
+            },
+            "raw": "Flyfrod's Mega Excadrill ex is now in the Active Spot.",
+            "templateKey": "blog_loc_promote_to_active"
+          },
+          "subEntries": []
+        }
+      ],
+      "plainTextPhaseTitle": "cdierkens's Turn"
+    },
+    {
+      "battlePhase": "Opponent",
+      "displayTurnNumber": 6,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "cardName": "a card"
+            },
+            "raw": "Flyfrod drew a card.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "cardName": "Team Rocket's Petrel"
+            },
+            "raw": "Flyfrod played Team Rocket's Petrel.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Flyfrod",
+                  "cardName": "Special Red Card"
+                },
+                "raw": "Flyfrod drew Special Red Card.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Flyfrod"
+                },
+                "raw": "Flyfrod shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "cardName": "Special Red Card"
+            },
+            "raw": "Flyfrod played Special Red Card.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their hand.",
+                "templateKey": "blog_loc_shuffled_hand"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Flyfrod",
+                  "cardName": "3 cards"
+                },
+                "raw": "Flyfrod put 3 cards on the bottom of their deck.",
+                "templateKey": "blog_loc_move_to_bottom_deck"
+              },
+              "subString": "Lillie's Determination, Festival Grounds, Grookey"
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Flyfrod",
+                  "cardName": "3 cards"
+                },
+                "raw": "Flyfrod drew 3 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": "Basic Grass Energy, Dipplin, Buddy-Buddy Poffin"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "sourceCardName": "Basic Metal Energy",
+              "targetCardName": "Metang"
+            },
+            "raw": "Flyfrod attached Basic Metal Energy to Metang on the Bench.",
+            "templateKey": "blog_loc_attach_card_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "attackingPokemonCardName": "Genesect ex",
+              "attackName": "Metallic Signal"
+            },
+            "raw": "Flyfrod's Genesect ex used Metallic Signal.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Flyfrod",
+                  "cardName": "Metagross"
+                },
+                "raw": "Flyfrod drew Metagross.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Flyfrod"
+                },
+                "raw": "Flyfrod shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "sourcePokemonCardName": "Metang",
+              "targetPokemonCardName": "Metagross"
+            },
+            "raw": "Flyfrod evolved Metang to Metagross on the Bench.",
+            "templateKey": "blog_loc_evolved_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "cardName": "Buddy-Buddy Poffin"
+            },
+            "raw": "Flyfrod played Buddy-Buddy Poffin.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Flyfrod"
+                },
+                "raw": "Flyfrod shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "attackingPokemonCardName": "Metang",
+              "attackName": "Metal Maker"
+            },
+            "raw": "Flyfrod's Metang used Metal Maker.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Flyfrod",
+                  "sourceCardName": "Basic Metal Energy",
+                  "targetCardName": "Metagross"
+                },
+                "raw": "Flyfrod attached Basic Metal Energy to Metagross on the Bench.",
+                "templateKey": "blog_loc_attach_card_bench"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Flyfrod",
+                  "sourceCardName": "Basic Metal Energy",
+                  "targetCardName": "Metagross"
+                },
+                "raw": "Flyfrod attached Basic Metal Energy to Metagross on the Bench.",
+                "templateKey": "blog_loc_attach_card_bench"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their cards.",
+                "templateKey": "blog_loc_shuffled_fallback"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "attackingPlayerName": "Flyfrod",
+              "attackingPokemonCardName": "Mega Excadrill ex",
+              "attackName": "Undermine",
+              "defendingPlayerName": "cdierkens",
+              "targetPokemonCardName": "Dipplin",
+              "numDamage": "90"
+            },
+            "raw": "Flyfrod's Mega Excadrill ex used Undermine on cdierkens’s Dipplin for 90 damage.",
+            "templateKey": "blog_loc_applied_damage"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Flyfrod",
+                  "targetPlayerName": "cdierkens",
+                  "cardName": "2 cards"
+                },
+                "raw": "Flyfrod moved cdierkens's 2 cards to the discard pile.",
+                "templateKey": "blog_loc_move_to_discard"
+              },
+              "subString": "Forest of Vitality, Dipplin"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Dipplin"
+            },
+            "raw": "cdierkens's Dipplin was Knocked Out!",
+            "templateKey": "blog_loc_knockout"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "numCards": "3",
+                  "playerName": "cdierkens",
+                  "pokemonCardName": "Dipplin"
+                },
+                "raw": "3 cards were discarded from cdierkens's Dipplin.",
+                "templateKey": "blog_loc_discarded_attachment_multi"
+              },
+              "subString": "Basic Grass Energy, Applin, Brave Bangle"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod"
+            },
+            "raw": "Flyfrod took a Prize card.",
+            "templateKey": "blog_loc_took_single_prize_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "A card",
+              "playerName": "Flyfrod"
+            },
+            "raw": "A card was added to Flyfrod's hand.",
+            "templateKey": "blog_loc_added_prize"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Dipplin"
+            },
+            "raw": "cdierkens's Dipplin is now in the Active Spot.",
+            "templateKey": "blog_loc_promote_to_active"
+          },
+          "subEntries": []
+        }
+      ],
+      "plainTextPhaseTitle": "Flyfrod's Turn"
+    },
+    {
+      "battlePhase": "Player",
+      "displayTurnNumber": 6,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Basic Grass Energy"
+            },
+            "raw": "cdierkens drew Basic Grass Energy.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "sourceCardName": "Basic Grass Energy",
+              "targetCardName": "Dipplin"
+            },
+            "raw": "cdierkens attached Basic Grass Energy to Dipplin in the Active Spot.",
+            "templateKey": "blog_loc_attach_card_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Buddy-Buddy Poffin"
+            },
+            "raw": "cdierkens played Buddy-Buddy Poffin.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "Applin"
+                },
+                "raw": "cdierkens drew Applin and played it to the Bench.",
+                "templateKey": "blog_loc_drew_then_play_bench"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "sourcePokemonCardName": "Applin",
+              "targetPokemonCardName": "Dipplin"
+            },
+            "raw": "cdierkens evolved Applin to Dipplin on the Bench.",
+            "templateKey": "blog_loc_evolved_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "attackingPokemonCardName": "Thwackey",
+              "attackName": "Boom Boom Groove"
+            },
+            "raw": "cdierkens's Thwackey used Boom Boom Groove.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "Boss's Orders"
+                },
+                "raw": "cdierkens drew Boss's Orders.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Boss's Orders"
+            },
+            "raw": "cdierkens played Boss's Orders.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "targetPlayerName": "Flyfrod",
+                  "targetCardName": "Metang",
+                  "sourcePlayerName": "Flyfrod",
+                  "sourceCardName": "Mega Excadrill ex"
+                },
+                "raw": "Flyfrod's Metang was switched with Flyfrod's Mega Excadrill ex to become the Active Pokémon.",
+                "templateKey": "blog_loc_switched_active"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Flyfrod",
+              "cardName": "Metang"
+            },
+            "raw": "Flyfrod's Metang is now in the Active Spot.",
+            "templateKey": "blog_loc_promote_to_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "gameEndReason": "Opponent conceded",
+              "playerName": "cdierkens"
+            },
+            "raw": "Opponent conceded. cdierkens wins.",
+            "templateKey": "blog_loc_end_game"
+          },
+          "subEntries": []
+        }
+      ],
+      "plainTextPhaseTitle": "cdierkens's Turn"
+    }
+  ]
+}

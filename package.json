@@ -1,0 +1,64 @@
+{
+  "name": "@pokedojo/battle-log",
+  "version": "0.1.0",
+  "description": "Zero-dependency parser for Pokémon TCG Live battle-log exports. 7 locales, structured AST, no runtime deps.",
+  "keywords": [
+    "pokemon",
+    "ptcg",
+    "pokemon-tcg-live",
+    "battle-log",
+    "parser",
+    "tcgl"
+  ],
+  "license": "MIT",
+  "packageManager": "pnpm@11.11.0",
+  "type": "module",
+  "engines": {
+    "node": ">=20.11"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "homepage": "https://pokedojo.pro/docs/battle-log",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cdierkens/pokedojo-battle-log.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cdierkens/pokedojo-battle-log/issues"
+  },
+  "scripts": {
+    "build": "pnpm run \"/^build:.*/\"",
+    "build:clean": "node -e \"import('node:fs').then(f=>f.rmSync('dist',{recursive:true,force:true}))\"",
+    "build:lib": "tsc -p tsconfig.build.json",
+    "test": "pnpm run \"/^test:.*/\"",
+    "test:unit": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "templates:refresh": "tsx scripts/refresh-templates.ts",
+    "templates:check": "tsx scripts/refresh-templates.ts --check",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "verify": "pnpm run templates:check && pnpm run typecheck && pnpm run test && pnpm run build",
+    "prepublishOnly": "pnpm run verify",
+    "version": "changeset version",
+    "release": "pnpm run build && pnpm publish --provenance --no-git-checks"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.10",
+    "@types/node": "^22.10.2",
+    "@vitest/coverage-v8": "^2.1.8",
+    "tsx": "^4.19.2",
+    "typescript": "^5.9.3",
+    "vitest": "^2.1.8"
+  }
+}

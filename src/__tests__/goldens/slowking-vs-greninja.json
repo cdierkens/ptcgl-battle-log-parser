@@ -1,0 +1,2044 @@
+{
+  "phases": [
+    {
+      "battlePhase": "Setup",
+      "displayTurnNumber": null,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "coinFace": "tails"
+            },
+            "raw": "cdierkens chose tails for the opening coin flip.",
+            "templateKey": "blog_loc_selected_coinface"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros"
+            },
+            "raw": "Kingofslowbros won the coin toss.",
+            "templateKey": "blog_loc_won_coin_toss"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros"
+            },
+            "raw": "Kingofslowbros decided to go first.",
+            "templateKey": "blog_loc_going_first"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "numCards": "7"
+            },
+            "raw": "cdierkens drew 7 cards for the opening hand.",
+            "templateKey": "blog_loc_draw_opening_hand"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "numCards": "7"
+                },
+                "raw": "7 drawn cards.",
+                "templateKey": "blog_loc_drawn_cards_grid_header"
+              },
+              "subString": "Boomerang Energy, Telepathic Psychic Energy, Telepathic Psychic Energy, Slowpoke, Meowth ex, Mega Kangaskhan ex, Night Stretcher"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros",
+              "numCards": "7"
+            },
+            "raw": "Kingofslowbros drew 7 cards for the opening hand.",
+            "templateKey": "blog_loc_draw_opening_hand"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "numCards": "7"
+                },
+                "raw": "7 drawn cards.",
+                "templateKey": "blog_loc_drawn_cards_grid_header"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Slowpoke"
+            },
+            "raw": "cdierkens played Slowpoke to the Active Spot.",
+            "templateKey": "blog_loc_play_to_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Mega Kangaskhan ex"
+            },
+            "raw": "cdierkens played Mega Kangaskhan ex to the Bench.",
+            "templateKey": "blog_loc_play_to_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros",
+              "cardName": "Budew"
+            },
+            "raw": "Kingofslowbros played Budew to the Active Spot.",
+            "templateKey": "blog_loc_play_to_active"
+          },
+          "subEntries": []
+        }
+      ],
+      "plainTextPhaseTitle": "Setup"
+    },
+    {
+      "battlePhase": "Opponent",
+      "displayTurnNumber": 1,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros",
+              "cardName": "a card"
+            },
+            "raw": "Kingofslowbros drew a card.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros",
+              "cardName": "Dreepy"
+            },
+            "raw": "Kingofslowbros played Dreepy to the Bench.",
+            "templateKey": "blog_loc_play_to_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros",
+              "cardName": "Buddy-Buddy Poffin"
+            },
+            "raw": "Kingofslowbros played Buddy-Buddy Poffin.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Kingofslowbros",
+                  "numCards": "2"
+                },
+                "raw": "Kingofslowbros drew 2 cards and played them to the Bench.",
+                "templateKey": "blog_loc_drew_then_play_bench_multi"
+              },
+              "subString": "Froakie, Froakie"
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Kingofslowbros"
+                },
+                "raw": "Kingofslowbros shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros",
+              "cardName": "Poké Pad"
+            },
+            "raw": "Kingofslowbros played Poké Pad.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Kingofslowbros",
+                  "cardName": "Drakloak"
+                },
+                "raw": "Kingofslowbros drew Drakloak.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Kingofslowbros"
+                },
+                "raw": "Kingofslowbros shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros",
+              "sourceCardName": "Basic Water Energy",
+              "targetCardName": "Froakie"
+            },
+            "raw": "Kingofslowbros attached Basic Water Energy to Froakie on the Bench.",
+            "templateKey": "blog_loc_attach_card_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros"
+            },
+            "raw": "Kingofslowbros ended their turn.",
+            "templateKey": "blog_loc_manual_end"
+          },
+          "subEntries": []
+        }
+      ],
+      "plainTextPhaseTitle": "Kingofslowbros's Turn"
+    },
+    {
+      "battlePhase": "Player",
+      "displayTurnNumber": 1,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Slowking"
+            },
+            "raw": "cdierkens drew Slowking.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "sourceCardName": "Telepathic Psychic Energy",
+              "targetCardName": "Slowpoke"
+            },
+            "raw": "cdierkens attached Telepathic Psychic Energy to Slowpoke in the Active Spot.",
+            "templateKey": "blog_loc_attach_card_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "Telepathic Psychic Energy"
+            },
+            "raw": "Telepathic Psychic Energy was activated.",
+            "templateKey": "blog_loc_card_activated"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "numCards": "2"
+                },
+                "raw": "cdierkens drew 2 cards and played them to the Bench.",
+                "templateKey": "blog_loc_drew_then_play_bench_multi"
+              },
+              "subString": "Latias ex, Slowpoke"
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Slowpoke"
+            },
+            "raw": "cdierkens retreated Slowpoke to the Bench.",
+            "templateKey": "blog_loc_retreated"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Mega Kangaskhan ex"
+            },
+            "raw": "cdierkens's Mega Kangaskhan ex is now in the Active Spot.",
+            "templateKey": "blog_loc_promote_to_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "attackingPokemonCardName": "Mega Kangaskhan ex",
+              "attackName": "Run Errand"
+            },
+            "raw": "cdierkens's Mega Kangaskhan ex used Run Errand.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "2 cards"
+                },
+                "raw": "cdierkens drew 2 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": "Telepathic Psychic Energy, Basic Psychic Energy"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens"
+            },
+            "raw": "cdierkens ended their turn.",
+            "templateKey": "blog_loc_manual_end"
+          },
+          "subEntries": []
+        }
+      ],
+      "plainTextPhaseTitle": "cdierkens's Turn"
+    },
+    {
+      "battlePhase": "Opponent",
+      "displayTurnNumber": 2,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros",
+              "cardName": "a card"
+            },
+            "raw": "Kingofslowbros drew a card.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros",
+              "sourcePokemonCardName": "Dreepy",
+              "targetPokemonCardName": "Drakloak"
+            },
+            "raw": "Kingofslowbros evolved Dreepy to Drakloak on the Bench.",
+            "templateKey": "blog_loc_evolved_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros",
+              "attackingPokemonCardName": "Drakloak",
+              "attackName": "Recon Directive"
+            },
+            "raw": "Kingofslowbros's Drakloak used Recon Directive.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Kingofslowbros",
+                  "cardName": "a card"
+                },
+                "raw": "Kingofslowbros drew a card.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros",
+              "cardName": "Dreepy"
+            },
+            "raw": "Kingofslowbros played Dreepy to the Bench.",
+            "templateKey": "blog_loc_play_to_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros",
+              "cardName": "Poké Pad"
+            },
+            "raw": "Kingofslowbros played Poké Pad.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Kingofslowbros",
+                  "cardName": "Frogadier"
+                },
+                "raw": "Kingofslowbros drew Frogadier.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Kingofslowbros"
+                },
+                "raw": "Kingofslowbros shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros",
+              "sourcePokemonCardName": "Froakie",
+              "targetPokemonCardName": "Frogadier"
+            },
+            "raw": "Kingofslowbros evolved Froakie to Frogadier on the Bench.",
+            "templateKey": "blog_loc_evolved_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros",
+              "cardName": "Lillie's Determination"
+            },
+            "raw": "Kingofslowbros played Lillie's Determination.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Kingofslowbros",
+                  "cardName": "2 cards"
+                },
+                "raw": "Kingofslowbros shuffled 2 cards into their deck.",
+                "templateKey": "blog_loc_shuffled_card_into_deck"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Kingofslowbros",
+                  "cardName": "8 cards"
+                },
+                "raw": "Kingofslowbros drew 8 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros",
+              "sourcePokemonCardName": "Froakie",
+              "targetPokemonCardName": "Frogadier"
+            },
+            "raw": "Kingofslowbros evolved Froakie to Frogadier on the Bench.",
+            "templateKey": "blog_loc_evolved_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros",
+              "cardName": "Froakie"
+            },
+            "raw": "Kingofslowbros played Froakie to the Bench.",
+            "templateKey": "blog_loc_play_to_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "attackingPlayerName": "Kingofslowbros",
+              "attackingPokemonCardName": "Budew",
+              "attackName": "Itchy Pollen",
+              "defendingPlayerName": "cdierkens",
+              "targetPokemonCardName": "Mega Kangaskhan ex",
+              "numDamage": "10"
+            },
+            "raw": "Kingofslowbros's Budew used Itchy Pollen on cdierkens’s Mega Kangaskhan ex for 10 damage.",
+            "templateKey": "blog_loc_applied_damage"
+          },
+          "subEntries": []
+        }
+      ],
+      "plainTextPhaseTitle": "Kingofslowbros's Turn"
+    },
+    {
+      "battlePhase": "Player",
+      "displayTurnNumber": 2,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Ultra Ball"
+            },
+            "raw": "cdierkens drew Ultra Ball.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "sourcePokemonCardName": "Slowpoke",
+              "targetPokemonCardName": "Slowking"
+            },
+            "raw": "cdierkens evolved Slowpoke to Slowking on the Bench.",
+            "templateKey": "blog_loc_evolved_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "sourceCardName": "Boomerang Energy",
+              "targetCardName": "Slowking"
+            },
+            "raw": "cdierkens attached Boomerang Energy to Slowking on the Bench.",
+            "templateKey": "blog_loc_attach_card_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Meowth ex"
+            },
+            "raw": "cdierkens played Meowth ex to the Bench.",
+            "templateKey": "blog_loc_play_to_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "attackingPokemonCardName": "Meowth ex",
+              "attackName": "Last-Ditch Catch"
+            },
+            "raw": "cdierkens's Meowth ex used Last-Ditch Catch.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "Lillie's Determination"
+                },
+                "raw": "cdierkens drew Lillie's Determination.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Lillie's Determination"
+            },
+            "raw": "cdierkens played Lillie's Determination.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "5 cards"
+                },
+                "raw": "cdierkens shuffled 5 cards into their deck.",
+                "templateKey": "blog_loc_shuffled_card_into_deck"
+              },
+              "subString": "Telepathic Psychic Energy, Night Stretcher, Telepathic Psychic Energy, Basic Psychic Energy, Ultra Ball"
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "8 cards"
+                },
+                "raw": "cdierkens drew 8 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": "Smoochum, Telepathic Psychic Energy, Ciphermaniac's Codebreaking, Fezandipiti ex, Slowpoke, Boomerang Energy, Slowking, Ultra Ball"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "attackingPokemonCardName": "Mega Kangaskhan ex",
+              "attackName": "Run Errand"
+            },
+            "raw": "cdierkens's Mega Kangaskhan ex used Run Errand.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "2 cards"
+                },
+                "raw": "cdierkens drew 2 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": "Lillie's Determination, Wondrous Patch"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Smoochum"
+            },
+            "raw": "cdierkens played Smoochum to the Bench.",
+            "templateKey": "blog_loc_play_to_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "sourcePokemonCardName": "Slowpoke",
+              "targetPokemonCardName": "Slowking"
+            },
+            "raw": "cdierkens evolved Slowpoke to Slowking on the Bench.",
+            "templateKey": "blog_loc_evolved_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Mega Kangaskhan ex"
+            },
+            "raw": "cdierkens retreated Mega Kangaskhan ex to the Bench.",
+            "templateKey": "blog_loc_retreated"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Smoochum"
+            },
+            "raw": "cdierkens's Smoochum is now in the Active Spot.",
+            "templateKey": "blog_loc_promote_to_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "attackingPokemonCardName": "Smoochum",
+              "attackName": "Delightful Kiss"
+            },
+            "raw": "cdierkens's Smoochum used Delightful Kiss.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "sourceCardName": "Basic Psychic Energy",
+                  "targetCardName": "Slowking"
+                },
+                "raw": "cdierkens attached Basic Psychic Energy to Slowking on the Bench.",
+                "templateKey": "blog_loc_attach_card_bench"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "sourceCardName": "Basic Psychic Energy",
+                  "targetCardName": "Slowking"
+                },
+                "raw": "cdierkens attached Basic Psychic Energy to Slowking on the Bench.",
+                "templateKey": "blog_loc_attach_card_bench"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        }
+      ],
+      "plainTextPhaseTitle": "cdierkens's Turn"
+    },
+    {
+      "battlePhase": "Opponent",
+      "displayTurnNumber": 3,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros",
+              "cardName": "a card"
+            },
+            "raw": "Kingofslowbros drew a card.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros",
+              "cardName": "Budew"
+            },
+            "raw": "Kingofslowbros retreated Budew to the Bench.",
+            "templateKey": "blog_loc_retreated"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros",
+              "cardName": "Frogadier"
+            },
+            "raw": "Kingofslowbros's Frogadier is now in the Active Spot.",
+            "templateKey": "blog_loc_promote_to_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros",
+              "attackingPokemonCardName": "Drakloak",
+              "attackName": "Recon Directive"
+            },
+            "raw": "Kingofslowbros's Drakloak used Recon Directive.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Kingofslowbros",
+                  "cardName": "a card"
+                },
+                "raw": "Kingofslowbros drew a card.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros",
+              "cardName": "Hilda"
+            },
+            "raw": "Kingofslowbros played Hilda.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Kingofslowbros",
+                  "cardName": "2 cards"
+                },
+                "raw": "Kingofslowbros drew 2 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": "Greninja ex, Basic Water Energy"
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Kingofslowbros"
+                },
+                "raw": "Kingofslowbros shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros",
+              "cardName": "Ultra Ball"
+            },
+            "raw": "Kingofslowbros played Ultra Ball.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Kingofslowbros",
+                  "cardName": "2 cards"
+                },
+                "raw": "Kingofslowbros discarded 2 cards.",
+                "templateKey": "blog_loc_discarded_from_board"
+              },
+              "subString": "Basic Water Energy, Fezandipiti ex"
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Kingofslowbros",
+                  "cardName": "Mega Greninja ex"
+                },
+                "raw": "Kingofslowbros drew Mega Greninja ex.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Kingofslowbros"
+                },
+                "raw": "Kingofslowbros shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros",
+              "sourcePokemonCardName": "Frogadier",
+              "targetPokemonCardName": "Mega Greninja ex"
+            },
+            "raw": "Kingofslowbros evolved Frogadier to Mega Greninja ex in the Active Spot.",
+            "templateKey": "blog_loc_evolved_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros",
+              "sourceCardName": "Neo Upper Energy",
+              "targetCardName": "Mega Greninja ex"
+            },
+            "raw": "Kingofslowbros attached Neo Upper Energy to Mega Greninja ex in the Active Spot.",
+            "templateKey": "blog_loc_attach_card_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros",
+              "attackingPokemonCardName": "Mega Greninja ex",
+              "attackName": "Mortal Shuriken"
+            },
+            "raw": "Kingofslowbros's Mega Greninja ex used Mortal Shuriken.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Kingofslowbros",
+                  "cardName": "Basic Water Energy"
+                },
+                "raw": "Kingofslowbros discarded Basic Water Energy.",
+                "templateKey": "blog_loc_discarded_from_board"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "cardName": "Kingofslowbros",
+                  "numDamageCounters": "6",
+                  "targetPlayerName": "Kingofslowbros",
+                  "targetPokemonCardName": "Smoochum"
+                },
+                "raw": "Kingofslowbros put 6 damage counters on Kingofslowbros's Smoochum.",
+                "templateKey": "blog_loc_player_placed_dc"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Smoochum"
+            },
+            "raw": "cdierkens's Smoochum was Knocked Out!",
+            "templateKey": "blog_loc_knockout"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros"
+            },
+            "raw": "Kingofslowbros took a Prize card.",
+            "templateKey": "blog_loc_took_single_prize_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "A card",
+              "playerName": "Kingofslowbros"
+            },
+            "raw": "A card was added to Kingofslowbros's hand.",
+            "templateKey": "blog_loc_added_prize"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Slowking"
+            },
+            "raw": "cdierkens's Slowking is now in the Active Spot.",
+            "templateKey": "blog_loc_promote_to_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros",
+              "sourcePokemonCardName": "Frogadier",
+              "targetPokemonCardName": "Greninja ex"
+            },
+            "raw": "Kingofslowbros evolved Frogadier to Greninja ex on the Bench.",
+            "templateKey": "blog_loc_evolved_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "attackingPlayerName": "Kingofslowbros",
+              "attackingPokemonCardName": "Mega Greninja ex",
+              "attackName": "Ninja Spinner",
+              "defendingPlayerName": "cdierkens",
+              "targetPokemonCardName": "Slowking",
+              "numDamage": "120"
+            },
+            "raw": "Kingofslowbros's Mega Greninja ex used Ninja Spinner on cdierkens’s Slowking for 120 damage.",
+            "templateKey": "blog_loc_applied_damage"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Slowking"
+            },
+            "raw": "cdierkens's Slowking was Knocked Out!",
+            "templateKey": "blog_loc_knockout"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "numCards": "3",
+                  "playerName": "cdierkens",
+                  "pokemonCardName": "Slowking"
+                },
+                "raw": "3 cards were discarded from cdierkens's Slowking.",
+                "templateKey": "blog_loc_discarded_attachment_multi"
+              },
+              "subString": "Basic Psychic Energy, Basic Psychic Energy, Slowpoke"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros"
+            },
+            "raw": "Kingofslowbros took a Prize card.",
+            "templateKey": "blog_loc_took_single_prize_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "A card",
+              "playerName": "Kingofslowbros"
+            },
+            "raw": "A card was added to Kingofslowbros's hand.",
+            "templateKey": "blog_loc_added_prize"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Mega Kangaskhan ex"
+            },
+            "raw": "cdierkens's Mega Kangaskhan ex is now in the Active Spot.",
+            "templateKey": "blog_loc_promote_to_active"
+          },
+          "subEntries": []
+        }
+      ],
+      "plainTextPhaseTitle": "Kingofslowbros's Turn"
+    },
+    {
+      "battlePhase": "Player",
+      "displayTurnNumber": 3,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Lana's Aid"
+            },
+            "raw": "cdierkens drew Lana's Aid.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Slowpoke"
+            },
+            "raw": "cdierkens played Slowpoke to the Bench.",
+            "templateKey": "blog_loc_play_to_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Fezandipiti ex"
+            },
+            "raw": "cdierkens played Fezandipiti ex to the Bench.",
+            "templateKey": "blog_loc_play_to_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Wondrous Patch"
+            },
+            "raw": "cdierkens played Wondrous Patch.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "sourceCardName": "Basic Psychic Energy",
+                  "targetCardName": "Slowpoke"
+                },
+                "raw": "cdierkens attached Basic Psychic Energy to Slowpoke on the Bench.",
+                "templateKey": "blog_loc_attach_card_bench"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "sourceCardName": "Boomerang Energy",
+              "targetCardName": "Slowpoke"
+            },
+            "raw": "cdierkens attached Boomerang Energy to Slowpoke on the Bench.",
+            "templateKey": "blog_loc_attach_card_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "attackingPokemonCardName": "Mega Kangaskhan ex",
+              "attackName": "Run Errand"
+            },
+            "raw": "cdierkens's Mega Kangaskhan ex used Run Errand.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "2 cards"
+                },
+                "raw": "cdierkens drew 2 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": "Poké Pad, Ultra Ball"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Ciphermaniac's Codebreaking"
+            },
+            "raw": "cdierkens played Ciphermaniac's Codebreaking.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Mega Kangaskhan ex"
+            },
+            "raw": "cdierkens retreated Mega Kangaskhan ex to the Bench.",
+            "templateKey": "blog_loc_retreated"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Slowking"
+            },
+            "raw": "cdierkens's Slowking is now in the Active Spot.",
+            "templateKey": "blog_loc_promote_to_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "attackingPokemonCardName": "Slowking",
+              "attackName": "Seek Inspiration"
+            },
+            "raw": "cdierkens's Slowking used Seek Inspiration.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "Kyurem"
+                },
+                "raw": "cdierkens discarded Kyurem.",
+                "templateKey": "blog_loc_discarded_from_board"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "selectedOption": "Trifrost"
+                },
+                "raw": "cdierkens chose Trifrost",
+                "templateKey": "blog_loc_selected_option"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "numCards": "2",
+                  "playerName": "cdierkens",
+                  "pokemonCardName": "Slowking"
+                },
+                "raw": "2 cards were discarded from cdierkens's Slowking.",
+                "templateKey": "blog_loc_discarded_attachment_multi"
+              },
+              "subString": "Telepathic Psychic Energy, Boomerang Energy"
+            },
+            {
+              "event": {
+                "groups": {
+                  "defendingPlayerName": "Kingofslowbros",
+                  "targetPokemonCardName": "Froakie",
+                  "numDamage": "110"
+                },
+                "raw": "Kingofslowbros's Froakie took 110 damage.",
+                "templateKey": "blog_loc_secondary_damage"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "defendingPlayerName": "Kingofslowbros",
+                  "targetPokemonCardName": "Dreepy",
+                  "numDamage": "110"
+                },
+                "raw": "Kingofslowbros's Dreepy took 110 damage.",
+                "templateKey": "blog_loc_secondary_damage"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "defendingPlayerName": "Kingofslowbros",
+                  "targetPokemonCardName": "Drakloak",
+                  "numDamage": "110"
+                },
+                "raw": "Kingofslowbros's Drakloak took 110 damage.",
+                "templateKey": "blog_loc_secondary_damage"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros",
+              "cardName": "Drakloak"
+            },
+            "raw": "Kingofslowbros's Drakloak was Knocked Out!",
+            "templateKey": "blog_loc_knockout"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "Dreepy",
+              "playerName": "Kingofslowbros",
+              "pokemonCardName": "Drakloak"
+            },
+            "raw": "Dreepy was discarded from Kingofslowbros's Drakloak.",
+            "templateKey": "blog_loc_discarded_attachment"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros",
+              "cardName": "Dreepy"
+            },
+            "raw": "Kingofslowbros's Dreepy was Knocked Out!",
+            "templateKey": "blog_loc_knockout"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros",
+              "cardName": "Froakie"
+            },
+            "raw": "Kingofslowbros's Froakie was Knocked Out!",
+            "templateKey": "blog_loc_knockout"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "Boomerang Energy"
+            },
+            "raw": "Boomerang Energy was activated.",
+            "templateKey": "blog_loc_card_activated"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "sourceCardName": "Boomerang Energy",
+                  "targetCardName": "Slowking"
+                },
+                "raw": "cdierkens attached Boomerang Energy to Slowking in the Active Spot.",
+                "templateKey": "blog_loc_attach_card_active"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "numCards": "3"
+            },
+            "raw": "cdierkens took 3 Prize cards.",
+            "templateKey": "blog_loc_took_prize_cards"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "Night Stretcher",
+              "playerName": "cdierkens"
+            },
+            "raw": "Night Stretcher was added to cdierkens's hand.",
+            "templateKey": "blog_loc_added_prize"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "Metagross",
+              "playerName": "cdierkens"
+            },
+            "raw": "Metagross was added to cdierkens's hand.",
+            "templateKey": "blog_loc_added_prize"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "Kyurem",
+              "playerName": "cdierkens"
+            },
+            "raw": "Kyurem was added to cdierkens's hand.",
+            "templateKey": "blog_loc_added_prize"
+          },
+          "subEntries": []
+        }
+      ],
+      "plainTextPhaseTitle": "cdierkens's Turn"
+    },
+    {
+      "battlePhase": "Opponent",
+      "displayTurnNumber": 4,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros",
+              "cardName": "a card"
+            },
+            "raw": "Kingofslowbros drew a card.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros",
+              "cardName": "Hilda"
+            },
+            "raw": "Kingofslowbros played Hilda.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Kingofslowbros",
+                  "cardName": "2 cards"
+                },
+                "raw": "Kingofslowbros drew 2 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": "Greninja ex, Ignition Energy"
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Kingofslowbros"
+                },
+                "raw": "Kingofslowbros shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros",
+              "cardName": "Mega Greninja ex"
+            },
+            "raw": "Kingofslowbros retreated Mega Greninja ex to the Bench.",
+            "templateKey": "blog_loc_retreated"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "cardName": "Neo Upper Energy",
+                  "playerName": "Kingofslowbros",
+                  "pokemonCardName": "Mega Greninja ex"
+                },
+                "raw": "Neo Upper Energy was discarded from Kingofslowbros's Mega Greninja ex.",
+                "templateKey": "blog_loc_discarded_attachment"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros",
+              "cardName": "Greninja ex"
+            },
+            "raw": "Kingofslowbros's Greninja ex is now in the Active Spot.",
+            "templateKey": "blog_loc_promote_to_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros",
+              "sourceCardName": "Ignition Energy",
+              "targetCardName": "Greninja ex"
+            },
+            "raw": "Kingofslowbros attached Ignition Energy to Greninja ex in the Active Spot.",
+            "templateKey": "blog_loc_attach_card_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "attackingPlayerName": "Kingofslowbros",
+              "attackingPokemonCardName": "Greninja ex",
+              "attackName": "Mirage Barrage",
+              "defendingPlayerName": "cdierkens",
+              "targetPokemonCardName": "Slowking",
+              "numDamage": "90",
+              "numReducedDamage": "-30",
+              "energyType": "Fighting"
+            },
+            "raw": "Kingofslowbros's Greninja ex used Mirage Barrage on cdierkens’s Slowking for 90 damage. cdierkens's Slowking took -30 less damage because of Fighting Resistance.",
+            "templateKey": "blog_loc_resistant_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {},
+                "raw": "Damage breakdown:",
+                "templateKey": "blog_loc_export_damage_breakdown_label"
+              },
+              "subString": "Resistance to Fighting: -30 damage"
+            },
+            {
+              "event": {
+                "groups": {
+                  "defendingPlayerName": "cdierkens",
+                  "targetPokemonCardName": "Slowpoke",
+                  "numDamage": "120"
+                },
+                "raw": "cdierkens's Slowpoke took 120 damage.",
+                "templateKey": "blog_loc_secondary_damage"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "cardName": "Ignition Energy",
+                  "playerName": "Kingofslowbros",
+                  "pokemonCardName": "Greninja ex"
+                },
+                "raw": "Ignition Energy was discarded from Kingofslowbros's Greninja ex.",
+                "templateKey": "blog_loc_discarded_attachment"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Slowpoke"
+            },
+            "raw": "cdierkens's Slowpoke was Knocked Out!",
+            "templateKey": "blog_loc_knockout"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "numCards": "2",
+                  "playerName": "cdierkens",
+                  "pokemonCardName": "Slowpoke"
+                },
+                "raw": "2 cards were discarded from cdierkens's Slowpoke.",
+                "templateKey": "blog_loc_discarded_attachment_multi"
+              },
+              "subString": "Basic Psychic Energy, Boomerang Energy"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros"
+            },
+            "raw": "Kingofslowbros took a Prize card.",
+            "templateKey": "blog_loc_took_single_prize_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "A card",
+              "playerName": "Kingofslowbros"
+            },
+            "raw": "A card was added to Kingofslowbros's hand.",
+            "templateKey": "blog_loc_added_prize"
+          },
+          "subEntries": []
+        }
+      ],
+      "plainTextPhaseTitle": "Kingofslowbros's Turn"
+    },
+    {
+      "battlePhase": "Player",
+      "displayTurnNumber": 4,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Slowking"
+            },
+            "raw": "cdierkens drew Slowking.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Ultra Ball"
+            },
+            "raw": "cdierkens played Ultra Ball.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "2 cards"
+                },
+                "raw": "cdierkens discarded 2 cards.",
+                "templateKey": "blog_loc_discarded_from_board"
+              },
+              "subString": "Ultra Ball, Lana's Aid"
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "Lillie's Clefairy ex"
+                },
+                "raw": "cdierkens drew Lillie's Clefairy ex.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Lillie's Clefairy ex"
+            },
+            "raw": "cdierkens played Lillie's Clefairy ex to the Bench.",
+            "templateKey": "blog_loc_play_to_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "sourceCardName": "Telepathic Psychic Energy",
+              "targetCardName": "Lillie's Clefairy ex"
+            },
+            "raw": "cdierkens attached Telepathic Psychic Energy to Lillie's Clefairy ex on the Bench.",
+            "templateKey": "blog_loc_attach_card_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Lillie's Determination"
+            },
+            "raw": "cdierkens played Lillie's Determination.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "5 cards"
+                },
+                "raw": "cdierkens shuffled 5 cards into their deck.",
+                "templateKey": "blog_loc_shuffled_card_into_deck"
+              },
+              "subString": "Poké Pad, Night Stretcher, Metagross, Kyurem, Slowking"
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "6 cards"
+                },
+                "raw": "cdierkens drew 6 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": "Brave Bangle, Poké Pad, Surfer, Secret Box, Poké Pad, Lillie's Determination"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Secret Box"
+            },
+            "raw": "cdierkens played Secret Box.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "3 cards"
+                },
+                "raw": "cdierkens discarded 3 cards.",
+                "templateKey": "blog_loc_discarded_from_board"
+              },
+              "subString": "Poké Pad, Poké Pad, Brave Bangle"
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "4 cards"
+                },
+                "raw": "cdierkens drew 4 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": "Wondrous Patch, Lucky Helmet, Ciphermaniac's Codebreaking, Academy at Night"
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Wondrous Patch"
+            },
+            "raw": "cdierkens played Wondrous Patch.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "sourceCardName": "Basic Psychic Energy",
+                  "targetCardName": "Lillie's Clefairy ex"
+                },
+                "raw": "cdierkens attached Basic Psychic Energy to Lillie's Clefairy ex on the Bench.",
+                "templateKey": "blog_loc_attach_card_bench"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "sourceCardName": "Lucky Helmet",
+              "targetCardName": "Slowking"
+            },
+            "raw": "cdierkens attached Lucky Helmet to Slowking in the Active Spot.",
+            "templateKey": "blog_loc_attach_card_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Academy at Night"
+            },
+            "raw": "cdierkens played Academy at Night to the Stadium spot.",
+            "templateKey": "blog_loc_played_to_stadium"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "attackingPokemonCardName": "Fezandipiti ex",
+              "attackName": "Flip the Script"
+            },
+            "raw": "cdierkens's Fezandipiti ex used Flip the Script.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "3 cards"
+                },
+                "raw": "cdierkens drew 3 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": "Night Stretcher, Night Stretcher, Kyurem"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens"
+            },
+            "raw": "cdierkens ended their turn.",
+            "templateKey": "blog_loc_manual_end"
+          },
+          "subEntries": []
+        }
+      ],
+      "plainTextPhaseTitle": "cdierkens's Turn"
+    },
+    {
+      "battlePhase": "Opponent",
+      "displayTurnNumber": 5,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros",
+              "cardName": "a card"
+            },
+            "raw": "Kingofslowbros drew a card.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros",
+              "cardName": "Boss's Orders"
+            },
+            "raw": "Kingofslowbros played Boss's Orders.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "targetPlayerName": "cdierkens",
+                  "targetCardName": "Mega Kangaskhan ex",
+                  "sourcePlayerName": "cdierkens",
+                  "sourceCardName": "Slowking"
+                },
+                "raw": "cdierkens's Mega Kangaskhan ex was switched with cdierkens's Slowking to become the Active Pokémon.",
+                "templateKey": "blog_loc_switched_active"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Mega Kangaskhan ex"
+            },
+            "raw": "cdierkens's Mega Kangaskhan ex is now in the Active Spot.",
+            "templateKey": "blog_loc_promote_to_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "attackingPlayerName": "Kingofslowbros",
+              "attackingPokemonCardName": "Greninja ex",
+              "attackName": "Shinobi Blade",
+              "defendingPlayerName": "cdierkens",
+              "targetPokemonCardName": "Mega Kangaskhan ex",
+              "numDamage": "340",
+              "numAdditionalDamage": "170",
+              "energyType": "Fighting"
+            },
+            "raw": "Kingofslowbros's Greninja ex used Shinobi Blade on cdierkens’s Mega Kangaskhan ex for 340 damage. cdierkens's Mega Kangaskhan ex took 170 more damage because of Fighting Weakness.",
+            "templateKey": "blog_loc_weak_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {},
+                "raw": "Damage breakdown:",
+                "templateKey": "blog_loc_export_damage_breakdown_label"
+              },
+              "subString": "Base damage: 170 damage\nWeakness to Fighting: 170 damage\nTotal damage: 340 damage"
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Kingofslowbros",
+                  "cardName": "a card"
+                },
+                "raw": "Kingofslowbros drew a card.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Kingofslowbros"
+                },
+                "raw": "Kingofslowbros shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Mega Kangaskhan ex"
+            },
+            "raw": "cdierkens's Mega Kangaskhan ex was Knocked Out!",
+            "templateKey": "blog_loc_knockout"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Kingofslowbros",
+              "numCards": "3"
+            },
+            "raw": "Kingofslowbros took 3 Prize cards.",
+            "templateKey": "blog_loc_took_prize_cards"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "A card",
+              "playerName": "Kingofslowbros"
+            },
+            "raw": "A card was added to Kingofslowbros's hand.",
+            "templateKey": "blog_loc_added_prize"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "A card",
+              "playerName": "Kingofslowbros"
+            },
+            "raw": "A card was added to Kingofslowbros's hand.",
+            "templateKey": "blog_loc_added_prize"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "A card",
+              "playerName": "Kingofslowbros"
+            },
+            "raw": "A card was added to Kingofslowbros's hand.",
+            "templateKey": "blog_loc_added_prize"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "gameEndReason": "Opponent took all of their Prize cards",
+              "playerName": "Kingofslowbros"
+            },
+            "raw": "Opponent took all of their Prize cards. Kingofslowbros wins.",
+            "templateKey": "blog_loc_end_game"
+          },
+          "subEntries": []
+        }
+      ],
+      "plainTextPhaseTitle": "Kingofslowbros's Turn"
+    }
+  ]
+}

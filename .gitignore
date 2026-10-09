@@ -1,0 +1,9 @@
+node_modules/
+dist/
+coverage/
+*.tgz
+
+# Stray log output, but never the battle-log fixtures under src/__tests__.
+/*.log
+
+.DS_Store

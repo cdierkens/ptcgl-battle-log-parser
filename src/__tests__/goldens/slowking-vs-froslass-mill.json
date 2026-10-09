@@ -1,0 +1,3134 @@
+{
+  "phases": [
+    {
+      "battlePhase": "Setup",
+      "displayTurnNumber": null,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "coinFace": "tails"
+            },
+            "raw": "cdierkens chose tails for the opening coin flip.",
+            "templateKey": "blog_loc_selected_coinface"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ"
+            },
+            "raw": "TSLAUJ won the coin toss.",
+            "templateKey": "blog_loc_won_coin_toss"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ"
+            },
+            "raw": "TSLAUJ decided to go first.",
+            "templateKey": "blog_loc_going_first"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "numCards": "7"
+            },
+            "raw": "cdierkens drew 7 cards for the opening hand.",
+            "templateKey": "blog_loc_draw_opening_hand"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "numCards": "7"
+                },
+                "raw": "7 drawn cards.",
+                "templateKey": "blog_loc_drawn_cards_grid_header"
+              },
+              "subString": "Smoochum, Kyurem, Slowpoke, Wondrous Patch, Ciphermaniac's Codebreaking, Poké Pad, Ultra Ball"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "numCards": "7"
+            },
+            "raw": "TSLAUJ drew 7 cards for the opening hand.",
+            "templateKey": "blog_loc_draw_opening_hand"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "numCards": "7"
+                },
+                "raw": "7 drawn cards.",
+                "templateKey": "blog_loc_drawn_cards_grid_header"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Smoochum"
+            },
+            "raw": "cdierkens played Smoochum to the Active Spot.",
+            "templateKey": "blog_loc_play_to_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Slowpoke"
+            },
+            "raw": "cdierkens played Slowpoke to the Bench.",
+            "templateKey": "blog_loc_play_to_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "Snorunt"
+            },
+            "raw": "TSLAUJ played Snorunt to the Active Spot.",
+            "templateKey": "blog_loc_play_to_active"
+          },
+          "subEntries": []
+        }
+      ],
+      "plainTextPhaseTitle": "Setup"
+    },
+    {
+      "battlePhase": "Opponent",
+      "displayTurnNumber": 1,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "a card"
+            },
+            "raw": "TSLAUJ drew a card.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "Poké Pad"
+            },
+            "raw": "TSLAUJ played Poké Pad.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "TSLAUJ",
+                  "cardName": "Uxie"
+                },
+                "raw": "TSLAUJ drew Uxie.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "TSLAUJ"
+                },
+                "raw": "TSLAUJ shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "Uxie"
+            },
+            "raw": "TSLAUJ played Uxie to the Bench.",
+            "templateKey": "blog_loc_play_to_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "sourceCardName": "Basic Psychic Energy",
+              "targetCardName": "Snorunt"
+            },
+            "raw": "TSLAUJ attached Basic Psychic Energy to Snorunt in the Active Spot.",
+            "templateKey": "blog_loc_attach_card_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "Snorunt"
+            },
+            "raw": "TSLAUJ retreated Snorunt to the Bench.",
+            "templateKey": "blog_loc_retreated"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "cardName": "Basic Psychic Energy",
+                  "playerName": "TSLAUJ",
+                  "pokemonCardName": "Snorunt"
+                },
+                "raw": "Basic Psychic Energy was discarded from TSLAUJ's Snorunt.",
+                "templateKey": "blog_loc_discarded_attachment"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "Uxie"
+            },
+            "raw": "TSLAUJ's Uxie is now in the Active Spot.",
+            "templateKey": "blog_loc_promote_to_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ"
+            },
+            "raw": "TSLAUJ ended their turn.",
+            "templateKey": "blog_loc_manual_end"
+          },
+          "subEntries": []
+        }
+      ],
+      "plainTextPhaseTitle": "TSLAUJ's Turn"
+    },
+    {
+      "battlePhase": "Player",
+      "displayTurnNumber": 1,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Metagross"
+            },
+            "raw": "cdierkens drew Metagross.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Poké Pad"
+            },
+            "raw": "cdierkens played Poké Pad.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "Slowpoke"
+                },
+                "raw": "cdierkens drew Slowpoke.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Slowpoke"
+            },
+            "raw": "cdierkens played Slowpoke to the Bench.",
+            "templateKey": "blog_loc_play_to_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Ultra Ball"
+            },
+            "raw": "cdierkens played Ultra Ball.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "2 cards"
+                },
+                "raw": "cdierkens discarded 2 cards.",
+                "templateKey": "blog_loc_discarded_from_board"
+              },
+              "subString": "Ciphermaniac's Codebreaking, Metagross"
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "Meowth ex"
+                },
+                "raw": "cdierkens drew Meowth ex.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Meowth ex"
+            },
+            "raw": "cdierkens played Meowth ex to the Bench.",
+            "templateKey": "blog_loc_play_to_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "attackingPokemonCardName": "Meowth ex",
+              "attackName": "Last-Ditch Catch"
+            },
+            "raw": "cdierkens's Meowth ex used Last-Ditch Catch.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "Lillie's Determination"
+                },
+                "raw": "cdierkens drew Lillie's Determination.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Lillie's Determination"
+            },
+            "raw": "cdierkens played Lillie's Determination.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "2 cards"
+                },
+                "raw": "cdierkens shuffled 2 cards into their deck.",
+                "templateKey": "blog_loc_shuffled_card_into_deck"
+              },
+              "subString": "Kyurem, Wondrous Patch"
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "8 cards"
+                },
+                "raw": "cdierkens drew 8 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": "Mega Kangaskhan ex, Telepathic Psychic Energy, Basic Psychic Energy, Latias ex, Telepathic Psychic Energy, Night Stretcher, Lana's Aid, Academy at Night"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "sourceCardName": "Telepathic Psychic Energy",
+              "targetCardName": "Slowpoke"
+            },
+            "raw": "cdierkens attached Telepathic Psychic Energy to Slowpoke on the Bench.",
+            "templateKey": "blog_loc_attach_card_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "Telepathic Psychic Energy"
+            },
+            "raw": "Telepathic Psychic Energy was activated.",
+            "templateKey": "blog_loc_card_activated"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "Slowpoke"
+                },
+                "raw": "cdierkens drew Slowpoke and played it to the Bench.",
+                "templateKey": "blog_loc_drew_then_play_bench"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "attackingPokemonCardName": "Smoochum",
+              "attackName": "Delightful Kiss"
+            },
+            "raw": "cdierkens's Smoochum used Delightful Kiss.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "sourceCardName": "Basic Psychic Energy",
+                  "targetCardName": "Slowpoke"
+                },
+                "raw": "cdierkens attached Basic Psychic Energy to Slowpoke on the Bench.",
+                "templateKey": "blog_loc_attach_card_bench"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "sourceCardName": "Basic Psychic Energy",
+                  "targetCardName": "Slowpoke"
+                },
+                "raw": "cdierkens attached Basic Psychic Energy to Slowpoke on the Bench.",
+                "templateKey": "blog_loc_attach_card_bench"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        }
+      ],
+      "plainTextPhaseTitle": "cdierkens's Turn"
+    },
+    {
+      "battlePhase": "Opponent",
+      "displayTurnNumber": 2,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "a card"
+            },
+            "raw": "TSLAUJ drew a card.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "sourcePokemonCardName": "Snorunt",
+              "targetPokemonCardName": "Froslass"
+            },
+            "raw": "TSLAUJ evolved Snorunt to Froslass on the Bench.",
+            "templateKey": "blog_loc_evolved_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "sourceCardName": "Basic Psychic Energy",
+              "targetCardName": "Uxie"
+            },
+            "raw": "TSLAUJ attached Basic Psychic Energy to Uxie in the Active Spot.",
+            "templateKey": "blog_loc_attach_card_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "Boss's Orders"
+            },
+            "raw": "TSLAUJ played Boss's Orders.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "targetPlayerName": "cdierkens",
+                  "targetCardName": "Slowpoke",
+                  "sourcePlayerName": "cdierkens",
+                  "sourceCardName": "Smoochum"
+                },
+                "raw": "cdierkens's Slowpoke was switched with cdierkens's Smoochum to become the Active Pokémon.",
+                "templateKey": "blog_loc_switched_active"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Slowpoke"
+            },
+            "raw": "cdierkens's Slowpoke is now in the Active Spot.",
+            "templateKey": "blog_loc_promote_to_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "attackingPokemonCardName": "Uxie",
+              "attackName": "Painful Memories"
+            },
+            "raw": "TSLAUJ's Uxie used Painful Memories.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "cardName": "TSLAUJ",
+                  "numDamageCounters": "2",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Slowpoke"
+                },
+                "raw": "TSLAUJ put 2 damage counters on TSLAUJ's Slowpoke.",
+                "templateKey": "blog_loc_player_placed_dc"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "cardName": "TSLAUJ",
+                  "numDamageCounters": "2",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Slowpoke"
+                },
+                "raw": "TSLAUJ put 2 damage counters on TSLAUJ's Slowpoke.",
+                "templateKey": "blog_loc_player_placed_dc"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "cardName": "TSLAUJ",
+                  "numDamageCounters": "2",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Slowpoke"
+                },
+                "raw": "TSLAUJ put 2 damage counters on TSLAUJ's Slowpoke.",
+                "templateKey": "blog_loc_player_placed_dc"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "cardName": "TSLAUJ",
+                  "numDamageCounters": "2",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Meowth ex"
+                },
+                "raw": "TSLAUJ put 2 damage counters on TSLAUJ's Meowth ex.",
+                "templateKey": "blog_loc_player_placed_dc"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "cardName": "TSLAUJ",
+                  "numDamageCounters": "2",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Smoochum"
+                },
+                "raw": "TSLAUJ put 2 damage counters on TSLAUJ's Smoochum.",
+                "templateKey": "blog_loc_player_placed_dc"
+              },
+              "subString": null
+            }
+          ]
+        }
+      ],
+      "plainTextPhaseTitle": "TSLAUJ's Turn"
+    },
+    {
+      "battlePhase": "Checkup",
+      "displayTurnNumber": null,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "attackingPokemonCardName": "Froslass",
+              "attackName": "Freezing Shroud"
+            },
+            "raw": "TSLAUJ's Froslass used Freezing Shroud.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "cardName": "TSLAUJ",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Meowth ex"
+                },
+                "raw": "TSLAUJ put a damage counter on TSLAUJ's Meowth ex.",
+                "templateKey": "blog_loc_player_placed_single_dc"
+              },
+              "subString": null
+            }
+          ]
+        }
+      ],
+      "plainTextPhaseTitle": "Pokémon Checkup"
+    },
+    {
+      "battlePhase": "Player",
+      "displayTurnNumber": 2,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Mega Kangaskhan ex"
+            },
+            "raw": "cdierkens drew Mega Kangaskhan ex.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "sourceCardName": "Basic Psychic Energy",
+              "targetCardName": "Slowpoke"
+            },
+            "raw": "cdierkens attached Basic Psychic Energy to Slowpoke on the Bench.",
+            "templateKey": "blog_loc_attach_card_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Academy at Night"
+            },
+            "raw": "cdierkens played Academy at Night to the Stadium spot.",
+            "templateKey": "blog_loc_played_to_stadium"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Mega Kangaskhan ex"
+            },
+            "raw": "cdierkens played Mega Kangaskhan ex to the Bench.",
+            "templateKey": "blog_loc_play_to_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens"
+            },
+            "raw": "cdierkens ended their turn.",
+            "templateKey": "blog_loc_manual_end"
+          },
+          "subEntries": []
+        }
+      ],
+      "plainTextPhaseTitle": "cdierkens's Turn"
+    },
+    {
+      "battlePhase": "Checkup",
+      "displayTurnNumber": null,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "attackingPokemonCardName": "Froslass",
+              "attackName": "Freezing Shroud"
+            },
+            "raw": "TSLAUJ's Froslass used Freezing Shroud.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "cardName": "cdierkens",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Meowth ex"
+                },
+                "raw": "cdierkens put a damage counter on TSLAUJ's Meowth ex.",
+                "templateKey": "blog_loc_player_placed_single_dc"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "cardName": "cdierkens",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Mega Kangaskhan ex"
+                },
+                "raw": "cdierkens put a damage counter on TSLAUJ's Mega Kangaskhan ex.",
+                "templateKey": "blog_loc_player_placed_single_dc"
+              },
+              "subString": null
+            }
+          ]
+        }
+      ],
+      "plainTextPhaseTitle": "Pokémon Checkup"
+    },
+    {
+      "battlePhase": "Opponent",
+      "displayTurnNumber": 3,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "a card"
+            },
+            "raw": "TSLAUJ drew a card.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "Buddy-Buddy Poffin"
+            },
+            "raw": "TSLAUJ played Buddy-Buddy Poffin.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "TSLAUJ",
+                  "numCards": "2"
+                },
+                "raw": "TSLAUJ drew 2 cards and played them to the Bench.",
+                "templateKey": "blog_loc_drew_then_play_bench_multi"
+              },
+              "subString": "Phantump, Snorunt"
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "TSLAUJ"
+                },
+                "raw": "TSLAUJ shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "Night Stretcher"
+            },
+            "raw": "TSLAUJ played Night Stretcher.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "TSLAUJ",
+                  "targetPlayerName": "TSLAUJ",
+                  "cardName": "Basic Psychic Energy"
+                },
+                "raw": "TSLAUJ moved TSLAUJ's Basic Psychic Energy to their hand.",
+                "templateKey": "blog_loc_move_to_hand"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "sourceCardName": "Basic Psychic Energy",
+              "targetCardName": "Phantump"
+            },
+            "raw": "TSLAUJ attached Basic Psychic Energy to Phantump on the Bench.",
+            "templateKey": "blog_loc_attach_card_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "Lillie's Determination"
+            },
+            "raw": "TSLAUJ played Lillie's Determination.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "TSLAUJ",
+                  "cardName": "a card"
+                },
+                "raw": "TSLAUJ shuffled a card into their deck.",
+                "templateKey": "blog_loc_shuffled_card_into_deck"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "TSLAUJ",
+                  "cardName": "8 cards"
+                },
+                "raw": "TSLAUJ drew 8 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "Poké Pad"
+            },
+            "raw": "TSLAUJ played Poké Pad.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "TSLAUJ",
+                  "cardName": "Trevenant"
+                },
+                "raw": "TSLAUJ drew Trevenant.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "TSLAUJ"
+                },
+                "raw": "TSLAUJ shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "attackingPokemonCardName": "Phantump",
+              "attackName": "Spiteful Evolution"
+            },
+            "raw": "TSLAUJ's Phantump used Spiteful Evolution.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "TSLAUJ",
+                  "sourcePokemonCardName": "Phantump",
+                  "targetPokemonCardName": "Trevenant"
+                },
+                "raw": "TSLAUJ evolved Phantump to Trevenant on the Bench.",
+                "templateKey": "blog_loc_evolved_bench"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "cardName": "TSLAUJ",
+                  "numDamageCounters": "2",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Trevenant"
+                },
+                "raw": "TSLAUJ put 2 damage counters on TSLAUJ's Trevenant.",
+                "templateKey": "blog_loc_player_placed_dc"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "Buddy-Buddy Poffin"
+            },
+            "raw": "TSLAUJ played Buddy-Buddy Poffin.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "TSLAUJ",
+                  "cardName": "Uxie"
+                },
+                "raw": "TSLAUJ drew Uxie and played it to the Bench.",
+                "templateKey": "blog_loc_drew_then_play_bench"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "TSLAUJ"
+                },
+                "raw": "TSLAUJ shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "Uxie"
+            },
+            "raw": "TSLAUJ retreated Uxie to the Bench.",
+            "templateKey": "blog_loc_retreated"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "cardName": "Basic Psychic Energy",
+                  "playerName": "TSLAUJ",
+                  "pokemonCardName": "Uxie"
+                },
+                "raw": "Basic Psychic Energy was discarded from TSLAUJ's Uxie.",
+                "templateKey": "blog_loc_discarded_attachment"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "Trevenant"
+            },
+            "raw": "TSLAUJ's Trevenant is now in the Active Spot.",
+            "templateKey": "blog_loc_promote_to_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "Snorunt"
+            },
+            "raw": "TSLAUJ played Snorunt to the Bench.",
+            "templateKey": "blog_loc_play_to_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "Pokégear 3.0"
+            },
+            "raw": "TSLAUJ played Pokégear 3.0.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "TSLAUJ",
+                  "cardName": "Lillie's Determination"
+                },
+                "raw": "TSLAUJ drew Lillie's Determination.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "TSLAUJ"
+                },
+                "raw": "TSLAUJ shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "attackingPlayerName": "TSLAUJ",
+              "attackingPokemonCardName": "Trevenant",
+              "attackName": "Cursed Roots",
+              "defendingPlayerName": "cdierkens",
+              "targetPokemonCardName": "Slowpoke",
+              "numDamage": "30"
+            },
+            "raw": "TSLAUJ's Trevenant used Cursed Roots on cdierkens’s Slowpoke for 30 damage.",
+            "templateKey": "blog_loc_applied_damage"
+          },
+          "subEntries": []
+        }
+      ],
+      "plainTextPhaseTitle": "TSLAUJ's Turn"
+    },
+    {
+      "battlePhase": "Checkup",
+      "displayTurnNumber": null,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "attackingPokemonCardName": "Froslass",
+              "attackName": "Freezing Shroud"
+            },
+            "raw": "TSLAUJ's Froslass used Freezing Shroud.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "cardName": "TSLAUJ",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Meowth ex"
+                },
+                "raw": "TSLAUJ put a damage counter on TSLAUJ's Meowth ex.",
+                "templateKey": "blog_loc_player_placed_single_dc"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "cardName": "TSLAUJ",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Mega Kangaskhan ex"
+                },
+                "raw": "TSLAUJ put a damage counter on TSLAUJ's Mega Kangaskhan ex.",
+                "templateKey": "blog_loc_player_placed_single_dc"
+              },
+              "subString": null
+            }
+          ]
+        }
+      ],
+      "plainTextPhaseTitle": "Pokémon Checkup"
+    },
+    {
+      "battlePhase": "Player",
+      "displayTurnNumber": 3,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Slowking"
+            },
+            "raw": "cdierkens drew Slowking.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "sourcePokemonCardName": "Slowpoke",
+              "targetPokemonCardName": "Slowking"
+            },
+            "raw": "cdierkens evolved Slowpoke to Slowking on the Bench.",
+            "templateKey": "blog_loc_evolved_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens"
+            },
+            "raw": "cdierkens ended their turn.",
+            "templateKey": "blog_loc_manual_end"
+          },
+          "subEntries": []
+        }
+      ],
+      "plainTextPhaseTitle": "cdierkens's Turn"
+    },
+    {
+      "battlePhase": "Checkup",
+      "displayTurnNumber": null,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "attackingPokemonCardName": "Froslass",
+              "attackName": "Freezing Shroud"
+            },
+            "raw": "TSLAUJ's Froslass used Freezing Shroud.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "cardName": "cdierkens",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Meowth ex"
+                },
+                "raw": "cdierkens put a damage counter on TSLAUJ's Meowth ex.",
+                "templateKey": "blog_loc_player_placed_single_dc"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "cardName": "cdierkens",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Mega Kangaskhan ex"
+                },
+                "raw": "cdierkens put a damage counter on TSLAUJ's Mega Kangaskhan ex.",
+                "templateKey": "blog_loc_player_placed_single_dc"
+              },
+              "subString": null
+            }
+          ]
+        }
+      ],
+      "plainTextPhaseTitle": "Pokémon Checkup"
+    },
+    {
+      "battlePhase": "Opponent",
+      "displayTurnNumber": 4,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "a card"
+            },
+            "raw": "TSLAUJ drew a card.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "sourcePokemonCardName": "Snorunt",
+              "targetPokemonCardName": "Froslass"
+            },
+            "raw": "TSLAUJ evolved Snorunt to Froslass on the Bench.",
+            "templateKey": "blog_loc_evolved_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "Wondrous Patch"
+            },
+            "raw": "TSLAUJ played Wondrous Patch.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "TSLAUJ",
+                  "sourceCardName": "Basic Psychic Energy",
+                  "targetCardName": "Uxie"
+                },
+                "raw": "TSLAUJ attached Basic Psychic Energy to Uxie on the Bench.",
+                "templateKey": "blog_loc_attach_card_bench"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "Lillie's Determination"
+            },
+            "raw": "TSLAUJ played Lillie's Determination.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "TSLAUJ",
+                  "cardName": "3 cards"
+                },
+                "raw": "TSLAUJ shuffled 3 cards into their deck.",
+                "templateKey": "blog_loc_shuffled_card_into_deck"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "TSLAUJ",
+                  "cardName": "8 cards"
+                },
+                "raw": "TSLAUJ drew 8 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "Risky Ruins"
+            },
+            "raw": "TSLAUJ played Risky Ruins to the Stadium spot.",
+            "templateKey": "blog_loc_played_to_stadium"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "TSLAUJ",
+                  "cardName": "Academy at Night"
+                },
+                "raw": "TSLAUJ discarded Academy at Night.",
+                "templateKey": "blog_loc_discarded_from_board"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "sourceCardName": "Basic Psychic Energy",
+              "targetCardName": "Uxie"
+            },
+            "raw": "TSLAUJ attached Basic Psychic Energy to Uxie on the Bench.",
+            "templateKey": "blog_loc_attach_card_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "attackingPlayerName": "TSLAUJ",
+              "attackingPokemonCardName": "Trevenant",
+              "attackName": "Cursed Roots",
+              "defendingPlayerName": "cdierkens",
+              "targetPokemonCardName": "Slowpoke",
+              "numDamage": "30"
+            },
+            "raw": "TSLAUJ's Trevenant used Cursed Roots on cdierkens’s Slowpoke for 30 damage.",
+            "templateKey": "blog_loc_applied_damage"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Slowpoke"
+            },
+            "raw": "cdierkens's Slowpoke was Knocked Out!",
+            "templateKey": "blog_loc_knockout"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ"
+            },
+            "raw": "TSLAUJ took a Prize card.",
+            "templateKey": "blog_loc_took_single_prize_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "A card",
+              "playerName": "TSLAUJ"
+            },
+            "raw": "A card was added to TSLAUJ's hand.",
+            "templateKey": "blog_loc_added_prize"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Mega Kangaskhan ex"
+            },
+            "raw": "cdierkens's Mega Kangaskhan ex is now in the Active Spot.",
+            "templateKey": "blog_loc_promote_to_active"
+          },
+          "subEntries": []
+        }
+      ],
+      "plainTextPhaseTitle": "TSLAUJ's Turn"
+    },
+    {
+      "battlePhase": "Checkup",
+      "displayTurnNumber": null,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "attackingPokemonCardName": "Froslass",
+              "attackName": "Freezing Shroud"
+            },
+            "raw": "TSLAUJ's Froslass used Freezing Shroud.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "cardName": "TSLAUJ",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Mega Kangaskhan ex"
+                },
+                "raw": "TSLAUJ put a damage counter on TSLAUJ's Mega Kangaskhan ex.",
+                "templateKey": "blog_loc_player_placed_single_dc"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "cardName": "TSLAUJ",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Meowth ex"
+                },
+                "raw": "TSLAUJ put a damage counter on TSLAUJ's Meowth ex.",
+                "templateKey": "blog_loc_player_placed_single_dc"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "cardName": "TSLAUJ",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Mega Kangaskhan ex"
+                },
+                "raw": "TSLAUJ put a damage counter on TSLAUJ's Mega Kangaskhan ex.",
+                "templateKey": "blog_loc_player_placed_single_dc"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "cardName": "TSLAUJ",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Meowth ex"
+                },
+                "raw": "TSLAUJ put a damage counter on TSLAUJ's Meowth ex.",
+                "templateKey": "blog_loc_player_placed_single_dc"
+              },
+              "subString": null
+            }
+          ]
+        }
+      ],
+      "plainTextPhaseTitle": "Pokémon Checkup"
+    },
+    {
+      "battlePhase": "Player",
+      "displayTurnNumber": 4,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Poké Pad"
+            },
+            "raw": "cdierkens drew Poké Pad.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "attackingPokemonCardName": "Mega Kangaskhan ex",
+              "attackName": "Run Errand"
+            },
+            "raw": "cdierkens's Mega Kangaskhan ex used Run Errand.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "2 cards"
+                },
+                "raw": "cdierkens drew 2 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": "Wondrous Patch, Lucky Helmet"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Poké Pad"
+            },
+            "raw": "cdierkens played Poké Pad.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "Kyurem"
+                },
+                "raw": "cdierkens drew Kyurem.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Latias ex"
+            },
+            "raw": "cdierkens played Latias ex to the Bench.",
+            "templateKey": "blog_loc_play_to_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "Risky Ruins"
+            },
+            "raw": "Risky Ruins was activated.",
+            "templateKey": "blog_loc_card_activated"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "cardName": "cdierkens",
+                  "numDamageCounters": "2",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Latias ex"
+                },
+                "raw": "cdierkens put 2 damage counters on TSLAUJ's Latias ex.",
+                "templateKey": "blog_loc_player_placed_dc"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "sourceCardName": "Telepathic Psychic Energy",
+              "targetCardName": "Latias ex"
+            },
+            "raw": "cdierkens attached Telepathic Psychic Energy to Latias ex on the Bench.",
+            "templateKey": "blog_loc_attach_card_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "sourceCardName": "Lucky Helmet",
+              "targetCardName": "Mega Kangaskhan ex"
+            },
+            "raw": "cdierkens attached Lucky Helmet to Mega Kangaskhan ex in the Active Spot.",
+            "templateKey": "blog_loc_attach_card_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens"
+            },
+            "raw": "cdierkens ended their turn.",
+            "templateKey": "blog_loc_manual_end"
+          },
+          "subEntries": []
+        }
+      ],
+      "plainTextPhaseTitle": "cdierkens's Turn"
+    },
+    {
+      "battlePhase": "Checkup",
+      "displayTurnNumber": null,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "attackingPokemonCardName": "Froslass",
+              "attackName": "Freezing Shroud"
+            },
+            "raw": "TSLAUJ's Froslass used Freezing Shroud.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "cardName": "cdierkens",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Mega Kangaskhan ex"
+                },
+                "raw": "cdierkens put a damage counter on TSLAUJ's Mega Kangaskhan ex.",
+                "templateKey": "blog_loc_player_placed_single_dc"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "cardName": "cdierkens",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Meowth ex"
+                },
+                "raw": "cdierkens put a damage counter on TSLAUJ's Meowth ex.",
+                "templateKey": "blog_loc_player_placed_single_dc"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "cardName": "cdierkens",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Latias ex"
+                },
+                "raw": "cdierkens put a damage counter on TSLAUJ's Latias ex.",
+                "templateKey": "blog_loc_player_placed_single_dc"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "cardName": "cdierkens",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Mega Kangaskhan ex"
+                },
+                "raw": "cdierkens put a damage counter on TSLAUJ's Mega Kangaskhan ex.",
+                "templateKey": "blog_loc_player_placed_single_dc"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "cardName": "cdierkens",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Meowth ex"
+                },
+                "raw": "cdierkens put a damage counter on TSLAUJ's Meowth ex.",
+                "templateKey": "blog_loc_player_placed_single_dc"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "cardName": "cdierkens",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Latias ex"
+                },
+                "raw": "cdierkens put a damage counter on TSLAUJ's Latias ex.",
+                "templateKey": "blog_loc_player_placed_single_dc"
+              },
+              "subString": null
+            }
+          ]
+        }
+      ],
+      "plainTextPhaseTitle": "Pokémon Checkup"
+    },
+    {
+      "battlePhase": "Opponent",
+      "displayTurnNumber": 5,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "a card"
+            },
+            "raw": "TSLAUJ drew a card.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "Lillie's Determination"
+            },
+            "raw": "TSLAUJ played Lillie's Determination.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "TSLAUJ",
+                  "cardName": "7 cards"
+                },
+                "raw": "TSLAUJ shuffled 7 cards into their deck.",
+                "templateKey": "blog_loc_shuffled_card_into_deck"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "TSLAUJ",
+                  "cardName": "6 cards"
+                },
+                "raw": "TSLAUJ drew 6 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "Poké Pad"
+            },
+            "raw": "TSLAUJ played Poké Pad.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "TSLAUJ",
+                  "cardName": "Froslass"
+                },
+                "raw": "TSLAUJ drew Froslass.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "TSLAUJ"
+                },
+                "raw": "TSLAUJ shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "sourcePokemonCardName": "Snorunt",
+              "targetPokemonCardName": "Froslass"
+            },
+            "raw": "TSLAUJ evolved Snorunt to Froslass on the Bench.",
+            "templateKey": "blog_loc_evolved_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "attackingPlayerName": "TSLAUJ",
+              "attackingPokemonCardName": "Trevenant",
+              "attackName": "Cursed Roots",
+              "defendingPlayerName": "cdierkens",
+              "targetPokemonCardName": "Mega Kangaskhan ex",
+              "numDamage": "30"
+            },
+            "raw": "TSLAUJ's Trevenant used Cursed Roots on cdierkens’s Mega Kangaskhan ex for 30 damage.",
+            "templateKey": "blog_loc_applied_damage"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "Lucky Helmet"
+            },
+            "raw": "Lucky Helmet was activated.",
+            "templateKey": "blog_loc_card_activated"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "2 cards"
+                },
+                "raw": "cdierkens drew 2 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": "Ciphermaniac's Codebreaking, Ultra Ball"
+            }
+          ]
+        }
+      ],
+      "plainTextPhaseTitle": "TSLAUJ's Turn"
+    },
+    {
+      "battlePhase": "Checkup",
+      "displayTurnNumber": null,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "attackingPokemonCardName": "Froslass",
+              "attackName": "Freezing Shroud"
+            },
+            "raw": "TSLAUJ's Froslass used Freezing Shroud.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "cardName": "TSLAUJ",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Mega Kangaskhan ex"
+                },
+                "raw": "TSLAUJ put a damage counter on TSLAUJ's Mega Kangaskhan ex.",
+                "templateKey": "blog_loc_player_placed_single_dc"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "cardName": "TSLAUJ",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Meowth ex"
+                },
+                "raw": "TSLAUJ put a damage counter on TSLAUJ's Meowth ex.",
+                "templateKey": "blog_loc_player_placed_single_dc"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "cardName": "TSLAUJ",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Latias ex"
+                },
+                "raw": "TSLAUJ put a damage counter on TSLAUJ's Latias ex.",
+                "templateKey": "blog_loc_player_placed_single_dc"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "cardName": "TSLAUJ",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Mega Kangaskhan ex"
+                },
+                "raw": "TSLAUJ put a damage counter on TSLAUJ's Mega Kangaskhan ex.",
+                "templateKey": "blog_loc_player_placed_single_dc"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "cardName": "TSLAUJ",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Meowth ex"
+                },
+                "raw": "TSLAUJ put a damage counter on TSLAUJ's Meowth ex.",
+                "templateKey": "blog_loc_player_placed_single_dc"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "cardName": "TSLAUJ",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Latias ex"
+                },
+                "raw": "TSLAUJ put a damage counter on TSLAUJ's Latias ex.",
+                "templateKey": "blog_loc_player_placed_single_dc"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "cardName": "TSLAUJ",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Mega Kangaskhan ex"
+                },
+                "raw": "TSLAUJ put a damage counter on TSLAUJ's Mega Kangaskhan ex.",
+                "templateKey": "blog_loc_player_placed_single_dc"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "cardName": "TSLAUJ",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Meowth ex"
+                },
+                "raw": "TSLAUJ put a damage counter on TSLAUJ's Meowth ex.",
+                "templateKey": "blog_loc_player_placed_single_dc"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "cardName": "TSLAUJ",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Latias ex"
+                },
+                "raw": "TSLAUJ put a damage counter on TSLAUJ's Latias ex.",
+                "templateKey": "blog_loc_player_placed_single_dc"
+              },
+              "subString": null
+            }
+          ]
+        }
+      ],
+      "plainTextPhaseTitle": "Pokémon Checkup"
+    },
+    {
+      "battlePhase": "Player",
+      "displayTurnNumber": 5,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Academy at Night"
+            },
+            "raw": "cdierkens drew Academy at Night.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Academy at Night"
+            },
+            "raw": "cdierkens played Academy at Night to the Stadium spot.",
+            "templateKey": "blog_loc_played_to_stadium"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "Risky Ruins"
+                },
+                "raw": "cdierkens discarded Risky Ruins.",
+                "templateKey": "blog_loc_discarded_from_board"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "attackingPokemonCardName": "Mega Kangaskhan ex",
+              "attackName": "Run Errand"
+            },
+            "raw": "cdierkens's Mega Kangaskhan ex used Run Errand.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "2 cards"
+                },
+                "raw": "cdierkens drew 2 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": "Night Stretcher, Fezandipiti ex"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Mega Kangaskhan ex"
+            },
+            "raw": "cdierkens retreated Mega Kangaskhan ex to the Bench.",
+            "templateKey": "blog_loc_retreated"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Slowking"
+            },
+            "raw": "cdierkens's Slowking is now in the Active Spot.",
+            "templateKey": "blog_loc_promote_to_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Academy at Night"
+            },
+            "raw": "cdierkens played Academy at Night.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "Kyurem"
+                },
+                "raw": "cdierkens put Kyurem on top of their deck.",
+                "templateKey": "blog_loc_move_on_top_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "attackingPlayerName": "cdierkens",
+              "attackingPokemonCardName": "Slowking",
+              "attackName": "Seek Inspiration",
+              "defendingPlayerName": "TSLAUJ",
+              "targetPokemonCardName": "Trevenant",
+              "numDamage": "110"
+            },
+            "raw": "cdierkens's Slowking used Seek Inspiration on TSLAUJ’s Trevenant for 110 damage.",
+            "templateKey": "blog_loc_applied_damage"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "Kyurem"
+                },
+                "raw": "cdierkens discarded Kyurem.",
+                "templateKey": "blog_loc_discarded_from_board"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "selectedOption": "Trifrost"
+                },
+                "raw": "cdierkens chose Trifrost",
+                "templateKey": "blog_loc_selected_option"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "numCards": "2",
+                  "playerName": "cdierkens",
+                  "pokemonCardName": "Slowking"
+                },
+                "raw": "2 cards were discarded from cdierkens's Slowking.",
+                "templateKey": "blog_loc_discarded_attachment_multi"
+              },
+              "subString": "Basic Psychic Energy, Basic Psychic Energy"
+            },
+            {
+              "event": {
+                "groups": {
+                  "defendingPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Froslass",
+                  "numDamage": "110"
+                },
+                "raw": "TSLAUJ's Froslass took 110 damage.",
+                "templateKey": "blog_loc_secondary_damage"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "defendingPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Froslass",
+                  "numDamage": "110"
+                },
+                "raw": "TSLAUJ's Froslass took 110 damage.",
+                "templateKey": "blog_loc_secondary_damage"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "Slowking",
+              "playerName": "cdierkens"
+            },
+            "raw": "Slowking was added to cdierkens's hand.",
+            "templateKey": "blog_loc_added_prize"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "Lillie's Clefairy ex",
+              "playerName": "cdierkens"
+            },
+            "raw": "Lillie's Clefairy ex was added to cdierkens's hand.",
+            "templateKey": "blog_loc_added_prize"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "numCards": "3"
+            },
+            "raw": "cdierkens took 3 Prize cards.",
+            "templateKey": "blog_loc_took_prize_cards"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "Snorunt",
+              "playerName": "TSLAUJ",
+              "pokemonCardName": "Froslass"
+            },
+            "raw": "Snorunt was discarded from TSLAUJ's Froslass.",
+            "templateKey": "blog_loc_discarded_attachment"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "Froslass"
+            },
+            "raw": "TSLAUJ's Froslass was Knocked Out!",
+            "templateKey": "blog_loc_knockout"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "Snorunt",
+              "playerName": "TSLAUJ",
+              "pokemonCardName": "Froslass"
+            },
+            "raw": "Snorunt was discarded from TSLAUJ's Froslass.",
+            "templateKey": "blog_loc_discarded_attachment"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "Wondrous Patch",
+              "playerName": "cdierkens"
+            },
+            "raw": "Wondrous Patch was added to cdierkens's hand.",
+            "templateKey": "blog_loc_added_prize"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "Froslass"
+            },
+            "raw": "TSLAUJ's Froslass was Knocked Out!",
+            "templateKey": "blog_loc_knockout"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "Trevenant"
+            },
+            "raw": "TSLAUJ's Trevenant was Knocked Out!",
+            "templateKey": "blog_loc_knockout"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "numCards": "2",
+                  "playerName": "TSLAUJ",
+                  "pokemonCardName": "Trevenant"
+                },
+                "raw": "2 cards were discarded from TSLAUJ's Trevenant.",
+                "templateKey": "blog_loc_discarded_attachment_multi"
+              },
+              "subString": "Basic Psychic Energy, Phantump"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "Uxie"
+            },
+            "raw": "TSLAUJ's Uxie is now in the Active Spot.",
+            "templateKey": "blog_loc_promote_to_active"
+          },
+          "subEntries": []
+        }
+      ],
+      "plainTextPhaseTitle": "cdierkens's Turn"
+    },
+    {
+      "battlePhase": "Checkup",
+      "displayTurnNumber": null,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "attackingPokemonCardName": "Froslass",
+              "attackName": "Freezing Shroud"
+            },
+            "raw": "TSLAUJ's Froslass used Freezing Shroud.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "cardName": "cdierkens",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Meowth ex"
+                },
+                "raw": "cdierkens put a damage counter on TSLAUJ's Meowth ex.",
+                "templateKey": "blog_loc_player_placed_single_dc"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "cardName": "cdierkens",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Latias ex"
+                },
+                "raw": "cdierkens put a damage counter on TSLAUJ's Latias ex.",
+                "templateKey": "blog_loc_player_placed_single_dc"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "cardName": "cdierkens",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Mega Kangaskhan ex"
+                },
+                "raw": "cdierkens put a damage counter on TSLAUJ's Mega Kangaskhan ex.",
+                "templateKey": "blog_loc_player_placed_single_dc"
+              },
+              "subString": null
+            }
+          ]
+        }
+      ],
+      "plainTextPhaseTitle": "Pokémon Checkup"
+    },
+    {
+      "battlePhase": "Opponent",
+      "displayTurnNumber": 6,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "a card"
+            },
+            "raw": "TSLAUJ drew a card.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "Phantump"
+            },
+            "raw": "TSLAUJ played Phantump to the Bench.",
+            "templateKey": "blog_loc_play_to_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "Wondrous Patch"
+            },
+            "raw": "TSLAUJ played Wondrous Patch.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "TSLAUJ",
+                  "sourceCardName": "Basic Psychic Energy",
+                  "targetCardName": "Phantump"
+                },
+                "raw": "TSLAUJ attached Basic Psychic Energy to Phantump on the Bench.",
+                "templateKey": "blog_loc_attach_card_bench"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "Pokégear 3.0"
+            },
+            "raw": "TSLAUJ played Pokégear 3.0.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "TSLAUJ",
+                  "cardName": "Iris's Fighting Spirit"
+                },
+                "raw": "TSLAUJ drew Iris's Fighting Spirit.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "TSLAUJ"
+                },
+                "raw": "TSLAUJ shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "Munkidori"
+            },
+            "raw": "TSLAUJ played Munkidori to the Bench.",
+            "templateKey": "blog_loc_play_to_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "sourceCardName": "Basic Darkness Energy",
+              "targetCardName": "Munkidori"
+            },
+            "raw": "TSLAUJ attached Basic Darkness Energy to Munkidori on the Bench.",
+            "templateKey": "blog_loc_attach_card_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "Iris's Fighting Spirit"
+            },
+            "raw": "TSLAUJ played Iris's Fighting Spirit.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "TSLAUJ",
+                  "cardName": "Iris's Fighting Spirit"
+                },
+                "raw": "TSLAUJ discarded Iris's Fighting Spirit.",
+                "templateKey": "blog_loc_discarded_from_board"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "TSLAUJ",
+                  "cardName": "6 cards"
+                },
+                "raw": "TSLAUJ drew 6 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "Poké Pad"
+            },
+            "raw": "TSLAUJ played Poké Pad.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "TSLAUJ",
+                  "cardName": "Trevenant"
+                },
+                "raw": "TSLAUJ drew Trevenant.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "TSLAUJ"
+                },
+                "raw": "TSLAUJ shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "attackingPokemonCardName": "Phantump",
+              "attackName": "Spiteful Evolution"
+            },
+            "raw": "TSLAUJ's Phantump used Spiteful Evolution.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "TSLAUJ",
+                  "sourcePokemonCardName": "Phantump",
+                  "targetPokemonCardName": "Trevenant"
+                },
+                "raw": "TSLAUJ evolved Phantump to Trevenant on the Bench.",
+                "templateKey": "blog_loc_evolved_bench"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "cardName": "TSLAUJ",
+                  "numDamageCounters": "2",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Trevenant"
+                },
+                "raw": "TSLAUJ put 2 damage counters on TSLAUJ's Trevenant.",
+                "templateKey": "blog_loc_player_placed_dc"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "attackingPokemonCardName": "Munkidori",
+              "attackName": "Adrena-Brain"
+            },
+            "raw": "TSLAUJ's Munkidori used Adrena-Brain.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "cardName": "TSLAUJ",
+                  "numDamageCounters": "2",
+                  "sourcePlayerName": "TSLAUJ",
+                  "sourcePokemonCardName": "Trevenant",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Latias ex"
+                },
+                "raw": "TSLAUJ moved 2 damage counters from TSLAUJ's Trevenant to TSLAUJ's Latias ex.",
+                "templateKey": "blog_loc_player_moved_dc"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "Pokégear 3.0"
+            },
+            "raw": "TSLAUJ played Pokégear 3.0.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "TSLAUJ",
+                  "cardName": "Crispin"
+                },
+                "raw": "TSLAUJ drew Crispin.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "TSLAUJ"
+                },
+                "raw": "TSLAUJ shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "Uxie"
+            },
+            "raw": "TSLAUJ retreated Uxie to the Bench.",
+            "templateKey": "blog_loc_retreated"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "cardName": "Basic Psychic Energy",
+                  "playerName": "TSLAUJ",
+                  "pokemonCardName": "Uxie"
+                },
+                "raw": "Basic Psychic Energy was discarded from TSLAUJ's Uxie.",
+                "templateKey": "blog_loc_discarded_attachment"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "Trevenant"
+            },
+            "raw": "TSLAUJ's Trevenant is now in the Active Spot.",
+            "templateKey": "blog_loc_promote_to_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "attackingPlayerName": "TSLAUJ",
+              "attackingPokemonCardName": "Trevenant",
+              "attackName": "Cursed Roots",
+              "defendingPlayerName": "cdierkens",
+              "targetPokemonCardName": "Slowking",
+              "numDamage": "30"
+            },
+            "raw": "TSLAUJ's Trevenant used Cursed Roots on cdierkens’s Slowking for 30 damage.",
+            "templateKey": "blog_loc_applied_damage"
+          },
+          "subEntries": []
+        }
+      ],
+      "plainTextPhaseTitle": "TSLAUJ's Turn"
+    },
+    {
+      "battlePhase": "Checkup",
+      "displayTurnNumber": null,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "attackingPokemonCardName": "Froslass",
+              "attackName": "Freezing Shroud"
+            },
+            "raw": "TSLAUJ's Froslass used Freezing Shroud.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "cardName": "TSLAUJ",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Munkidori"
+                },
+                "raw": "TSLAUJ put a damage counter on TSLAUJ's Munkidori.",
+                "templateKey": "blog_loc_player_placed_single_dc"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "cardName": "TSLAUJ",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Meowth ex"
+                },
+                "raw": "TSLAUJ put a damage counter on TSLAUJ's Meowth ex.",
+                "templateKey": "blog_loc_player_placed_single_dc"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "cardName": "TSLAUJ",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Latias ex"
+                },
+                "raw": "TSLAUJ put a damage counter on TSLAUJ's Latias ex.",
+                "templateKey": "blog_loc_player_placed_single_dc"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "cardName": "TSLAUJ",
+                  "targetPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Mega Kangaskhan ex"
+                },
+                "raw": "TSLAUJ put a damage counter on TSLAUJ's Mega Kangaskhan ex.",
+                "templateKey": "blog_loc_player_placed_single_dc"
+              },
+              "subString": null
+            }
+          ]
+        }
+      ],
+      "plainTextPhaseTitle": "Pokémon Checkup"
+    },
+    {
+      "battlePhase": "Player",
+      "displayTurnNumber": 6,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Lillie's Determination"
+            },
+            "raw": "cdierkens drew Lillie's Determination.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Lillie's Determination"
+            },
+            "raw": "cdierkens played Lillie's Determination.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "11 cards"
+                },
+                "raw": "cdierkens shuffled 11 cards into their deck.",
+                "templateKey": "blog_loc_shuffled_card_into_deck"
+              },
+              "subString": "Mega Kangaskhan ex, Night Stretcher, Lana's Aid, Wondrous Patch, Ciphermaniac's Codebreaking, Ultra Ball, Night Stretcher, Fezandipiti ex, Lillie's Clefairy ex, Slowking, Wondrous Patch"
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "6 cards"
+                },
+                "raw": "cdierkens drew 6 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": "Dawn, Switch, Lillie's Determination, Ultra Ball, Slowking, Ciphermaniac's Codebreaking"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "sourcePokemonCardName": "Slowpoke",
+              "targetPokemonCardName": "Slowking"
+            },
+            "raw": "cdierkens evolved Slowpoke to Slowking on the Bench.",
+            "templateKey": "blog_loc_evolved_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Switch"
+            },
+            "raw": "cdierkens played Switch.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "targetPlayerName": "cdierkens",
+                  "targetCardName": "Slowking",
+                  "sourcePlayerName": "cdierkens",
+                  "sourceCardName": "Slowking"
+                },
+                "raw": "cdierkens's Slowking was switched with cdierkens's Slowking to become the Active Pokémon.",
+                "templateKey": "blog_loc_switched_active"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Slowking"
+            },
+            "raw": "cdierkens's Slowking is now in the Active Spot.",
+            "templateKey": "blog_loc_promote_to_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Ultra Ball"
+            },
+            "raw": "cdierkens played Ultra Ball.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "2 cards"
+                },
+                "raw": "cdierkens discarded 2 cards.",
+                "templateKey": "blog_loc_discarded_from_board"
+              },
+              "subString": "Dawn, Ciphermaniac's Codebreaking"
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "Kyurem"
+                },
+                "raw": "cdierkens drew Kyurem.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Academy at Night"
+            },
+            "raw": "cdierkens played Academy at Night.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "Kyurem"
+                },
+                "raw": "cdierkens put Kyurem on top of their deck.",
+                "templateKey": "blog_loc_move_on_top_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "attackingPokemonCardName": "Slowking",
+              "attackName": "Seek Inspiration"
+            },
+            "raw": "cdierkens's Slowking used Seek Inspiration.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "Kyurem"
+                },
+                "raw": "cdierkens discarded Kyurem.",
+                "templateKey": "blog_loc_discarded_from_board"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "selectedOption": "Trifrost"
+                },
+                "raw": "cdierkens chose Trifrost",
+                "templateKey": "blog_loc_selected_option"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "numCards": "2",
+                  "playerName": "cdierkens",
+                  "pokemonCardName": "Slowking"
+                },
+                "raw": "2 cards were discarded from cdierkens's Slowking.",
+                "templateKey": "blog_loc_discarded_attachment_multi"
+              },
+              "subString": "Telepathic Psychic Energy, Basic Psychic Energy"
+            },
+            {
+              "event": {
+                "groups": {
+                  "defendingPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Munkidori",
+                  "numDamage": "110"
+                },
+                "raw": "TSLAUJ's Munkidori took 110 damage.",
+                "templateKey": "blog_loc_secondary_damage"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "defendingPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Froslass",
+                  "numDamage": "110"
+                },
+                "raw": "TSLAUJ's Froslass took 110 damage.",
+                "templateKey": "blog_loc_secondary_damage"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "defendingPlayerName": "TSLAUJ",
+                  "targetPokemonCardName": "Uxie",
+                  "numDamage": "110"
+                },
+                "raw": "TSLAUJ's Uxie took 110 damage.",
+                "templateKey": "blog_loc_secondary_damage"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "Latias ex",
+              "playerName": "cdierkens"
+            },
+            "raw": "Latias ex was added to cdierkens's hand.",
+            "templateKey": "blog_loc_added_prize"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "Slowpoke",
+              "playerName": "cdierkens"
+            },
+            "raw": "Slowpoke was added to cdierkens's hand.",
+            "templateKey": "blog_loc_added_prize"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "numCards": "3"
+            },
+            "raw": "cdierkens took 3 Prize cards.",
+            "templateKey": "blog_loc_took_prize_cards"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "Basic Darkness Energy",
+              "playerName": "TSLAUJ",
+              "pokemonCardName": "Munkidori"
+            },
+            "raw": "Basic Darkness Energy was discarded from TSLAUJ's Munkidori.",
+            "templateKey": "blog_loc_discarded_attachment"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "Munkidori"
+            },
+            "raw": "TSLAUJ's Munkidori was Knocked Out!",
+            "templateKey": "blog_loc_knockout"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "Snorunt",
+              "playerName": "TSLAUJ",
+              "pokemonCardName": "Froslass"
+            },
+            "raw": "Snorunt was discarded from TSLAUJ's Froslass.",
+            "templateKey": "blog_loc_discarded_attachment"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "Froslass"
+            },
+            "raw": "TSLAUJ's Froslass was Knocked Out!",
+            "templateKey": "blog_loc_knockout"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "Basic Psychic Energy",
+              "playerName": "TSLAUJ",
+              "pokemonCardName": "Uxie"
+            },
+            "raw": "Basic Psychic Energy was discarded from TSLAUJ's Uxie.",
+            "templateKey": "blog_loc_discarded_attachment"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "TSLAUJ",
+              "cardName": "Uxie"
+            },
+            "raw": "TSLAUJ's Uxie was Knocked Out!",
+            "templateKey": "blog_loc_knockout"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "Telepathic Psychic Energy",
+              "playerName": "cdierkens"
+            },
+            "raw": "Telepathic Psychic Energy was added to cdierkens's hand.",
+            "templateKey": "blog_loc_added_prize"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "gameEndReason": "All Prize cards taken",
+              "playerName": "cdierkens"
+            },
+            "raw": "All Prize cards taken. cdierkens wins.",
+            "templateKey": "blog_loc_end_game"
+          },
+          "subEntries": []
+        }
+      ],
+      "plainTextPhaseTitle": "cdierkens's Turn"
+    }
+  ]
+}

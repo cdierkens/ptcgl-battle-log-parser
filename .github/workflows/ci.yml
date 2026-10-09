@@ -1,0 +1,86 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      # templates:check re-derives all seven locale bundles from a Pokémon TCG
+      # Live install and diffs them against what is committed. It cannot run
+      # on a CI runner with no game install, so instead assert the invariant it
+      # protects: every bundle has the same 228 keys and no duplicate
+      # placeholders. The full extraction check runs locally via
+      # `pnpm run templates:check`.
+      - name: Assert locale bundle invariants
+        run: pnpm exec vitest run src/__tests__/locale.test.ts
+
+      - run: pnpm run typecheck
+
+      - run: pnpm run test:unit
+
+      - run: pnpm run build
+
+  # Proves the published artefact actually loads in a plain Node process —
+  # the JSON import attributes are the part a bundler-based test run can mask.
+  smoke:
+    runs-on: ubuntu-latest
+    needs: verify
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run build
+      - run: pnpm pack --pack-destination .
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install the packed tarball and exercise it
+        run: |
+          mkdir -p /tmp/smoke && cd /tmp/smoke
+          npm init -y > /dev/null
+          npm pkg set type=module > /dev/null
+          npm install "$GITHUB_WORKSPACE"/*.tgz
+          node --input-type=module -e "
+            import { analyzeBattleLog, ALL_BLOG_LOCALES, blogTemplateBundles } from '@pokedojo/battle-log';
+            const log = "Setup\nAlice drew 7 cards for the opening hand.\n\nAlice's Turn\nAlice ended their turn.\n";
+            const r = analyzeBattleLog(log, { playerName: 'Alice' });
+            if (!r.ok) throw r.error;
+            console.log('locale:', r.value.locale, '| turns:', r.value.summary.turnCount);
+            for (const l of ALL_BLOG_LOCALES) {
+              const n = Object.keys(blogTemplateBundles[l]).length;
+              if (n !== 228) throw new Error(l + ' has ' + n + ' templates');
+            }
+            console.log('all locales:', ALL_BLOG_LOCALES.length, 'x 228 templates');
+          "

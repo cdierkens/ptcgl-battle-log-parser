@@ -1,0 +1,2802 @@
+{
+  "phases": [
+    {
+      "battlePhase": "Setup",
+      "displayTurnNumber": null,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "coinFace": "tails"
+            },
+            "raw": "Wonder_Squid chose tails for the opening coin flip.",
+            "templateKey": "blog_loc_selected_coinface"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens"
+            },
+            "raw": "cdierkens won the coin toss.",
+            "templateKey": "blog_loc_won_coin_toss"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens"
+            },
+            "raw": "cdierkens decided to go first.",
+            "templateKey": "blog_loc_going_first"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "numCards": "7"
+            },
+            "raw": "Wonder_Squid drew 7 cards for the opening hand.",
+            "templateKey": "blog_loc_draw_opening_hand"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "numCards": "7"
+                },
+                "raw": "7 drawn cards.",
+                "templateKey": "blog_loc_drawn_cards_grid_header"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "numCards": "7"
+            },
+            "raw": "cdierkens drew 7 cards for the opening hand.",
+            "templateKey": "blog_loc_draw_opening_hand"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "numCards": "7"
+                },
+                "raw": "7 drawn cards.",
+                "templateKey": "blog_loc_drawn_cards_grid_header"
+              },
+              "subString": "Ultra Ball, Slowpoke, Lillie's Clefairy ex, Ciphermaniac's Codebreaking, Mega Kangaskhan ex, Telepathic Psychic Energy, Kyurem"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "Celebi"
+            },
+            "raw": "Wonder_Squid played Celebi to the Active Spot.",
+            "templateKey": "blog_loc_play_to_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "Weedle"
+            },
+            "raw": "Wonder_Squid played Weedle to the Bench.",
+            "templateKey": "blog_loc_play_to_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "Fezandipiti ex"
+            },
+            "raw": "Wonder_Squid played Fezandipiti ex to the Bench.",
+            "templateKey": "blog_loc_play_to_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Mega Kangaskhan ex"
+            },
+            "raw": "cdierkens played Mega Kangaskhan ex to the Active Spot.",
+            "templateKey": "blog_loc_play_to_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Slowpoke"
+            },
+            "raw": "cdierkens played Slowpoke to the Bench.",
+            "templateKey": "blog_loc_play_to_bench"
+          },
+          "subEntries": []
+        }
+      ],
+      "plainTextPhaseTitle": "Setup"
+    },
+    {
+      "battlePhase": "Player",
+      "displayTurnNumber": 1,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Basic Psychic Energy"
+            },
+            "raw": "cdierkens drew Basic Psychic Energy.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "sourceCardName": "Telepathic Psychic Energy",
+              "targetCardName": "Slowpoke"
+            },
+            "raw": "cdierkens attached Telepathic Psychic Energy to Slowpoke on the Bench.",
+            "templateKey": "blog_loc_attach_card_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "Telepathic Psychic Energy"
+            },
+            "raw": "Telepathic Psychic Energy was activated.",
+            "templateKey": "blog_loc_card_activated"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "numCards": "2"
+                },
+                "raw": "cdierkens drew 2 cards and played them to the Bench.",
+                "templateKey": "blog_loc_drew_then_play_bench_multi"
+              },
+              "subString": "Latias ex, Smoochum"
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "attackingPokemonCardName": "Mega Kangaskhan ex",
+              "attackName": "Run Errand"
+            },
+            "raw": "cdierkens's Mega Kangaskhan ex used Run Errand.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "2 cards"
+                },
+                "raw": "cdierkens drew 2 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": "Fezandipiti ex, Poké Pad"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Mega Kangaskhan ex"
+            },
+            "raw": "cdierkens retreated Mega Kangaskhan ex to the Bench.",
+            "templateKey": "blog_loc_retreated"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Smoochum"
+            },
+            "raw": "cdierkens's Smoochum is now in the Active Spot.",
+            "templateKey": "blog_loc_promote_to_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens"
+            },
+            "raw": "cdierkens ended their turn.",
+            "templateKey": "blog_loc_manual_end"
+          },
+          "subEntries": []
+        }
+      ],
+      "plainTextPhaseTitle": "cdierkens's Turn"
+    },
+    {
+      "battlePhase": "Opponent",
+      "displayTurnNumber": 1,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "a card"
+            },
+            "raw": "Wonder_Squid drew a card.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "Bug Catching Set"
+            },
+            "raw": "Wonder_Squid played Bug Catching Set.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid",
+                  "cardName": "Weedle"
+                },
+                "raw": "Wonder_Squid drew Weedle.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid"
+                },
+                "raw": "Wonder_Squid shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "Weedle"
+            },
+            "raw": "Wonder_Squid played Weedle to the Bench.",
+            "templateKey": "blog_loc_play_to_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "Poké Pad"
+            },
+            "raw": "Wonder_Squid played Poké Pad.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid",
+                  "cardName": "Dunsparce"
+                },
+                "raw": "Wonder_Squid drew Dunsparce.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid"
+                },
+                "raw": "Wonder_Squid shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "Dunsparce"
+            },
+            "raw": "Wonder_Squid played Dunsparce to the Bench.",
+            "templateKey": "blog_loc_play_to_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "Poké Pad"
+            },
+            "raw": "Wonder_Squid played Poké Pad.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid",
+                  "cardName": "Kakuna"
+                },
+                "raw": "Wonder_Squid drew Kakuna.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid"
+                },
+                "raw": "Wonder_Squid shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "Bug Catching Set"
+            },
+            "raw": "Wonder_Squid played Bug Catching Set.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid"
+                },
+                "raw": "Wonder_Squid shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "Lillie's Determination"
+            },
+            "raw": "Wonder_Squid played Lillie's Determination.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid",
+                  "cardName": "a card"
+                },
+                "raw": "Wonder_Squid shuffled a card into their deck.",
+                "templateKey": "blog_loc_shuffled_card_into_deck"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid",
+                  "cardName": "8 cards"
+                },
+                "raw": "Wonder_Squid drew 8 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "Bug Catching Set"
+            },
+            "raw": "Wonder_Squid played Bug Catching Set.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid",
+                  "cardName": "2 cards"
+                },
+                "raw": "Wonder_Squid drew 2 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": "Kakuna, Beedrill ex"
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid"
+                },
+                "raw": "Wonder_Squid shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "Buddy-Buddy Poffin"
+            },
+            "raw": "Wonder_Squid played Buddy-Buddy Poffin.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid",
+                  "cardName": "Dunsparce"
+                },
+                "raw": "Wonder_Squid drew Dunsparce and played it to the Bench.",
+                "templateKey": "blog_loc_drew_then_play_bench"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid"
+                },
+                "raw": "Wonder_Squid shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid"
+            },
+            "raw": "Wonder_Squid ended their turn.",
+            "templateKey": "blog_loc_manual_end"
+          },
+          "subEntries": []
+        }
+      ],
+      "plainTextPhaseTitle": "Wonder_Squid's Turn"
+    },
+    {
+      "battlePhase": "Player",
+      "displayTurnNumber": 2,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Ultra Ball"
+            },
+            "raw": "cdierkens drew Ultra Ball.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "sourceCardName": "Basic Psychic Energy",
+              "targetCardName": "Slowpoke"
+            },
+            "raw": "cdierkens attached Basic Psychic Energy to Slowpoke on the Bench.",
+            "templateKey": "blog_loc_attach_card_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Poké Pad"
+            },
+            "raw": "cdierkens played Poké Pad.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "Slowking"
+                },
+                "raw": "cdierkens drew Slowking.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "sourcePokemonCardName": "Slowpoke",
+              "targetPokemonCardName": "Slowking"
+            },
+            "raw": "cdierkens evolved Slowpoke to Slowking on the Bench.",
+            "templateKey": "blog_loc_evolved_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Ciphermaniac's Codebreaking"
+            },
+            "raw": "cdierkens played Ciphermaniac's Codebreaking.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Smoochum"
+            },
+            "raw": "cdierkens retreated Smoochum to the Bench.",
+            "templateKey": "blog_loc_retreated"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Slowking"
+            },
+            "raw": "cdierkens's Slowking is now in the Active Spot.",
+            "templateKey": "blog_loc_promote_to_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "attackingPokemonCardName": "Slowking",
+              "attackName": "Seek Inspiration on Wonder_Squid's Celebi for 110 damage"
+            },
+            "raw": "cdierkens's Slowking used Seek Inspiration on Wonder_Squid's Celebi for 110 damage.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "Kyurem"
+                },
+                "raw": "cdierkens discarded Kyurem.",
+                "templateKey": "blog_loc_discarded_from_board"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "selectedOption": "Trifrost"
+                },
+                "raw": "cdierkens chose Trifrost",
+                "templateKey": "blog_loc_selected_option"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "numCards": "2",
+                  "playerName": "cdierkens",
+                  "pokemonCardName": "Slowking"
+                },
+                "raw": "2 cards were discarded from cdierkens's Slowking.",
+                "templateKey": "blog_loc_discarded_attachment_multi"
+              },
+              "subString": "Telepathic Psychic Energy, Basic Psychic Energy"
+            },
+            {
+              "event": {
+                "groups": {
+                  "defendingPlayerName": "Wonder_Squid",
+                  "targetPokemonCardName": "Weedle",
+                  "numDamage": "110"
+                },
+                "raw": "Wonder_Squid's Weedle took 110 damage.",
+                "templateKey": "blog_loc_secondary_damage"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "defendingPlayerName": "Wonder_Squid",
+                  "targetPokemonCardName": "Weedle",
+                  "numDamage": "110"
+                },
+                "raw": "Wonder_Squid's Weedle took 110 damage.",
+                "templateKey": "blog_loc_secondary_damage"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "Celebi"
+            },
+            "raw": "Wonder_Squid's Celebi was Knocked Out!",
+            "templateKey": "blog_loc_knockout"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "Weedle"
+            },
+            "raw": "Wonder_Squid's Weedle was Knocked Out!",
+            "templateKey": "blog_loc_knockout"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "Weedle"
+            },
+            "raw": "Wonder_Squid's Weedle was Knocked Out!",
+            "templateKey": "blog_loc_knockout"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "numCards": "3"
+            },
+            "raw": "cdierkens took 3 Prize cards.",
+            "templateKey": "blog_loc_took_prize_cards"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "Academy at Night",
+              "playerName": "cdierkens"
+            },
+            "raw": "Academy at Night was added to cdierkens's hand.",
+            "templateKey": "blog_loc_added_prize"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "Wondrous Patch",
+              "playerName": "cdierkens"
+            },
+            "raw": "Wondrous Patch was added to cdierkens's hand.",
+            "templateKey": "blog_loc_added_prize"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "Night Stretcher",
+              "playerName": "cdierkens"
+            },
+            "raw": "Night Stretcher was added to cdierkens's hand.",
+            "templateKey": "blog_loc_added_prize"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "Dunsparce"
+            },
+            "raw": "Wonder_Squid's Dunsparce is now in the Active Spot.",
+            "templateKey": "blog_loc_promote_to_active"
+          },
+          "subEntries": []
+        }
+      ],
+      "plainTextPhaseTitle": "cdierkens's Turn"
+    },
+    {
+      "battlePhase": "Opponent",
+      "displayTurnNumber": 2,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "a card"
+            },
+            "raw": "Wonder_Squid drew a card.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "Sacred Ash"
+            },
+            "raw": "Wonder_Squid played Sacred Ash.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid",
+                  "cardName": "2 cards"
+                },
+                "raw": "Wonder_Squid shuffled 2 cards into their deck.",
+                "templateKey": "blog_loc_shuffled_card_into_deck"
+              },
+              "subString": "Weedle, Weedle"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "attackingPokemonCardName": "Fezandipiti ex",
+              "attackName": "Flip the Script"
+            },
+            "raw": "Wonder_Squid's Fezandipiti ex used Flip the Script.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid",
+                  "cardName": "3 cards"
+                },
+                "raw": "Wonder_Squid drew 3 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "Buddy-Buddy Poffin"
+            },
+            "raw": "Wonder_Squid played Buddy-Buddy Poffin.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid",
+                  "numCards": "2"
+                },
+                "raw": "Wonder_Squid drew 2 cards and played them to the Bench.",
+                "templateKey": "blog_loc_drew_then_play_bench_multi"
+              },
+              "subString": "Weedle, Weedle"
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid"
+                },
+                "raw": "Wonder_Squid shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "Special Red Card"
+            },
+            "raw": "Wonder_Squid played Special Red Card.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their hand.",
+                "templateKey": "blog_loc_shuffled_hand"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid",
+                  "cardName": "8 cards"
+                },
+                "raw": "Wonder_Squid put 8 cards on the bottom of their deck.",
+                "templateKey": "blog_loc_move_to_bottom_deck"
+              },
+              "subString": "Lillie's Clefairy ex, Kyurem, Ultra Ball, Fezandipiti ex, Academy at Night, Night Stretcher, Wondrous Patch, Ultra Ball"
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid",
+                  "cardName": "3 cards"
+                },
+                "raw": "Wonder_Squid drew 3 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": "Secret Box, Brave Bangle, Metagross"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "Ultra Ball"
+            },
+            "raw": "Wonder_Squid played Ultra Ball.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid",
+                  "cardName": "2 cards"
+                },
+                "raw": "Wonder_Squid discarded 2 cards.",
+                "templateKey": "blog_loc_discarded_from_board"
+              },
+              "subString": "Celebi, Celebi"
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid",
+                  "cardName": "Meowth ex"
+                },
+                "raw": "Wonder_Squid drew Meowth ex.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid"
+                },
+                "raw": "Wonder_Squid shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "Meowth ex"
+            },
+            "raw": "Wonder_Squid played Meowth ex to the Bench.",
+            "templateKey": "blog_loc_play_to_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "attackingPokemonCardName": "Meowth ex",
+              "attackName": "Last-Ditch Catch"
+            },
+            "raw": "Wonder_Squid's Meowth ex used Last-Ditch Catch.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid",
+                  "cardName": "Team Rocket's Petrel"
+                },
+                "raw": "Wonder_Squid drew Team Rocket's Petrel.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid"
+                },
+                "raw": "Wonder_Squid shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "Team Rocket's Petrel"
+            },
+            "raw": "Wonder_Squid played Team Rocket's Petrel.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid",
+                  "cardName": "Forest of Vitality"
+                },
+                "raw": "Wonder_Squid drew Forest of Vitality.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid"
+                },
+                "raw": "Wonder_Squid shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "Forest of Vitality"
+            },
+            "raw": "Wonder_Squid played Forest of Vitality to the Stadium spot.",
+            "templateKey": "blog_loc_played_to_stadium"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "sourcePokemonCardName": "Weedle",
+              "targetPokemonCardName": "Kakuna"
+            },
+            "raw": "Wonder_Squid evolved Weedle to Kakuna on the Bench.",
+            "templateKey": "blog_loc_evolved_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "sourcePokemonCardName": "Weedle",
+              "targetPokemonCardName": "Kakuna"
+            },
+            "raw": "Wonder_Squid evolved Weedle to Kakuna on the Bench.",
+            "templateKey": "blog_loc_evolved_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "sourcePokemonCardName": "Kakuna",
+              "targetPokemonCardName": "Beedrill ex"
+            },
+            "raw": "Wonder_Squid evolved Kakuna to Beedrill ex on the Bench.",
+            "templateKey": "blog_loc_evolved_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "Ultra Ball"
+            },
+            "raw": "Wonder_Squid played Ultra Ball.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid",
+                  "cardName": "2 cards"
+                },
+                "raw": "Wonder_Squid discarded 2 cards.",
+                "templateKey": "blog_loc_discarded_from_board"
+              },
+              "subString": "Sacred Ash, Morty's Conviction"
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid",
+                  "cardName": "Dudunsparce"
+                },
+                "raw": "Wonder_Squid drew Dudunsparce.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid"
+                },
+                "raw": "Wonder_Squid shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "sourcePokemonCardName": "Dunsparce",
+              "targetPokemonCardName": "Dudunsparce"
+            },
+            "raw": "Wonder_Squid evolved Dunsparce to Dudunsparce in the Active Spot.",
+            "templateKey": "blog_loc_evolved_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "Dudunsparce"
+            },
+            "raw": "Wonder_Squid played Dudunsparce.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid",
+                  "cardName": "3 cards"
+                },
+                "raw": "Wonder_Squid drew 3 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid",
+                  "cardName": "2 cards"
+                },
+                "raw": "Wonder_Squid shuffled 2 cards into their deck.",
+                "templateKey": "blog_loc_shuffled_card_into_deck"
+              },
+              "subString": "Dudunsparce, Dunsparce"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "Beedrill ex"
+            },
+            "raw": "Wonder_Squid's Beedrill ex is now in the Active Spot.",
+            "templateKey": "blog_loc_promote_to_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "sourcePokemonCardName": "Kakuna",
+              "targetPokemonCardName": "Beedrill ex"
+            },
+            "raw": "Wonder_Squid evolved Kakuna to Beedrill ex on the Bench.",
+            "templateKey": "blog_loc_evolved_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "sourceCardName": "Basic Grass Energy",
+              "targetCardName": "Beedrill ex"
+            },
+            "raw": "Wonder_Squid attached Basic Grass Energy to Beedrill ex in the Active Spot.",
+            "templateKey": "blog_loc_attach_card_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "attackingPokemonCardName": "Beedrill ex",
+              "attackName": "Rumbling Bees on cdierkens's Slowking for 220 damage"
+            },
+            "raw": "Wonder_Squid's Beedrill ex used Rumbling Bees on cdierkens's Slowking for 220 damage.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {},
+                "raw": "Damage breakdown:",
+                "templateKey": "blog_loc_export_damage_breakdown_label"
+              },
+              "subString": "2 Pokémon: 220 damage"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Slowking"
+            },
+            "raw": "cdierkens's Slowking was Knocked Out!",
+            "templateKey": "blog_loc_knockout"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "Slowpoke",
+              "playerName": "cdierkens",
+              "pokemonCardName": "Slowking"
+            },
+            "raw": "Slowpoke was discarded from cdierkens's Slowking.",
+            "templateKey": "blog_loc_discarded_attachment"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid"
+            },
+            "raw": "Wonder_Squid took a Prize card.",
+            "templateKey": "blog_loc_took_single_prize_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "A card",
+              "playerName": "Wonder_Squid"
+            },
+            "raw": "A card was added to Wonder_Squid's hand.",
+            "templateKey": "blog_loc_added_prize"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Smoochum"
+            },
+            "raw": "cdierkens's Smoochum is now in the Active Spot.",
+            "templateKey": "blog_loc_promote_to_active"
+          },
+          "subEntries": []
+        }
+      ],
+      "plainTextPhaseTitle": "Wonder_Squid's Turn"
+    },
+    {
+      "battlePhase": "Player",
+      "displayTurnNumber": 3,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Telepathic Psychic Energy"
+            },
+            "raw": "cdierkens drew Telepathic Psychic Energy.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "sourceCardName": "Telepathic Psychic Energy",
+              "targetCardName": "Smoochum"
+            },
+            "raw": "cdierkens attached Telepathic Psychic Energy to Smoochum in the Active Spot.",
+            "templateKey": "blog_loc_attach_card_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "Telepathic Psychic Energy"
+            },
+            "raw": "Telepathic Psychic Energy was activated.",
+            "templateKey": "blog_loc_card_activated"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "numCards": "2"
+                },
+                "raw": "cdierkens drew 2 cards and played them to the Bench.",
+                "templateKey": "blog_loc_drew_then_play_bench_multi"
+              },
+              "subString": "Slowpoke, Lillie's Clefairy ex"
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "attackingPokemonCardName": "Smoochum",
+              "attackName": "Delightful Kiss"
+            },
+            "raw": "cdierkens's Smoochum used Delightful Kiss.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "sourceCardName": "Basic Psychic Energy",
+                  "targetCardName": "Slowpoke"
+                },
+                "raw": "cdierkens attached Basic Psychic Energy to Slowpoke on the Bench.",
+                "templateKey": "blog_loc_attach_card_bench"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "sourceCardName": "Basic Psychic Energy",
+                  "targetCardName": "Slowpoke"
+                },
+                "raw": "cdierkens attached Basic Psychic Energy to Slowpoke on the Bench.",
+                "templateKey": "blog_loc_attach_card_bench"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        }
+      ],
+      "plainTextPhaseTitle": "cdierkens's Turn"
+    },
+    {
+      "battlePhase": "Opponent",
+      "displayTurnNumber": 3,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "a card"
+            },
+            "raw": "Wonder_Squid drew a card.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "sourceCardName": "Basic Grass Energy",
+              "targetCardName": "Beedrill ex"
+            },
+            "raw": "Wonder_Squid attached Basic Grass Energy to Beedrill ex on the Bench.",
+            "templateKey": "blog_loc_attach_card_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "Bug Catching Set"
+            },
+            "raw": "Wonder_Squid played Bug Catching Set.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid",
+                  "cardName": "2 cards"
+                },
+                "raw": "Wonder_Squid drew 2 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": "Weedle, Kakuna"
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid"
+                },
+                "raw": "Wonder_Squid shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "Weedle"
+            },
+            "raw": "Wonder_Squid played Weedle to the Bench.",
+            "templateKey": "blog_loc_play_to_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "sourcePokemonCardName": "Weedle",
+              "targetPokemonCardName": "Kakuna"
+            },
+            "raw": "Wonder_Squid evolved Weedle to Kakuna on the Bench.",
+            "templateKey": "blog_loc_evolved_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "Lillie's Determination"
+            },
+            "raw": "Wonder_Squid played Lillie's Determination.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid",
+                  "cardName": "6 cards"
+                },
+                "raw": "Wonder_Squid drew 6 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "sourcePokemonCardName": "Dunsparce",
+              "targetPokemonCardName": "Dudunsparce"
+            },
+            "raw": "Wonder_Squid evolved Dunsparce to Dudunsparce on the Bench.",
+            "templateKey": "blog_loc_evolved_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "Dudunsparce"
+            },
+            "raw": "Wonder_Squid played Dudunsparce.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid",
+                  "cardName": "3 cards"
+                },
+                "raw": "Wonder_Squid drew 3 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid",
+                  "cardName": "2 cards"
+                },
+                "raw": "Wonder_Squid shuffled 2 cards into their deck.",
+                "templateKey": "blog_loc_shuffled_card_into_deck"
+              },
+              "subString": "Dudunsparce, Dunsparce"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "Buddy-Buddy Poffin"
+            },
+            "raw": "Wonder_Squid played Buddy-Buddy Poffin.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid",
+                  "cardName": "Weedle"
+                },
+                "raw": "Wonder_Squid drew Weedle and played it to the Bench.",
+                "templateKey": "blog_loc_drew_then_play_bench"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid"
+                },
+                "raw": "Wonder_Squid shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "Poké Pad"
+            },
+            "raw": "Wonder_Squid played Poké Pad.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid",
+                  "cardName": "Kakuna"
+                },
+                "raw": "Wonder_Squid drew Kakuna.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid"
+                },
+                "raw": "Wonder_Squid shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "sourcePokemonCardName": "Weedle",
+              "targetPokemonCardName": "Kakuna"
+            },
+            "raw": "Wonder_Squid evolved Weedle to Kakuna on the Bench.",
+            "templateKey": "blog_loc_evolved_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "sourcePokemonCardName": "Kakuna",
+              "targetPokemonCardName": "Beedrill ex"
+            },
+            "raw": "Wonder_Squid evolved Kakuna to Beedrill ex on the Bench.",
+            "templateKey": "blog_loc_evolved_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "Ultra Ball"
+            },
+            "raw": "Wonder_Squid played Ultra Ball.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid",
+                  "cardName": "2 cards"
+                },
+                "raw": "Wonder_Squid discarded 2 cards.",
+                "templateKey": "blog_loc_discarded_from_board"
+              },
+              "subString": "Dunsparce, Redeemable Ticket"
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid",
+                  "cardName": "Dudunsparce"
+                },
+                "raw": "Wonder_Squid drew Dudunsparce.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid"
+                },
+                "raw": "Wonder_Squid shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "attackingPokemonCardName": "Beedrill ex",
+              "attackName": "Rumbling Bees on cdierkens's Smoochum for 330 damage"
+            },
+            "raw": "Wonder_Squid's Beedrill ex used Rumbling Bees on cdierkens's Smoochum for 330 damage.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {},
+                "raw": "Damage breakdown:",
+                "templateKey": "blog_loc_export_damage_breakdown_label"
+              },
+              "subString": "3 Pokémon: 330 damage"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Smoochum"
+            },
+            "raw": "cdierkens's Smoochum was Knocked Out!",
+            "templateKey": "blog_loc_knockout"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "Telepathic Psychic Energy",
+              "playerName": "cdierkens",
+              "pokemonCardName": "Smoochum"
+            },
+            "raw": "Telepathic Psychic Energy was discarded from cdierkens's Smoochum.",
+            "templateKey": "blog_loc_discarded_attachment"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid"
+            },
+            "raw": "Wonder_Squid took a Prize card.",
+            "templateKey": "blog_loc_took_single_prize_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "A card",
+              "playerName": "Wonder_Squid"
+            },
+            "raw": "A card was added to Wonder_Squid's hand.",
+            "templateKey": "blog_loc_added_prize"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Mega Kangaskhan ex"
+            },
+            "raw": "cdierkens's Mega Kangaskhan ex is now in the Active Spot.",
+            "templateKey": "blog_loc_promote_to_active"
+          },
+          "subEntries": []
+        }
+      ],
+      "plainTextPhaseTitle": "Wonder_Squid's Turn"
+    },
+    {
+      "battlePhase": "Player",
+      "displayTurnNumber": 4,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Fezandipiti ex"
+            },
+            "raw": "cdierkens drew Fezandipiti ex.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Fezandipiti ex"
+            },
+            "raw": "cdierkens played Fezandipiti ex to the Bench.",
+            "templateKey": "blog_loc_play_to_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "attackingPokemonCardName": "Fezandipiti ex",
+              "attackName": "Flip the Script"
+            },
+            "raw": "cdierkens's Fezandipiti ex used Flip the Script.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "3 cards"
+                },
+                "raw": "cdierkens drew 3 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": "Lucky Helmet, Wondrous Patch, Ciphermaniac's Codebreaking"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "attackingPokemonCardName": "Mega Kangaskhan ex",
+              "attackName": "Run Errand"
+            },
+            "raw": "cdierkens's Mega Kangaskhan ex used Run Errand.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "2 cards"
+                },
+                "raw": "cdierkens drew 2 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": "Slowpoke, Meowth ex"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Slowpoke"
+            },
+            "raw": "cdierkens played Slowpoke to the Bench.",
+            "templateKey": "blog_loc_play_to_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Wondrous Patch"
+            },
+            "raw": "cdierkens played Wondrous Patch.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "sourceCardName": "Basic Psychic Energy",
+                  "targetCardName": "Slowpoke"
+                },
+                "raw": "cdierkens attached Basic Psychic Energy to Slowpoke on the Bench.",
+                "templateKey": "blog_loc_attach_card_bench"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "sourceCardName": "Lucky Helmet",
+              "targetCardName": "Slowpoke"
+            },
+            "raw": "cdierkens attached Lucky Helmet to Slowpoke on the Bench.",
+            "templateKey": "blog_loc_attach_card_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "sourceCardName": "Brave Bangle",
+              "targetCardName": "Slowpoke"
+            },
+            "raw": "cdierkens attached Brave Bangle to Slowpoke on the Bench.",
+            "templateKey": "blog_loc_attach_card_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Secret Box"
+            },
+            "raw": "cdierkens played Secret Box.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "3 cards"
+                },
+                "raw": "cdierkens discarded 3 cards.",
+                "templateKey": "blog_loc_discarded_from_board"
+              },
+              "subString": "Metagross, Ciphermaniac's Codebreaking, Meowth ex"
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "3 cards"
+                },
+                "raw": "cdierkens drew 3 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": "Poké Pad, Ciphermaniac's Codebreaking, Academy at Night"
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Academy at Night"
+            },
+            "raw": "cdierkens played Academy at Night to the Stadium spot.",
+            "templateKey": "blog_loc_played_to_stadium"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "Forest of Vitality"
+                },
+                "raw": "cdierkens discarded Forest of Vitality.",
+                "templateKey": "blog_loc_discarded_from_board"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Poké Pad"
+            },
+            "raw": "cdierkens played Poké Pad.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "Slowking"
+                },
+                "raw": "cdierkens drew Slowking.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "sourcePokemonCardName": "Slowpoke",
+              "targetPokemonCardName": "Slowking"
+            },
+            "raw": "cdierkens evolved Slowpoke to Slowking on the Bench.",
+            "templateKey": "blog_loc_evolved_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Ciphermaniac's Codebreaking"
+            },
+            "raw": "cdierkens played Ciphermaniac's Codebreaking.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens"
+                },
+                "raw": "cdierkens shuffled their deck.",
+                "templateKey": "blog_loc_shuffled_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Mega Kangaskhan ex"
+            },
+            "raw": "cdierkens retreated Mega Kangaskhan ex to the Bench.",
+            "templateKey": "blog_loc_retreated"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Slowking"
+            },
+            "raw": "cdierkens's Slowking is now in the Active Spot.",
+            "templateKey": "blog_loc_promote_to_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "attackingPokemonCardName": "Slowking",
+              "attackName": "Seek Inspiration on Wonder_Squid's Beedrill ex for 300 damage"
+            },
+            "raw": "cdierkens's Slowking used Seek Inspiration on Wonder_Squid's Beedrill ex for 300 damage.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {},
+                "raw": "Damage breakdown:",
+                "templateKey": "blog_loc_export_damage_breakdown_label"
+              },
+              "subString": "Base damage: 150 damage\nTotal damage: 300 damage"
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "selectedOption": "Metallic Hammer"
+                },
+                "raw": "cdierkens chose Metallic Hammer",
+                "templateKey": "blog_loc_selected_option"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "Metagross"
+                },
+                "raw": "cdierkens discarded Metagross.",
+                "templateKey": "blog_loc_discarded_from_board"
+              },
+              "subString": null
+            }
+          ]
+        }
+      ],
+      "plainTextPhaseTitle": "cdierkens's Turn"
+    },
+    {
+      "battlePhase": "Opponent",
+      "displayTurnNumber": 4,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "a card"
+            },
+            "raw": "Wonder_Squid drew a card.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "sourceCardName": "Basic Grass Energy",
+              "targetCardName": "Beedrill ex"
+            },
+            "raw": "Wonder_Squid attached Basic Grass Energy to Beedrill ex on the Bench.",
+            "templateKey": "blog_loc_attach_card_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "Redeemable Ticket"
+            },
+            "raw": "Wonder_Squid played Redeemable Ticket.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid"
+                },
+                "raw": "Wonder_Squid shuffled their Prize cards.",
+                "templateKey": "blog_loc_shuffled_prizes"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid",
+                  "cardName": "4 cards"
+                },
+                "raw": "Wonder_Squid put 4 cards on the bottom of their deck.",
+                "templateKey": "blog_loc_move_to_bottom_deck"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid",
+                  "targetPlayerName": "Wonder_Squid",
+                  "cardName": "4 cards"
+                },
+                "raw": "Wonder_Squid moved Wonder_Squid's 4 cards to the Prize cards.",
+                "templateKey": "blog_loc_move_to_prizes"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "Morty's Conviction"
+            },
+            "raw": "Wonder_Squid played Morty's Conviction.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid",
+                  "cardName": "Dudunsparce"
+                },
+                "raw": "Wonder_Squid discarded Dudunsparce.",
+                "templateKey": "blog_loc_discarded_from_board"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "Wonder_Squid",
+                  "cardName": "5 cards"
+                },
+                "raw": "Wonder_Squid drew 5 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "Beedrill ex"
+            },
+            "raw": "Wonder_Squid retreated Beedrill ex to the Bench.",
+            "templateKey": "blog_loc_retreated"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "cardName": "Basic Grass Energy",
+                  "playerName": "Wonder_Squid",
+                  "pokemonCardName": "Beedrill ex"
+                },
+                "raw": "Basic Grass Energy was discarded from Wonder_Squid's Beedrill ex.",
+                "templateKey": "blog_loc_discarded_attachment"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "Beedrill ex"
+            },
+            "raw": "Wonder_Squid's Beedrill ex is now in the Active Spot.",
+            "templateKey": "blog_loc_promote_to_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "attackingPokemonCardName": "Beedrill ex",
+              "attackName": "Rumbling Bees on cdierkens's Slowking for 330 damage"
+            },
+            "raw": "Wonder_Squid's Beedrill ex used Rumbling Bees on cdierkens's Slowking for 330 damage.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {},
+                "raw": "Damage breakdown:",
+                "templateKey": "blog_loc_export_damage_breakdown_label"
+              },
+              "subString": "3 Pokémon: 330 damage"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Slowking"
+            },
+            "raw": "cdierkens's Slowking was Knocked Out!",
+            "templateKey": "blog_loc_knockout"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "numCards": "4",
+                  "playerName": "cdierkens",
+                  "pokemonCardName": "Slowking"
+                },
+                "raw": "4 cards were discarded from cdierkens's Slowking.",
+                "templateKey": "blog_loc_discarded_attachment_multi"
+              },
+              "subString": "Basic Psychic Energy, Basic Psychic Energy, Slowpoke, Lucky Helmet"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "Lucky Helmet"
+            },
+            "raw": "Lucky Helmet was activated.",
+            "templateKey": "blog_loc_card_activated"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "2 cards"
+                },
+                "raw": "cdierkens drew 2 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": "Lillie's Determination, Academy at Night"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid"
+            },
+            "raw": "Wonder_Squid took a Prize card.",
+            "templateKey": "blog_loc_took_single_prize_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "A card",
+              "playerName": "Wonder_Squid"
+            },
+            "raw": "A card was added to Wonder_Squid's hand.",
+            "templateKey": "blog_loc_added_prize"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Mega Kangaskhan ex"
+            },
+            "raw": "cdierkens's Mega Kangaskhan ex is now in the Active Spot.",
+            "templateKey": "blog_loc_promote_to_active"
+          },
+          "subEntries": []
+        }
+      ],
+      "plainTextPhaseTitle": "Wonder_Squid's Turn"
+    },
+    {
+      "battlePhase": "Player",
+      "displayTurnNumber": 5,
+      "mainEntries": [
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Lana's Aid"
+            },
+            "raw": "cdierkens drew Lana's Aid.",
+            "templateKey": "blog_loc_drew_card"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "attackingPokemonCardName": "Mega Kangaskhan ex",
+              "attackName": "Run Errand"
+            },
+            "raw": "cdierkens's Mega Kangaskhan ex used Run Errand.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "2 cards"
+                },
+                "raw": "cdierkens drew 2 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": "Boomerang Energy, Kyurem"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "sourceCardName": "Boomerang Energy",
+              "targetCardName": "Slowpoke"
+            },
+            "raw": "cdierkens attached Boomerang Energy to Slowpoke on the Bench.",
+            "templateKey": "blog_loc_attach_card_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "attackingPokemonCardName": "Fezandipiti ex",
+              "attackName": "Flip the Script"
+            },
+            "raw": "cdierkens's Fezandipiti ex used Flip the Script.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "3 cards"
+                },
+                "raw": "cdierkens drew 3 cards.",
+                "templateKey": "blog_loc_drew_card"
+              },
+              "subString": "Switch, Wondrous Patch, Night Stretcher"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Lana's Aid"
+            },
+            "raw": "cdierkens played Lana's Aid.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "targetPlayerName": "cdierkens",
+                  "cardName": "3 cards"
+                },
+                "raw": "cdierkens moved cdierkens's 3 cards to their hand.",
+                "templateKey": "blog_loc_move_to_hand"
+              },
+              "subString": "Metagross, Slowpoke, Slowking"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "sourcePokemonCardName": "Slowpoke",
+              "targetPokemonCardName": "Slowking"
+            },
+            "raw": "cdierkens evolved Slowpoke to Slowking on the Bench.",
+            "templateKey": "blog_loc_evolved_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Night Stretcher"
+            },
+            "raw": "cdierkens played Night Stretcher.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "targetPlayerName": "cdierkens",
+                  "cardName": "Slowking"
+                },
+                "raw": "cdierkens moved cdierkens's Slowking to their hand.",
+                "templateKey": "blog_loc_move_to_hand"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Slowpoke"
+            },
+            "raw": "cdierkens played Slowpoke to the Bench.",
+            "templateKey": "blog_loc_play_to_bench"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Wondrous Patch"
+            },
+            "raw": "cdierkens played Wondrous Patch.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "sourceCardName": "Basic Psychic Energy",
+                  "targetCardName": "Slowpoke"
+                },
+                "raw": "cdierkens attached Basic Psychic Energy to Slowpoke on the Bench.",
+                "templateKey": "blog_loc_attach_card_bench"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Mega Kangaskhan ex"
+            },
+            "raw": "cdierkens retreated Mega Kangaskhan ex to the Bench.",
+            "templateKey": "blog_loc_retreated"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Slowking"
+            },
+            "raw": "cdierkens's Slowking is now in the Active Spot.",
+            "templateKey": "blog_loc_promote_to_active"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "cardName": "Academy at Night"
+            },
+            "raw": "cdierkens played Academy at Night.",
+            "templateKey": "blog_loc_played_card"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "Kyurem"
+                },
+                "raw": "cdierkens put Kyurem on top of their deck.",
+                "templateKey": "blog_loc_move_on_top_deck"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "attackingPokemonCardName": "Slowking",
+              "attackName": "Seek Inspiration on Wonder_Squid's Beedrill ex for 140 damage"
+            },
+            "raw": "cdierkens's Slowking used Seek Inspiration on Wonder_Squid's Beedrill ex for 140 damage.",
+            "templateKey": "blog_loc_used_attack"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {},
+                "raw": "Damage breakdown:",
+                "templateKey": "blog_loc_export_damage_breakdown_label"
+              },
+              "subString": "(Pokémon Tool) Brave Bangle: 30 damage"
+            },
+            {
+              "event": {
+                "groups": {},
+                "raw": "Damage breakdown:",
+                "templateKey": "blog_loc_export_damage_breakdown_label"
+              },
+              "subString": "(Ability) Exoskeleton: -20 damage"
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "cardName": "Kyurem"
+                },
+                "raw": "cdierkens discarded Kyurem.",
+                "templateKey": "blog_loc_discarded_from_board"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "selectedOption": "Trifrost"
+                },
+                "raw": "cdierkens chose Trifrost",
+                "templateKey": "blog_loc_selected_option"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "numCards": "2",
+                  "playerName": "cdierkens",
+                  "pokemonCardName": "Slowking"
+                },
+                "raw": "2 cards were discarded from cdierkens's Slowking.",
+                "templateKey": "blog_loc_discarded_attachment_multi"
+              },
+              "subString": "Basic Psychic Energy, Boomerang Energy"
+            },
+            {
+              "event": {
+                "groups": {
+                  "defendingPlayerName": "Wonder_Squid",
+                  "targetPokemonCardName": "Beedrill ex",
+                  "numDamage": "110"
+                },
+                "raw": "Wonder_Squid's Beedrill ex took 110 damage.",
+                "templateKey": "blog_loc_secondary_damage"
+              },
+              "subString": null
+            },
+            {
+              "event": {
+                "groups": {
+                  "defendingPlayerName": "Wonder_Squid",
+                  "targetPokemonCardName": "Kakuna",
+                  "numDamage": "90"
+                },
+                "raw": "Wonder_Squid's Kakuna took 90 damage.",
+                "templateKey": "blog_loc_secondary_damage"
+              },
+              "subString": null
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "Latias ex",
+              "playerName": "cdierkens"
+            },
+            "raw": "Latias ex was added to cdierkens's hand.",
+            "templateKey": "blog_loc_added_prize"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "Slowking",
+              "playerName": "cdierkens"
+            },
+            "raw": "Slowking was added to cdierkens's hand.",
+            "templateKey": "blog_loc_added_prize"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "cdierkens",
+              "numCards": "3"
+            },
+            "raw": "cdierkens took 3 Prize cards.",
+            "templateKey": "blog_loc_took_prize_cards"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "Beedrill ex"
+            },
+            "raw": "Wonder_Squid's Beedrill ex was Knocked Out!",
+            "templateKey": "blog_loc_knockout"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "numCards": "2",
+                  "playerName": "Wonder_Squid",
+                  "pokemonCardName": "Beedrill ex"
+                },
+                "raw": "2 cards were discarded from Wonder_Squid's Beedrill ex.",
+                "templateKey": "blog_loc_discarded_attachment_multi"
+              },
+              "subString": "Kakuna, Weedle"
+            }
+          ]
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "Weedle",
+              "playerName": "Wonder_Squid",
+              "pokemonCardName": "Kakuna"
+            },
+            "raw": "Weedle was discarded from Wonder_Squid's Kakuna.",
+            "templateKey": "blog_loc_discarded_attachment"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "playerName": "Wonder_Squid",
+              "cardName": "Kakuna"
+            },
+            "raw": "Wonder_Squid's Kakuna was Knocked Out!",
+            "templateKey": "blog_loc_knockout"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "Academy at Night",
+              "playerName": "cdierkens"
+            },
+            "raw": "Academy at Night was added to cdierkens's hand.",
+            "templateKey": "blog_loc_added_prize"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "gameEndReason": "All Prize cards taken",
+              "playerName": "cdierkens"
+            },
+            "raw": "All Prize cards taken. cdierkens wins.",
+            "templateKey": "blog_loc_end_game"
+          },
+          "subEntries": []
+        },
+        {
+          "event": {
+            "groups": {
+              "cardName": "Boomerang Energy"
+            },
+            "raw": "Boomerang Energy was activated.",
+            "templateKey": "blog_loc_card_activated"
+          },
+          "subEntries": [
+            {
+              "event": {
+                "groups": {
+                  "playerName": "cdierkens",
+                  "sourceCardName": "Boomerang Energy",
+                  "targetCardName": "Slowking"
+                },
+                "raw": "cdierkens attached Boomerang Energy to Slowking in the Active Spot.",
+                "templateKey": "blog_loc_attach_card_active"
+              },
+              "subString": null
+            }
+          ]
+        }
+      ],
+      "plainTextPhaseTitle": "cdierkens's Turn"
+    }
+  ]
+}
