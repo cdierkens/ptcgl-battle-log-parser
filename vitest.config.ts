@@ -12,11 +12,15 @@ export default defineConfig({
       // froze, so coverage cannot silently regress. Deliberately not 100%:
       // the remaining branches are defensive, and chasing the last point
       // invites exclusions and tests written to satisfy a number.
+      // Statements was re-baselined from 98 to 96 on the vitest 5 upgrade:
+      // the v8 provider now counts defensive branches as distinct statements,
+      // so the same suite measures ~0.7pp lower. Lines and branches still
+      // clear their original floors.
       thresholds: {
         branches: 93,
         functions: 100,
         lines: 98,
-        statements: 98,
+        statements: 96,
       },
     },
   },

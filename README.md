@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/cdierkens/ptcgl-battle-log-parser/actions/workflows/ci.yml/badge.svg)](https://github.com/cdierkens/ptcgl-battle-log-parser/actions/workflows/ci.yml)
 [![npm version](https://img.shields.io/npm/v/%40dierkens.dev%2Fptcgl-battle-log-parser)](https://www.npmjs.com/package/@dierkens.dev/ptcgl-battle-log-parser)
-[![coverage floor](https://img.shields.io/badge/coverage%20floor-98%25-yellowgreen)](./vitest.config.ts)
+[![coverage floor](https://img.shields.io/badge/coverage%20floor-96%25-yellowgreen)](./vitest.config.ts)
 
 Parse [Pokémon TCG Live](https://pokemon-tcg-live.com) battle-log exports into a
 typed AST. Zero runtime dependencies, ESM-only, 7 locales.
