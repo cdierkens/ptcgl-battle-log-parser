@@ -26,7 +26,7 @@
  * const result = parseBattleLog(raw, { locale: "de" });
  * if (result.ok) {
  *   for (const phase of result.value.phases) {
- *     console.log(phase.battlePhase, phase.displayTurnNumber);
+ *     if (phase.kind === "Turn") console.log(phase.displayTurnNumber, phase.playerName);
  *   }
  * }
  */
@@ -39,7 +39,9 @@ import type {
   BlogLocale,
   MainEntry,
   Phase,
-  PhaseType,
+  PhaseKind,
+  Side,
+  SideSource,
   SubEntry,
   TemplateEvent,
   TemplateMatcher,
@@ -62,18 +64,18 @@ export interface ParseBattleLogOptions {
    */
   readonly locale?: BlogLocale | undefined;
   /**
-   * Name of the player whose perspective "Player" phases are resolved
-   * against.
+   * Name of the player whose perspective turns are resolved against.
    *
    * `blog_loc_phase_turn` renders identically for both sides of the board, so
    * the game itself carries no local-player flag — the parser has to be told.
-   * Supplying this is what makes `phase.battlePhase` reliable, and what
+   * Supplying this is what makes a turn's `side` reliable, and what
    * `GameSummary` counts `self` against.
    *
    * If omitted, the first `phase_turn` header seen is assumed to be the local
-   * player's, tagging that turn `Player` and everything after it `Opponent`.
-   * That heuristic holds when the local player went first and breaks when
-   * they did not, so pass the name whenever you know it.
+   * player's, and every turn is stamped `sideSource: "inferred"`. That holds
+   * when the local player went first and is wrong when they did not, so pass
+   * the name whenever you know it — or start from `analyzeBattleLog`, which
+   * settles the sides once it has identified the local player.
    */
   readonly playerName?: string | undefined;
   /**
@@ -89,23 +91,36 @@ interface MutableMainEntry {
   subEntries: MutableSubEntry[];
 }
 
-interface MutablePhase {
-  battlePhase: PhaseType;
-  displayTurnNumber: null | number;
+interface MutablePhaseBase {
   mainEntries: MutableMainEntry[];
   plainTextPhaseTitle: string;
-  playerName: null | string;
 }
+
+interface MutableSetupPhase extends MutablePhaseBase {
+  kind: "Setup";
+}
+
+interface MutableCheckupPhase extends MutablePhaseBase {
+  kind: "Checkup";
+}
+
+interface MutableTurnPhase extends MutablePhaseBase {
+  displayTurnNumber: number;
+  kind: "Turn";
+  playerName: string;
+  side: Side;
+  sideSource: SideSource;
+}
+
+type MutablePhase = MutableCheckupPhase | MutableSetupPhase | MutableTurnPhase;
 
 interface MutableSubEntry {
   event: TemplateEvent;
   subString: null | string;
 }
 
-type PhaseHeaderKind = "Checkup" | "Setup" | "Turn";
-
 interface PhaseHeader {
-  readonly kind: PhaseHeaderKind;
+  readonly kind: PhaseKind;
   readonly playerName: null | string;
 }
 
@@ -128,6 +143,9 @@ export function parseBattleLog(
     (options.locale === undefined
       ? defaultTemplateMatcher
       : blogTemplateMatchers[options.locale]);
+  // Whether the caller named the local player is a property of the call, not
+  // of any one phase, so it is decided once and stamped on every turn.
+  const sideSource: SideSource = options.playerName === undefined ? "inferred" : "declared";
   const lines = raw.split(/\r?\n/u);
   const phases: MutablePhase[] = [];
   let currentPhase: MutablePhase | null = null;
@@ -143,13 +161,36 @@ export function parseBattleLog(
 
     const phaseHeader = tryPhaseHeader(line, matcher);
     if (phaseHeader !== null) {
-      const opened = openPhase(line, phaseHeader, {
-        localName,
-        turnCount: phaseTurnCounter,
-      });
-      localName = opened.localName;
-      phaseTurnCounter = opened.turnCount;
-      currentPhase = opened.phase;
+      const plainTextPhaseTitle = line;
+      if (phaseHeader.kind === "Setup") {
+        currentPhase = { kind: "Setup", mainEntries: [], plainTextPhaseTitle };
+      } else if (phaseHeader.kind === "Checkup") {
+        currentPhase = { kind: "Checkup", mainEntries: [], plainTextPhaseTitle };
+      } else {
+        // A turn names someone. Every shipped bundle declares `[playerName]`
+        // on the turn template, so this is only reachable through a
+        // caller-supplied `matcher` — and a turn with no name is not a turn we
+        // can place, so it fails the same way an unmatched line does rather
+        // than becoming one side by default.
+        if (phaseHeader.playerName === null) {
+          return err(new UnmatchedBattleLogLineError(line, lineNumber));
+        }
+        // With no name from the caller, the first turn header decides who is
+        // local. See `sideSource` for why that is recorded on every turn.
+        if (localName === null) localName = phaseHeader.playerName;
+        phaseTurnCounter += 1;
+        currentPhase = {
+          // Player and Opponent turns alternate, so every second turn starts a
+          // new round: this is the game's own (TurnNumber + 1) / 2 derivation.
+          displayTurnNumber: Math.floor((phaseTurnCounter + 1) / 2),
+          kind: "Turn",
+          mainEntries: [],
+          plainTextPhaseTitle,
+          playerName: phaseHeader.playerName,
+          side: phaseHeader.playerName === localName ? "self" : "opponent",
+          sideSource,
+        };
+      }
       phases.push(currentPhase);
       continue;
     }
@@ -207,96 +248,26 @@ function freezeMainEntry(entry: MutableMainEntry): MainEntry {
 }
 
 function freezePhase(phase: MutablePhase): Phase {
+  if (phase.kind === "Turn") {
+    return {
+      displayTurnNumber: phase.displayTurnNumber,
+      kind: "Turn",
+      mainEntries: phase.mainEntries.map(freezeMainEntry),
+      plainTextPhaseTitle: phase.plainTextPhaseTitle,
+      playerName: phase.playerName,
+      side: phase.side,
+      sideSource: phase.sideSource,
+    };
+  }
   return {
-    battlePhase: phase.battlePhase,
-    displayTurnNumber: phase.displayTurnNumber,
+    kind: phase.kind,
     mainEntries: phase.mainEntries.map(freezeMainEntry),
     plainTextPhaseTitle: phase.plainTextPhaseTitle,
-    playerName: phase.playerName,
   };
 }
 
 function freezeSubEntry(entry: MutableSubEntry): SubEntry {
   return { event: entry.event, subString: entry.subString };
-}
-
-/**
- * What `openPhase` needs from the loop, and what it hands back.
- *
- * The local player name may first become knowable *inside* a turn header, and
- * the turn counter advances once per turn header — both are loop state. Passing
- * them in and returning the advanced values keeps `openPhase` a pure function
- * of its arguments without a callback bag.
- */
-interface OpenPhaseInput {
-  readonly localName: null | string;
-  readonly turnCount: number;
-}
-
-interface OpenPhaseResult {
-  readonly localName: null | string;
-  readonly phase: MutablePhase;
-  readonly turnCount: number;
-}
-
-/**
- * Materialise a phase-header line as a MutablePhase.
- *
- * Player/Opponent resolution happens here because it depends on local-POV
- * state threaded through the outer loop: if we have not been told the local
- * player's name, the first turn header supplies it.
- */
-function openPhase(
-  titleLine: string,
-  header: PhaseHeader,
-  input: OpenPhaseInput,
-): OpenPhaseResult {
-  if (header.kind === "Setup") {
-    return {
-      localName: input.localName,
-      phase: {
-        battlePhase: "Setup",
-        displayTurnNumber: null,
-        mainEntries: [],
-        plainTextPhaseTitle: titleLine,
-        playerName: null,
-      },
-      turnCount: input.turnCount,
-    };
-  }
-  if (header.kind === "Checkup") {
-    return {
-      localName: input.localName,
-      phase: {
-        battlePhase: "Checkup",
-        displayTurnNumber: null,
-        mainEntries: [],
-        plainTextPhaseTitle: titleLine,
-        playerName: null,
-      },
-      turnCount: input.turnCount,
-    };
-  }
-  let localName = input.localName;
-  if (localName === null && header.playerName !== null) {
-    localName = header.playerName;
-  }
-  const battlePhase: PhaseType = header.playerName === localName ? "Player" : "Opponent";
-  const turnCount = input.turnCount + 1;
-  // Player and Opponent turns alternate, so every second turn starts a new
-  // round: this is the game's own (TurnNumber + 1) / 2 derivation.
-  const displayTurnNumber = Math.floor((turnCount + 1) / 2);
-  return {
-    localName,
-    phase: {
-      battlePhase,
-      displayTurnNumber,
-      mainEntries: [],
-      plainTextPhaseTitle: titleLine,
-      playerName: header.playerName,
-    },
-    turnCount,
-  };
 }
 
 /**

@@ -61,6 +61,22 @@ export function detectPlayers(parsed: BattleLog): Result<DetectedPlayers, Player
   return ok({ playerName, opponentName });
 }
 
+/**
+ * The opponent's name, read off the first turn that resolved to the other side.
+ *
+ * `null` when the log has no opponent turn. A one-line lookup, but it lives
+ * here because "who is the opponent" is this module's question, and because
+ * the side is already resolved on the turn — nothing has to be re-matched, and
+ * it works for every locale, including ones whose header strings are not in
+ * the English bundle.
+ */
+export function opponentNameOf(log: BattleLog): null | string {
+  for (const phase of log.phases) {
+    if (phase.kind === "Turn" && phase.side === "opponent") return phase.playerName;
+  }
+  return null;
+}
+
 function addName(names: Set<string>, value: null | string | undefined): void {
   const trimmed = value?.trim();
   if (trimmed !== undefined && trimmed.length > 0) names.add(trimmed);
@@ -111,7 +127,9 @@ function collectPlayerNames(parsed: BattleLog): Set<string> {
     // `phase.playerName` was resolved from the header at parse time, against
     // the source locale's bundle. Re-matching `phase.plainTextPhaseTitle` here
     // would need that same bundle and silently find nothing without it.
-    addName(names, phase.playerName);
+    //
+    // Only a `Turn` names anyone; the other kinds carry no name at all.
+    if (phase.kind === "Turn") addName(names, phase.playerName);
   }
   for (const walked of walkEntries(parsed)) {
     collectNamesFromGroups(names, walked.event.groups);

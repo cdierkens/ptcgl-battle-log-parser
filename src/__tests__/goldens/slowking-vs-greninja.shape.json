@@ -1,64 +1,84 @@
 {
   "phases": [
     {
-      "battlePhase": "Setup",
       "displayTurnNumber": null,
+      "kind": "Setup",
       "mainEntryCount": 8,
-      "playerName": null
+      "playerName": null,
+      "side": null,
+      "sideSource": null
     },
     {
-      "battlePhase": "Opponent",
       "displayTurnNumber": 1,
+      "kind": "Turn",
       "mainEntryCount": 6,
-      "playerName": "Kingofslowbros"
+      "playerName": "Kingofslowbros",
+      "side": "opponent",
+      "sideSource": "declared"
     },
     {
-      "battlePhase": "Player",
       "displayTurnNumber": 1,
+      "kind": "Turn",
       "mainEntryCount": 7,
-      "playerName": "cdierkens"
+      "playerName": "cdierkens",
+      "side": "self",
+      "sideSource": "declared"
     },
     {
-      "battlePhase": "Opponent",
       "displayTurnNumber": 2,
+      "kind": "Turn",
       "mainEntryCount": 10,
-      "playerName": "Kingofslowbros"
+      "playerName": "Kingofslowbros",
+      "side": "opponent",
+      "sideSource": "declared"
     },
     {
-      "battlePhase": "Player",
       "displayTurnNumber": 2,
+      "kind": "Turn",
       "mainEntryCount": 12,
-      "playerName": "cdierkens"
+      "playerName": "cdierkens",
+      "side": "self",
+      "sideSource": "declared"
     },
     {
-      "battlePhase": "Opponent",
       "displayTurnNumber": 3,
+      "kind": "Turn",
       "mainEntryCount": 19,
-      "playerName": "Kingofslowbros"
+      "playerName": "Kingofslowbros",
+      "side": "opponent",
+      "sideSource": "declared"
     },
     {
-      "battlePhase": "Player",
       "displayTurnNumber": 3,
+      "kind": "Turn",
       "mainEntryCount": 19,
-      "playerName": "cdierkens"
+      "playerName": "cdierkens",
+      "side": "self",
+      "sideSource": "declared"
     },
     {
-      "battlePhase": "Opponent",
       "displayTurnNumber": 4,
+      "kind": "Turn",
       "mainEntryCount": 9,
-      "playerName": "Kingofslowbros"
+      "playerName": "Kingofslowbros",
+      "side": "opponent",
+      "sideSource": "declared"
     },
     {
-      "battlePhase": "Player",
       "displayTurnNumber": 4,
+      "kind": "Turn",
       "mainEntryCount": 11,
-      "playerName": "cdierkens"
+      "playerName": "cdierkens",
+      "side": "self",
+      "sideSource": "declared"
     },
     {
-      "battlePhase": "Opponent",
       "displayTurnNumber": 5,
+      "kind": "Turn",
       "mainEntryCount": 10,
-      "playerName": "Kingofslowbros"
+      "playerName": "Kingofslowbros",
+      "side": "opponent",
+      "sideSource": "declared"
     }
   ],
   "templateKeyCounts": {

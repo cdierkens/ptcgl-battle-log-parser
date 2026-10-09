@@ -1,64 +1,84 @@
 {
   "phases": [
     {
-      "battlePhase": "Setup",
       "displayTurnNumber": null,
+      "kind": "Setup",
       "mainEntryCount": 10,
-      "playerName": null
+      "playerName": null,
+      "side": null,
+      "sideSource": null
     },
     {
-      "battlePhase": "Player",
       "displayTurnNumber": 1,
+      "kind": "Turn",
       "mainEntryCount": 7,
-      "playerName": "cdierkens"
+      "playerName": "cdierkens",
+      "side": "self",
+      "sideSource": "declared"
     },
     {
-      "battlePhase": "Opponent",
       "displayTurnNumber": 1,
+      "kind": "Turn",
       "mainEntryCount": 11,
-      "playerName": "Wonder_Squid"
+      "playerName": "Wonder_Squid",
+      "side": "opponent",
+      "sideSource": "declared"
     },
     {
-      "battlePhase": "Player",
       "displayTurnNumber": 2,
+      "kind": "Turn",
       "mainEntryCount": 16,
-      "playerName": "cdierkens"
+      "playerName": "cdierkens",
+      "side": "self",
+      "sideSource": "declared"
     },
     {
-      "battlePhase": "Opponent",
       "displayTurnNumber": 2,
+      "kind": "Turn",
       "mainEntryCount": 25,
-      "playerName": "Wonder_Squid"
+      "playerName": "Wonder_Squid",
+      "side": "opponent",
+      "sideSource": "declared"
     },
     {
-      "battlePhase": "Player",
       "displayTurnNumber": 3,
+      "kind": "Turn",
       "mainEntryCount": 4,
-      "playerName": "cdierkens"
+      "playerName": "cdierkens",
+      "side": "self",
+      "sideSource": "declared"
     },
     {
-      "battlePhase": "Opponent",
       "displayTurnNumber": 3,
+      "kind": "Turn",
       "mainEntryCount": 19,
-      "playerName": "Wonder_Squid"
+      "playerName": "Wonder_Squid",
+      "side": "opponent",
+      "sideSource": "declared"
     },
     {
-      "battlePhase": "Player",
       "displayTurnNumber": 4,
+      "kind": "Turn",
       "mainEntryCount": 16,
-      "playerName": "cdierkens"
+      "playerName": "cdierkens",
+      "side": "self",
+      "sideSource": "declared"
     },
     {
-      "battlePhase": "Opponent",
       "displayTurnNumber": 4,
+      "kind": "Turn",
       "mainEntryCount": 12,
-      "playerName": "Wonder_Squid"
+      "playerName": "Wonder_Squid",
+      "side": "opponent",
+      "sideSource": "declared"
     },
     {
-      "battlePhase": "Player",
       "displayTurnNumber": 5,
+      "kind": "Turn",
       "mainEntryCount": 22,
-      "playerName": "cdierkens"
+      "playerName": "cdierkens",
+      "side": "self",
+      "sideSource": "declared"
     }
   ],
   "templateKeyCounts": {

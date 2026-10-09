@@ -1,8 +1,7 @@
 {
   "phases": [
     {
-      "battlePhase": "Setup",
-      "displayTurnNumber": null,
+      "kind": "Setup",
       "mainEntries": [
         {
           "event": {
@@ -135,12 +134,11 @@
           "subEntries": []
         }
       ],
-      "plainTextPhaseTitle": "Setup",
-      "playerName": null
+      "plainTextPhaseTitle": "Setup"
     },
     {
-      "battlePhase": "Player",
       "displayTurnNumber": 1,
+      "kind": "Turn",
       "mainEntries": [
         {
           "event": {
@@ -255,11 +253,13 @@
         }
       ],
       "plainTextPhaseTitle": "cdierkens's Turn",
-      "playerName": "cdierkens"
+      "playerName": "cdierkens",
+      "side": "self",
+      "sideSource": "declared"
     },
     {
-      "battlePhase": "Opponent",
       "displayTurnNumber": 1,
+      "kind": "Turn",
       "mainEntries": [
         {
           "event": {
@@ -527,11 +527,13 @@
         }
       ],
       "plainTextPhaseTitle": "Wonder_Squid's Turn",
-      "playerName": "Wonder_Squid"
+      "playerName": "Wonder_Squid",
+      "side": "opponent",
+      "sideSource": "declared"
     },
     {
-      "battlePhase": "Player",
       "displayTurnNumber": 2,
+      "kind": "Turn",
       "mainEntries": [
         {
           "event": {
@@ -806,11 +808,13 @@
         }
       ],
       "plainTextPhaseTitle": "cdierkens's Turn",
-      "playerName": "cdierkens"
+      "playerName": "cdierkens",
+      "side": "self",
+      "sideSource": "declared"
     },
     {
-      "battlePhase": "Opponent",
       "displayTurnNumber": 2,
+      "kind": "Turn",
       "mainEntries": [
         {
           "event": {
@@ -1319,11 +1323,13 @@
         }
       ],
       "plainTextPhaseTitle": "Wonder_Squid's Turn",
-      "playerName": "Wonder_Squid"
+      "playerName": "Wonder_Squid",
+      "side": "opponent",
+      "sideSource": "declared"
     },
     {
-      "battlePhase": "Player",
       "displayTurnNumber": 3,
+      "kind": "Turn",
       "mainEntries": [
         {
           "event": {
@@ -1429,11 +1435,13 @@
         }
       ],
       "plainTextPhaseTitle": "cdierkens's Turn",
-      "playerName": "cdierkens"
+      "playerName": "cdierkens",
+      "side": "self",
+      "sideSource": "declared"
     },
     {
-      "battlePhase": "Opponent",
       "displayTurnNumber": 3,
+      "kind": "Turn",
       "mainEntries": [
         {
           "event": {
@@ -1795,11 +1803,13 @@
         }
       ],
       "plainTextPhaseTitle": "Wonder_Squid's Turn",
-      "playerName": "Wonder_Squid"
+      "playerName": "Wonder_Squid",
+      "side": "opponent",
+      "sideSource": "declared"
     },
     {
-      "battlePhase": "Player",
       "displayTurnNumber": 4,
+      "kind": "Turn",
       "mainEntries": [
         {
           "event": {
@@ -2131,11 +2141,13 @@
         }
       ],
       "plainTextPhaseTitle": "cdierkens's Turn",
-      "playerName": "cdierkens"
+      "playerName": "cdierkens",
+      "side": "self",
+      "sideSource": "declared"
     },
     {
-      "battlePhase": "Opponent",
       "displayTurnNumber": 4,
+      "kind": "Turn",
       "mainEntries": [
         {
           "event": {
@@ -2375,11 +2387,13 @@
         }
       ],
       "plainTextPhaseTitle": "Wonder_Squid's Turn",
-      "playerName": "Wonder_Squid"
+      "playerName": "Wonder_Squid",
+      "side": "opponent",
+      "sideSource": "declared"
     },
     {
-      "battlePhase": "Player",
       "displayTurnNumber": 5,
+      "kind": "Turn",
       "mainEntries": [
         {
           "event": {
@@ -2806,7 +2820,9 @@
         }
       ],
       "plainTextPhaseTitle": "cdierkens's Turn",
-      "playerName": "cdierkens"
+      "playerName": "cdierkens",
+      "side": "self",
+      "sideSource": "declared"
     }
   ]
 }

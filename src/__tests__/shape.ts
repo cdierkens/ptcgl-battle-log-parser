@@ -23,10 +23,12 @@ import { walkEntries } from "../walk.js";
  */
 export interface LogShape {
   readonly phases: readonly {
-    readonly battlePhase: string;
     readonly displayTurnNumber: null | number;
+    readonly kind: string;
     readonly mainEntryCount: number;
     readonly playerName: null | string;
+    readonly side: null | string;
+    readonly sideSource: null | string;
   }[];
   readonly templateKeyCounts: Readonly<Record<string, number>>;
 }
@@ -38,12 +40,25 @@ export function shapeOf(log: BattleLog): LogShape {
     templateKeyCounts[key] = (templateKeyCounts[key] ?? 0) + 1;
   }
   return {
-    phases: log.phases.map((phase) => ({
-      battlePhase: phase.battlePhase,
-      displayTurnNumber: phase.displayTurnNumber,
-      mainEntryCount: phase.mainEntries.length,
-      playerName: phase.playerName,
-    })),
+    phases: log.phases.map((phase) =>
+      phase.kind === "Turn"
+        ? {
+            displayTurnNumber: phase.displayTurnNumber,
+            kind: phase.kind,
+            mainEntryCount: phase.mainEntries.length,
+            playerName: phase.playerName,
+            side: phase.side,
+            sideSource: phase.sideSource,
+          }
+        : {
+            displayTurnNumber: null,
+            kind: phase.kind,
+            mainEntryCount: phase.mainEntries.length,
+            playerName: null,
+            side: null,
+            sideSource: null,
+          },
+    ),
     templateKeyCounts: Object.fromEntries(
       Object.entries(templateKeyCounts).sort(([a], [b]) => a.localeCompare(b)),
     ),

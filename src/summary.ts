@@ -17,7 +17,7 @@
  * in hand". Build richer analysis on top of the parsed log, not here.
  */
 
-import type { BattleLog, Credit, CreditCounts, GameSummary, TemplateEvent } from "./types.js";
+import type { BattleLog, GameSummary, Side, SideCounts, TemplateEvent } from "./types.js";
 
 import { walkEntries } from "./walk.js";
 
@@ -37,9 +37,9 @@ export interface DeriveGameSummaryOptions {
  * function of its event and can be asserted in isolation.
  */
 export type SummaryDelta =
-  | { readonly kind: "knockout"; readonly credit: Credit }
-  | { readonly kind: "prizes"; readonly count: number; readonly credit: Credit }
-  | { readonly credit: Credit; readonly kind: "winner" };
+  | { readonly kind: "knockout"; readonly credit: Side }
+  | { readonly kind: "prizes"; readonly count: number; readonly credit: Side }
+  | { readonly credit: Side; readonly kind: "winner" };
 
 /**
  * Resolve a player name to a side, or `null` when the name is unusable.
@@ -48,7 +48,7 @@ export type SummaryDelta =
  * treated `undefined` as "opponent", which silently miscredited a count to the
  * wrong player. A rule that cannot attribute its event now skips it instead.
  */
-export type CreditResolver = (name: string | undefined) => Credit | null;
+export type CreditResolver = (name: string | undefined) => null | Side;
 
 /** What a rule is given beyond the event's own placeholder groups. */
 export interface SummaryRuleContext {
@@ -114,12 +114,12 @@ export function deriveGameSummary(
   options: DeriveGameSummaryOptions,
 ): GameSummary {
   const { playerName } = options;
-  const prizes: Record<Credit, number> = { opponent: 0, self: 0 };
-  const knockouts: Record<Credit, number> = { opponent: 0, self: 0 };
-  let firstKnockoutBy: Credit | null = null;
+  const prizes: Record<Side, number> = { opponent: 0, self: 0 };
+  const knockouts: Record<Side, number> = { opponent: 0, self: 0 };
+  let firstKnockoutBy: null | Side = null;
   let turnCount = 0;
   let totalEntries = 0;
-  let winner: Credit | null = null;
+  let winner: null | Side = null;
 
   // A name that is absent or blank is not the opponent — it is unattributable.
   const creditOf: CreditResolver = (name) =>
@@ -149,15 +149,15 @@ export function deriveGameSummary(
   };
 
   for (const phase of log.phases) {
-    if (phase.battlePhase === "Player" || phase.battlePhase === "Opponent") turnCount += 1;
+    if (phase.kind === "Turn") turnCount += 1;
   }
   for (const walked of walkEntries(log)) {
     totalEntries += 1;
     applyEvent(walked.event);
   }
 
-  const prizesByPlayer: CreditCounts = prizes;
-  const knockoutsByPlayer: CreditCounts = knockouts;
+  const prizesByPlayer: SideCounts = prizes;
+  const knockoutsByPlayer: SideCounts = knockouts;
 
   return {
     firstKnockoutBy,

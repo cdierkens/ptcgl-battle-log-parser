@@ -211,16 +211,14 @@ describe("Phase.playerName — resolved at parse time, per locale", () => {
 
   it.each(ALL_BLOG_LOCALES)("captures the header name on each %s phase", (locale) => {
     const parsed = unwrap(parseBattleLog(syntheticLog(locale), { locale }));
-    expect(parsed.phases.map((p) => p.playerName)).toEqual([null, ME, THEM]);
+    expect(parsed.phases.map((p) => (p.kind === "Turn" ? p.playerName : null))).toEqual([null, ME, THEM]);
   });
 
-  it.each(ALL_BLOG_LOCALES)("leaves playerName null on Setup and Checkup (%s)", (locale) => {
+  it.each(ALL_BLOG_LOCALES)("uses the three-kind vocabulary, not Player/Opponent (%s)", (locale) => {
+    // The old vocabulary merged kind and side, so a turn read `Player` or
+    // `Opponent`. A turn is a `Turn`; its side is a separate field.
     const parsed = unwrap(parseBattleLog(syntheticLog(locale), { locale }));
-    const nonTurns = parsed.phases.filter(
-      (p) => p.battlePhase === "Setup" || p.battlePhase === "Checkup",
-    );
-    expect(nonTurns.length).toBeGreaterThan(0);
-    for (const phase of nonTurns) expect(phase.playerName, locale).toBeNull();
+    expect(parsed.phases.map((phase) => phase.kind)).toEqual(["Setup", "Turn", "Turn"]);
   });
 
   // The regression. Before this fix every non-English locale reported
@@ -260,13 +258,10 @@ describe("parseBattleLog — every locale", () => {
     expect(isOk(result)).toBe(true);
     if (!isOk(result)) return;
 
-    expect(result.value.phases.map((p) => p.battlePhase)).toEqual([
-      "Setup",
-      "Player",
-      "Opponent",
-    ]);
-    expect(result.value.phases[1]?.displayTurnNumber).toBe(1);
-    expect(result.value.phases[2]?.displayTurnNumber).toBe(1);
+    expect(result.value.phases.map((p) => p.kind)).toEqual(["Setup", "Turn", "Turn"]);
+    const [, firstTurn, secondTurn] = result.value.phases;
+    expect(firstTurn?.kind === "Turn" ? firstTurn.displayTurnNumber : null).toBe(1);
+    expect(secondTurn?.kind === "Turn" ? secondTurn.displayTurnNumber : null).toBe(1);
 
     const setup = result.value.phases[0];
     const openingDraw = setup?.mainEntries.find(
@@ -276,7 +271,7 @@ describe("parseBattleLog — every locale", () => {
     expect(openingDraw?.event.groups["playerName"]).toBe(VALUES["playerName"]);
   });
 
-  it.each(ALL_BLOG_LOCALES)("resolves Player/Opponent phases correctly for %s", (locale) => {
+  it.each(ALL_BLOG_LOCALES)("resolves the side of each turn for %s", (locale) => {
     const result = parseBattleLog(syntheticLog(locale), {
       locale,
       playerName: VALUES["playerName"],
@@ -284,8 +279,9 @@ describe("parseBattleLog — every locale", () => {
     expect(isOk(result)).toBe(true);
     if (!isOk(result)) return;
 
-    expect(result.value.phases[1]?.battlePhase).toBe("Player");
-    expect(result.value.phases[2]?.battlePhase).toBe("Opponent");
+    const [, firstTurn, secondTurn] = result.value.phases;
+    expect(firstTurn?.kind === "Turn" ? firstTurn.side : null).toBe("self");
+    expect(secondTurn?.kind === "Turn" ? secondTurn.side : null).toBe("opponent");
   });
 
   it("rejects an English line when forced to German", () => {

@@ -151,8 +151,9 @@ describe("parseBattleLog — unmatched lines", () => {
     const result = parseBattleLog("Begin.\nAnn's turn.\nAnn is done.\n", { matcher });
     expect(isOk(result)).toBe(true);
     if (!isOk(result)) return;
-    expect(result.value.phases.map((phase) => phase.battlePhase)).toEqual(["Setup", "Player"]);
-    expect(result.value.phases[1]?.playerName).toBe("Ann");
+    expect(result.value.phases.map((phase) => phase.kind)).toEqual(["Setup", "Turn"]);
+    const turn = result.value.phases[1];
+    expect(turn?.kind === "Turn" ? turn.playerName : null).toBe("Ann");
   });
 
   it("accepts CRLF line endings", () => {
@@ -166,6 +167,41 @@ describe("parseBattleLog — unmatched lines", () => {
     expect(isOk(result)).toBe(true);
     if (!isOk(result)) return;
     expect(result.value.phases).toHaveLength(2);
-    expect(result.value.phases[1]?.battlePhase).toBe("Player");
+    const turn = result.value.phases[1];
+    expect(turn?.kind).toBe("Turn");
+    expect(turn?.kind === "Turn" ? turn.side : null).toBe("self");
+  });
+});
+
+describe("sideSource", () => {
+  it("is declared when the caller names the local player", () => {
+    const log = unwrap(
+      parseBattleLog("Alice's Turn\nAlice ended their turn.\n", { playerName: "Alice" }),
+    );
+    const turn = log.phases[0];
+    expect(turn?.kind === "Turn" ? turn.sideSource : null).toBe("declared");
+  });
+
+  it("is inferred when no name is given", () => {
+    const log = unwrap(parseBattleLog("Alice's Turn\nAlice ended their turn.\n"));
+    const turn = log.phases[0];
+    expect(turn?.kind === "Turn" ? turn.sideSource : null).toBe("inferred");
+  });
+});
+
+describe("a turn header that captures no name", () => {
+  it("fails rather than silently becoming one side", () => {
+    // Only a caller-supplied matcher can reach this: every shipped bundle
+    // declares `[playerName]` on the turn template. A turn with no name used
+    // to become `"Player"` because two nulls compared equal.
+    const matcher = createTemplateMatcher({
+      blog_loc_phase_setup: { placeholders: [], template: "Begin." },
+      blog_loc_phase_turn: { placeholders: [], template: "Turn." },
+    });
+    const result = parseBattleLog("Begin.\nTurn.\n", { matcher });
+    expect(isOk(result)).toBe(false);
+    if (isOk(result)) return;
+    expect(result.error).toBeInstanceOf(UnmatchedBattleLogLineError);
+    expect(result.error.lineNumber).toBe(2);
   });
 });

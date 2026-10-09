@@ -27,10 +27,11 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { basename, extname, join } from "node:path";
 
 import { shapeOf } from "../src/__tests__/shape.js";
+import { opponentNameOf } from "../src/detect-players.js";
 import { UnmatchedBattleLogLineError } from "../src/errors.js";
 import { detectBattleLogLanguage } from "../src/locales.js";
 import { parseBattleLog } from "../src/parse-battle-log.js";
-import { ALL_BLOG_LOCALES, type BattleLog, type BlogLocale } from "../src/types.js";
+import { ALL_BLOG_LOCALES, type BlogLocale } from "../src/types.js";
 
 const FIXTURES_DIR = join("src", "__tests__", "fixtures");
 const GOLDENS_DIR = join("src", "__tests__", "goldens");
@@ -76,7 +77,7 @@ function main(): void {
     return;
   }
 
-  const opponent = opponentOf(first.value);
+  const opponent = opponentNameOf(first.value);
   if (opponent === null) {
     console.warn(
       "warning: no opponent handle found in the log, so only your handle is redacted.\n" +
@@ -157,14 +158,6 @@ function asLocale(value: string): BlogLocale {
     fail(`unknown locale "${value}"; expected one of ${ALL_BLOG_LOCALES.join(", ")}`);
   }
   return match;
-}
-
-/** The opponent's handle, read off the first `Opponent` phase. */
-function opponentOf(log: BattleLog): null | string {
-  for (const phase of log.phases) {
-    if (phase.battlePhase === "Opponent") return phase.playerName;
-  }
-  return null;
 }
 
 /**

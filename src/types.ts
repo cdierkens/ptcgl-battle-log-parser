@@ -62,46 +62,98 @@ export interface MainEntry {
 }
 
 /**
- * One of the four phase kinds the game defines.
+ * One of the three phase kinds the game defines.
  *
- * `Setup` is the pre-turn opening block; `Player` / `Opponent` are turns;
- * `Checkup` is the "Pokémon Checkup" block between turns.
- *
- * `Player` vs `Opponent` is *resolved*, not observed: the game renders both
- * from the same `blog_loc_phase_turn` template and carries no notion of
- * which side is local. The parser decides by comparing the header's
- * `playerName` against the local player's name — see
- * {@link ParseBattleLogOptions.playerName}.
+ * `Setup` is the pre-turn opening block; `Turn` is either player's turn;
+ * `Checkup` is the "Pokémon Checkup" block between turns. A turn's *side* is a
+ * separate axis — see {@link Side}.
  */
-export type PhaseType = "Setup" | "Player" | "Opponent" | "Checkup";
+export type PhaseKind = "Setup" | "Turn" | "Checkup";
 
 /**
- * A phase block: its header line (rendered from a `blog_loc_phase_*` key)
- * plus the main entries the client attached to it.
+ * Which side of the board something belongs to.
  *
- * `displayTurnNumber` mirrors the game's own `(turnNumber + 1) / 2`
- * derivation, counting Player and Opponent turns together as one round. It is
- * `null` for `Setup` and `Checkup`, which have no turn number.
+ * `self` is the local player and `opponent` is everyone else. A phase's side
+ * and a summary count's side are the same axis, so they share this one type.
+ *
+ * A side is *resolved*, never observed: the game renders both turns from the
+ * same `blog_loc_phase_turn` template and carries no local-player flag. See
+ * {@link SideSource} for how the resolution was reached.
  */
-export interface Phase {
-  readonly battlePhase: PhaseType;
-  readonly displayTurnNumber: null | number;
+export type Side = "self" | "opponent";
+
+/**
+ * How a turn's side was resolved.
+ *
+ * `declared` — the caller passed `playerName`, so the side is a comparison
+ * against a name the caller supplied.
+ *
+ * `inferred` — no name was passed, so the first turn header was taken to be
+ * the local player's. That holds when the local player went first, and is
+ * wrong when they did not — which is why it is recorded rather than assumed.
+ */
+export type SideSource = "declared" | "inferred";
+
+/**
+ * What every phase carries, whatever its kind.
+ *
+ * Not exported from the package entry point: consumers narrow {@link Phase} to
+ * an arm and read that arm's fields.
+ */
+export interface PhaseBase {
   readonly mainEntries: readonly MainEntry[];
-  /**
-   * The player this phase belongs to, resolved from the header at parse time.
-   *
-   * `null` for `Setup` and `Checkup`, whose headers name no player.
-   *
-   * This is the value that decides {@link Phase.battlePhase}, captured at the
-   * seam where it is known. Consumers should read it here rather than
-   * re-matching {@link Phase.plainTextPhaseTitle} against a locale bundle: the
-   * title is in the source language, so re-matching it needs a matcher for the
-   * right locale, and getting that wrong silently yields no player at all.
-   */
-  readonly playerName: null | string;
-  /** The raw header line, e.g. `"TSLAUJ's Turn"`. */
+  /** The raw header line, e.g. `"TSLAUJ's Turn"` or `"Setup"`. */
   readonly plainTextPhaseTitle: string;
 }
+
+/** The pre-turn opening block. Names no player, has no turn number. */
+export interface SetupPhase extends PhaseBase {
+  readonly kind: "Setup";
+}
+
+/** The between-turns block. Names no player, has no turn number. */
+export interface CheckupPhase extends PhaseBase {
+  readonly kind: "Checkup";
+}
+
+/**
+ * One player's turn.
+ *
+ * Every field is non-null, because a turn always has a number, a player and a
+ * side. That is the point of the union: a `Setup` cannot claim a side and a
+ * `Turn` cannot lack one, so neither has to be checked for after the fact.
+ */
+export interface TurnPhase extends PhaseBase {
+  readonly kind: "Turn";
+  /**
+   * The game's own `(turnNumber + 1) / 2`, counting both sides' turns as one
+   * round.
+   */
+  readonly displayTurnNumber: number;
+  /**
+   * The player whose turn it is, resolved from the header at parse time.
+   *
+   * Read it here rather than re-matching
+   * {@link PhaseBase.plainTextPhaseTitle} against a locale bundle: the title is
+   * in the source language, so re-matching it needs a matcher for the right
+   * locale, and getting that wrong silently yields no player at all.
+   */
+  readonly playerName: string;
+  /** Which side this turn belongs to. */
+  readonly side: Side;
+  /** How {@link TurnPhase.side} was resolved. */
+  readonly sideSource: SideSource;
+}
+
+/**
+ * A phase block: its header line (rendered from a `blog_loc_phase_*` key) plus
+ * the main entries the client attached to it.
+ *
+ * A union rather than one record with nullable side fields. The two non-turn
+ * kinds carry neither a side nor a name, and they carry that by *absence*
+ * instead of by a `null` every caller has to test.
+ */
+export type Phase = CheckupPhase | SetupPhase | TurnPhase;
 
 /**
  * The full parsed log. Root of the AST; the direct inverse of
@@ -167,16 +219,8 @@ export interface TemplateMatcher {
   readonly size: number;
 }
 
-/**
- * Which side of the board a summary credit belongs to.
- *
- * `self` is the local player — the one whose name was passed to the parser.
- * `opponent` is everyone else.
- */
-export type Credit = "self" | "opponent";
-
-/** Per-side tallies. Keys are {@link Credit} values. */
-export type CreditCounts = Readonly<Record<Credit, number>>;
+/** Per-side tallies. Keys are {@link Side} values. */
+export type SideCounts = Readonly<Record<Side, number>>;
 
 /**
  * Compact summary of a parsed battle log, suitable for rendering a list row
@@ -188,14 +232,14 @@ export type CreditCounts = Readonly<Record<Credit, number>>;
  */
 export interface GameSummary {
   /** Who took the first knockout credit, or `null` if there were none. */
-  readonly firstKnockoutBy: null | Credit;
-  readonly knockoutsByPlayer: CreditCounts;
-  readonly prizesByPlayer: CreditCounts;
+  readonly firstKnockoutBy: null | Side;
+  readonly knockoutsByPlayer: SideCounts;
+  readonly prizesByPlayer: SideCounts;
   /** Total main + sub entries across every phase. */
   readonly totalEntries: number;
-  /** Number of `Player` + `Opponent` phases. */
+  /** Number of `Turn` phases. */
   readonly turnCount: number;
-  readonly winner: null | Credit;
+  readonly winner: null | Side;
 }
 
 /**

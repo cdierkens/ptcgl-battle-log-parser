@@ -75,14 +75,12 @@ describe("deriveGameSummary", () => {
     expect(flipped.totalEntries).toBe(correct.totalEntries);
   });
 
-  it("counts only Player and Opponent phases as turns", () => {
+  it("counts only Turn phases as turns", () => {
     const log = unwrap(parseBattleLog(loadFixture("slowking-vs-greninja.log"), {
       playerName: ME,
     }));
     const summary = deriveGameSummary(log, { playerName: ME });
-    const turnPhases = log.phases.filter(
-      (p) => p.battlePhase === "Player" || p.battlePhase === "Opponent",
-    ).length;
+    const turnPhases = log.phases.filter((p) => p.kind === "Turn").length;
     expect(summary.turnCount).toBe(turnPhases);
   });
 
@@ -164,9 +162,9 @@ describe("deriveGameSummary — unattributable names", () => {
   it("does not credit a prize to the opponent when playerName is absent", () => {
     // Guards the silent-miscredit bug directly through the public interface.
     const log = { phases: [
-      { battlePhase: "Player" as const, displayTurnNumber: 1, mainEntries: [
+      { displayTurnNumber: 1, kind: "Turn" as const, mainEntries: [
         { event: { groups: {}, raw: "x", templateKey: "blog_loc_took_single_prize_card" }, subEntries: [] },
-      ], plainTextPhaseTitle: "Turn", playerName: "me" },
+      ], plainTextPhaseTitle: "Turn", playerName: "me", side: "self" as const, sideSource: "declared" as const },
     ] };
     const summary = deriveGameSummary(log, { playerName: "me" });
     expect(summary.prizesByPlayer).toEqual({ opponent: 0, self: 0 });
