@@ -12,14 +12,16 @@ import { describe, expect, it } from "vitest";
 
 import * as api from "../index.js";
 
-// The frozen value surface. `blogTemplateBundles` and `blogTemplateMatchers`
-// are gone because the package ships no templates — there is no shipped data
-// to expose. If one of them reappears here, the API grew without a decision.
+// The frozen value surface. `defaultTemplateMatcher`, `englishBlogTemplates`
+// and `summaryRules` were removed before the freeze (ADR-0002); if one of them
+// reappears here, the API grew without a decision.
 const EXPECTED_EXPORTS = [
   "ALL_BLOG_LOCALES",
   "PlayerDetectionError",
   "UnmatchedBattleLogLineError",
   "analyzeBattleLog",
+  "blogTemplateBundles",
+  "blogTemplateMatchers",
   "compileTemplate",
   "createTemplateMatcher",
   "deriveGameSummary",
@@ -33,12 +35,6 @@ const EXPECTED_EXPORTS = [
   "unwrap",
 ] as const;
 
-// The suite's own bundle — the package ships none, so a caller has to bring
-// one, and this exercises that path through the public entry point.
-import { bundles } from "./bundles.js";
-
-const matcher = api.createTemplateMatcher(bundles["en"]);
-
 describe("public API", () => {
   it("exports exactly the documented surface", () => {
     // Anything missing is a broken consumer build. Anything extra is an
@@ -46,11 +42,15 @@ describe("public API", () => {
     expect([...Object.keys(api)].sort()).toEqual([...EXPECTED_EXPORTS].sort());
   });
 
-  it("exports the value API as functions, except the locale list", () => {
+  it("exports the value API as functions", () => {
     for (const name of EXPECTED_EXPORTS) {
       const value = api[name];
       if (name === "ALL_BLOG_LOCALES") {
         expect(Array.isArray(value), name).toBe(true);
+        continue;
+      }
+      if (name === "blogTemplateBundles" || name === "blogTemplateMatchers") {
+        expect(typeof value, name).toBe("object");
         continue;
       }
       expect(typeof value, name).toBe("function");
@@ -59,15 +59,16 @@ describe("public API", () => {
 
   it("round-trips a log through the entry point", () => {
     const log = "Setup\nAlice drew 7 cards for the opening hand.\n\nAlice's Turn\nAlice ended their turn.\n";
-    const result = api.analyzeBattleLog(log, { matcher, playerName: "Alice" });
+    const result = api.analyzeBattleLog(log, { playerName: "Alice" });
     expect(api.isOk(result)).toBe(true);
     if (!api.isOk(result)) return;
+    expect(result.value.locale).toBe("en");
     expect(result.value.playerName).toBe("Alice");
     expect(result.value.summary.turnCount).toBe(1);
   });
 
   it("unwrap throws the same error the Result carried", () => {
-    const result = api.parseBattleLog("Setup\nnot a log line\n", { matcher });
+    const result = api.parseBattleLog("Setup\nnot a log line\n");
     expect(api.isErr(result)).toBe(true);
     if (api.isErr(result)) {
       expect(() => api.unwrap(result)).toThrow(api.UnmatchedBattleLogLineError);

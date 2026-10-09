@@ -26,13 +26,10 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { basename, extname, join } from "node:path";
 
-// Both are test-support modules: this script is a dev tool, and the package
-// ships no bundles, so it borrows the suite's.
-import { matchers } from "../src/__tests__/bundles.js";
 import { shapeOf } from "../src/__tests__/shape.js";
 import { UnmatchedBattleLogLineError } from "../src/errors.js";
+import { detectBattleLogLanguage } from "../src/locales.js";
 import { parseBattleLog } from "../src/parse-battle-log.js";
-import { detectBattleLogLanguage } from "../src/template-matcher.js";
 import { ALL_BLOG_LOCALES, type BattleLog, type BlogLocale } from "../src/types.js";
 
 const FIXTURES_DIR = join("src", "__tests__", "fixtures");
@@ -70,9 +67,9 @@ function main(): void {
 
   const raw = readFileSync(args.log, "utf8");
   const slug = args.name ?? basename(args.log, extname(args.log));
-  const locale = args.locale === undefined ? detectLocale(raw) : asLocale(args.locale);
+  const locale = args.locale === undefined ? detectBattleLogLanguage(raw) : asLocale(args.locale);
 
-  const first = parseBattleLog(raw, { matcher: matchers[locale], playerName: args.player });
+  const first = parseBattleLog(raw, { locale, playerName: args.player });
   if (!first.ok) {
     reportUnmatched(first.error, args.log, locale);
     process.exitCode = 1;
@@ -96,7 +93,7 @@ function main(): void {
   let redacted = raw;
   for (const { from, to } of pairs) redacted = redact(redacted, from, to);
 
-  const second = parseBattleLog(redacted, { matcher: matchers[locale], playerName: REDACTED_LOCAL });
+  const second = parseBattleLog(redacted, { locale, playerName: REDACTED_LOCAL });
   if (!second.ok) {
     console.error("error: the redacted log no longer parses, so redaction changed a line:");
     console.error("");
@@ -152,21 +149,6 @@ function parseArgs(argv: readonly string[]): Args | "help" {
   if (player === undefined) fail("--player is required");
 
   return { locale: flags.get("locale"), log, name: flags.get("name"), player };
-}
-
-/**
- * Work out which bundle this log needs.
- *
- * Fails rather than guessing: a wrong guess would produce a fixture that
- * misparses for reasons the contributor cannot see, and they can always pass
- * `--locale` if the log is too short to tell.
- */
-function detectLocale(raw: string): BlogLocale {
-  const detected = detectBattleLogLanguage(raw, matchers);
-  if (detected === null) {
-    fail("could not tell which locale this log is in; pass --locale <code>");
-  }
-  return asLocale(detected);
 }
 
 function asLocale(value: string): BlogLocale {

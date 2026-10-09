@@ -35,7 +35,6 @@ import { isErr, isOk } from "../result.js";
 import { unwrap } from "../errors.js";
 import { parseBattleLog } from "../parse-battle-log.js";
 import { createTemplateMatcher } from "../template-matcher.js";
-import { english } from "./bundles.js";
 import { shapeOf } from "./shape.js";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -63,7 +62,7 @@ const readShape = (name: string): unknown =>
 
 describe("parseBattleLog — golden regression", () => {
   it.each(CASES)("$fixture matches its golden", ({ fixture, golden, playerName }) => {
-    const actual = parseBattleLog(readFixture(fixture), { matcher: english, playerName });
+    const actual = parseBattleLog(readFixture(fixture), { playerName });
 
     expect(isOk(actual)).toBe(true);
     if (!isOk(actual)) return;
@@ -72,12 +71,12 @@ describe("parseBattleLog — golden regression", () => {
 
   it.each(CASES)("$fixture matches its reviewable shape", ({ fixture, playerName }) => {
     // Small enough to read in a diff when a template or locale changes.
-    const parsed = unwrap(parseBattleLog(readFixture(fixture), { matcher: english, playerName }));
+    const parsed = unwrap(parseBattleLog(readFixture(fixture), { playerName }));
     expect(shapeOf(parsed)).toEqual(readShape(fixture));
   });
 
   it.each(CASES)("$fixture serialises byte-identically to its golden", ({ fixture, golden, playerName }) => {
-    const actual = unwrap(parseBattleLog(readFixture(fixture), { matcher: english, playerName }));
+    const actual = unwrap(parseBattleLog(readFixture(fixture), { playerName }));
 
     // Stronger than toEqual: catches key-order drift, which would silently
     // change the bytes consumers hash or diff.
@@ -91,7 +90,7 @@ describe("parseBattleLog — golden regression", () => {
     // replaced with trivial logs.
     const seen = new Set<string>();
     for (const { fixture, playerName } of CASES) {
-      const parsed = unwrap(parseBattleLog(readFixture(fixture), { matcher: english, playerName }));
+      const parsed = unwrap(parseBattleLog(readFixture(fixture), { playerName }));
       for (const phase of parsed.phases) {
         for (const main of phase.mainEntries) {
           seen.add(main.event.templateKey);
@@ -106,7 +105,7 @@ describe("parseBattleLog — golden regression", () => {
 describe("parseBattleLog — unmatched lines", () => {
   it("returns UnmatchedBattleLogLineError carrying line number and text", () => {
     const badLog = "Setup\ncdierkens performed some unknown ritual.\n";
-    const result = parseBattleLog(badLog, { matcher: english, playerName: "cdierkens" });
+    const result = parseBattleLog(badLog, { playerName: "cdierkens" });
 
     expect(isErr(result)).toBe(true);
     if (!isErr(result)) return;
@@ -119,13 +118,13 @@ describe("parseBattleLog — unmatched lines", () => {
 
   it("throws the same error via unwrap on the failure arm", () => {
     const badLog = "Setup\ncdierkens performed some unknown ritual.\n";
-    expect(() => unwrap(parseBattleLog(badLog, { matcher: english, playerName: "cdierkens" }))).toThrow(
+    expect(() => unwrap(parseBattleLog(badLog, { playerName: "cdierkens" }))).toThrow(
       UnmatchedBattleLogLineError,
     );
   });
 
   it("reports line 1 when content precedes any phase header", () => {
-    const result = parseBattleLog("cdierkens drew a card.\n", { matcher: english });
+    const result = parseBattleLog("cdierkens drew a card.\n", {});
     expect(isErr(result)).toBe(true);
     if (!isErr(result)) return;
     expect(result.error.lineNumber).toBe(1);
@@ -135,7 +134,7 @@ describe("parseBattleLog — unmatched lines", () => {
     // An empty file contains no unmatched line, so there is nothing to blame:
     // this is `ok([])`, not an error. Callers that need to know whether a
     // battle actually happened should check `phases.length`.
-    const result = parseBattleLog("", { matcher: english });
+    const result = parseBattleLog("", {});
     expect(isOk(result)).toBe(true);
     if (!isOk(result)) return;
     expect(result.value.phases).toEqual([]);
@@ -163,7 +162,7 @@ describe("parseBattleLog — unmatched lines", () => {
     const crlf =
       "Setup\r\nAlice drew 7 cards for the opening hand.\r\n\r\n" +
       "Alice's Turn\r\nAlice ended their turn.\r\n";
-    const result = parseBattleLog(crlf, { matcher: english, playerName: "Alice" });
+    const result = parseBattleLog(crlf, { playerName: "Alice" });
     expect(isOk(result)).toBe(true);
     if (!isOk(result)) return;
     expect(result.value.phases).toHaveLength(2);

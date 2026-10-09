@@ -1,17 +1,21 @@
 /**
  * Template matcher.
  *
- * Compiles battle-log templates — strings with `[placeholder]` slots) into
- * anchored named-capture regexes, matches lines against a whole
- * bundle in specificity order, and scores bundles against a log to guess which
- * one it was written in.
+ * Compiles PTCG Live battle-log templates (e.g. `[playerName] played
+ * [cardName] to the Bench.`) into anchored named-capture regexes, and matches
+ * lines against a whole bundle in specificity order.
  *
- * This module ships no templates. A "bundle" is supplied by the caller — see
- * the README's *Supplying a bundle*. The package deliberately distributes no
- * game strings: the parser is original code, and the data stays with whoever
- * already has it.
+ * This module knows nothing about which locales exist. It takes a
+ * {@link TemplateBundle} and returns a matcher; the shipped bundles, and the
+ * question of which one a given log is in, live in `./locales.ts`.
  *
- * A "template" is any string with `[placeholderName]` slots.
+ * A "template" is any string with `[placeholderName]` slots. The set that
+ * ships with this package is the `blog_loc_*` bundle for each supported
+ * locale, extracted from PTCG Live's own public localization cache — the
+ * strings the client renders when you tap the in-app "Copy Log" button. All
+ * locales share the same 228 keys; only the string values differ.
+ * See `scripts/refresh-templates.ts` for how the bundles are re-extracted
+ * and why they can be MIT-licensed.
  *
  * Specificity: templates are sorted by the number of *literal* (non-
  * placeholder) characters, descending. That way `[X] is now in the Active
@@ -20,10 +24,10 @@
  * both would match a line.
  *
  * Matching is intentionally the *only* layer. There is no regex fallback and
- * no fuzzy matching: a line either came from a template in your bundle or the
- * parse fails. That constraint is what keeps the output trustworthy — every
- * event in the AST can be traced back to a specific key in the bundle you
- * supplied.
+ * no fuzzy matching: a line either came from a shipped template or the parse
+ * fails. That constraint is what keeps the output trustworthy — every event
+ * in the AST can be traced back to a specific localization key the game
+ * itself emits.
  */
 
 import type { TemplateBundle, TemplateEntry, TemplateMatch, TemplateMatcher } from "./types.js";
@@ -74,8 +78,8 @@ export function compileTemplate(template: string): RegExp {
  * Compile a whole bundle into a matcher.
  *
  * Compilation is eager and there is no cache here: build a matcher once and
- * reuse it. Compiling every template in a bundle is the expensive part of a
- * parse — on the order of milliseconds — so hoist it out of any loop.
+ * reuse it. The package's own matchers are built once at module load in
+ * `./locales.ts`.
  */
 export function createTemplateMatcher(bundle: TemplateBundle): TemplateMatcher {
   const compiled = compileBundle(bundle);
@@ -122,51 +126,4 @@ function literalLength(entry: TemplateEntry): number {
 
 function escapeLiteral(text: string): string {
   return text.replace(REGEX_META_RE, "\\$&");
-}
-
-/**
- * Guess which of several bundles a log was written in, by scoring each
- * matcher against the log's non-blank lines. The matcher that matches the
- * most lines wins; blank lines are ignored.
- *
- * `matchers` is a caller-supplied map of any key you like — normally a locale
- * code — to a compiled matcher. Returns the winning key, or `null` when
- * nothing scored above zero, since without knowing which bundles you handed
- * over there is no sensible fallback to pick.
- *
- * Locales that share a header get separated by the body lines, where the
- * templates diverge. This is a *heuristic*, not a guarantee: a log too short
- * to contain any distinctive string may score zero everywhere. When you
- * already know which bundle to use, just use it directly.
- */
-export function detectBattleLogLanguage(
-  log: string,
-  matchers: Readonly<Record<string, TemplateMatcher>>,
-): null | string {
-  const lines = log
-    .split(/\r?\n/u)
-    .map((line) => line.trim())
-    .filter((line) => line.length > 0);
-
-  if (lines.length === 0) return null;
-
-  let best: null | string = null;
-  let bestScore = 0;
-  for (const [key, matcher] of Object.entries(matchers)) {
-    const score = matchScore(matcher, lines);
-    if (score > bestScore) {
-      best = key;
-      bestScore = score;
-    }
-  }
-  return best;
-}
-
-/** How many of `lines` match at least one template for the matcher. */
-function matchScore(matcher: TemplateMatcher, lines: readonly string[]): number {
-  let score = 0;
-  for (const line of lines) {
-    if (matcher.match(line) !== null) score += 1;
-  }
-  return score;
 }

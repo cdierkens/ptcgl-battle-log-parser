@@ -119,7 +119,7 @@ export interface BattleLog {
  */
 export interface TemplateEntry {
   readonly placeholders: readonly string[];
-  /** e.g. `"[name] did [thing] to [target]."` */
+  /** e.g. `"[playerName] played [cardName] to the Bench."` */
   readonly template: string;
 }
 
@@ -202,14 +202,12 @@ export interface GameSummary {
 }
 
 /**
- * The full analysis of a single battle-log export: resolved player identities
- * and a compact summary.
- *
- * There is no `locale` field. This package ships no bundles, so the parser
- * cannot know which one you handed it — if you keyed your matchers by locale,
- * you already know which key you used.
+ * The full analysis of a single battle-log export: detected locale, resolved
+ * player identities, and a compact summary.
  */
 export interface BattleLogAnalysis {
+  /** The detected locale of the source log. */
+  readonly locale: BlogLocale;
   readonly opponentName: null | string;
   readonly playerName: string;
   readonly summary: GameSummary;

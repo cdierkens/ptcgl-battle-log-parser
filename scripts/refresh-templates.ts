@@ -71,7 +71,7 @@ import { fileURLToPath } from "node:url";
 import { ALL_BLOG_LOCALES } from "../src/types.js";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
-const TEMPLATE_DIR = join(HERE, "..", "test-fixtures", "templates");
+const TEMPLATE_DIR = join(HERE, "..", "src", "templates");
 
 const LOCALES = ALL_BLOG_LOCALES;
 

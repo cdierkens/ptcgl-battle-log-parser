@@ -6,9 +6,7 @@ export default defineConfig({
     coverage: {
       provider: "v8",
       include: ["src/**/*.ts"],
-      // Tests and test-support modules are not shipped code, so they are not
-      // measured. The bundles live outside `src/` entirely now.
-      exclude: ["src/**/__tests__/**"],
+      exclude: ["src/**/__tests__/**", "src/templates/**"],
       reporter: ["text", "lcov"],
       // A floor, not a target. Set at the level the suite held when the API
       // froze, so coverage cannot silently regress. Deliberately not 100%:
