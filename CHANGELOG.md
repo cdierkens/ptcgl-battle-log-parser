@@ -1,6 +1,6 @@
 # @dierkens.dev/ptcgl-battle-log-parser
 
-## 1.0.0-rc.0
+## 1.0.0
 
 ### Major Changes
 
@@ -56,6 +56,10 @@
   template _strings_ and the template-key _set_ are **not** part of the stability
   promise: they track the game client and may change in a minor.
 
+> Published first as `1.0.0-rc.0` on the `next` dist-tag, with identical
+> code, to exercise the release pipeline before it touched `latest`.
+> That version carries the same provenance attestation as this one.
+
 ## 0.1.0
 
 **Never published.** Tagged in the repository, but never released to npm under
@@ -81,7 +85,7 @@ golden JSON under both `toEqual` and a byte-exact `JSON.stringify` comparison.
 just numerically lower.** It is listed last because it is the least real, not
 because it came first.
 
-Trusted publishing can only be *configured* for a package that already exists,
+Trusted publishing can only be _configured_ for a package that already exists,
 so the name had to be created before CI could publish anything. This is that
 throwaway: a manual 2FA publish whose only job was to create the name. It
 carries no code promise — do not use it, and do not pin to it. It sits on
