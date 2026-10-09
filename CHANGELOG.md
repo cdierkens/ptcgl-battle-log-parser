@@ -1,23 +1,4 @@
-# ptcgl-battle-log-parser
-
-## 0.1.1
-
-### Patch Changes
-
-- Correct package metadata.
-
-  `homepage` pointed at `https://pokedojo.pro/docs/battle-log`, which 404s, so
-  every npm visitor landed on a dead link. It now points at the repository
-  README, which is where the documentation actually lives.
-
-  `repository` and `bugs` pointed at the old `cdierkens/pokedojo-battle-log`
-  repo name and now point at `cdierkens/ptcgl-battle-log-parser`.
-
-  `keywords` gained `ptcgl` and `battle-log-parser`, matching the package name.
-
-  These are metadata-only fixes; no runtime behaviour changes. 0.1.0 remains
-  functional and is left undeprecated — the wrong homepage does not warrant
-  warning every new installer.
+# @dierkens.dev/ptcgl-battle-log-parser
 
 ## 0.1.0
 
@@ -33,5 +14,19 @@ Fidelity to PokeDojo's original Effect-TS implementation is measured rather
 than asserted: four real battle-log fixtures are compared against ~330KB of
 golden JSON under both `toEqual` and a byte-exact `JSON.stringify` comparison.
 
-Note that `0.0.0-stage` also exists on npm. It is a name-reservation stub with
-no entry point and is deprecated — do not install it.
+### Migrating from the unscoped name
+
+This package was briefly published as the unscoped `ptcgl-battle-log-parser`
+before being moved under the `@dierkens.dev` scope. That name is now
+deprecated and will not receive further releases.
+
+If you depend on it:
+
+```sh
+pnpm remove ptcgl-battle-log-parser
+pnpm add @dierkens.dev/ptcgl-battle-log-parser
+```
+
+The API is identical — only the specifier changed. There is no unscoped
+equivalent of this version, so the import path must be updated; nothing else
+about your code needs to change.

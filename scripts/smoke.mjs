@@ -21,7 +21,7 @@ import {
   blogTemplateBundles,
   UnmatchedBattleLogLineError,
   parseBattleLogOrThrow,
-} from "ptcgl-battle-log-parser";
+} from "@dierkens.dev/ptcgl-battle-log-parser";
 
 const EXPECTED_TEMPLATES = 228;
 

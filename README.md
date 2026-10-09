@@ -1,10 +1,10 @@
-# `ptcgl-battle-log-parser`
+# `@dierkens.dev/ptcgl-battle-log-parser`
 
 Parse [Pokémon TCG Live](https://pokemon-tcg-live.com) battle-log exports into a
 typed AST. Zero runtime dependencies, ESM-only, 7 locales.
 
 ```ts
-import { analyzeBattleLog } from "ptcgl-battle-log-parser";
+import { analyzeBattleLog } from "@dierkens.dev/ptcgl-battle-log-parser";
 
 const result = analyzeBattleLog(await readLogFile());
 if (!result.ok) throw result.error;
@@ -39,8 +39,8 @@ AST, build it — the AST is deliberately close to the game's own model.
 ## Install
 
 ```sh
-pnpm add ptcgl-battle-log-parser
-npm  install ptcgl-battle-log-parser
+pnpm add @dierkens.dev/ptcgl-battle-log-parser
+npm  install @dierkens.dev/ptcgl-battle-log-parser
 ```
 
 Requires Node **>= 22**. ESM only — no CommonJS build.
@@ -100,7 +100,7 @@ that is a value you usually want to branch on, not an exception. Every fallible
 export returns a discriminated union on `ok`:
 
 ```ts
-import { isErr } from "ptcgl-battle-log-parser";
+import { isErr } from "@dierkens.dev/ptcgl-battle-log-parser";
 
 const result = parseBattleLog(raw, { locale: "de" });
 if (isErr(result)) {
@@ -112,7 +112,7 @@ Errors are also real `Error` subclasses carrying an `_tag`, so `instanceof` and
 tag narrowing both work — which is what makes the `*OrThrow` variants possible:
 
 ```ts
-import { UnmatchedBattleLogLineError } from "ptcgl-battle-log-parser";
+import { UnmatchedBattleLogLineError } from "@dierkens.dev/ptcgl-battle-log-parser";
 
 try {
   const log = parseBattleLogOrThrow(raw);
