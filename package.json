@@ -1,7 +1,7 @@
 {
   "name": "@dierkens.dev/ptcgl-battle-log-parser",
   "version": "0.1.0",
-  "description": "Zero-dependency parser for Pokémon TCG Live battle-log exports. 7 locales, structured AST, no runtime deps.",
+  "description": "Zero-dependency parser for Pok\u00e9mon TCG Live battle-log exports. 7 locales, structured AST, no runtime deps.",
   "keywords": [
     "pokemon",
     "ptcg",
@@ -55,17 +55,21 @@
     "templates:refresh": "tsx scripts/refresh-templates.ts",
     "templates:check": "tsx scripts/refresh-templates.ts --check",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "verify:ci": "pnpm run typecheck && pnpm run test && pnpm run build",
+    "lint": "eslint .",
+    "verify:ci": "pnpm run typecheck && pnpm run lint && pnpm run test:coverage && pnpm run build",
     "verify": "pnpm run templates:check && pnpm run verify:ci",
     "prepublishOnly": "pnpm run verify:ci",
     "version": "changeset version"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.10",
+    "@eslint/js": "^10.0.1",
     "@types/node": "^22.10.2",
     "@vitest/coverage-v8": "^2.1.8",
+    "eslint": "^10.12.0",
     "tsx": "^4.19.2",
     "typescript": "^5.9.3",
+    "typescript-eslint": "^8.71.1",
     "vitest": "^2.1.8"
   }
 }
