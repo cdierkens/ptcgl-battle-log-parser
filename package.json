@@ -1,6 +1,6 @@
 {
   "name": "ptcgl-battle-log-parser",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Zero-dependency parser for Pokémon TCG Live battle-log exports. 7 locales, structured AST, no runtime deps.",
   "keywords": [
     "pokemon",
@@ -30,7 +30,8 @@
   "files": [
     "dist",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "CHANGELOG.md"
   ],
   "homepage": "https://github.com/cdierkens/ptcgl-battle-log-parser#readme",
   "repository": {
