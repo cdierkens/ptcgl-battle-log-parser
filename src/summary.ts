@@ -25,7 +25,7 @@ export interface DeriveGameSummaryOptions {
    * The local player's name. Every credit is assigned by comparing against
    * this string, so getting it wrong flips `self` and `opponent` everywhere.
    */
-  readonly localPlayerName: string;
+  readonly playerName: string;
 }
 
 /**
@@ -46,7 +46,7 @@ export type SummaryDelta =
  * treated `undefined` as "opponent", which silently miscredited a count to the
  * wrong player. A rule that cannot attribute its event now skips it instead.
  */
-export type CreditResolver = (playerName: string | undefined) => Credit | null;
+export type CreditResolver = (name: string | undefined) => Credit | null;
 
 /** What a rule is given beyond the event's own placeholder groups. */
 export interface SummaryRuleContext {
@@ -65,8 +65,10 @@ export type SummaryRule = (
 /**
  * Every template the summary understands, keyed by its `blog_loc_*` key.
  *
- * Adding a semantic case is one entry here. Exported so a new rule can be
- * tested directly, without building a log that exercises it.
+ * Adding a semantic case is one entry here. Exported from this module so the
+ * tests can reach a rule directly, without building a log that exercises it —
+ * but deliberately **not** re-exported from the package entry point. It is an
+ * implementation detail, not an extension point. See ADR-0002.
  */
 export const summaryRules: Readonly<Record<string, SummaryRule>> = {
   // "[gameEndReason]. [playerName] wins." — playerName IS the winner.
@@ -109,7 +111,7 @@ export function deriveGameSummary(
   log: BattleLog,
   options: DeriveGameSummaryOptions,
 ): GameSummary {
-  const { localPlayerName } = options;
+  const { playerName } = options;
   const prizes: Record<Credit, number> = { opponent: 0, self: 0 };
   const knockouts: Record<Credit, number> = { opponent: 0, self: 0 };
   let firstKnockoutBy: Credit | null = null;
@@ -118,10 +120,10 @@ export function deriveGameSummary(
   let winner: Credit | null = null;
 
   // A name that is absent or blank is not the opponent — it is unattributable.
-  const creditOf: CreditResolver = (playerName) =>
-    playerName === undefined || playerName.trim().length === 0
+  const creditOf: CreditResolver = (name) =>
+    name === undefined || name.trim().length === 0
       ? null
-      : playerName === localPlayerName
+      : name === playerName
         ? "self"
         : "opponent";
 

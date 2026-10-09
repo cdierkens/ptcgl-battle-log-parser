@@ -7,17 +7,14 @@
  * locale-detection pass, which scores the log against all 7 bundles.
  */
 
-import type { BattleLog, BattleLogAnalysis } from "./types.js";
+import type { BattleLog, BattleLogAnalysis, BlogLocale } from "./types.js";
 
 import { detectPlayers } from "./detect-players.js";
 import type { AnalyzeBattleLogError } from "./errors.js";
+import { detectBattleLogLanguage } from "./locales.js";
 import { err, ok, type Result } from "./result.js";
 import { parseBattleLog } from "./parse-battle-log.js";
 import { deriveGameSummary } from "./summary.js";
-import {
-  type BlogLocale,
-  detectBattleLogLanguage,
-} from "./template-matcher.js";
 
 export interface AnalyzeBattleLogOptions {
   /**
@@ -55,7 +52,7 @@ export function analyzeBattleLog(
   options: AnalyzeBattleLogOptions = {},
 ): Result<BattleLogAnalysis, AnalyzeBattleLogError> {
   const locale = options.locale ?? detectBattleLogLanguage(raw);
-  const parsed = parseBattleLog(raw, { locale, localPlayerName: options.playerName });
+  const parsed = parseBattleLog(raw, { locale, playerName: options.playerName });
   if (!parsed.ok) return parsed;
 
   let playerName: string;
@@ -69,11 +66,11 @@ export function analyzeBattleLog(
   } else {
     const players = detectPlayers(parsed.value);
     if (!players.ok) return err(players.error);
-    playerName = players.value.localPlayerName;
+    playerName = players.value.playerName;
     opponentName = players.value.opponentName;
   }
 
-  const summary = deriveGameSummary(parsed.value, { localPlayerName: playerName });
+  const summary = deriveGameSummary(parsed.value, { playerName });
 
   return ok({ locale, opponentName, playerName, summary });
 }

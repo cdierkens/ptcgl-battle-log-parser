@@ -20,7 +20,7 @@
  *
  * To regenerate either, parse the fixture and rewrite the file — there is no
  * vitest snapshot here, so `--update` does nothing. A throwaway script using
- * `unwrap(parseBattleLog(raw, { localPlayerName }))` and `JSON.stringify(v,
+ * `unwrap(parseBattleLog(raw, { playerName }))` and `JSON.stringify(v,
  * null, 2) + "\n"` is the whole regeneration, and the shape projection is
  * `shapeOf` below.
  */
@@ -42,14 +42,14 @@ const GOLDENS = join(HERE, "goldens");
 interface Case {
   readonly fixture: string;
   readonly golden: string;
-  readonly localPlayerName: string;
+  readonly playerName: string;
 }
 
 const CASES: readonly Case[] = [
-  { fixture: "slowking-vs-beedrill.log", golden: "slowking-vs-beedrill.json", localPlayerName: "cdierkens" },
-  { fixture: "slowking-vs-froslass-mill.log", golden: "slowking-vs-froslass-mill.json", localPlayerName: "cdierkens" },
-  { fixture: "slowking-vs-greninja.log", golden: "slowking-vs-greninja.json", localPlayerName: "cdierkens" },
-  { fixture: "dipplin-vs-mega-excadrill.log", golden: "dipplin-vs-mega-excadrill.json", localPlayerName: "cdierkens" },
+  { fixture: "slowking-vs-beedrill.log", golden: "slowking-vs-beedrill.json", playerName: "cdierkens" },
+  { fixture: "slowking-vs-froslass-mill.log", golden: "slowking-vs-froslass-mill.json", playerName: "cdierkens" },
+  { fixture: "slowking-vs-greninja.log", golden: "slowking-vs-greninja.json", playerName: "cdierkens" },
+  { fixture: "dipplin-vs-mega-excadrill.log", golden: "dipplin-vs-mega-excadrill.json", playerName: "cdierkens" },
 ];
 
 const readFixture = (name: string): string => readFileSync(join(FIXTURES, name), "utf8");
@@ -102,22 +102,22 @@ const readShape = (name: string): unknown =>
   JSON.parse(readFileSync(join(GOLDENS, name.replace(/\.log$/, ".shape.json")), "utf8"));
 
 describe("parseBattleLog — golden regression", () => {
-  it.each(CASES)("$fixture matches its golden", ({ fixture, golden, localPlayerName }) => {
-    const actual = parseBattleLog(readFixture(fixture), { localPlayerName });
+  it.each(CASES)("$fixture matches its golden", ({ fixture, golden, playerName }) => {
+    const actual = parseBattleLog(readFixture(fixture), { playerName });
 
     expect(isOk(actual)).toBe(true);
     if (!isOk(actual)) return;
     expect(actual.value).toEqual(readGolden(golden));
   });
 
-  it.each(CASES)("$fixture matches its reviewable shape", ({ fixture, localPlayerName }) => {
+  it.each(CASES)("$fixture matches its reviewable shape", ({ fixture, playerName }) => {
     // Small enough to read in a diff when a template or locale changes.
-    const parsed = unwrap(parseBattleLog(readFixture(fixture), { localPlayerName }));
+    const parsed = unwrap(parseBattleLog(readFixture(fixture), { playerName }));
     expect(shapeOf(parsed)).toEqual(readShape(fixture));
   });
 
-  it.each(CASES)("$fixture serialises byte-identically to its golden", ({ fixture, golden, localPlayerName }) => {
-    const actual = unwrap(parseBattleLog(readFixture(fixture), { localPlayerName }));
+  it.each(CASES)("$fixture serialises byte-identically to its golden", ({ fixture, golden, playerName }) => {
+    const actual = unwrap(parseBattleLog(readFixture(fixture), { playerName }));
 
     // Stronger than toEqual: catches key-order drift, which would silently
     // change the bytes consumers hash or diff.
@@ -130,8 +130,8 @@ describe("parseBattleLog — golden regression", () => {
     // Guards against the goldens silently going stale if the fixtures are
     // replaced with trivial logs.
     const seen = new Set<string>();
-    for (const { fixture, localPlayerName } of CASES) {
-      const parsed = unwrap(parseBattleLog(readFixture(fixture), { localPlayerName }));
+    for (const { fixture, playerName } of CASES) {
+      const parsed = unwrap(parseBattleLog(readFixture(fixture), { playerName }));
       for (const phase of parsed.phases) {
         for (const main of phase.mainEntries) {
           seen.add(main.event.templateKey);
@@ -146,7 +146,7 @@ describe("parseBattleLog — golden regression", () => {
 describe("parseBattleLog — unmatched lines", () => {
   it("returns UnmatchedBattleLogLineError carrying line number and text", () => {
     const badLog = "Setup\ncdierkens performed some unknown ritual.\n";
-    const result = parseBattleLog(badLog, { localPlayerName: "cdierkens" });
+    const result = parseBattleLog(badLog, { playerName: "cdierkens" });
 
     expect(isErr(result)).toBe(true);
     if (!isErr(result)) return;
@@ -159,7 +159,7 @@ describe("parseBattleLog — unmatched lines", () => {
 
   it("throws the same error via unwrap on the failure arm", () => {
     const badLog = "Setup\ncdierkens performed some unknown ritual.\n";
-    expect(() => unwrap(parseBattleLog(badLog, { localPlayerName: "cdierkens" }))).toThrow(
+    expect(() => unwrap(parseBattleLog(badLog, { playerName: "cdierkens" }))).toThrow(
       UnmatchedBattleLogLineError,
     );
   });

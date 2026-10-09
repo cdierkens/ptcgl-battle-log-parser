@@ -12,6 +12,9 @@ import { describe, expect, it } from "vitest";
 
 import * as api from "../index.js";
 
+// The frozen value surface. `defaultTemplateMatcher`, `englishBlogTemplates`
+// and `summaryRules` were removed before the freeze (ADR-0002); if one of them
+// reappears here, the API grew without a decision.
 const EXPECTED_EXPORTS = [
   "ALL_BLOG_LOCALES",
   "PlayerDetectionError",
@@ -21,17 +24,14 @@ const EXPECTED_EXPORTS = [
   "blogTemplateMatchers",
   "compileTemplate",
   "createTemplateMatcher",
-  "defaultTemplateMatcher",
   "deriveGameSummary",
   "detectBattleLogLanguage",
   "detectPlayers",
-  "englishBlogTemplates",
   "err",
   "isErr",
   "isOk",
   "ok",
   "parseBattleLog",
-  "summaryRules",
   "unwrap",
 ] as const;
 
@@ -49,13 +49,7 @@ describe("public API", () => {
         expect(Array.isArray(value), name).toBe(true);
         continue;
       }
-      if (
-        name === "blogTemplateBundles" ||
-        name === "blogTemplateMatchers" ||
-        name === "defaultTemplateMatcher" ||
-        name === "englishBlogTemplates" ||
-        name === "summaryRules"
-      ) {
+      if (name === "blogTemplateBundles" || name === "blogTemplateMatchers") {
         expect(typeof value, name).toBe("object");
         continue;
       }

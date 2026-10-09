@@ -78,7 +78,7 @@ describe("detectPlayers", () => {
     expect(isOk(result)).toBe(true);
     if (!isOk(result)) return;
     expect(result.value).toEqual({
-      localPlayerName: "cdierkens",
+      playerName: "cdierkens",
       opponentName: "Izunzun",
     });
   });

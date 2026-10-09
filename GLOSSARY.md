@@ -54,6 +54,12 @@ who is local) at the point where the evidence is in hand, and exposes the
 *answer* rather than enough raw material to re-derive it. `Phase.playerName` is
 resolved at the seam; re-matching `plainTextPhaseTitle` downstream is not.
 
+**`playerName`** — the one spelling for a player's name across the API. The
+options on `analyzeBattleLog`, `parseBattleLog` and `deriveGameSummary` name the
+*local* player; `DetectedPlayers.playerName` and `BattleLogAnalysis.playerName`
+name the local player too; `Phase.playerName` names the player a phase belongs
+to, which may be either side. There is no `localPlayerName` anywhere.
+
 **Fallible export** — any function that can fail. All return a `Result`
 (`{ ok: true, value }` or `{ ok: false, error }`). There are no `*OrThrow`
 twins; `unwrap` is the throwing surface. See

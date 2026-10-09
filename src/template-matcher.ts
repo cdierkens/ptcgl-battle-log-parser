@@ -2,8 +2,12 @@
  * Template matcher.
  *
  * Compiles PTCG Live battle-log templates (e.g. `[playerName] played
- * [cardName] to the Bench.`) into anchored named-capture regexes, then
- * matches lines against the whole set in specificity order.
+ * [cardName] to the Bench.`) into anchored named-capture regexes, and matches
+ * lines against a whole bundle in specificity order.
+ *
+ * This module knows nothing about which locales exist. It takes a
+ * {@link TemplateBundle} and returns a matcher; the shipped bundles, and the
+ * question of which one a given log is in, live in `./locales.ts`.
  *
  * A "template" is any string with `[placeholderName]` slots. The set that
  * ships with this package is the `blog_loc_*` bundle for each supported
@@ -26,31 +30,7 @@
  * itself emits.
  */
 
-import type {
-  BlogLocale,
-  TemplateBundle,
-  TemplateEntry,
-  TemplateMatch,
-  TemplateMatcher,
-} from "./types.js";
-
-import { ALL_BLOG_LOCALES } from "./types.js";
-
-export type {
-  BlogLocale,
-  TemplateBundle,
-  TemplateEntry,
-  TemplateMatch,
-  TemplateMatcher,
-} from "./types.js";
-
-import blogTemplatesDe from "./templates/blog-templates.de.json" with { type: "json" };
-import blogTemplatesEn from "./templates/blog-templates.en.json" with { type: "json" };
-import blogTemplatesEs from "./templates/blog-templates.es.json" with { type: "json" };
-import blogTemplatesEsLa from "./templates/blog-templates.es_la.json" with { type: "json" };
-import blogTemplatesFr from "./templates/blog-templates.fr.json" with { type: "json" };
-import blogTemplatesIt from "./templates/blog-templates.it.json" with { type: "json" };
-import blogTemplatesPtbr from "./templates/blog-templates.ptbr.json" with { type: "json" };
+import type { TemplateBundle, TemplateEntry, TemplateMatch, TemplateMatcher } from "./types.js";
 
 const PLACEHOLDER_SPLIT_RE = /(\[[a-zA-Z][a-zA-Z0-9_]*\])/;
 const PLACEHOLDER_TEST_RE = /^\[([a-zA-Z][a-zA-Z0-9_]*)\]$/;
@@ -97,9 +77,9 @@ export function compileTemplate(template: string): RegExp {
 /**
  * Compile a whole bundle into a matcher.
  *
- * Compilation is eager and the result is cached per bundle by
- * {@link createCachedMatcher}, so constructing matchers in a hot loop is
- * wasteful — reuse the exported {@link blogTemplateMatchers} instead.
+ * Compilation is eager and there is no cache here: build a matcher once and
+ * reuse it. The package's own matchers are built once at module load in
+ * `./locales.ts`.
  */
 export function createTemplateMatcher(bundle: TemplateBundle): TemplateMatcher {
   const compiled = compileBundle(bundle);
@@ -146,120 +126,4 @@ function literalLength(entry: TemplateEntry): number {
 
 function escapeLiteral(text: string): string {
   return text.replace(REGEX_META_RE, "\\$&");
-}
-
-// --- Locale support ---
-
-/**
- * Every supported locale, in detection-preference order.
- *
- * Re-exported from `types.ts`, which owns the list; the `BlogLocale` type is
- * derived from the same array, so the two cannot drift.
- */
-export { ALL_BLOG_LOCALES } from "./types.js";
-
-/**
- * The raw `blog_loc_*` bundle per locale, exactly as extracted from the
- * client. Prefer a precompiled matcher from {@link blogTemplateMatchers}
- * unless you are inspecting the strings themselves.
- *
- * The `Record<BlogLocale, …>` type makes this exhaustive: adding a locale to
- * `ALL_BLOG_LOCALES` turns a missing bundle here into a compile error.
- */
-export const blogTemplateBundles: Readonly<Record<BlogLocale, TemplateBundle>> = {
-  de: blogTemplatesDe,
-  en: blogTemplatesEn,
-  es: blogTemplatesEs,
-  es_la: blogTemplatesEsLa,
-  fr: blogTemplatesFr,
-  it: blogTemplatesIt,
-  ptbr: blogTemplatesPtbr,
-};
-
-/** Precompiled matcher per locale, built once at module load. */
-export const blogTemplateMatchers: Readonly<Record<BlogLocale, TemplateMatcher>> =
-  createCachedMatchers(blogTemplateBundles);
-
-/**
- * The English bundle, which is the parser's default when no locale is given.
- */
-export const englishBlogTemplates: TemplateBundle = blogTemplateBundles["en"];
-
-/**
- * Matcher backed by the shipped English bundle.
- *
- * This is the default for {@link parseBattleLog} when no `locale` is passed.
- * It matches an English log out of the box, but it cannot read a log in any
- * other language — pass the right `locale`, or let
- * {@link analyzeBattleLog} detect it.
- */
-export const defaultTemplateMatcher: TemplateMatcher =
-  blogTemplateMatchers["en"];
-
-/**
- * Build one matcher per locale, sharing a compiled matcher per distinct bundle
- * object.
- *
- * Driven by {@link ALL_BLOG_LOCALES} rather than a hand-written key list, so
- * adding a locale is a one-line change in `types.ts` plus its bundle — there is
- * no parallel list here to forget.
- */
-function createCachedMatchers(
-  bundles: Readonly<Record<BlogLocale, TemplateBundle>>,
-): Readonly<Record<BlogLocale, TemplateMatcher>> {
-  const byBundle = new WeakMap<TemplateBundle, TemplateMatcher>();
-  const get = (bundle: TemplateBundle): TemplateMatcher => {
-    const cached = byBundle.get(bundle);
-    if (cached !== undefined) return cached;
-    const matcher = createTemplateMatcher(bundle);
-    byBundle.set(bundle, matcher);
-    return matcher;
-  };
-  const entries = ALL_BLOG_LOCALES.map((locale) => [locale, get(bundles[locale])] as const);
-  // `Object.fromEntries` widens the key type to `string`; the locale set is
-  // exactly ALL_BLOG_LOCALES, so the narrower record type is sound.
-  return Object.fromEntries(entries) as Readonly<Record<BlogLocale, TemplateMatcher>>;
-}
-
-/**
- * Detect which locale a battle-log export is in, by scoring each locale's
- * matcher against the log's non-blank lines. The locale whose templates match
- * the most lines wins; blank lines are ignored.
- *
- * Locales that share headers — `es` and `es_la` both open with the same
- * `Preparación`-style setup string — are separated by the body lines, where
- * the templates diverge.
- *
- * Unrecognisable input falls back to `"en"`, so this always returns a usable
- * matcher. It is a *heuristic*, not a guarantee: a log too short to contain
- * any distinctive string will be reported as English even if it is not. When
- * you already know the locale, pass it explicitly.
- */
-export function detectBattleLogLanguage(log: string): BlogLocale {
-  const lines = log
-    .split(/\r?\n/u)
-    .map((line) => line.trim())
-    .filter((line) => line.length > 0);
-
-  if (lines.length === 0) return "en";
-
-  let best: BlogLocale = "en";
-  let bestScore = -1;
-  for (const locale of ALL_BLOG_LOCALES) {
-    const score = matchScore(blogTemplateMatchers[locale], lines);
-    if (score > bestScore) {
-      best = locale;
-      bestScore = score;
-    }
-  }
-  return best;
-}
-
-/** How many of `lines` match at least one template for the locale. */
-function matchScore(matcher: TemplateMatcher, lines: readonly string[]): number {
-  let score = 0;
-  for (const line of lines) {
-    if (matcher.match(line) !== null) score += 1;
-  }
-  return score;
 }

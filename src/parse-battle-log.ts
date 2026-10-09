@@ -32,23 +32,19 @@
  * }
  */
 
+import { UnmatchedBattleLogLineError } from "./errors.js";
+import { blogTemplateMatchers, defaultTemplateMatcher } from "./locales.js";
+import { err, ok, type Result } from "./result.js";
 import type {
   BattleLog,
+  BlogLocale,
   MainEntry,
   Phase,
   PhaseType,
   SubEntry,
   TemplateEvent,
+  TemplateMatcher,
 } from "./types.js";
-
-import { UnmatchedBattleLogLineError } from "./errors.js";
-import { err, ok, type Result } from "./result.js";
-import {
-  type BlogLocale,
-  blogTemplateMatchers,
-  defaultTemplateMatcher,
-  type TemplateMatcher,
-} from "./template-matcher.js";
 
 const SUB_ENTRY_PREFIX = "- ";
 const SUB_STRING_PREFIX = "   • ";
@@ -80,7 +76,7 @@ export interface ParseBattleLogOptions {
    * That heuristic holds when the local player went first and breaks when
    * they did not, so pass the name whenever you know it.
    */
-  readonly localPlayerName?: string | undefined;
+  readonly playerName?: string | undefined;
   /**
    * A matcher to use instead of a locale bundle — for matching a custom or
    * user-supplied bundle, or for reusing one you built yourself. Takes
@@ -137,7 +133,7 @@ export function parseBattleLog(
   const phases: MutablePhase[] = [];
   let currentPhase: MutablePhase | null = null;
   let phaseTurnCounter = 0;
-  let localPlayerName: null | string = options.localPlayerName ?? null;
+  let localName: null | string = options.playerName ?? null;
 
   for (let i = 0; i < lines.length; i++) {
     const rawLine = lines[i];
@@ -149,10 +145,10 @@ export function parseBattleLog(
     const phaseHeader = tryPhaseHeader(line, matcher);
     if (phaseHeader !== null) {
       const opened = openPhase(line, phaseHeader, {
-        localPlayerName,
+        localName,
         turnCount: phaseTurnCounter,
       });
-      localPlayerName = opened.localPlayerName;
+      localName = opened.localName;
       phaseTurnCounter = opened.turnCount;
       currentPhase = opened.phase;
       phases.push(currentPhase);
@@ -234,12 +230,12 @@ function freezeSubEntry(entry: MutableSubEntry): SubEntry {
  * of its arguments without a callback bag.
  */
 interface OpenPhaseInput {
-  readonly localPlayerName: null | string;
+  readonly localName: null | string;
   readonly turnCount: number;
 }
 
 interface OpenPhaseResult {
-  readonly localPlayerName: null | string;
+  readonly localName: null | string;
   readonly phase: MutablePhase;
   readonly turnCount: number;
 }
@@ -258,7 +254,7 @@ function openPhase(
 ): OpenPhaseResult {
   if (header.kind === "Setup") {
     return {
-      localPlayerName: input.localPlayerName,
+      localName: input.localName,
       phase: {
         battlePhase: "Setup",
         displayTurnNumber: null,
@@ -271,7 +267,7 @@ function openPhase(
   }
   if (header.kind === "Checkup") {
     return {
-      localPlayerName: input.localPlayerName,
+      localName: input.localName,
       phase: {
         battlePhase: "Checkup",
         displayTurnNumber: null,
@@ -282,7 +278,7 @@ function openPhase(
       turnCount: input.turnCount,
     };
   }
-  let localName = input.localPlayerName;
+  let localName = input.localName;
   if (localName === null && header.playerName !== null) {
     localName = header.playerName;
   }
@@ -292,7 +288,7 @@ function openPhase(
   // round: this is the game's own (TurnNumber + 1) / 2 derivation.
   const displayTurnNumber = Math.floor((turnCount + 1) / 2);
   return {
-    localPlayerName: localName,
+    localName,
     phase: {
       battlePhase,
       displayTurnNumber,

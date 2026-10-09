@@ -73,7 +73,7 @@ export interface MainEntry {
  * from the same `blog_loc_phase_turn` template and carries no notion of
  * which side is local. The parser decides by comparing the header's
  * `playerName` against the local player's name — see
- * {@link ParseBattleLogOptions.localPlayerName}.
+ * {@link ParseBattleLogOptions.playerName}.
  */
 export type PhaseType = "Setup" | "Player" | "Opponent" | "Checkup";
 

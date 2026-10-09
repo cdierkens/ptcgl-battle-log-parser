@@ -37,28 +37,29 @@ export {
 export { detectPlayers, type DetectedPlayers } from "./detect-players.js";
 
 // --- Summarisation ---
+// `summaryRules` and its rule types (`SummaryRule`, `SummaryRuleContext`,
+// `SummaryDelta`, `CreditResolver`) are deliberately *not* re-exported. They
+// stay exported from `./summary.js` for the tests, which import it directly,
+// but they are an implementation detail, not an extension point. See ADR-0002.
 export {
-  type CreditResolver,
   deriveGameSummary,
   type DeriveGameSummaryOptions,
-  type SummaryDelta,
-  type SummaryRule,
-  type SummaryRuleContext,
-  summaryRules,
 } from "./summary.js";
 
-// --- Template matching (advanced) ---
+// --- Locales ---
+// `defaultTemplateMatcher` and `englishBlogTemplates` are deliberately *not*
+// re-exported: they are exactly `blogTemplateMatchers["en"]` and
+// `blogTemplateBundles["en"]`, and exporting both spellings would freeze two
+// names for one thing. See ADR-0002.
+export { ALL_BLOG_LOCALES } from "./types.js";
 export {
-  ALL_BLOG_LOCALES,
-  type BlogLocale,
   blogTemplateBundles,
   blogTemplateMatchers,
-  compileTemplate,
-  createTemplateMatcher,
-  defaultTemplateMatcher,
   detectBattleLogLanguage,
-  englishBlogTemplates,
-} from "./template-matcher.js";
+} from "./locales.js";
+
+// --- Template matching (advanced) ---
+export { compileTemplate, createTemplateMatcher } from "./template-matcher.js";
 
 // --- Errors ---
 export {
@@ -76,6 +77,7 @@ export { err, type Err, isErr, isOk, ok, type Ok, type Result } from "./result.j
 export type {
   BattleLog,
   BattleLogAnalysis,
+  BlogLocale,
   Credit,
   CreditCounts,
   GameSummary,

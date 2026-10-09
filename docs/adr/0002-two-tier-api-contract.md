@@ -8,9 +8,9 @@ Accepted.
 
 ## Context
 
-1.0.0 is a stability promise: after it, the public API is a contract. The barrel
-exports 20 values and 28 types, pinned by `src/__tests__/index.test.ts`. They are
-not all the same kind of thing.
+1.0.0 is a stability promise: after it, the public API is a contract. Before the
+removals below, the barrel exported 20 values and 28 types, pinned by
+`src/__tests__/index.test.ts`. They were not all the same kind of thing.
 
 `analyzeBattleLog` and the `Result` union are the product. `compileTemplate` and
 `blogTemplateMatchers` exist because matching against your own bundle is a real

@@ -9,13 +9,12 @@
 import { describe, expect, it } from "vitest";
 
 import {
-  ALL_BLOG_LOCALES,
   blogTemplateBundles,
-  compileTemplate,
-  createTemplateMatcher,
   defaultTemplateMatcher,
   englishBlogTemplates,
-} from "../template-matcher.js";
+} from "../locales.js";
+import { compileTemplate, createTemplateMatcher } from "../template-matcher.js";
+import { ALL_BLOG_LOCALES } from "../types.js";
 
 describe("compileTemplate", () => {
   it("compiles a single-placeholder template into an anchored regex", () => {

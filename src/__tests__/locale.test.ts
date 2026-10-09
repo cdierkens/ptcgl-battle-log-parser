@@ -25,12 +25,10 @@ import { unwrap } from "../errors.js";
 import { parseBattleLog } from "../parse-battle-log.js";
 import { isOk } from "../result.js";
 import {
-  ALL_BLOG_LOCALES,
-  type BlogLocale,
   blogTemplateBundles,
-
   detectBattleLogLanguage,
-} from "../template-matcher.js";
+} from "../locales.js";
+import { ALL_BLOG_LOCALES, type BlogLocale } from "../types.js";
 
 /**
  * Placeholder values substituted into templates to build synthetic lines.
@@ -243,7 +241,7 @@ describe("Phase.playerName — resolved at parse time, per locale", () => {
     const result = detectPlayers(unwrap(parseBattleLog(syntheticLog(locale), { locale })));
     expect(result.ok, locale).toBe(true);
     if (!result.ok) return;
-    expect(result.value, locale).toEqual({ localPlayerName: ME, opponentName: THEM });
+    expect(result.value, locale).toEqual({ playerName: ME, opponentName: THEM });
   });
 
   it("detectPlayers does not need a locale argument", () => {
@@ -252,7 +250,7 @@ describe("Phase.playerName — resolved at parse time, per locale", () => {
     const result = detectPlayers(parsed);
     expect(result.ok).toBe(true);
     if (!result.ok) return;
-    expect(result.value.localPlayerName).toBe(ME);
+    expect(result.value.playerName).toBe(ME);
   });
 });
 
@@ -281,7 +279,7 @@ describe("parseBattleLog — every locale", () => {
   it.each(ALL_BLOG_LOCALES)("resolves Player/Opponent phases correctly for %s", (locale) => {
     const result = parseBattleLog(syntheticLog(locale), {
       locale,
-      localPlayerName: VALUES["playerName"],
+      playerName: VALUES["playerName"],
     });
     expect(isOk(result)).toBe(true);
     if (!isOk(result)) return;

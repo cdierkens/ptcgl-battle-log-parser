@@ -6,12 +6,19 @@ typed AST. Zero runtime dependencies, ESM-only, 7 locales.
 ```ts
 import { analyzeBattleLog } from "@dierkens.dev/ptcgl-battle-log-parser";
 
-const result = analyzeBattleLog(await readLogFile());
+// The text the game's in-app "Copy Log" button hands you.
+const raw = `Setup
+Alice drew 7 cards for the opening hand.
+
+Alice's Turn
+Alice ended their turn.`;
+
+const result = analyzeBattleLog(raw, { playerName: "Alice" });
 if (!result.ok) throw result.error;
 
-result.value.locale;    // "en"
-result.value.playerName; // "cdierkens"
-result.value.summary.winner; // "self"
+result.value.locale;            // "en"
+result.value.playerName;        // "Alice"
+result.value.summary.turnCount; // 1
 ```
 
 Every line you feed it is matched back to the exact `blog_loc_*` localization
@@ -43,7 +50,11 @@ pnpm add @dierkens.dev/ptcgl-battle-log-parser
 npm  install @dierkens.dev/ptcgl-battle-log-parser
 ```
 
-Requires Node **>= 22**. ESM only — no CommonJS build.
+Requires Node **>= 22.12.0** — the first release where JSON import attributes
+are stable, which the locale bundles rely on. The raw syntax floor is lower
+(import attributes landed unflagged in 20.10), but 22.12 is the oldest line
+still receiving security fixes, so that is where the floor sits. ESM only — no
+CommonJS build.
 
 ## What you get
 
@@ -55,6 +66,7 @@ interface BattleLog {
 interface Phase {
   battlePhase: "Setup" | "Player" | "Opponent" | "Checkup";
   displayTurnNumber: number | null;   // the game's own (turn + 1) / 2
+  playerName: string | null;          // resolved at parse time; null for Setup/Checkup
   mainEntries: MainEntry[];
   plainTextPhaseTitle: string;
 }
@@ -89,7 +101,6 @@ SubEntry[]` tree. `parseBattleLog` is the mathematical inverse of
 | `unwrap(result)` | Get the value, or throw the error. Works on every fallible export. |
 | `detectPlayers(parsed)` | Infer who the local player was. |
 | `deriveGameSummary(parsed, opts)` | Per-side knockouts, prizes, winner. |
-| `summaryRules` | The per-template rules the summary fold applies; test or extend one directly. |
 | `detectBattleLogLanguage(log)` | Guess the locale from the text. |
 | `compileTemplate`, `createTemplateMatcher` | Match against your own template bundle. |
 | `blogTemplateBundles`, `blogTemplateMatchers`, `ALL_BLOG_LOCALES` | The shipped data, if you want to inspect it. |
@@ -144,6 +155,34 @@ analyzeBattleLog(raw, { playerName: "cdierkens" });
 > name. Supply the wrong one and the summary **inverts silently** rather than
 > failing. There is a test pinning that behaviour (`analyze-battle-log.test.ts`,
 > *"mirrors self/opponent…"*) precisely because it is a footgun.
+
+## Stability
+
+**1.0.0 is a promise, not a milestone.** The public API is a contract: after
+1.0, a breaking change to anything in Tier 1 needs a major version.
+
+The exports do not all carry the same promise, because they are not all the same
+kind of thing:
+
+| Tier | Exports | The promise |
+|---|---|---|
+| **1 — the contract** | `analyzeBattleLog` · `parseBattleLog` · `detectPlayers` · `deriveGameSummary` · `detectBattleLogLanguage` · `unwrap` · `ok` · `err` · `isOk` · `isErr` · `UnmatchedBattleLogLineError` · `PlayerDetectionError` · the `Result` union and the options types · and the shapes `BattleLog` · `Phase` · `PhaseType` · `MainEntry` · `SubEntry` · `TemplateEvent` · `BattleLogAnalysis` · `GameSummary` · `Credit` · `CreditCounts` · `DetectedPlayers` · `AnalyzeBattleLogError` · `PlayerDetectionReason` | Frozen. Semver applies to type shapes **and** observable behaviour. |
+| **2 — advanced** | `compileTemplate` · `createTemplateMatcher` · `blogTemplateBundles` · `blogTemplateMatchers` · `ALL_BLOG_LOCALES` · `BlogLocale` · the template types (`TemplateBundle`, `TemplateEntry`, `TemplateMatch`, `TemplateMatcher`) | Public and stable, but outside the promise. A game-client change can move these in a **minor** — never silently. |
+
+**Excluded from the promise, and said plainly:**
+
+- the shipped template *strings* and the template-key *set* — the game client
+  can add or reword keys whenever it likes, and this package follows it;
+- `raw` and `groups` for any *given* log — they are whatever the client printed;
+- performance characteristics.
+
+**Deprecation policy.** A Tier 1 export is deprecated in a minor with a
+changelog note, and removed only in a major — never without a full minor of
+warning. A Tier 2 change can land in a minor, but it still gets a changelog
+entry.
+
+The reasoning, and the alternatives rejected, are in
+[ADR-0002](./docs/adr/0002-two-tier-api-contract.md).
 
 ## Localisation
 
@@ -265,7 +304,7 @@ vitest snapshot, so `--update` does nothing. A throwaway script is the whole
 job:
 
 ```ts
-const value = unwrap(parseBattleLog(raw, { localPlayerName: "you" }));
+const value = unwrap(parseBattleLog(raw, { playerName: "you" }));
 writeFileSync(goldenPath, JSON.stringify(value, null, 2) + "\n");
 ```
 

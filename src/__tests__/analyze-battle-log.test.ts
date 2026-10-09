@@ -26,9 +26,9 @@ const ALL_FIXTURES = readdirSync(new URL("./fixtures/", import.meta.url));
 describe("deriveGameSummary", () => {
   it("summarises the Slowking vs Beedrill fixture", () => {
     const log = unwrap(parseBattleLog(loadFixture("slowking-vs-beedrill.log"), {
-      localPlayerName: ME,
+      playerName: ME,
     }));
-    expect(deriveGameSummary(log, { localPlayerName: ME })).toEqual({
+    expect(deriveGameSummary(log, { playerName: ME })).toEqual({
       firstKnockoutBy: "self",
       knockoutsByPlayer: { opponent: 3, self: 5 },
       prizesByPlayer: { opponent: 3, self: 6 },
@@ -41,9 +41,9 @@ describe("deriveGameSummary", () => {
   it("returns a null winner for an unfinished game", () => {
     const log = unwrap(parseBattleLog(
       "Setup\ncdierkens chose tails for the opening coin flip.\ncdierkens decided to go first.\n",
-      { localPlayerName: ME },
+      { playerName: ME },
     ));
-    const summary = deriveGameSummary(log, { localPlayerName: ME });
+    const summary = deriveGameSummary(log, { playerName: ME });
     expect(summary.winner).toBeNull();
     expect(summary.firstKnockoutBy).toBeNull();
     expect(summary.turnCount).toBe(0);
@@ -55,10 +55,10 @@ describe("deriveGameSummary", () => {
     // mis-supplied name does not fail loudly, it inverts the summary. That
     // is worth knowing before you trust `summary.winner`.
     const log = unwrap(parseBattleLog(loadFixture("slowking-vs-beedrill.log"), {
-      localPlayerName: ME,
+      playerName: ME,
     }));
-    const correct = deriveGameSummary(log, { localPlayerName: ME });
-    const flipped = deriveGameSummary(log, { localPlayerName: "Wonder_Squid" });
+    const correct = deriveGameSummary(log, { playerName: ME });
+    const flipped = deriveGameSummary(log, { playerName: "Wonder_Squid" });
 
     expect(correct.winner).toBe("self");
     expect(flipped.winner).toBe("opponent");
@@ -77,9 +77,9 @@ describe("deriveGameSummary", () => {
 
   it("counts only Player and Opponent phases as turns", () => {
     const log = unwrap(parseBattleLog(loadFixture("slowking-vs-greninja.log"), {
-      localPlayerName: ME,
+      playerName: ME,
     }));
-    const summary = deriveGameSummary(log, { localPlayerName: ME });
+    const summary = deriveGameSummary(log, { playerName: ME });
     const turnPhases = log.phases.filter(
       (p) => p.battlePhase === "Player" || p.battlePhase === "Opponent",
     ).length;
@@ -88,14 +88,14 @@ describe("deriveGameSummary", () => {
 
   it("counts every main and sub entry in totalEntries", () => {
     const log = unwrap(parseBattleLog(loadFixture("slowking-vs-beedrill.log"), {
-      localPlayerName: ME,
+      playerName: ME,
     }));
     const expected = log.phases.reduce(
       (sum, phase) =>
         sum + phase.mainEntries.reduce((s, main) => s + 1 + main.subEntries.length, 0),
       0,
     );
-    expect(deriveGameSummary(log, { localPlayerName: ME }).totalEntries).toBe(expected);
+    expect(deriveGameSummary(log, { playerName: ME }).totalEntries).toBe(expected);
     expect(expected).toBeGreaterThan(200);
   });
 });
@@ -168,7 +168,7 @@ describe("deriveGameSummary — unattributable names", () => {
         { event: { groups: {}, raw: "x", templateKey: "blog_loc_took_single_prize_card" }, subEntries: [] },
       ], plainTextPhaseTitle: "Turn", playerName: "me" },
     ] };
-    const summary = deriveGameSummary(log, { localPlayerName: "me" });
+    const summary = deriveGameSummary(log, { playerName: "me" });
     expect(summary.prizesByPlayer).toEqual({ opponent: 0, self: 0 });
   });
 });

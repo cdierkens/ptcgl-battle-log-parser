@@ -32,7 +32,7 @@ import { err, ok, type Result } from "./result.js";
 /** The two players, as named in the log. */
 export interface DetectedPlayers {
   /** The player whose perspective the log is from. */
-  readonly localPlayerName: string;
+  readonly playerName: string;
   readonly opponentName: string;
 }
 
@@ -51,13 +51,13 @@ export function detectPlayers(parsed: BattleLog): Result<DetectedPlayers, Player
   const localCandidates = collectOpeningHandRevealOwners(parsed);
   if (localCandidates.size !== 1) return err(new PlayerDetectionError("ambiguous"));
 
-  const localPlayerName = first(localCandidates);
-  if (localPlayerName === null) return err(new PlayerDetectionError("ambiguous"));
+  const playerName = first(localCandidates);
+  if (playerName === null) return err(new PlayerDetectionError("ambiguous"));
 
-  const opponentName = [...players].find((player) => player !== localPlayerName) ?? null;
+  const opponentName = [...players].find((player) => player !== playerName) ?? null;
   if (opponentName === null) return err(new PlayerDetectionError("ambiguous"));
 
-  return ok({ localPlayerName, opponentName });
+  return ok({ playerName, opponentName });
 }
 
 function addName(names: Set<string>, value: null | string | undefined): void {
