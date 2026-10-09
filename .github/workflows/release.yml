@@ -104,3 +104,44 @@ jobs:
       # `--no-git-checks` anywhere: that flag only exists because pnpm checks
       # whether a detached HEAD is the publish branch, and npm does not.
       - run: npm publish --access public --tag "${{ steps.dist.outputs.tag }}"
+
+  # Runs only after the publish step succeeds, so a Release never announces a
+  # version that failed to reach the registry.
+  #
+  # Deliberately a separate job from `publish`: this one needs
+  # `contents: write`, and the job that authenticates to npm should not have it.
+  release:
+    needs: publish
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 22.14.0
+
+      # The notes are the changelog entry itself, so there is no second summary
+      # to keep in sync. The step fails rather than posting empty notes.
+      - name: Build the release notes
+        run: node scripts/changelog-section.mjs "${GITHUB_REF_NAME#v}" > "$RUNNER_TEMP/notes.md"
+
+      - name: Create or update the GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          tag="$GITHUB_REF_NAME"
+          flags=()
+          case "$tag" in
+            *-*) flags+=(--prerelease) ;;
+          esac
+          # Idempotent: a re-run after a partial failure updates the notes
+          # instead of failing on "release already exists".
+          if gh release view "$tag" > /dev/null 2>&1; then
+            gh release edit "$tag" --notes-file "$RUNNER_TEMP/notes.md" "${flags[@]}"
+          else
+            gh release create "$tag" --title "$tag" --verify-tag \
+              --notes-file "$RUNNER_TEMP/notes.md" "${flags[@]}"
+          fi

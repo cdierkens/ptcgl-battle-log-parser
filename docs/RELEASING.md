@@ -11,7 +11,7 @@ provenance-signed by CI (`.github/workflows/release.yml`).
 ```
 changeset  →  pnpm run version  →  commit  →  git tag  →  git push --tags
                                                               ↓
-                              CI: guards → verify → publish
+                CI: guards → verify → publish → GitHub Release
 ```
 
 The dist-tag is derived from the version: anything with a prerelease suffix
@@ -93,10 +93,23 @@ git tag v1.0.0 && git push origin main --tags
 CI runs and what `prepublishOnly` runs, so the same gate runs locally and in
 the pipeline.
 
+## GitHub Releases
+
+After a successful publish, CI creates a GitHub Release for the tag — in a
+separate job, because creating one needs `contents: write` and the job that
+authenticates to npm should not have it.
+
+The notes are the CHANGELOG section for that version, extracted by
+`scripts/changelog-section.mjs`. Same text as the changelog, so there is no
+second summary to keep in sync; the step fails rather than posting empty notes.
+Prereleases are marked as prereleases, final releases become the repository's
+latest release, and the step is idempotent so a re-run updates the notes instead
+of failing on "release already exists".
+
 ## What is automated, and what is not
 
 **Automated:** verification, the build, the dist-tag choice, provenance
-attestation, the upload.
+attestation, the upload, the GitHub Release.
 
 **Manual:** deciding the version bump, pushing the tag, and 2FA for the one-time
 bootstrap. There is no `NPM_TOKEN` in the repository, and there should never be
