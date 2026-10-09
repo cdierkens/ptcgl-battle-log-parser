@@ -86,9 +86,10 @@ SubEntry[]` tree. `parseBattleLog` is the mathematical inverse of
 |---|---|
 | `analyzeBattleLog(raw, opts?)` | The one-call path: detect locale → parse → identify players → summarise. |
 | `parseBattleLog(raw, opts?)` | Parse to the AST. Returns a `Result`. |
-| `parseBattleLogOrThrow(raw, opts?)` | Same, but throws instead of returning `err`. |
+| `unwrap(result)` | Get the value, or throw the error. Works on every fallible export. |
 | `detectPlayers(parsed)` | Infer who the local player was. |
 | `deriveGameSummary(parsed, opts)` | Per-side knockouts, prizes, winner. |
+| `summaryRules` | The per-template rules the summary fold applies; test or extend one directly. |
 | `detectBattleLogLanguage(log)` | Guess the locale from the text. |
 | `compileTemplate`, `createTemplateMatcher` | Match against your own template bundle. |
 | `blogTemplateBundles`, `blogTemplateMatchers`, `ALL_BLOG_LOCALES` | The shipped data, if you want to inspect it. |
@@ -109,13 +110,14 @@ if (isErr(result)) {
 ```
 
 Errors are also real `Error` subclasses carrying an `_tag`, so `instanceof` and
-tag narrowing both work — which is what makes the `*OrThrow` variants possible:
+tag narrowing both work. To throw instead of branching, pass the result to
+`unwrap` — there is no separate `*OrThrow` twin to keep in sync:
 
 ```ts
-import { UnmatchedBattleLogLineError } from "@dierkens.dev/ptcgl-battle-log-parser";
+import { unwrap, UnmatchedBattleLogLineError } from "@dierkens.dev/ptcgl-battle-log-parser";
 
 try {
-  const log = parseBattleLogOrThrow(raw);
+  const log = unwrap(parseBattleLog(raw));
 } catch (e) {
   if (e instanceof UnmatchedBattleLogLineError) {
     console.error(`line ${e.lineNumber}: ${e.line}`);
@@ -187,12 +189,14 @@ that union and rewrites `src/templates/`. It is verifiable, not a claim:
 
 ```sh
 pnpm run templates:refresh        # rewrite the bundles from your local install
-pnpm run templates:check          # verify they are up to date (runs in CI)
+pnpm run templates:check          # verify they are up to date (needs a game install)
 ```
 
 `pnpm run templates:check` re-derives all 7 bundles and compares them to what
 is committed. It passes only if they are byte-identical, which is the proof
-that the shipped data really is the client's.
+that the shipped data really is the client's. **It needs a local PTCG Live
+install, so it cannot run on a CI runner.** CI asserts the invariant it protects
+instead: every bundle has the same 228 keys and no duplicate placeholders.
 
 **Why fetching directly isn't the default.** It would be nicer to download
 `<directory>/<locale>.gzip` over the network, and the path shape above is known
@@ -256,17 +260,21 @@ If you play PTCG Live in any language other than English:
 3. Drop the text in as `src/__tests__/fixtures/<descriptive-name>.log`.
 4. Open a PR.
 
-Add its golden by running:
+Add its golden by parsing the fixture and writing the JSON — there is no
+vitest snapshot, so `--update` does nothing. A throwaway script is the whole
+job:
 
-```sh
-pnpm run test:unit -- --update
+```ts
+const value = unwrap(parseBattleLog(raw, { localPlayerName: "you" }));
+writeFileSync(goldenPath, JSON.stringify(value, null, 2) + "\n");
 ```
 
-**Read the resulting diff before you commit it.** That diff is the whole point —
-it shows exactly which strings this locale renders differently, and it is how
-template gaps get found. A new client version that renames a string will fail
-the existing goldens the same way; regenerate, read the diff, and say so in the
-PR.
+Also regenerate its `<name>.shape.json` — a ~120-line projection (phase shape,
+resolved player names, per-template-key counts). **Read that diff first.** It is
+small enough to actually review, and it shows exactly which strings this locale
+renders differently; the ~3,000-line golden is the regression net behind it.
+A new client version that renames a string will fail both the same way;
+regenerate, read the shape diff, and say so in the PR.
 
 If you hit a line that fails to parse in the wild, open an issue with the log
 attached. `UnmatchedBattleLogLineError` carries the line number and text
@@ -277,30 +285,39 @@ precisely so the fix can start from evidence.
 The parser is a port of PokeDojo's Effect-TS implementation. Fidelity is not
 asserted — it is **measured**:
 
-- Four real battle-log fixtures (~330KB of golden JSON) are compared against
-  the ported parser.
+- Four real battle-log fixtures are compared against the ported parser.
 - Each is asserted with `toEqual` **and** with a byte-exact
   `JSON.stringify` comparison, so key-order drift fails too.
+- Alongside each golden sits a `<fixture>.shape.json`: phase shape, resolved
+  player names, and per-template-key counts, in ~120 lines rather than ~3,000.
+  Reviewable in a diff; the full golden is not.
 - A sweep test asserts that *every* content line in *every* fixture matches some
   template — the property that makes the goldens possible at all.
+- Locale support is tested per locale: bundles are asserted to share the English
+  228-key set, and synthetic logs built from the *shipped* strings drive
+  detection and parsing for all 7.
 
 ```
-✓ src/__tests__/parse-battle-log.test.ts  (13 tests)
-✓ src/__tests__/locale.test.ts           (24 tests)
+✓ src/__tests__/parse-battle-log.test.ts  (17 tests)
+✓ src/__tests__/locale.test.ts           (53 tests)
 ✓ src/__tests__/template-matcher.test.ts (22 tests)
-✓ src/__tests__/analyze-battle-log.test.ts (14 tests)
+✓ src/__tests__/analyze-battle-log.test.ts (22 tests)
 ✓ src/__tests__/detect-players.test.ts   ( 6 tests)
-Tests  79 passed (79)
+✓ src/__tests__/index.test.ts            ( 5 tests)
+Tests  125 passed (125)
 ```
 
 ### Deliberate deviations from the original
 
 Two behavioural differences from the PokeDojo implementation, both fixes:
 
-1. **`analyzeBattleLog` reads the opponent's name with the detected locale's
-   matcher.** The original hardcoded the English matcher, so `opponentName`
-   silently came back `null` for every non-English log — a contradiction in a
-   package whose headline feature is locale support.
+1. **Player identity is resolved once, at parse time, onto `Phase.playerName`.**
+   The original re-matched a phase's raw header line to recover the player's
+   name, and `detectPlayers` did so with the hardcoded English matcher — so on
+   any non-English log it found no names at all. A log whose names appear only
+   in turn headers (a battle cut off mid-play) reported `no-players-found`
+   instead of `ambiguous`. The phase now carries the name it was resolved from,
+   so nothing re-matches and the path is locale-independent.
 2. **Duplicate placeholder declarations are ignored when ranking specificity.**
    50 shipped bundle entries listed a repeated placeholder twice, which
    inflated the computed literal length and mis-ranked those templates. The
