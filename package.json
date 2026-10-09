@@ -32,13 +32,13 @@
     "README.md",
     "LICENSE"
   ],
-  "homepage": "https://github.com/cdierkens/pokedojo-battle-log#readme",
+  "homepage": "https://github.com/cdierkens/ptcgl-battle-log-parser#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cdierkens/pokedojo-battle-log.git"
+    "url": "git+https://github.com/cdierkens/ptcgl-battle-log-parser.git"
   },
   "bugs": {
-    "url": "https://github.com/cdierkens/pokedojo-battle-log/issues"
+    "url": "https://github.com/cdierkens/ptcgl-battle-log-parser/issues"
   },
   "scripts": {
     "build": "pnpm run \"/^build:.*/\"",
