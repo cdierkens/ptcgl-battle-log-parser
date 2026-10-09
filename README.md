@@ -26,7 +26,7 @@ result.value.summary.turnCount; // 1
 ```
 
 Every line you feed it is matched back to the exact `blog_loc_*` localization
-template the game rendered it from. Nothing is inferred, nothing is
+template it was rendered from. Nothing is inferred, nothing is
 approximated.
 
 ---
@@ -35,8 +35,8 @@ approximated.
 
 PTCG Live's in-app **Copy Log** button is the only way to get structured data
 out of a match. It hands you a wall of localized prose. Every tool built on top
-of it re-solves the same problem: strip the prefixes, match the lines against
-the game's string table, and rebuild the tree.
+of it re-solves the same problem: strip the prefixes, match each line to a
+`blog_loc_*` template, and rebuild the tree.
 
 This package is that parser, done once and done properly. It is extracted from
 [PokeDojo](https://pokedojo.pro)'s private codebase, rewritten to drop an
@@ -45,7 +45,7 @@ a deck tool, a tournament tracker, or a log viewer can use it.
 
 **It does one thing.** Parsing. There is no card database, no deck validation,
 no archetype detection, no network access. If you want analysis on top of the
-AST, build it — the AST is deliberately close to the game's own model.
+AST, build it — the AST is deliberately close to the log's own model.
 
 ## Install
 
@@ -116,9 +116,9 @@ interface TemplateEvent {
 }
 ```
 
-The AST mirrors the client's own `BattleLog → Phase[] → MainEntry[] →
-SubEntry[]` tree. `parseBattleLog` is the mathematical inverse of the client's
-export.
+The AST mirrors the exported log's own shape: `BattleLog → Phase[] →
+MainEntry[] → SubEntry[]`. `parseBattleLog` is the mathematical inverse of
+that export — feed it the text, get the tree back.
 
 ## API
 
@@ -201,7 +201,7 @@ const rows = readdirSync("./logs").map((name) => {
 });
 ```
 
-**Read every card that hit the Bench.** The AST carries the game's own template
+**Read every card that hit the Bench.** The AST carries each line's template
 key, so you filter on that rather than on prose.
 
 ```ts
@@ -287,23 +287,21 @@ explicitly when you already know it.
 
 ## About the template bundles
 
-`src/templates/` holds the `blog_loc_*` strings for each supported locale. They
-are the game's own, not this project's work: the parser cannot match a battle
-log without them, and they are checked in so that `npm install` gives you a
-package that works out of the box. Treat them as *data about* the game. See
-`LICENSE`.
+`src/templates/` holds the `blog_loc_*` strings for each supported locale. The
+parser cannot match a battle log without them, and they are checked in so that
+`npm install` gives you a package that works out of the box. See `LICENSE` for
+how the strings sit alongside the MIT grant.
 
 All seven bundles share the same 228 keys; only the values differ, which is what
 lets a `templateKey` mean the same thing in every locale.
 
 ### Why `blog_loc_`
 
-The prefix is the game's own, not this project's. "blog" is the team's
-contraction for **BattleLog**, not blogging.
+The prefix is the battle-log vocabulary every key here uses: "blog" is short
+for **BattleLog**, not blogging.
 
-Keeping their vocabulary means every `templateKey` in the AST ties back to a
-name the game itself defines, so any key this package emits is traceable to the
-client's own table.
+Keeping that naming means every `templateKey` in the AST refers to exactly one
+string, so a key means the same event in every locale.
 
 The convention has exactly one exception, and it used to break this parser: the
 string that marks a drawn rock-paper-scissors flip does not carry the prefix,
