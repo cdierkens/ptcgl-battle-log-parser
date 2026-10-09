@@ -1,5 +1,5 @@
 /**
- * `@dierkens.dev/battle-log` — a zero-dependency parser for Pokémon TCG Live
+ * `ptcgl-battle-log-parser` — a zero-dependency parser for Pokémon TCG Live
  * battle-log exports.
  *
  * The client renders battle logs from an in-memory tree and flattens it to
@@ -8,7 +8,7 @@
  * localization template it came from.
  *
  * ```ts
- * import { analyzeBattleLog } from "@dierkens.dev/battle-log";
+ * import { analyzeBattleLog } from "ptcgl-battle-log-parser";
  *
  * const result = analyzeBattleLog(raw);
  * if (!result.ok) throw result.error;

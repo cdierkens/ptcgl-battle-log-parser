@@ -1,5 +1,5 @@
 ---
-"@pokedojo/battle-log": minor
+"ptcgl-battle-log-parser": minor
 ---
 
 Initial release.
