@@ -34,6 +34,7 @@ import { UnmatchedBattleLogLineError } from "../errors.js";
 import { isErr, isOk } from "../result.js";
 import { unwrap } from "../errors.js";
 import { parseBattleLog } from "../parse-battle-log.js";
+import { createTemplateMatcher } from "../template-matcher.js";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const FIXTURES = join(HERE, "fixtures");
@@ -171,11 +172,42 @@ describe("parseBattleLog — unmatched lines", () => {
     expect(result.error.lineNumber).toBe(1);
   });
 
-  it("rejects an empty log rather than inventing an empty battle", () => {
-    // No phases at all means this was not a battle-log export.
+  it("accepts an empty log as an empty battle, rather than erroring", () => {
+    // An empty file contains no unmatched line, so there is nothing to blame:
+    // this is `ok([])`, not an error. Callers that need to know whether a
+    // battle actually happened should check `phases.length`.
     const result = parseBattleLog("", {});
     expect(isOk(result)).toBe(true);
     if (!isOk(result)) return;
     expect(result.value.phases).toEqual([]);
+  });
+
+  it("uses a caller-supplied matcher in place of a locale bundle", () => {
+    // `matcher` is a public option and takes precedence over `locale`. A tiny
+    // three-key bundle proves the wiring without involving a real locale.
+    const matcher = createTemplateMatcher({
+      blog_loc_phase_setup: { placeholders: [], template: "Begin." },
+      blog_loc_phase_turn: { placeholders: ["playerName"], template: "[playerName]'s turn." },
+      blog_loc_end_turn: { placeholders: ["playerName"], template: "[playerName] is done." },
+    });
+    const result = parseBattleLog("Begin.\nAnn's turn.\nAnn is done.\n", { matcher });
+    expect(isOk(result)).toBe(true);
+    if (!isOk(result)) return;
+    expect(result.value.phases.map((phase) => phase.battlePhase)).toEqual(["Setup", "Player"]);
+    expect(result.value.phases[1]?.playerName).toBe("Ann");
+  });
+
+  it("accepts CRLF line endings", () => {
+    // Windows exports use `\r\n`. The split on `/\r?\n/` and the trailing-
+    // whitespace trim are both load-bearing: drop either and a `\r` survives
+    // into the line, where no template matches it.
+    const crlf =
+      "Setup\r\nAlice drew 7 cards for the opening hand.\r\n\r\n" +
+      "Alice's Turn\r\nAlice ended their turn.\r\n";
+    const result = parseBattleLog(crlf, { playerName: "Alice" });
+    expect(isOk(result)).toBe(true);
+    if (!isOk(result)) return;
+    expect(result.value.phases).toHaveLength(2);
+    expect(result.value.phases[1]?.battlePhase).toBe("Player");
   });
 });

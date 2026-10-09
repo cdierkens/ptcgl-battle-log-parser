@@ -56,6 +56,11 @@ are stable, which the locale bundles rely on. The raw syntax floor is lower
 still receiving security fixes, so that is where the floor sits. ESM only — no
 CommonJS build.
 
+The bundles are JSON modules imported with `with { type: "json" }`, so your
+toolchain has to understand import attributes. The floors: esbuild 0.19.7,
+Rollup 4, webpack 5.92, Vite 5, and TypeScript 5.3. Bun, and Deno >= 2.0, read
+it directly.
+
 ## What you get
 
 ```ts

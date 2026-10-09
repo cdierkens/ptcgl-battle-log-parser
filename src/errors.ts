@@ -2,16 +2,14 @@
  * Error types.
  *
  * Every error here is a plain `class extends Error` carrying an `_tag`
- * discriminant and a structured payload. That gives two escape hatches for
- * the same value:
+ * discriminant and a structured payload. It is *returned* — as the error arm
+ * of a `Result` — rather than thrown. {@link unwrap} is the one thing that
+ * turns a `Result` back into a throw, for callers who would rather write
+ * `try { … } catch`; there are no per-function `*OrThrow` twins. See
+ * [ADR-0001](../docs/adr/0001-no-orthrow-twins.md).
  *
- *   - as a value, via the {@link Result} arm its function returns;
- *   - as an exception, via the `*OrThrow` variants (see `parse-battle-log.ts`),
- *     for callers who would rather write `try { … } catch`.
- *
- * Both routes hand back the *same instance*, so `_tag` narrowing and
- * `instanceof` both work, and so a `try/catch` block can re-throw without
- * losing structure.
+ * The instance is the same one either way, so `_tag` narrowing and `instanceof`
+ * both work, and a `try/catch` block can re-throw without losing structure.
  *
  * The `_tag` values are part of the public API and will not change.
  */
@@ -27,7 +25,8 @@ import type { BattleLog, BattleLogAnalysis } from "./types.js";
  * through. Both are actionable, and both are reported with enough context to
  * act on — the 1-based line number and the raw text.
  *
- * Open an issue with the fixture attached if you hit one; see the README.
+ * If you hit one in the wild, open an issue with the failing line — replace
+ * the player handles — rather than the whole log. See the README.
  */
 export class UnmatchedBattleLogLineError extends Error {
   readonly _tag = "UnmatchedBattleLogLineError" as const;

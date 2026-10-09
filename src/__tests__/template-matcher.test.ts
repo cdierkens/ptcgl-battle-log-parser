@@ -268,8 +268,13 @@ describe("shipped bundles", () => {
   });
 
   it("matches every line of every real fixture", () => {
-    // A whole-log sweep: no line in a real export may fail to match, which
-    // is the property that makes the golden tests possible at all.
+    // A whole-log sweep over the captured fixtures: no line may fail to match,
+    // which is what makes the golden tests possible at all.
+    //
+    // ⚠️ Every fixture in this repo is English (see locale.test.ts), so this
+    // proves the English path end to end — *not* that a real non-English export
+    // matches. The synthetic per-locale sweep in locale.test.ts is what covers
+    // the other six, and it cannot stand in for a hand-captured log.
     const { readFileSync, readdirSync } = nodeFs;
     for (const file of readdirSync(new URL("./fixtures/", import.meta.url))) {
       const raw = readFileSync(new URL(`./fixtures/${file}`, import.meta.url), "utf8");
