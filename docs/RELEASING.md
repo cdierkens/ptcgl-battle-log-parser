@@ -28,11 +28,13 @@ otherwise ship without provenance).
    `package.json`, then:
 
    ```sh
-   pnpm publish --access public --no-git-checks
+   npm publish --access public
    ```
 
    `prepublishOnly` runs `verify:ci` here; that is fine and fast. Revert the
-   version afterwards — do not commit it.
+   version afterwards — do not commit it. Note that this works with a dirty
+   working tree: npm has no publish-branch check, unlike pnpm. Your npm must be
+   >= 11.5.1 (check with `npm -v`).
 
 2. **Configure the trusted publisher** at
    <https://www.npmjs.com/package/@dierkens.dev/ptcgl-battle-log-parser/access>
@@ -92,8 +94,8 @@ re-derives all seven locale bundles from a local PTCG Live install) **plus**
 `verify:ci`. Run it before tagging. CI cannot run `templates:check` — it has no
 game install — so it asserts the 228-key invariant instead.
 
-`pnpm run verify:ci` is `typecheck && test && build`, and is what
-`prepublishOnly` runs.
+`pnpm run verify:ci` is `typecheck && lint && test:coverage && build`, and is
+what `prepublishOnly` runs.
 
 ## What is automated, and what is not
 
@@ -114,13 +116,20 @@ one.
   automatically. Passing the flag is not wrong, just redundant.
 - **`npm whoami` is not a valid check** that trusted publishing is configured.
   The only valid check is performing the intended operation.
-- **`--no-git-checks`** is used *only* in the CI workflow, and only because a
-  tag checkout is a detached HEAD with no branch, so pnpm's publish-branch check
-  can never pass. Two explicit guards (tag ↔ `package.json`, tag on `main`)
-  replace what it disables. The manual bootstrap also passes it, for the same
-  detached-checkout reason when run in CI-like conditions.
-- **`.npmrc`'s `access` setting is inert.** pnpm reads only auth and registry
-  settings from `.npmrc`; visibility comes from `publishConfig.access` in
-  `package.json` and the explicit `--access public`.
+- **The publish is `npm publish`, and it needs npm >= 11.5.1.** pnpm does not
+  implement OIDC itself — `pnpm publish` shells out to npm
+  ([pnpm/pnpm#9812](https://github.com/pnpm/pnpm/issues/9812)) — so the npm CLI
+  is what authenticates either way. The workflow installs it explicitly, and
+  uses `npm publish` directly so the path does not depend on pnpm's delegation.
+  The Node version matters only because npm needs a recent-enough runtime.
+- **No `--no-git-checks` anywhere.** It exists because pnpm refuses to publish
+  from a detached HEAD, which is what a tag checkout always is. npm has no such
+  check, so switching to `npm publish` removed the need for the flag rather than
+  working around it.
+- **`.npmrc`'s `access` setting is not what makes it public.** pnpm reads only
+  auth and registry settings from `.npmrc`; visibility comes from
+  `publishConfig.access` in `package.json` and the explicit `--access public`.
+  (npm *does* honour `access` in `.npmrc`, which is why it works locally — but
+  do not rely on that.)
 - **Republishing an unpublished name is blocked** for ~24 hours. Irrelevant for
   the scoped name, which has never been published.

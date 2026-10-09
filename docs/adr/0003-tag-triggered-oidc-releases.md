@@ -34,8 +34,8 @@ click is needed *once* to create the package and the trust, not on every release
 **Publish from CI on a `v*` tag, via OIDC trusted publishing.** `changeset
 version` runs locally; the maintainer commits and pushes a tag. Pushing the tag
 is the single sanctioned release action. A version-match guard (tag ↔
-`package.json`) is the first job step, and the publish job pins
-`pnpm/action-setup` v6 and Node ≥ 22.14.0 (the OIDC CLI floor).
+`package.json`) is the first job step, and the publish job runs `npm publish`
+with npm ≥ 11.5.1 on Node ≥ 22.14.0.
 
 **Bootstrap by hand, once.** A manual 2FA publish of a `0.0.0` placeholder
 creates the package; then the trusted publisher is configured on npmjs.com with
@@ -49,9 +49,28 @@ to *stage-only*). CI then publishes `1.0.0-rc.1` to `next`, and later `1.0.0` to
 step rather than a publish gate.
 
 **Provenance is not a flag.** `--provenance` is dropped; it is automatic under
-OIDC. `--no-git-checks` is dropped too (a dirty-tree publish is never wanted).
-`publishConfig.access` is set, because pnpm reads only auth and registry settings
-from `.npmrc` and the existing `.npmrc access=public` is therefore inert.
+OIDC. `--no-git-checks` is dropped too, and turns out to be unnecessary rather
+than merely undesirable — see the amendment below. `publishConfig.access` is
+set, because pnpm reads only auth and registry settings from `.npmrc` and the
+existing `.npmrc access=public` is therefore inert.
+
+### Amendment, same day, during implementation
+
+The decision above originally said the publish job "pins `pnpm/action-setup` v6
+and Node ≥ 22.14.0 (the OIDC CLI floor)". That was wrong in one detail, and the
+detail would have failed at the first real publish.
+
+The OIDC exchange lives in the **npm CLI** (≥ 11.5.1), not in Node and not in
+pnpm: `pnpm publish` shells out to `npm publish`
+([pnpm/pnpm#9812](https://github.com/pnpm/pnpm/issues/9812)). Node 22.14.0 is
+the runtime half of the requirement, but it bundles npm 10.x, which does not
+understand OIDC at all — it fails with `ENEEDAUTH` and there is no fallback.
+
+So the workflow installs `npm@^11.5.1` and publishes with `npm publish` directly
+instead of going through pnpm's delegation. Both changes are better than the
+original plan: the authentication path no longer depends on pnpm's delegation
+behaviour, and `--no-git-checks` becomes unnecessary rather than a documented
+compromise, because npm has no publish-branch check for a detached HEAD to trip.
 
 ## Consequences
 

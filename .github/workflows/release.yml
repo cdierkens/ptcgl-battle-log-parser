@@ -46,10 +46,18 @@ jobs:
       # and fails with ENEEDAUTH. See actions/setup-node#1551.
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
-          node-version: 22.14.0 # the OIDC CLI floor
+          node-version: 22.14.0 # the runtime half of the OIDC floor
           cache: pnpm
 
       - run: pnpm install --frozen-lockfile
+
+      # Trusted publishing authenticates through the **npm** CLI, which must be
+      # >= 11.5.1. Node 22.14.0 satisfies the runtime half of that requirement
+      # but bundles npm 10.x, so install npm explicitly rather than depending on
+      # whichever version a Node release happens to ship. Without this the
+      # publish fails with ENEEDAUTH, because npm 10 does not understand OIDC at
+      # all — there is no graceful fallback.
+      - run: npm install -g npm@^11.5.1
 
       # Guard 1 — the tag must name the version being published. A mismatch
       # publishes the wrong version under the right tag, and that cannot be
@@ -86,14 +94,13 @@ jobs:
             *)   echo "tag=latest" >> "$GITHUB_OUTPUT" ;;
           esac
 
-      # `prepublishOnly` runs `verify:ci` (typecheck + test + build) on publish,
-      # so nothing unverified can reach the registry.
+      # `prepublishOnly` runs `verify:ci` (typecheck + lint + test:coverage +
+      # build) on publish, so nothing unverified can reach the registry.
       #
-      # `--no-git-checks` is required here for one structural reason: a tag
-      # checkout is a detached HEAD, which has no branch, so pnpm's
-      # "is this the publish branch?" check can never pass. Dropping it would
-      # disable a dirty-tree guard, but a fresh CI checkout cannot be dirty and
-      # the two guards above are strictly stronger than what it disables. The
-      # manual bootstrap is a different case — see docs/RELEASING.md, which
-      # does not use it.
-      - run: pnpm publish --access public --tag "${{ steps.dist.outputs.tag }}" --no-git-checks
+      # `npm publish`, not `pnpm publish`. pnpm just shells out to npm for this
+      # (pnpm/pnpm#9812), so npm is doing the OIDC exchange either way — being
+      # explicit about it means the authentication path does not depend on
+      # pnpm's delegation staying as it is. It also means there is no
+      # `--no-git-checks` anywhere: that flag only exists because pnpm checks
+      # whether a detached HEAD is the publish branch, and npm does not.
+      - run: npm publish --access public --tag "${{ steps.dist.outputs.tag }}"
