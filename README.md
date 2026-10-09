@@ -1,5 +1,9 @@
 # `@dierkens.dev/ptcgl-battle-log-parser`
 
+[![CI](https://github.com/cdierkens/ptcgl-battle-log-parser/actions/workflows/ci.yml/badge.svg)](https://github.com/cdierkens/ptcgl-battle-log-parser/actions/workflows/ci.yml)
+[![npm version](https://img.shields.io/npm/v/%40dierkens.dev%2Fptcgl-battle-log-parser)](https://www.npmjs.com/package/@dierkens.dev/ptcgl-battle-log-parser)
+[![coverage floor](https://img.shields.io/badge/coverage%20floor-98%25-yellowgreen)](./vitest.config.ts)
+
 Parse [Pokémon TCG Live](https://pokemon-tcg-live.com) battle-log exports into a
 typed AST. Zero runtime dependencies, ESM-only, 7 locales.
 
@@ -161,6 +165,59 @@ analyzeBattleLog(raw, { playerName: "cdierkens" });
 > failing. There is a test pinning that behaviour (`analyze-battle-log.test.ts`,
 > *"mirrors self/opponent…"*) precisely because it is a footgun.
 
+## Recipes
+
+**Summarise a folder of logs.** `analyzeBattleLog` detects the locale, parses,
+resolves the players and summarises in one call.
+
+```ts
+import { readFileSync, readdirSync } from "node:fs";
+import { analyzeBattleLog, isErr } from "@dierkens.dev/ptcgl-battle-log-parser";
+
+const rows = readdirSync("./logs").map((name) => {
+  const result = analyzeBattleLog(readFileSync(`./logs/${name}`, "utf8"));
+  if (isErr(result)) return { name, failed: result.error._tag };
+  const { locale, summary } = result.value;
+  return { name, locale, turns: summary.turnCount, winner: summary.winner };
+});
+```
+
+**Read every card that hit the Bench.** The AST carries the game's own template
+key, so you filter on that rather than on prose.
+
+```ts
+import { unwrap, parseBattleLog } from "@dierkens.dev/ptcgl-battle-log-parser";
+
+const log = unwrap(parseBattleLog(raw, { locale: "en" }));
+for (const phase of log.phases) {
+  for (const main of phase.mainEntries) {
+    if (main.event.templateKey !== "blog_loc_play_to_bench") continue;
+    console.log(main.event.groups["playerName"], "→", main.event.groups["cardName"]);
+  }
+}
+```
+
+**Throw instead of branching.** Every fallible export returns a `Result`;
+`unwrap` is the one place that turns that back into a throw.
+
+```ts
+const log = unwrap(parseBattleLog(raw)); // throws UnmatchedBattleLogLineError
+```
+
+**Match against a bundle you built yourself.** `matcher` takes precedence over
+`locale`, so this works for a locale we do not ship, or a bundle you compiled
+from your own strings.
+
+```ts
+import { createTemplateMatcher, parseBattleLog } from "@dierkens.dev/ptcgl-battle-log-parser";
+
+const matcher = createTemplateMatcher({
+  blog_loc_phase_setup: { placeholders: [], template: "Begin." },
+  // …
+});
+const result = parseBattleLog(raw, { matcher });
+```
+
 ## Stability
 
 **1.0.0 is a promise, not a milestone.** The public API is a contract: after
@@ -288,41 +345,54 @@ list with that decomp citation, and a regression test guards it.
 
 ## Adding non-English fixtures
 
-**This is the package's biggest gap and the easiest thing you can help with.**
+**This is the package's biggest gap, and the easiest thing to help with.**
 
-The English fixtures in `src/__tests__/fixtures/` are real exports captured from
-the game. There are no real non-English ones, because PTCG Live never writes
-battle logs to disk — you copy them out by hand. The locale tests build
-*synthetic* logs from the real shipped templates instead, which proves the
-matcher and detector work per locale, but not that non-English clients render
-lines in exactly these shapes.
+Every real fixture in `src/__tests__/fixtures/` is English. PTCG Live never
+writes battle logs to disk — you copy them out by hand — so there is no way to
+harvest other locales in bulk. Three claims, kept separate on purpose:
 
-If you play PTCG Live in any language other than English:
+1. The locale tests build **synthetic** logs from the *shipped* template
+   strings, and prove the matcher and the detector work for all seven locales.
+   That is a genuine test of our data and our code.
+2. They do **not** prove that a client set to, say, German renders its log lines
+   in exactly those shapes. Only a captured log can show that.
+3. Only a hand-captured fixture closes the gap — and the maintainers cannot
+   produce one for a locale they do not play.
 
-1. Play one complete match.
-2. In-app → **Copy Log**.
-3. Drop the text in as `src/__tests__/fixtures/<descriptive-name>.log`.
-4. Open a PR.
+If you play in any language other than English, one match and one command is
+the whole contribution:
 
-Add its golden by parsing the fixture and writing the JSON — there is no
-vitest snapshot, so `--update` does nothing. A throwaway script is the whole
-job:
+1. Play a match. In-app → **Copy Log**. Save the text to a file.
+2. Run the fixture tool with your own handle:
 
-```ts
-const value = unwrap(parseBattleLog(raw, { playerName: "you" }));
-writeFileSync(goldenPath, JSON.stringify(value, null, 2) + "\n");
-```
+   ```sh
+   pnpm run fixtures:prepare -- --log ~/Downloads/meine-runde.log --player YourHandle
+   ```
 
-Also regenerate its `<name>.shape.json` — a ~120-line projection (phase shape,
-resolved player names, per-template-key counts). **Read that diff first.** It is
-small enough to actually review, and it shows exactly which strings this locale
-renders differently; the ~3,000-line golden is the regression net behind it.
-A new client version that renames a string will fail both the same way;
-regenerate, read the shape diff, and say so in the PR.
+   It detects the locale, parses the log against the shipped bundle, **redacts
+   both player handles** with fixed stand-ins, and writes
+   `src/__tests__/fixtures/<name>.log`, its golden, and its shape file. It
+   prints the `CASES` line to add to the golden test.
+3. **Read the shape file before committing.** It is ~120 lines on purpose: it
+   shows phase shape, resolved player names, and how often each template key
+   fired — which is exactly what a locale that renders a shape differently will
+   move. The ~3,000-line golden beside it is the regression net, not something
+   anyone reads end to end.
 
-If you hit a line that fails to parse in the wild, open an issue with the log
-attached. `UnmatchedBattleLogLineError` carries the line number and text
-precisely so the fix can start from evidence.
+If the log does not parse, the tool stops and prints the single unmatched line
+and its number, and writes nothing. That line is the whole report — open a
+[failing-log issue](.github/ISSUE_TEMPLATE/failing-log.yml) with **that one
+line**, player handles replaced, rather than the whole log.
+`UnmatchedBattleLogLineError` carries the line number and text precisely so a
+fix can start from evidence.
+
+### Why the handles are redacted
+
+The opponent never agreed to appear in a public repository, and neither did
+you. Redaction happens in the tool, before anything is committed, and the
+parser treats handles as opaque strings — nothing downstream depends on what
+they were. Swapping all of them for `TestPlayer` / `TestOpponent` changes no
+behaviour the tests assert. It is deterministic, not best-effort.
 
 ## Verification
 
@@ -342,13 +412,13 @@ asserted — it is **measured**:
   detection and parsing for all 7.
 
 ```
-✓ src/__tests__/parse-battle-log.test.ts  (17 tests)
-✓ src/__tests__/locale.test.ts           (53 tests)
-✓ src/__tests__/template-matcher.test.ts (22 tests)
+✓ src/__tests__/parse-battle-log.test.ts    (19 tests)
+✓ src/__tests__/locale.test.ts             (53 tests)
+✓ src/__tests__/template-matcher.test.ts   (22 tests)
 ✓ src/__tests__/analyze-battle-log.test.ts (22 tests)
-✓ src/__tests__/detect-players.test.ts   ( 6 tests)
-✓ src/__tests__/index.test.ts            ( 5 tests)
-Tests  125 passed (125)
+✓ src/__tests__/detect-players.test.ts     ( 6 tests)
+✓ src/__tests__/index.test.ts              ( 5 tests)
+Tests  127 passed (127)
 ```
 
 ### Deliberate deviations from the original

@@ -1,0 +1,55 @@
+name: Failing log line
+description: A line from a battle log that the parser could not match to a template.
+title: "Unmatched line: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is the most useful bug report this package can get — thank you.
+
+        **Please paste one line, not the whole log.** The parser's error already
+        carries the exact line and its number, and a whole log is mostly
+        information we already have.
+
+        Replace any real player handles with neutral stand-ins (`P1`, `P2`)
+        before pasting. The other player has not agreed to appear in this issue
+        tracker.
+
+  - type: textarea
+    id: line
+    attributes:
+      label: The line that failed
+      description: One line, handles replaced, exactly as it appears in the export.
+      render: text
+    validations:
+      required: true
+
+  - type: input
+    id: line-number
+    attributes:
+      label: Line number
+      description: From the error message, or from the thrown `UnmatchedBattleLogLineError`.
+      placeholder: "42"
+    validations:
+      required: true
+
+  - type: input
+    id: locale
+    attributes:
+      label: Locale
+      description: What is PTCG Live's language set to? Leave blank if you are not sure.
+      placeholder: "de"
+    validations:
+      required: false
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Surrounding lines (optional)
+      description: |
+        Only if the line makes no sense on its own. The line above and below is
+        plenty — still redact handles.
+      render: text
+    validations:
+      required: false

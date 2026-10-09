@@ -54,6 +54,7 @@
     "test:coverage": "vitest run --coverage",
     "templates:refresh": "tsx scripts/refresh-templates.ts",
     "templates:check": "tsx scripts/refresh-templates.ts --check",
+    "fixtures:prepare": "tsx scripts/prepare-fixture.ts",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "lint": "eslint .",
     "verify:ci": "pnpm run typecheck && pnpm run lint && pnpm run test:coverage && pnpm run build",

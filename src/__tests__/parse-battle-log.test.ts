@@ -35,6 +35,7 @@ import { isErr, isOk } from "../result.js";
 import { unwrap } from "../errors.js";
 import { parseBattleLog } from "../parse-battle-log.js";
 import { createTemplateMatcher } from "../template-matcher.js";
+import { shapeOf } from "./shape.js";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const FIXTURES = join(HERE, "fixtures");
@@ -55,49 +56,6 @@ const CASES: readonly Case[] = [
 
 const readFixture = (name: string): string => readFileSync(join(FIXTURES, name), "utf8");
 const readGolden = (name: string): unknown => JSON.parse(readFileSync(join(GOLDENS, name), "utf8"));
-
-/**
- * A compact, human-reviewable projection of a parsed log.
- *
- * The full golden is ~3,000 lines and merges every rule into one instrument:
- * a 3,000-line JSON diff cannot be read, which is exactly when a reviewer most
- * needs to read it. This projection keeps the structural facts that a locale or
- * template change is most likely to move — phase shape, player resolution, and
- * how often each template key fired — in a file small enough to actually
- * review. The full golden stays as the byte-exact regression net.
- */
-interface LogShape {
-  readonly phases: readonly {
-    readonly battlePhase: string;
-    readonly displayTurnNumber: null | number;
-    readonly mainEntryCount: number;
-    readonly playerName: null | string;
-  }[];
-  readonly templateKeyCounts: Readonly<Record<string, number>>;
-}
-
-function shapeOf(log: { phases: readonly { battlePhase: string; displayTurnNumber: null | number; mainEntries: readonly { event: { templateKey: string }; subEntries: readonly { event: { templateKey: string } }[] }[]; playerName: null | string }[] }): LogShape {
-  const templateKeyCounts: Record<string, number> = {};
-  for (const phase of log.phases) {
-    for (const main of phase.mainEntries) {
-      templateKeyCounts[main.event.templateKey] = (templateKeyCounts[main.event.templateKey] ?? 0) + 1;
-      for (const sub of main.subEntries) {
-        templateKeyCounts[sub.event.templateKey] = (templateKeyCounts[sub.event.templateKey] ?? 0) + 1;
-      }
-    }
-  }
-  return {
-    phases: log.phases.map((phase) => ({
-      battlePhase: phase.battlePhase,
-      displayTurnNumber: phase.displayTurnNumber,
-      mainEntryCount: phase.mainEntries.length,
-      playerName: phase.playerName,
-    })),
-    templateKeyCounts: Object.fromEntries(
-      Object.entries(templateKeyCounts).sort(([a], [b]) => a.localeCompare(b)),
-    ),
-  };
-}
 
 const readShape = (name: string): unknown =>
   JSON.parse(readFileSync(join(GOLDENS, name.replace(/\.log$/, ".shape.json")), "utf8"));

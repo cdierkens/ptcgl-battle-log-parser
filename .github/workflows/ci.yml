@@ -81,3 +81,20 @@ jobs:
           npm pkg set type=module > /dev/null
           npm install "$GITHUB_WORKSPACE"/*.tgz
           node "$GITHUB_WORKSPACE/scripts/smoke.mjs"
+
+  # One stable status check for branch protection. A matrix job expands into
+  # four contexts — "verify (ubuntu-latest, 22)" and friends — which is a
+  # brittle thing to enumerate in a required-checks list and would silently stop
+  # gating if the matrix ever changed. This collapses them into `ci-ok`.
+  ci-ok:
+    runs-on: ubuntu-latest
+    needs: [verify, smoke]
+    # `always()` so this still runs (and fails) when a needed job failed or was
+    # skipped; without it the required check would simply never appear.
+    if: always()
+    steps:
+      - if: needs.verify.result != 'success' || needs.smoke.result != 'success'
+        run: |
+          echo "::error::a required job did not succeed"
+          exit 1
+      - run: echo "all required jobs succeeded"
