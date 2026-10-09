@@ -68,19 +68,9 @@ jobs:
 
       - name: Install the packed tarball and exercise it
         run: |
-          mkdir -p /tmp/smoke && cd /tmp/smoke
+          mkdir -p /tmp/smoke
+          cd /tmp/smoke
           npm init -y > /dev/null
           npm pkg set type=module > /dev/null
           npm install "$GITHUB_WORKSPACE"/*.tgz
-          node --input-type=module -e "
-            import { analyzeBattleLog, ALL_BLOG_LOCALES, blogTemplateBundles } from '@pokedojo/battle-log';
-            const log = "Setup\nAlice drew 7 cards for the opening hand.\n\nAlice's Turn\nAlice ended their turn.\n";
-            const r = analyzeBattleLog(log, { playerName: 'Alice' });
-            if (!r.ok) throw r.error;
-            console.log('locale:', r.value.locale, '| turns:', r.value.summary.turnCount);
-            for (const l of ALL_BLOG_LOCALES) {
-              const n = Object.keys(blogTemplateBundles[l]).length;
-              if (n !== 228) throw new Error(l + ' has ' + n + ' templates');
-            }
-            console.log('all locales:', ALL_BLOG_LOCALES.length, 'x 228 templates');
-          "
+          node "$GITHUB_WORKSPACE/scripts/smoke.mjs"
