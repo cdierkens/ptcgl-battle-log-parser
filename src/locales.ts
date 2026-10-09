@@ -12,6 +12,7 @@
 
 import type { BlogLocale, TemplateBundle, TemplateMatcher } from "./types.js";
 
+import { contentLine } from "./content-line.js";
 import { createTemplateMatcher } from "./template-matcher.js";
 import { ALL_BLOG_LOCALES } from "./types.js";
 
@@ -102,10 +103,14 @@ export const defaultTemplateMatcher: TemplateMatcher = blogTemplateMatchers["en"
  * you already know the locale, pass it explicitly.
  */
 export function detectBattleLogLanguage(log: string): BlogLocale {
+  // Both passes see the same content lines (ADR-0004): a line that could not
+  // be parsed is not counted as evidence for a locale either, and a padded
+  // line is matched on the same content the parser matches.
   const lines = log
     .split(/\r?\n/u)
-    .map((line) => line.trim())
-    .filter((line) => line.length > 0);
+    .map(contentLine)
+    .filter((line) => line.kind !== "blank" && line.kind !== "sub-string")
+    .map((line) => line.content);
 
   if (lines.length === 0) return "en";
 

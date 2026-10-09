@@ -31,6 +31,7 @@
  * }
  */
 
+import { contentLine } from "./content-line.js";
 import { UnmatchedBattleLogLineError } from "./errors.js";
 import { blogTemplateMatchers, defaultTemplateMatcher } from "./locales.js";
 import { err, ok, type Result } from "./result.js";
@@ -46,9 +47,6 @@ import type {
   TemplateEvent,
   TemplateMatcher,
 } from "./types.js";
-
-const SUB_ENTRY_PREFIX = "- ";
-const SUB_STRING_PREFIX = "   • ";
 
 /**
  * Options for {@link parseBattleLog}.
@@ -155,13 +153,13 @@ export function parseBattleLog(
   for (let i = 0; i < lines.length; i++) {
     const rawLine = lines[i];
     if (rawLine === undefined) continue;
-    const line = rawLine.replace(/\s+$/u, "");
-    if (line === "") continue;
+    const classified = contentLine(rawLine);
+    if (classified.kind === "blank") continue;
     const lineNumber = i + 1;
 
-    const phaseHeader = tryPhaseHeader(line, matcher);
+    const phaseHeader = tryPhaseHeader(classified.content, matcher);
     if (phaseHeader !== null) {
-      const plainTextPhaseTitle = line;
+      const plainTextPhaseTitle = classified.content;
       if (phaseHeader.kind === "Setup") {
         currentPhase = { kind: "Setup", mainEntries: [], plainTextPhaseTitle };
       } else if (phaseHeader.kind === "Checkup") {
@@ -173,7 +171,7 @@ export function parseBattleLog(
         // can place, so it fails the same way an unmatched line does rather
         // than becoming one side by default.
         if (phaseHeader.playerName === null) {
-          return err(new UnmatchedBattleLogLineError(line, lineNumber));
+          return err(new UnmatchedBattleLogLineError(classified.content, lineNumber));
         }
         // With no name from the caller, the first turn header decides who is
         // local. See `sideSource` for why that is recorded on every turn.
@@ -198,44 +196,52 @@ export function parseBattleLog(
     // Content before any phase header: the exporter always writes a header
     // first, so this is a log that did not come from the exporter.
     if (currentPhase === null) {
-      return err(new UnmatchedBattleLogLineError(line, lineNumber));
+      return err(new UnmatchedBattleLogLineError(classified.content, lineNumber));
     }
 
-    if (line.startsWith(SUB_STRING_PREFIX)) {
+    if (classified.kind === "sub-string") {
       const mainEntry = currentPhase.mainEntries.at(-1);
       const subEntry = mainEntry?.subEntries.at(-1);
       if (mainEntry === undefined || subEntry === undefined) {
-        return err(new UnmatchedBattleLogLineError(line, lineNumber));
+        return err(new UnmatchedBattleLogLineError(classified.content, lineNumber));
       }
-      const chunk = line.slice(SUB_STRING_PREFIX.length);
       subEntry.subString =
-        subEntry.subString === null ? chunk : `${subEntry.subString}\n${chunk}`;
+        subEntry.subString === null
+          ? classified.content
+          : `${subEntry.subString}\n${classified.content}`;
       continue;
     }
 
-    if (line.startsWith(SUB_ENTRY_PREFIX)) {
+    if (classified.kind === "sub-entry") {
       const mainEntry = currentPhase.mainEntries.at(-1);
       if (mainEntry === undefined) {
-        return err(new UnmatchedBattleLogLineError(line, lineNumber));
+        return err(new UnmatchedBattleLogLineError(classified.content, lineNumber));
       }
-      const inner = line.slice(SUB_ENTRY_PREFIX.length);
-      const match = matcher.match(inner);
+      const match = matcher.match(classified.content);
       if (match === null) {
-        return err(new UnmatchedBattleLogLineError(line, lineNumber));
+        return err(new UnmatchedBattleLogLineError(classified.content, lineNumber));
       }
       mainEntry.subEntries.push({
-        event: { groups: match.groups, raw: inner, templateKey: match.templateKey },
+        event: {
+          groups: match.groups,
+          raw: classified.content,
+          templateKey: match.templateKey,
+        },
         subString: null,
       });
       continue;
     }
 
-    const match = matcher.match(line);
+    const match = matcher.match(classified.content);
     if (match === null) {
-      return err(new UnmatchedBattleLogLineError(line, lineNumber));
+      return err(new UnmatchedBattleLogLineError(classified.content, lineNumber));
     }
     currentPhase.mainEntries.push({
-      event: { groups: match.groups, raw: line, templateKey: match.templateKey },
+      event: {
+        groups: match.groups,
+        raw: classified.content,
+        templateKey: match.templateKey,
+      },
       subEntries: [],
     });
   }

@@ -35,6 +35,7 @@ import { isErr, isOk } from "../result.js";
 import { unwrap } from "../errors.js";
 import { parseBattleLog } from "../parse-battle-log.js";
 import { createTemplateMatcher } from "../template-matcher.js";
+import type { BattleLog } from "../types.js";
 import { shapeOf } from "./shape.js";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -203,5 +204,51 @@ describe("a turn header that captures no name", () => {
     if (isOk(result)) return;
     expect(result.error).toBeInstanceOf(UnmatchedBattleLogLineError);
     expect(result.error.lineNumber).toBe(2);
+  });
+});
+
+describe("content lines (ADR-0004)", () => {
+  it("parses a padded log the same as a clean one, and captures unpadded", () => {
+    const clean =
+      "Setup\nAlice drew 7 cards for the opening hand.\n\nAlice's Turn\nAlice ended their turn.\n";
+    const padded =
+      "  Setup  \n   Alice drew 7 cards for the opening hand.\n\n   Alice's Turn\nAlice ended their turn.   \n";
+    const a = unwrap(parseBattleLog(clean, { playerName: "Alice" }));
+    const b = unwrap(parseBattleLog(padded, { playerName: "Alice" }));
+
+    const outline = (log: BattleLog): (readonly (null | number | string)[])[] =>
+      log.phases.map((phase) =>
+        phase.kind === "Turn"
+          ? [phase.kind, phase.side, phase.playerName]
+          : [phase.kind, phase.mainEntries.length],
+      );
+    expect(outline(b)).toEqual(outline(a));
+    expect(b.phases[0]?.mainEntries[0]?.event.groups).toEqual({
+      numCards: "7",
+      playerName: "Alice",
+    });
+  });
+
+  it("parses a literal-leading padded line, as detection expects", () => {
+    // `battle_draw` begins with a literal; before ADR-0004 a leading space
+    // broke the anchored match while detection still counted the line.
+    const result = parseBattleLog("Setup\n   Draw!\n");
+    expect(isOk(result)).toBe(true);
+    if (!isOk(result)) return;
+    expect(result.value.phases[0]?.mainEntries[0]?.event.templateKey).toBe("battle_draw");
+  });
+
+  it("matches a sub-entry on its trimmed remainder and keeps a sub-string verbatim", () => {
+    const log = unwrap(
+      parseBattleLog(
+        "Setup\nAlice drew 7 cards for the opening hand.\n-   7 drawn cards.\n   •   Slowpoke, Ultra Ball, Poké Pad\n",
+        { playerName: "Alice" },
+      ),
+    );
+    const sub = log.phases[0]?.mainEntries[0]?.subEntries[0];
+    expect(sub?.event.groups["numCards"]).toBe("7");
+    // The sub-string is free-form: whitespace after the `   • ` prefix is
+    // content, not decoration.
+    expect(sub?.subString).toBe("  Slowpoke, Ultra Ball, Poké Pad");
   });
 });

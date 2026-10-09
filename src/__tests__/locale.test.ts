@@ -191,9 +191,18 @@ describe("detectBattleLogLanguage", () => {
   it("defaults to English for an empty log", () => {
     expect(detectBattleLogLanguage("")).toBe("en");
   });
+
+  it("counts only content the parser would also match", () => {
+    // ADR-0004. Detection used to trim both ends, so a padded line with a
+    // literal-leading template counted as evidence for a locale the parser
+    // then refused. Both passes now classify the same content lines.
+    const padded = "Setup\n   Draw!\n";
+    expect(detectBattleLogLanguage(padded)).toBe("en");
+    expect(isOk(parseBattleLog(padded))).toBe(true);
+  });
 });
 
-describe("Phase.playerName — resolved at parse time, per locale", () => {
+describe("Turn.playerName — resolved at parse time, per locale", () => {
   /**
    * A log whose player names appear *only* in phase headers.
    *

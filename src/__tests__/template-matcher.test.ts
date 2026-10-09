@@ -8,6 +8,7 @@
 
 import { describe, expect, it } from "vitest";
 
+import { contentLine } from "../content-line.js";
 import {
   blogTemplateBundles,
   defaultTemplateMatcher,
@@ -279,10 +280,15 @@ describe("shipped bundles", () => {
     for (const file of readdirSync(new URL("./fixtures/", import.meta.url))) {
       const raw = readFileSync(new URL(`./fixtures/${file}`, import.meta.url), "utf8");
       for (const [i, line] of raw.split(/\r?\n/u).entries()) {
-        const trimmed = line.replace(/\s+$/u, "");
-        if (trimmed === "" || trimmed.startsWith("- ") || trimmed.startsWith("   • ")) continue;
-        const bare = trimmed.startsWith("- ") ? trimmed.slice(2) : trimmed;
-        expect(defaultTemplateMatcher.match(bare), `${file}:${i + 1} → ${bare}`).not.toBeNull();
+        // The parser's own classification (ADR-0004), so the sweep and the
+        // parser cannot disagree about what a line is. Stronger than before:
+        // a sub-entry's *remainder* now has to match too, not just be skipped.
+        const classified = contentLine(line);
+        if (classified.kind === "blank" || classified.kind === "sub-string") continue;
+        expect(
+          defaultTemplateMatcher.match(classified.content),
+          `${file}:${i + 1} → ${JSON.stringify(line)}`,
+        ).not.toBeNull();
       }
     }
   });
