@@ -72,10 +72,28 @@ interface BattleLog {
   phases: Phase[];
 }
 
-interface Phase {
-  battlePhase: "Setup" | "Player" | "Opponent" | "Checkup";
-  displayTurnNumber: number | null;   // the game's own (turn + 1) / 2
-  playerName: string | null;          // resolved at parse time; null for Setup/Checkup
+// A phase is one of three kinds. Only a Turn belongs to a side.
+type Phase = SetupPhase | CheckupPhase | TurnPhase;
+
+interface SetupPhase {
+  kind: "Setup";                       // the pre-turn opening block
+  mainEntries: MainEntry[];
+  plainTextPhaseTitle: string;
+}
+
+interface CheckupPhase {
+  kind: "Checkup";                     // the between-turns block
+  mainEntries: MainEntry[];
+  plainTextPhaseTitle: string;
+}
+
+interface TurnPhase {
+  kind: "Turn";
+  side: "self" | "opponent";           // resolved, never observed
+  sideSource: "declared" | "inferred"; // "declared" when you named the player;
+                                       // "inferred" when the first turn header guessed
+  playerName: string;                  // the player whose turn it is
+  displayTurnNumber: number;           // the game's own (turn + 1) / 2
   mainEntries: MainEntry[];
   plainTextPhaseTitle: string;
 }
@@ -93,7 +111,8 @@ interface SubEntry {
 interface TemplateEvent {
   templateKey: string;               // "blog_loc_play_to_bench"
   groups: Record<string, string>;     // { playerName: "cdierkens", cardName: "Slowpoke" }
-  raw: string;                       // the exact source line
+  raw: string;                       // the line as parsed: trailing whitespace stripped,
+                                    // never carrying leading padding (see ADR-0004)
 }
 ```
 
@@ -220,15 +239,23 @@ const result = parseBattleLog(raw, { matcher });
 
 ## Stability
 
-**1.0.0 is a promise, not a milestone.** The public API is a contract: after
-1.0, a breaking change to anything in Tier 1 needs a major version.
+**1.0.0 is a promise, not a milestone.** The public API is a contract: once
+there are consumers, a breaking change to anything in Tier 1 needs a major
+version.
+
+**Pre-adoption, the promise is dormant.** `1.1.0` shipped a shape correction —
+`battlePhase` became a `kind`/`side` split, see ADR-0005 — that would have been
+a major if anyone had adopted `1.0.0`. Nobody had, so nothing broke: with no
+consumers there is no migration for a version number to signal. The promise
+binds unconditionally from the first adopted version, and `1.1.0` is the last
+pre-adoption correction.
 
 The exports do not all carry the same promise, because they are not all the same
 kind of thing:
 
 | Tier | Exports | The promise |
 |---|---|---|
-| **1 — the contract** | `analyzeBattleLog` · `parseBattleLog` · `detectPlayers` · `deriveGameSummary` · `detectBattleLogLanguage` · `unwrap` · `ok` · `err` · `isOk` · `isErr` · `UnmatchedBattleLogLineError` · `PlayerDetectionError` · the `Result` union and the options types · and the shapes `BattleLog` · `Phase` · `PhaseType` · `MainEntry` · `SubEntry` · `TemplateEvent` · `BattleLogAnalysis` · `GameSummary` · `Credit` · `CreditCounts` · `DetectedPlayers` · `AnalyzeBattleLogError` · `PlayerDetectionReason` | Frozen. Semver applies to type shapes **and** observable behaviour. |
+| **1 — the contract** | `analyzeBattleLog` · `parseBattleLog` · `detectPlayers` · `deriveGameSummary` · `detectBattleLogLanguage` · `unwrap` · `ok` · `err` · `isOk` · `isErr` · `UnmatchedBattleLogLineError` · `PlayerDetectionError` · the `Result` union and the options types · and the shapes `BattleLog` · `Phase` (`SetupPhase` · `CheckupPhase` · `TurnPhase`) · `PhaseKind` · `Side` · `SideCounts` · `SideSource` · `MainEntry` · `SubEntry` · `TemplateEvent` · `BattleLogAnalysis` · `GameSummary` · `DetectedPlayers` · `AnalyzeBattleLogError` · `PlayerDetectionReason` | Frozen. Semver applies to type shapes **and** observable behaviour. |
 | **2 — advanced** | `compileTemplate` · `createTemplateMatcher` · `blogTemplateBundles` · `blogTemplateMatchers` · `ALL_BLOG_LOCALES` · `BlogLocale` · the template types (`TemplateBundle`, `TemplateEntry`, `TemplateMatch`, `TemplateMatcher`) | Public and stable, but outside the promise. A game-client change can move these in a **minor** — never silently. |
 
 **Excluded from the promise, and said plainly:**
