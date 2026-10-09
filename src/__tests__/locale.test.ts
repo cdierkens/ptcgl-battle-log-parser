@@ -24,6 +24,7 @@ import { detectPlayers } from "../detect-players.js";
 import { unwrap } from "../errors.js";
 import { parseBattleLog } from "../parse-battle-log.js";
 import { isOk } from "../result.js";
+import { templateKeys } from "../template-keys.js";
 import {
   blogTemplateBundles,
   detectBattleLogLanguage,
@@ -139,6 +140,16 @@ describe("template bundle parity", () => {
     expect(enKeys).toHaveLength(228);
     for (const locale of ALL_BLOG_LOCALES) {
       expect(Object.keys(blogTemplateBundles[locale]).sort(), locale).toEqual(enKeys);
+    }
+  });
+
+  it("ships every load-bearing template key in every locale", () => {
+    // The keys `src/template-keys.ts` names are load-bearing: a client rename
+    // must fail a test, not silently stop matching.
+    for (const locale of ALL_BLOG_LOCALES) {
+      for (const key of Object.values(templateKeys)) {
+        expect(blogTemplateBundles[locale][key], `${locale}/${key}`).toBeDefined();
+      }
     }
   });
 

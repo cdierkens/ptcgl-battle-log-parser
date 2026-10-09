@@ -35,6 +35,7 @@ import { contentLine } from "./content-line.js";
 import { UnmatchedBattleLogLineError } from "./errors.js";
 import { blogTemplateMatchers, defaultTemplateMatcher } from "./locales.js";
 import { err, ok, type Result } from "./result.js";
+import { templateKeys } from "./template-keys.js";
 import type {
   BattleLog,
   BlogLocale,
@@ -283,9 +284,9 @@ function freezeSubEntry(entry: MutableSubEntry): SubEntry {
 function tryPhaseHeader(line: string, matcher: TemplateMatcher): null | PhaseHeader {
   const match = matcher.match(line);
   if (match === null) return null;
-  if (match.templateKey === "blog_loc_phase_setup") return { kind: "Setup", playerName: null };
-  if (match.templateKey === "blog_loc_phase_checkup") return { kind: "Checkup", playerName: null };
-  if (match.templateKey === "blog_loc_phase_turn") {
+  if (match.templateKey === templateKeys.phaseSetup) return { kind: "Setup", playerName: null };
+  if (match.templateKey === templateKeys.phaseCheckup) return { kind: "Checkup", playerName: null };
+  if (match.templateKey === templateKeys.phaseTurn) {
     return { kind: "Turn", playerName: match.groups["playerName"] ?? null };
   }
   return null;

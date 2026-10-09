@@ -28,6 +28,7 @@ import type { BattleLog } from "./types.js";
 
 import { PlayerDetectionError } from "./errors.js";
 import { err, ok, type Result } from "./result.js";
+import { templateKeys } from "./template-keys.js";
 import { walkEntries } from "./walk.js";
 
 /** The two players, as named in the log. */
@@ -106,12 +107,12 @@ function collectOpeningHandRevealOwners(parsed: BattleLog): Set<string> {
   for (const walked of walkEntries(parsed)) {
     if (walked.isSubEntry) continue;
     const playerName = walked.event.groups["playerName"];
-    if (walked.event.templateKey !== "blog_loc_draw_opening_hand" || playerName === undefined) {
+    if (walked.event.templateKey !== templateKeys.drawOpeningHand || playerName === undefined) {
       continue;
     }
     const revealed = walked.mainEntry.subEntries.some(
       (sub) =>
-        sub.event.templateKey === "blog_loc_drawn_cards_grid_header" &&
+        sub.event.templateKey === templateKeys.drawnCardsGridHeader &&
         sub.subString !== null,
     );
     if (revealed) addName(candidates, playerName);

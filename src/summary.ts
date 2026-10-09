@@ -19,6 +19,7 @@
 
 import type { BattleLog, GameSummary, Side, SideCounts, TemplateEvent } from "./types.js";
 
+import { templateKeys } from "./template-keys.js";
 import { walkEntries } from "./walk.js";
 
 /** Which perspective every count in a {@link GameSummary} is measured from. */
@@ -74,21 +75,21 @@ export type SummaryRule = (
  */
 export const summaryRules: Readonly<Record<string, SummaryRule>> = {
   // "[gameEndReason]. [playerName] wins." — playerName IS the winner.
-  blog_loc_end_game: (groups, { creditOf }) => {
+  [templateKeys.endGame]: (groups, { creditOf }) => {
     const credit = creditOf(groups["playerName"]);
     return credit === null ? null : { credit, kind: "winner" };
   },
 
   // "[playerName]'s [cardName] was Knocked Out!" — playerName owns the
   // Pokémon that died, so the credit belongs to the *other* side.
-  blog_loc_knockout: (groups, { creditOf }) => {
+  [templateKeys.knockout]: (groups, { creditOf }) => {
     const owner = creditOf(groups["playerName"]);
     if (owner === null) return null;
     return { credit: owner === "self" ? "opponent" : "self", kind: "knockout" };
   },
 
   // "[playerName] took [numCards] Prize cards."
-  blog_loc_took_prize_cards: (groups, { creditOf }) => {
+  [templateKeys.tookPrizeCards]: (groups, { creditOf }) => {
     const credit = creditOf(groups["playerName"]);
     if (credit === null) return null;
     const count = Number.parseInt(groups["numCards"] ?? "", 10);
@@ -97,7 +98,7 @@ export const summaryRules: Readonly<Record<string, SummaryRule>> = {
   },
 
   // "[playerName] took a Prize card."
-  blog_loc_took_single_prize_card: (groups, { creditOf }) => {
+  [templateKeys.tookSinglePrizeCard]: (groups, { creditOf }) => {
     const credit = creditOf(groups["playerName"]);
     return credit === null ? null : { count: 1, credit, kind: "prizes" };
   },
