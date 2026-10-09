@@ -5,8 +5,10 @@
   "keywords": [
     "pokemon",
     "ptcg",
+    "ptcgl",
     "pokemon-tcg-live",
     "battle-log",
+    "battle-log-parser",
     "parser",
     "tcgl"
   ],
@@ -30,7 +32,7 @@
     "README.md",
     "LICENSE"
   ],
-  "homepage": "https://pokedojo.pro/docs/battle-log",
+  "homepage": "https://github.com/cdierkens/pokedojo-battle-log#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cdierkens/pokedojo-battle-log.git"
