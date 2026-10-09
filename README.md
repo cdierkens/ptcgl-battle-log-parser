@@ -345,16 +345,22 @@ pnpm run build
 Regenerating goldens:
 
 ```sh
-pnpm run test:unit -- --update
+pnpm run test:unit     # note: `--update` does nothing here
 ```
+
+Goldens are `readFileSync` comparisons, not vitest snapshots, so there is
+nothing to update. `src/__tests__/parse-battle-log.test.ts` documents the
+regeneration procedure: parse the fixture, rewrite the `<name>.json` golden and
+the `<name>.shape.json` projection.
 
 Versioning is [changesets](https://github.com/changesets/changesets):
 
 ```sh
 pnpm exec changeset          # add a changeset
-pnpm run version             # apply changesets
-pnpm run build && pnpm publish --provenance
+pnpm run version             # apply changesets to package.json + CHANGELOG.md
 ```
+
+Releases are automated from a tag — see [docs/RELEASING.md](./docs/RELEASING.md).
 
 ## Licence
 

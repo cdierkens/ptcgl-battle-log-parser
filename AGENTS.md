@@ -8,13 +8,16 @@ Public API and provenance: see `README.md`.
 
 ## Commands
 
-- `pnpm run verify` — the full gate: `templates:check`, `typecheck`, `test`, `build`.
-  Run before any publish; `prepublishOnly` runs it too.
+- `pnpm run verify` — the full **local** gate: `templates:check` + `verify:ci`.
+  Run it before tagging a release. Not CI-safe: `templates:check` needs a game install.
+- `pnpm run verify:ci` — `typecheck` + `test` + `build`. CI-safe; this is what
+  `prepublishOnly` runs.
 - `pnpm run templates:check` — re-derives the locale bundles from a local PTCG Live
   install. **Fails on a machine that has never run the game.** Don't reach for
   `verify` expecting it to pass anywhere; `templates:refresh` regenerates the bundles.
 - `pnpm run test` — `vitest run`.
-- `pnpm run release` — build, then `pnpm publish --access public --no-git-checks`.
+- **Releasing is automated from a tag.** `docs/RELEASING.md` is the procedure;
+  `docs/adr/0003-tag-triggered-oidc-releases.md` is the reasoning.
 
 ## Constraints
 
@@ -26,8 +29,9 @@ Public API and provenance: see `README.md`.
   twins: pass a `Result` to `unwrap` to throw instead of branching. See
   `docs/adr/0001-no-orthrow-twins.md`.
 - Public API changes go through Changesets (`.changeset/`), not manual `CHANGELOG.md` edits.
-- npm registry writes need 2FA and cannot be automated from CI here. Publishing is a
-  manual, human step.
+- Releases publish from CI via npm trusted publishing (OIDC), with provenance
+  attached automatically. There is **no `NPM_TOKEN`** and there should never be
+  one. Only the one-time bootstrap is manual (2FA) — see `docs/RELEASING.md`.
 
 ## Agent skills
 
