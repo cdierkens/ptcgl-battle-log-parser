@@ -61,12 +61,12 @@ export function compileTemplate(template: string): RegExp {
       const match = PLACEHOLDER_TEST_RE.exec(part);
       if (match !== null) {
         const name = match[1];
-        if (name === undefined) return escapeLiteral(part);
+        if (name === undefined) return literalPattern(part);
         if (seen.has(name)) return `\\k<${name}>`;
         seen.add(name);
         return `(?<${name}>.+?)`;
       }
-      return escapeLiteral(part);
+      return literalPattern(part);
     })
     .join("");
   return new RegExp(`^${pattern}$`, "u");
@@ -122,6 +122,35 @@ function literalLength(entry: TemplateEntry): number {
   return entry.template.length - placeholderChars;
 }
 
+/**
+ * Apostrophes that the client prints interchangeably.
+ *
+ * Only the two characters the bundles and the captured logs actually contain:
+ * `'` (U+0027) and `’` (U+2019). English authors both, French and Italian
+ * author almost entirely with the curly one, so the class has to work in both
+ * directions — a French log would otherwise be systematically affected.
+ *
+ * Adding a character needs a log that contains it. A wider class is not free:
+ * it turns a mismatch into a match, and a wrong match is the failure this rule
+ * exists to prevent. See `docs/adr/0006-apostrophe-equivalence.md`.
+ */
+const APOSTROPHES = "'’";
+const APOSTROPHE_CLASS = `[${APOSTROPHES}]`;
+
 function escapeLiteral(text: string): string {
   return text.replace(REGEX_META_RE, "\\$&");
+}
+
+/**
+ * Compile a literal segment into a regex fragment.
+ *
+ * Metacharacters are escaped as written; apostrophes become an equivalence
+ * class, because the client prints either form for the same template. Separate
+ * from {@link escapeLiteral} because escaping and equivalence are different
+ * reasons for this code to change.
+ */
+function literalPattern(text: string): string {
+  return [...text]
+    .map((char) => (APOSTROPHES.includes(char) ? APOSTROPHE_CLASS : escapeLiteral(char)))
+    .join("");
 }

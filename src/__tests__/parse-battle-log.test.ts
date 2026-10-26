@@ -101,6 +101,40 @@ describe("parseBattleLog — golden regression", () => {
     }
     expect(seen.size).toBeGreaterThan(40);
   });
+
+  /**
+   * The canary for "a shorter template accepted the line".
+   *
+   * `blog_loc_used_attack` ends in `[attackName]`, which is `.+?` and will
+   * absorb anything. So when a longer template stops matching — a changed
+   * apostrophe, a reworded client string — the line does not fail, it silently
+   * becomes an attack whose name contains the rest of the sentence, damage
+   * included. That is how 3.4% of attacks in a 411-log corpus lost their damage
+   * without a single error (parser ADR-0006).
+   *
+   * A damage clause contains a digit in every supported locale, so this is a
+   * locale-independent property. It fails loudly on the 1.1.0 behaviour, which
+   * is the whole point: a golden cannot catch this, because the golden was
+   * generated from the wrong parse.
+   */
+  it.each(CASES)("never swallows a damage clause into an attack name in $fixture", ({ fixture, playerName }) => {
+    const parsed = unwrap(parseBattleLog(readFixture(fixture), { playerName }));
+    const swallowed: string[] = [];
+
+    for (const phase of parsed.phases) {
+      for (const main of phase.mainEntries) {
+        for (const entry of [main, ...main.subEntries]) {
+          if (entry.event.templateKey !== "blog_loc_used_attack") continue;
+          const attackName = entry.event.groups["attackName"] ?? "";
+          if (/\d/u.test(attackName)) {
+            swallowed.push(attackName);
+          }
+        }
+      }
+    }
+
+    expect(swallowed).toEqual([]);
+  });
 });
 
 describe("parseBattleLog — unmatched lines", () => {

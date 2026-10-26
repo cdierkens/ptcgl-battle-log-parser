@@ -650,12 +650,15 @@
         {
           "event": {
             "groups": {
-              "playerName": "cdierkens",
+              "attackingPlayerName": "cdierkens",
               "attackingPokemonCardName": "Slowking",
-              "attackName": "Seek Inspiration on Wonder_Squid's Celebi for 110 damage"
+              "attackName": "Seek Inspiration",
+              "defendingPlayerName": "Wonder_Squid",
+              "targetPokemonCardName": "Celebi",
+              "numDamage": "110"
             },
             "raw": "cdierkens's Slowking used Seek Inspiration on Wonder_Squid's Celebi for 110 damage.",
-            "templateKey": "blog_loc_used_attack"
+            "templateKey": "blog_loc_applied_damage"
           },
           "subEntries": [
             {
@@ -1248,12 +1251,15 @@
         {
           "event": {
             "groups": {
-              "playerName": "Wonder_Squid",
+              "attackingPlayerName": "Wonder_Squid",
               "attackingPokemonCardName": "Beedrill ex",
-              "attackName": "Rumbling Bees on cdierkens's Slowking for 220 damage"
+              "attackName": "Rumbling Bees",
+              "defendingPlayerName": "cdierkens",
+              "targetPokemonCardName": "Slowking",
+              "numDamage": "220"
             },
             "raw": "Wonder_Squid's Beedrill ex used Rumbling Bees on cdierkens's Slowking for 220 damage.",
-            "templateKey": "blog_loc_used_attack"
+            "templateKey": "blog_loc_applied_damage"
           },
           "subEntries": [
             {
@@ -1728,12 +1734,15 @@
         {
           "event": {
             "groups": {
-              "playerName": "Wonder_Squid",
+              "attackingPlayerName": "Wonder_Squid",
               "attackingPokemonCardName": "Beedrill ex",
-              "attackName": "Rumbling Bees on cdierkens's Smoochum for 330 damage"
+              "attackName": "Rumbling Bees",
+              "defendingPlayerName": "cdierkens",
+              "targetPokemonCardName": "Smoochum",
+              "numDamage": "330"
             },
             "raw": "Wonder_Squid's Beedrill ex used Rumbling Bees on cdierkens's Smoochum for 330 damage.",
-            "templateKey": "blog_loc_used_attack"
+            "templateKey": "blog_loc_applied_damage"
           },
           "subEntries": [
             {
@@ -2099,12 +2108,15 @@
         {
           "event": {
             "groups": {
-              "playerName": "cdierkens",
+              "attackingPlayerName": "cdierkens",
               "attackingPokemonCardName": "Slowking",
-              "attackName": "Seek Inspiration on Wonder_Squid's Beedrill ex for 300 damage"
+              "attackName": "Seek Inspiration",
+              "defendingPlayerName": "Wonder_Squid",
+              "targetPokemonCardName": "Beedrill ex",
+              "numDamage": "300"
             },
             "raw": "cdierkens's Slowking used Seek Inspiration on Wonder_Squid's Beedrill ex for 300 damage.",
-            "templateKey": "blog_loc_used_attack"
+            "templateKey": "blog_loc_applied_damage"
           },
           "subEntries": [
             {
@@ -2289,12 +2301,15 @@
         {
           "event": {
             "groups": {
-              "playerName": "Wonder_Squid",
+              "attackingPlayerName": "Wonder_Squid",
               "attackingPokemonCardName": "Beedrill ex",
-              "attackName": "Rumbling Bees on cdierkens's Slowking for 330 damage"
+              "attackName": "Rumbling Bees",
+              "defendingPlayerName": "cdierkens",
+              "targetPokemonCardName": "Slowking",
+              "numDamage": "330"
             },
             "raw": "Wonder_Squid's Beedrill ex used Rumbling Bees on cdierkens's Slowking for 330 damage.",
-            "templateKey": "blog_loc_used_attack"
+            "templateKey": "blog_loc_applied_damage"
           },
           "subEntries": [
             {
@@ -2609,12 +2624,15 @@
         {
           "event": {
             "groups": {
-              "playerName": "cdierkens",
+              "attackingPlayerName": "cdierkens",
               "attackingPokemonCardName": "Slowking",
-              "attackName": "Seek Inspiration on Wonder_Squid's Beedrill ex for 140 damage"
+              "attackName": "Seek Inspiration",
+              "defendingPlayerName": "Wonder_Squid",
+              "targetPokemonCardName": "Beedrill ex",
+              "numDamage": "140"
             },
             "raw": "cdierkens's Slowking used Seek Inspiration on Wonder_Squid's Beedrill ex for 140 damage.",
-            "templateKey": "blog_loc_used_attack"
+            "templateKey": "blog_loc_applied_damage"
           },
           "subEntries": [
             {

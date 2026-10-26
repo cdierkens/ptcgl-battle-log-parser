@@ -42,6 +42,32 @@ describe("compileTemplate", () => {
     expect(re.exec("Damage breakdownX")).toBeNull();
   });
 
+  it("treats straight and curly apostrophes as the same character", () => {
+    // The client prints both forms for the same template; a log with none of
+    // the curly ones otherwise downgrades damage lines to `used_attack`.
+    const re = compileTemplate("[playerName]'s [cardName] was Knocked Out!");
+    expect(re.exec("cdierkens's Mega Kangaskhan ex was Knocked Out!")).not.toBeNull();
+    expect(re.exec("cdierkens’s Mega Kangaskhan ex was Knocked Out!")).not.toBeNull();
+  });
+
+  it("does not treat other punctuation as an apostrophe", () => {
+    // The set is evidence, not symmetry: only ' and ’ appear in the seven
+    // bundles or in a captured log. A wider class would turn mismatches into
+    // matches, which is the failure the rule exists to prevent.
+    const re = compileTemplate("[playerName]'s [cardName] was Knocked Out!");
+    for (const mark of ["‘", "ʼ", "′", "″"]) {
+      expect(re.exec(`cdierkens${mark}s Mega Kangaskhan ex was Knocked Out!`)).toBeNull();
+    }
+  });
+
+  it("captures apostrophes as printed, not normalised", () => {
+    // The rule is literal matching only: a card name keeps whatever the client
+    // wrote, so consumers compare against the log they were given.
+    const re = compileTemplate("[playerName]'s [cardName] was Knocked Out!");
+    const match = re.exec("cdierkens’s Lillie’s Clefairy ex was Knocked Out!");
+    expect(match?.groups?.["cardName"]).toBe("Lillie’s Clefairy ex");
+  });
+
   it("anchors — trailing content does not match", () => {
     const re = compileTemplate("[playerName] shuffled their deck.");
     // The placeholder can absorb any prefix (it's `.+?`) — that's expected.

@@ -378,18 +378,25 @@ asserted — it is **measured**:
   detection and parsing for all 7.
 
 ```
-✓ src/__tests__/parse-battle-log.test.ts    (19 tests)
-✓ src/__tests__/locale.test.ts             (53 tests)
-✓ src/__tests__/template-matcher.test.ts   (22 tests)
+✓ src/__tests__/parse-battle-log.test.ts    (29 tests)
+✓ src/__tests__/locale.test.ts             (55 tests)
+✓ src/__tests__/template-matcher.test.ts   (25 tests)
 ✓ src/__tests__/analyze-battle-log.test.ts (22 tests)
 ✓ src/__tests__/detect-players.test.ts     ( 6 tests)
 ✓ src/__tests__/index.test.ts              ( 5 tests)
-Tests  127 passed (127)
+✓ src/__tests__/types.test.ts              ( 9 tests)
+Tests  151 passed (151)
 ```
+
+One test is a canary rather than a regression: no fixture may produce a
+`used_attack` whose `attackName` contains a digit. A swallowed damage clause
+contains one in every locale, so the check is language-independent — and it fails
+on the 1.1.0 behaviour, which a golden cannot do, because that golden was
+generated from the wrong parse.
 
 ### Deliberate deviations from the original
 
-Two behavioural differences from the PokeDojo implementation, both fixes:
+Three behavioural differences from the PokeDojo implementation, all fixes:
 
 1. **Player identity is resolved once, at parse time, onto `Phase.playerName`.**
    The original re-matched a phase's raw header line to recover the player's
@@ -402,6 +409,12 @@ Two behavioural differences from the PokeDojo implementation, both fixes:
    50 shipped bundle entries listed a repeated placeholder twice, which
    inflated the computed literal length and mis-ranked those templates. The
    bundles are deduplicated. Golden output is unchanged.
+3. **Straight and curly apostrophes are interchangeable when matching**
+   (ADR-0006). The client prints either form for the same template, and matching
+   only the printed one silently downgraded a damage line to `used_attack`, with
+   the damage clause swallowed into the attack name. Six lines in
+   `slowking-vs-beedrill.log` change template key as a result. Captures are
+   unchanged: a card name keeps whichever apostrophe the log printed.
 
 ## Development
 
