@@ -304,12 +304,13 @@ how the strings sit alongside the MIT grant.
 
 All seven bundles share the same 228 keys; only the values differ.
 
-A key does **not** always name a distinguishable line. Some keys share identical
-template text, so they print byte-identical lines. Where the phase decides the
+A key does **not** always name a distinguishable line. Some keys' templates
+differ at most in slot names, which never print, so they render byte-identical
+lines. Where the phase decides the
 key, the parser picks it (ADR-0008). Otherwise `templateKey` is `null` and
 `candidateKeys` lists every key the line could be (ADR-0009). Every locale has:
 
-| Identical keys | `templateKey` |
+| Keys with identical rendered lines | `templateKey` |
 |---|---|
 | `play_to_active` · `played_to_active` | `play_to_*` in Setup (opening reveal), `played_to_*` elsewhere (played from hand) |
 | `play_to_bench` · `played_to_bench` | as above |
@@ -317,11 +318,19 @@ key, the parser picks it (ADR-0008). Otherwise `templateKey` is `null` and
 | `discarded_from_board` · `discarded_from_hand` | `null` — undecided. `_hand` covers own hand **or deck**; `_board` covers Active, Bench or stadium |
 | `damage_blocked` · `effect_prevention_damage` · `effect_prevention_damagecounters` | `null` — undecided |
 | `effect_prevention_allsubactions` · `effect_prevention_onlyeffects` | `null` — undecided |
+| `damage_detail_conditional_is_property` · `damage_detail_conditional_is_type` | `null` — undecided; slots `[pokemonProperty]` vs `[pokemonType]` |
 
-`ptbr` also has `shuffled_card_into_deck` · `shuffled_card_into_hand`, which are
-distinct in every other locale, so `ptbr` reports them as `null`. A key's
-distinguishability depends on the locale; read `candidateKeys` rather than this
-table.
+Per locale:
+
+- every locale except `fr`: `effect_prevention_allactioneffects` ·
+  `effect_prevention_allcardeffects` (slots `[attackName]` vs `[cardName]`);
+- `fr`: `healed` · `healed_dc` (`[numDamage]` vs `[numDamageCounters]`, both
+  printed as "dégâts");
+- `ptbr`: `shuffled_card_into_deck` · `shuffled_card_into_hand`.
+
+A key's distinguishability depends on the locale; read `candidateKeys` rather
+than this table. When `templateKey` is `null`, `groups` and the match's
+`template` use the slot names of `candidateKeys[0]`.
 
 ### What a line does not say
 
@@ -429,12 +438,12 @@ asserted — it is **measured**:
 ```
 ✓ src/__tests__/parse-battle-log.test.ts    (32 tests)
 ✓ src/__tests__/locale.test.ts             (55 tests)
-✓ src/__tests__/template-matcher.test.ts   (29 tests)
+✓ src/__tests__/template-matcher.test.ts   (31 tests)
 ✓ src/__tests__/analyze-battle-log.test.ts (22 tests)
 ✓ src/__tests__/detect-players.test.ts     ( 6 tests)
 ✓ src/__tests__/index.test.ts              ( 5 tests)
 ✓ src/__tests__/types.test.ts              ( 9 tests)
-Tests  158 passed (158)
+Tests  160 passed (160)
 ```
 
 One test is a canary rather than a regression: no fixture may produce a

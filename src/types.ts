@@ -34,8 +34,9 @@
 export interface TemplateEvent {
   /**
    * Every key the parser cannot rule out for this line, sorted and never
-   * empty. Keys in a locale can share identical template text and so render
-   * identical lines; all of them are listed. The phase narrows the placement
+   * empty. Keys whose templates differ at most in slot names render identical
+   * lines; all of them are listed, and `groups` uses the slot names of
+   * `candidateKeys[0]`. The phase narrows the placement
    * pairs (opening reveal vs played from hand) and `played_card` vs
    * `played_to_fallback`; see ADR 0008. Length 1 for almost every line.
    */
@@ -215,7 +216,8 @@ export type BlogLocale = (typeof ALL_BLOG_LOCALES)[number];
 /** A successful template match: which key matched, and what it captured. */
 export interface TemplateMatch {
   /**
-   * Every key whose template text is identical to the matched one, sorted.
+   * Every key whose template accepts the same lines as the matched one (slot
+   * names aside), sorted.
    * The matcher is context-free, so it does not apply the phase rule; see
    * {@link TemplateEvent.candidateKeys}.
    */

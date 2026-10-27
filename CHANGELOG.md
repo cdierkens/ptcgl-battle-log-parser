@@ -4,7 +4,7 @@
 
 ### Major Changes
 
-- 9c5c612: `templateKey` is now `null | string`: a string only when the line determines the key, `null` when keys share identical text and the line cannot say. `candidateKeys` (sorted, never empty) replaces `alternateKeys` and lists every key not ruled out — `[templateKey]` when decided. The phase still decides placements (ADR-0008); discards, damage blocks and `ptbr` shuffles are now `null`. See ADR-0009.
+- 9c5c612: `templateKey` is now `null | string`: a string only when the line determines the key, `null` when keys share identical text and the line cannot say. `candidateKeys` (sorted, never empty) replaces `alternateKeys` and lists every key not ruled out — `[templateKey]` when decided. Keys are grouped by the lines they render, so templates that differ only in slot names (`damage_detail_conditional_is_property` / `_is_type`, `effect_prevention_allactioneffects` / `_allcardeffects`, `fr` `healed` / `healed_dc`) are now reported too. The phase still decides placements (ADR-0008); discards, damage blocks, those groups and `ptbr` shuffles are now `null`. See ADR-0009.
 
 ## 1.3.0
 

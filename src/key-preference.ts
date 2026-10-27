@@ -1,5 +1,5 @@
 /**
- * Phase-aware narrowing of template keys whose text is identical.
+ * Phase-aware narrowing of template keys that render identical lines.
  *
  * The matcher is context-free: for identical templates it reports every key
  * and no `templateKey`. A few of those ties are decided by where the line

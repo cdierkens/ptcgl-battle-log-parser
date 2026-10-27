@@ -27,10 +27,18 @@ rule out, sorted, never empty — and `templateKey` becomes `null | string`:
   `candidateKeys` is `[templateKey]`;
 - `null` when the line cannot say, with two or more candidates.
 
-The matcher is context-free, so it returns `null` for every identical group.
+Keys are grouped by the lines their templates accept: the compiled pattern with
+slot names erased. Slot names never print, so `[pokemonProperty]: …` and
+`[pokemonType]: …` are one group, though ADR-0007 compared raw template text and
+missed them. When `templateKey` is `null`, `groups` uses the slot names of
+`candidateKeys[0]`, so the result does not depend on bundle order.
+
+The matcher is context-free, so it returns `null` for every group.
 The parser applies ADR-0008's phase rule, which narrows the placement pairs and
 `played_card` / `played_to_fallback` to one candidate. The discard, block and
-`ptbr` shuffle groups stay `null`.
+`ptbr` shuffle groups stay `null`, as do `damage_detail_conditional_is_property`
+/ `_is_type` (every locale), `effect_prevention_allactioneffects` /
+`_allcardeffects` (every locale but `fr`) and `healed` / `healed_dc` (`fr`).
 
 ## Consequences
 

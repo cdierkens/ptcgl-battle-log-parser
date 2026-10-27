@@ -225,6 +225,27 @@ describe("identical templates in the shipped bundles", () => {
   });
 });
 
+describe("templates that differ only in slot names", () => {
+  it("are one group: the names never print", () => {
+    expect(blogTemplateMatchers.en.match("Grass: 30 damage")).toEqual({
+      candidateKeys: [
+        "blog_loc_damage_detail_conditional_is_property",
+        "blog_loc_damage_detail_conditional_is_type",
+      ],
+      groups: { numDamage: "30", pokemonProperty: "Grass" },
+      template: "[pokemonProperty]: [numDamage] damage",
+      templateKey: null,
+    });
+  });
+
+  it("are grouped per locale: fr's healed and healed_dc collide", () => {
+    expect(blogTemplateMatchers.fr.match("Pikachu de Alice a été soigné de 30 dégâts.")).toMatchObject({
+      candidateKeys: ["blog_loc_healed", "blog_loc_healed_dc"],
+      templateKey: null,
+    });
+  });
+});
+
 describe("shipped bundles", () => {
   it("load without validation errors", () => {
     expect(defaultTemplateMatcher.size).toBeGreaterThan(200);

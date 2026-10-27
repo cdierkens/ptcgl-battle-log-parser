@@ -39,7 +39,10 @@ interface CompiledEntry {
   readonly key: string;
   readonly literalLen: number;
   readonly regex: RegExp;
-  readonly template: string;
+  // For a group, the first candidate's regex and template, so `groups` and
+  // `template` do not depend on bundle order.
+  readonly reportRegex: RegExp;
+  readonly reportTemplate: string;
 }
 
 /**
@@ -85,12 +88,12 @@ export function createTemplateMatcher(bundle: TemplateBundle): TemplateMatcher {
   return {
     match(line: string): null | TemplateMatch {
       for (const entry of compiled) {
-        const result = entry.regex.exec(line);
-        if (result === null) continue;
+        if (!entry.regex.test(line)) continue;
+        const result = entry.reportRegex.exec(line);
         return {
           candidateKeys: entry.candidateKeys,
-          groups: { ...result.groups },
-          template: entry.template,
+          groups: { ...result?.groups },
+          template: entry.reportTemplate,
           templateKey: entry.candidateKeys.length === 1 ? entry.key : null,
         };
       }
@@ -101,21 +104,37 @@ export function createTemplateMatcher(bundle: TemplateBundle): TemplateMatcher {
 }
 
 function compileBundle(bundle: TemplateBundle): CompiledEntry[] {
-  const keysByTemplate = new Map<string, string[]>();
+  // Keys whose templates accept the same lines are one group. That is the
+  // regex with slot names erased, not the raw text: names never print, and
+  // apostrophes are interchangeable (ADR-0006).
+  const keysByLanguage = new Map<string, string[]>();
   for (const [key, entry] of Object.entries(bundle)) {
-    const keys = keysByTemplate.get(entry.template) ?? [];
-    keys.push(key);
-    keysByTemplate.set(entry.template, keys);
+    const language = languageOf(entry.template);
+    keysByLanguage.set(language, [...(keysByLanguage.get(language) ?? []), key]);
   }
   return Object.entries(bundle)
-    .map(([key, entry]) => ({
-      candidateKeys: freezeKeys(key, keysByTemplate.get(entry.template) ?? []),
-      key,
-      literalLen: literalLength(entry),
-      regex: compileTemplate(entry.template),
-      template: entry.template,
-    }))
+    .map(([key, entry]) => {
+      const candidateKeys = freezeKeys(key, keysByLanguage.get(languageOf(entry.template)) ?? []);
+      const reportTemplate = bundle[candidateKeys[0]]?.template ?? entry.template;
+      return {
+        candidateKeys,
+        key,
+        literalLen: literalLength(entry),
+        regex: compileTemplate(entry.template),
+        reportRegex: compileTemplate(reportTemplate),
+        reportTemplate,
+      };
+    })
     .sort((a, b) => b.literalLen - a.literalLen);
+}
+
+function languageOf(template: string): string {
+  const names: string[] = [];
+  const positional = template.replace(/\[([a-zA-Z][a-zA-Z0-9_]*)\]/g, (_, name: string) => {
+    if (!names.includes(name)) names.push(name);
+    return `[p${names.indexOf(name)}]`;
+  });
+  return compileTemplate(positional).source;
 }
 
 function freezeKeys(key: string, sameText: readonly string[]): readonly [string, ...string[]] {
