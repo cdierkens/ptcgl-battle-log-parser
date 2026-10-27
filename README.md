@@ -25,9 +25,10 @@ result.value.playerName;        // "Alice"
 result.value.summary.turnCount; // 1
 ```
 
-Every line you feed it is matched back to the exact `blog_loc_*` localization
-template it was rendered from. Nothing is inferred, nothing is
-approximated.
+Every line you feed it is matched back to the `blog_loc_*` localization
+template it was rendered from. Nothing is approximated. Where the game uses
+identical text for different keys, the parser says so (`alternateKeys`)
+rather than guessing; see [About the template bundles](#about-the-template-bundles).
 
 ---
 
@@ -203,15 +204,17 @@ const rows = readdirSync("./logs").map((name) => {
 ```
 
 **Read every card that hit the Bench.** The AST carries each line's template
-key, so you filter on that rather than on prose.
+key, so you filter on that rather than on prose. The opening reveal in Setup is
+`play_to_bench`; a card played from hand during a turn is `played_to_bench`.
 
 ```ts
 import { unwrap, parseBattleLog } from "@dierkens.dev/ptcgl-battle-log-parser";
 
+const benchKeys = new Set(["blog_loc_play_to_bench", "blog_loc_played_to_bench"]);
 const log = unwrap(parseBattleLog(raw, { locale: "en" }));
 for (const phase of log.phases) {
   for (const main of phase.mainEntries) {
-    if (main.event.templateKey !== "blog_loc_play_to_bench") continue;
+    if (!benchKeys.has(main.event.templateKey)) continue;
     console.log(main.event.groups["playerName"], "→", main.event.groups["cardName"]);
   }
 }
@@ -419,14 +422,14 @@ asserted — it is **measured**:
   detection and parsing for all 7.
 
 ```
-✓ src/__tests__/parse-battle-log.test.ts    (29 tests)
+✓ src/__tests__/parse-battle-log.test.ts    (32 tests)
 ✓ src/__tests__/locale.test.ts             (55 tests)
-✓ src/__tests__/template-matcher.test.ts   (25 tests)
+✓ src/__tests__/template-matcher.test.ts   (29 tests)
 ✓ src/__tests__/analyze-battle-log.test.ts (22 tests)
 ✓ src/__tests__/detect-players.test.ts     ( 6 tests)
 ✓ src/__tests__/index.test.ts              ( 5 tests)
 ✓ src/__tests__/types.test.ts              ( 9 tests)
-Tests  151 passed (151)
+Tests  158 passed (158)
 ```
 
 One test is a canary rather than a regression: no fixture may produce a
@@ -437,7 +440,7 @@ generated from the wrong parse.
 
 ### Deliberate deviations from the original
 
-Three behavioural differences from the PokeDojo implementation, all fixes:
+Four behavioural differences from the PokeDojo implementation, all fixes:
 
 1. **Player identity is resolved once, at parse time, onto `Phase.playerName`.**
    The original re-matched a phase's raw header line to recover the player's
@@ -456,6 +459,12 @@ Three behavioural differences from the PokeDojo implementation, all fixes:
    the damage clause swallowed into the attack name. Six lines in
    `slowking-vs-beedrill.log` change template key as a result. Captures are
    unchanged: a card name keeps whichever apostrophe the log printed.
+4. **Identical templates are reported, and the phase decides placements**
+   (ADR-0007, ADR-0008). The original returned the first identical key in
+   bundle order, so every bench placement during a turn came back as the
+   Setup reveal `play_to_bench`, and every discard as `discarded_from_board`.
+   Placements are now `play_to_*` in Setup and `played_to_*` in a turn;
+   undecidable ties keep bundle order and list the rest in `alternateKeys`.
 
 ## Development
 
