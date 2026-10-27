@@ -1,14 +1,14 @@
 /**
- * Phase-aware choice between template keys whose text is identical.
+ * Phase-aware narrowing of template keys whose text is identical.
  *
- * The matcher is context-free: for identical templates it can only report
- * every key (`alternateKeys`). A few of those ties are decided by where the
- * line sits, and only those are resolved here. Each rule is backed by the
- * client's key mapping and the stored corpus; see ADR 0008. Ties not listed
- * here keep bundle order.
+ * The matcher is context-free: for identical templates it reports every key
+ * and no `templateKey`. A few of those ties are decided by where the line
+ * sits, and only those are narrowed here. Each rule is backed by the client's
+ * key mapping and the stored corpus; see ADR 0008. Every other tie stays
+ * unresolved.
  */
 
-import type { PhaseKind, TemplateMatch } from "./types.js";
+import type { PhaseKind, TemplateEvent, TemplateMatch } from "./types.js";
 
 // The opening board reveal renders `play_to_*`; a card played from hand
 // renders `played_to_*`. The reveal only happens in Setup.
@@ -24,17 +24,13 @@ const turnPreferred: readonly string[] = [
 // to the board always lands on Active, Bench or the stadium.
 const alwaysPreferred: readonly string[] = ["blog_loc_played_card"];
 
-export function preferKey(
+export function narrowKeys(
   match: TemplateMatch,
   phaseKind: PhaseKind,
-): Pick<TemplateMatch, "alternateKeys" | "templateKey"> {
-  if (match.alternateKeys.length === 0) return match;
-  const candidates = [match.templateKey, ...match.alternateKeys];
+): Pick<TemplateEvent, "candidateKeys" | "templateKey"> {
+  if (match.candidateKeys.length === 1) return match;
   const preferred = [...alwaysPreferred, ...(phaseKind === "Setup" ? setupPreferred : turnPreferred)];
-  const chosen = candidates.find((key) => preferred.includes(key));
-  if (chosen === undefined || chosen === match.templateKey) return match;
-  return {
-    alternateKeys: Object.freeze(candidates.filter((key) => key !== chosen).sort()),
-    templateKey: chosen,
-  };
+  const chosen = match.candidateKeys.find((key) => preferred.includes(key));
+  if (chosen === undefined) return match;
+  return { candidateKeys: Object.freeze([chosen] as const), templateKey: chosen };
 }

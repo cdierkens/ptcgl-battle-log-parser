@@ -5,7 +5,9 @@
       "mainEntries": [
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_selected_coinface"
+            ],
             "groups": {
               "playerName": "Wonder_Squid",
               "coinFace": "tails"
@@ -17,7 +19,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_won_coin_toss"
+            ],
             "groups": {
               "playerName": "cdierkens"
             },
@@ -28,7 +32,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_going_first"
+            ],
             "groups": {
               "playerName": "cdierkens"
             },
@@ -39,7 +45,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_draw_opening_hand"
+            ],
             "groups": {
               "playerName": "Wonder_Squid",
               "numCards": "7"
@@ -50,7 +58,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drawn_cards_grid_header"
+                ],
                 "groups": {
                   "numCards": "7"
                 },
@@ -63,7 +73,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_draw_opening_hand"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "numCards": "7"
@@ -74,7 +86,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drawn_cards_grid_header"
+                ],
                 "groups": {
                   "numCards": "7"
                 },
@@ -87,8 +101,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_active"
+            "candidateKeys": [
+              "blog_loc_play_to_active"
             ],
             "groups": {
               "playerName": "Wonder_Squid",
@@ -101,8 +115,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_bench"
+            "candidateKeys": [
+              "blog_loc_play_to_bench"
             ],
             "groups": {
               "playerName": "Wonder_Squid",
@@ -115,8 +129,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_bench"
+            "candidateKeys": [
+              "blog_loc_play_to_bench"
             ],
             "groups": {
               "playerName": "Wonder_Squid",
@@ -129,8 +143,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_active"
+            "candidateKeys": [
+              "blog_loc_play_to_active"
             ],
             "groups": {
               "playerName": "cdierkens",
@@ -143,8 +157,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_bench"
+            "candidateKeys": [
+              "blog_loc_play_to_bench"
             ],
             "groups": {
               "playerName": "cdierkens",
@@ -164,7 +178,9 @@
       "mainEntries": [
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_drew_card"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Basic Psychic Energy"
@@ -176,7 +192,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_attach_card_bench"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "sourceCardName": "Telepathic Psychic Energy",
@@ -189,7 +207,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_card_activated"
+            ],
             "groups": {
               "cardName": "Telepathic Psychic Energy"
             },
@@ -199,7 +219,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_then_play_bench_multi"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "numCards": "2"
@@ -211,7 +233,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_deck"
+                ],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -224,7 +248,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_used_attack"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "attackingPokemonCardName": "Mega Kangaskhan ex",
@@ -236,7 +262,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "2 cards"
@@ -250,7 +278,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_retreated"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Mega Kangaskhan ex"
@@ -262,7 +292,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_promote_to_active"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Smoochum"
@@ -274,7 +306,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_manual_end"
+            ],
             "groups": {
               "playerName": "cdierkens"
             },
@@ -295,7 +329,9 @@
       "mainEntries": [
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_drew_card"
+            ],
             "groups": {
               "playerName": "Wonder_Squid",
               "cardName": "a card"
@@ -307,8 +343,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "Wonder_Squid",
@@ -320,7 +356,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid",
                   "cardName": "Weedle"
@@ -332,7 +370,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_deck"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid"
                 },
@@ -345,8 +385,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_play_to_bench"
+            "candidateKeys": [
+              "blog_loc_played_to_bench"
             ],
             "groups": {
               "playerName": "Wonder_Squid",
@@ -359,8 +399,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "Wonder_Squid",
@@ -372,7 +412,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid",
                   "cardName": "Dunsparce"
@@ -384,7 +426,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_deck"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid"
                 },
@@ -397,8 +441,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_play_to_bench"
+            "candidateKeys": [
+              "blog_loc_played_to_bench"
             ],
             "groups": {
               "playerName": "Wonder_Squid",
@@ -411,8 +455,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "Wonder_Squid",
@@ -424,7 +468,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid",
                   "cardName": "Kakuna"
@@ -436,7 +482,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_deck"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid"
                 },
@@ -449,8 +497,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "Wonder_Squid",
@@ -462,7 +510,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_deck"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid"
                 },
@@ -475,8 +525,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "Wonder_Squid",
@@ -488,7 +538,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_card_into_deck"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid",
                   "cardName": "a card"
@@ -500,7 +552,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid",
                   "cardName": "8 cards"
@@ -514,8 +568,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "Wonder_Squid",
@@ -527,7 +581,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid",
                   "cardName": "2 cards"
@@ -539,7 +595,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_deck"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid"
                 },
@@ -552,8 +610,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "Wonder_Squid",
@@ -565,7 +623,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_then_play_bench"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid",
                   "cardName": "Dunsparce"
@@ -577,7 +637,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_deck"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid"
                 },
@@ -590,7 +652,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_manual_end"
+            ],
             "groups": {
               "playerName": "Wonder_Squid"
             },
@@ -611,7 +675,9 @@
       "mainEntries": [
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_drew_card"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Ultra Ball"
@@ -623,7 +689,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_attach_card_bench"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "sourceCardName": "Basic Psychic Energy",
@@ -636,8 +704,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "cdierkens",
@@ -649,7 +717,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "Slowking"
@@ -661,7 +731,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_deck"
+                ],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -674,7 +746,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_evolved_bench"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "sourcePokemonCardName": "Slowpoke",
@@ -687,8 +761,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "cdierkens",
@@ -700,7 +774,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_deck"
+                ],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -713,7 +789,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_retreated"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Smoochum"
@@ -725,7 +803,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_promote_to_active"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Slowking"
@@ -737,7 +817,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_applied_damage"
+            ],
             "groups": {
               "attackingPlayerName": "cdierkens",
               "attackingPokemonCardName": "Slowking",
@@ -752,7 +834,8 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [
+                "candidateKeys": [
+                  "blog_loc_discarded_from_board",
                   "blog_loc_discarded_from_hand"
                 ],
                 "groups": {
@@ -760,13 +843,15 @@
                   "cardName": "Kyurem"
                 },
                 "raw": "cdierkens discarded Kyurem.",
-                "templateKey": "blog_loc_discarded_from_board"
+                "templateKey": null
               },
               "subString": null
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_selected_option"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "selectedOption": "Trifrost"
@@ -778,7 +863,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_discarded_attachment_multi"
+                ],
                 "groups": {
                   "numCards": "2",
                   "playerName": "cdierkens",
@@ -791,7 +878,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_secondary_damage"
+                ],
                 "groups": {
                   "defendingPlayerName": "Wonder_Squid",
                   "targetPokemonCardName": "Weedle",
@@ -804,7 +893,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_secondary_damage"
+                ],
                 "groups": {
                   "defendingPlayerName": "Wonder_Squid",
                   "targetPokemonCardName": "Weedle",
@@ -819,7 +910,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_knockout"
+            ],
             "groups": {
               "playerName": "Wonder_Squid",
               "cardName": "Celebi"
@@ -831,7 +924,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_knockout"
+            ],
             "groups": {
               "playerName": "Wonder_Squid",
               "cardName": "Weedle"
@@ -843,7 +938,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_knockout"
+            ],
             "groups": {
               "playerName": "Wonder_Squid",
               "cardName": "Weedle"
@@ -855,7 +952,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_took_prize_cards"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "numCards": "3"
@@ -867,7 +966,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_added_prize"
+            ],
             "groups": {
               "cardName": "Academy at Night",
               "playerName": "cdierkens"
@@ -879,7 +980,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_added_prize"
+            ],
             "groups": {
               "cardName": "Wondrous Patch",
               "playerName": "cdierkens"
@@ -891,7 +994,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_added_prize"
+            ],
             "groups": {
               "cardName": "Night Stretcher",
               "playerName": "cdierkens"
@@ -903,7 +1008,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_promote_to_active"
+            ],
             "groups": {
               "playerName": "Wonder_Squid",
               "cardName": "Dunsparce"
@@ -925,7 +1032,9 @@
       "mainEntries": [
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_drew_card"
+            ],
             "groups": {
               "playerName": "Wonder_Squid",
               "cardName": "a card"
@@ -937,8 +1046,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "Wonder_Squid",
@@ -950,7 +1059,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_card_into_deck"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid",
                   "cardName": "2 cards"
@@ -964,7 +1075,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_used_attack"
+            ],
             "groups": {
               "playerName": "Wonder_Squid",
               "attackingPokemonCardName": "Fezandipiti ex",
@@ -976,7 +1089,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid",
                   "cardName": "3 cards"
@@ -990,8 +1105,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "Wonder_Squid",
@@ -1003,7 +1118,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_then_play_bench_multi"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid",
                   "numCards": "2"
@@ -1015,7 +1132,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_deck"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid"
                 },
@@ -1028,8 +1147,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "Wonder_Squid",
@@ -1041,7 +1160,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_hand"
+                ],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -1052,7 +1173,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_move_to_bottom_deck"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid",
                   "cardName": "8 cards"
@@ -1064,7 +1187,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid",
                   "cardName": "3 cards"
@@ -1078,8 +1203,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "Wonder_Squid",
@@ -1091,7 +1216,8 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [
+                "candidateKeys": [
+                  "blog_loc_discarded_from_board",
                   "blog_loc_discarded_from_hand"
                 ],
                 "groups": {
@@ -1099,13 +1225,15 @@
                   "cardName": "2 cards"
                 },
                 "raw": "Wonder_Squid discarded 2 cards.",
-                "templateKey": "blog_loc_discarded_from_board"
+                "templateKey": null
               },
               "subString": "Celebi, Celebi"
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid",
                   "cardName": "Meowth ex"
@@ -1117,7 +1245,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_deck"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid"
                 },
@@ -1130,8 +1260,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_play_to_bench"
+            "candidateKeys": [
+              "blog_loc_played_to_bench"
             ],
             "groups": {
               "playerName": "Wonder_Squid",
@@ -1144,7 +1274,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_used_attack"
+            ],
             "groups": {
               "playerName": "Wonder_Squid",
               "attackingPokemonCardName": "Meowth ex",
@@ -1156,7 +1288,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid",
                   "cardName": "Team Rocket's Petrel"
@@ -1168,7 +1302,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_deck"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid"
                 },
@@ -1181,8 +1317,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "Wonder_Squid",
@@ -1194,7 +1330,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid",
                   "cardName": "Forest of Vitality"
@@ -1206,7 +1344,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_deck"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid"
                 },
@@ -1219,7 +1359,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_played_to_stadium"
+            ],
             "groups": {
               "playerName": "Wonder_Squid",
               "cardName": "Forest of Vitality"
@@ -1231,7 +1373,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_evolved_bench"
+            ],
             "groups": {
               "playerName": "Wonder_Squid",
               "sourcePokemonCardName": "Weedle",
@@ -1244,7 +1388,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_evolved_bench"
+            ],
             "groups": {
               "playerName": "Wonder_Squid",
               "sourcePokemonCardName": "Weedle",
@@ -1257,7 +1403,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_evolved_bench"
+            ],
             "groups": {
               "playerName": "Wonder_Squid",
               "sourcePokemonCardName": "Kakuna",
@@ -1270,8 +1418,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "Wonder_Squid",
@@ -1283,7 +1431,8 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [
+                "candidateKeys": [
+                  "blog_loc_discarded_from_board",
                   "blog_loc_discarded_from_hand"
                 ],
                 "groups": {
@@ -1291,13 +1440,15 @@
                   "cardName": "2 cards"
                 },
                 "raw": "Wonder_Squid discarded 2 cards.",
-                "templateKey": "blog_loc_discarded_from_board"
+                "templateKey": null
               },
               "subString": "Sacred Ash, Morty's Conviction"
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid",
                   "cardName": "Dudunsparce"
@@ -1309,7 +1460,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_deck"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid"
                 },
@@ -1322,7 +1475,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_evolved_active"
+            ],
             "groups": {
               "playerName": "Wonder_Squid",
               "sourcePokemonCardName": "Dunsparce",
@@ -1335,8 +1490,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "Wonder_Squid",
@@ -1348,7 +1503,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid",
                   "cardName": "3 cards"
@@ -1360,7 +1517,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_card_into_deck"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid",
                   "cardName": "2 cards"
@@ -1374,7 +1533,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_promote_to_active"
+            ],
             "groups": {
               "playerName": "Wonder_Squid",
               "cardName": "Beedrill ex"
@@ -1386,7 +1547,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_evolved_bench"
+            ],
             "groups": {
               "playerName": "Wonder_Squid",
               "sourcePokemonCardName": "Kakuna",
@@ -1399,7 +1562,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_attach_card_active"
+            ],
             "groups": {
               "playerName": "Wonder_Squid",
               "sourceCardName": "Basic Grass Energy",
@@ -1412,7 +1577,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_applied_damage"
+            ],
             "groups": {
               "attackingPlayerName": "Wonder_Squid",
               "attackingPokemonCardName": "Beedrill ex",
@@ -1427,7 +1594,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_export_damage_breakdown_label"
+                ],
                 "groups": {},
                 "raw": "Damage breakdown:",
                 "templateKey": "blog_loc_export_damage_breakdown_label"
@@ -1438,7 +1607,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_knockout"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Slowking"
@@ -1450,7 +1621,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_discarded_attachment"
+            ],
             "groups": {
               "cardName": "Slowpoke",
               "playerName": "cdierkens",
@@ -1463,7 +1636,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_took_single_prize_card"
+            ],
             "groups": {
               "playerName": "Wonder_Squid"
             },
@@ -1474,7 +1649,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_added_prize"
+            ],
             "groups": {
               "cardName": "A card",
               "playerName": "Wonder_Squid"
@@ -1486,7 +1663,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_promote_to_active"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Smoochum"
@@ -1508,7 +1687,9 @@
       "mainEntries": [
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_drew_card"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Telepathic Psychic Energy"
@@ -1520,7 +1701,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_attach_card_active"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "sourceCardName": "Telepathic Psychic Energy",
@@ -1533,7 +1716,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_card_activated"
+            ],
             "groups": {
               "cardName": "Telepathic Psychic Energy"
             },
@@ -1543,7 +1728,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_then_play_bench_multi"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "numCards": "2"
@@ -1555,7 +1742,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_deck"
+                ],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -1568,7 +1757,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_used_attack"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "attackingPokemonCardName": "Smoochum",
@@ -1580,7 +1771,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_attach_card_bench"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "sourceCardName": "Basic Psychic Energy",
@@ -1593,7 +1786,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_attach_card_bench"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "sourceCardName": "Basic Psychic Energy",
@@ -1606,7 +1801,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_deck"
+                ],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -1629,7 +1826,9 @@
       "mainEntries": [
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_drew_card"
+            ],
             "groups": {
               "playerName": "Wonder_Squid",
               "cardName": "a card"
@@ -1641,7 +1840,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_attach_card_bench"
+            ],
             "groups": {
               "playerName": "Wonder_Squid",
               "sourceCardName": "Basic Grass Energy",
@@ -1654,8 +1855,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "Wonder_Squid",
@@ -1667,7 +1868,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid",
                   "cardName": "2 cards"
@@ -1679,7 +1882,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_deck"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid"
                 },
@@ -1692,8 +1897,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_play_to_bench"
+            "candidateKeys": [
+              "blog_loc_played_to_bench"
             ],
             "groups": {
               "playerName": "Wonder_Squid",
@@ -1706,7 +1911,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_evolved_bench"
+            ],
             "groups": {
               "playerName": "Wonder_Squid",
               "sourcePokemonCardName": "Weedle",
@@ -1719,8 +1926,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "Wonder_Squid",
@@ -1732,7 +1939,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid",
                   "cardName": "6 cards"
@@ -1746,7 +1955,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_evolved_bench"
+            ],
             "groups": {
               "playerName": "Wonder_Squid",
               "sourcePokemonCardName": "Dunsparce",
@@ -1759,8 +1970,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "Wonder_Squid",
@@ -1772,7 +1983,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid",
                   "cardName": "3 cards"
@@ -1784,7 +1997,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_card_into_deck"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid",
                   "cardName": "2 cards"
@@ -1798,8 +2013,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "Wonder_Squid",
@@ -1811,7 +2026,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_then_play_bench"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid",
                   "cardName": "Weedle"
@@ -1823,7 +2040,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_deck"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid"
                 },
@@ -1836,8 +2055,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "Wonder_Squid",
@@ -1849,7 +2068,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid",
                   "cardName": "Kakuna"
@@ -1861,7 +2082,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_deck"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid"
                 },
@@ -1874,7 +2097,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_evolved_bench"
+            ],
             "groups": {
               "playerName": "Wonder_Squid",
               "sourcePokemonCardName": "Weedle",
@@ -1887,7 +2112,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_evolved_bench"
+            ],
             "groups": {
               "playerName": "Wonder_Squid",
               "sourcePokemonCardName": "Kakuna",
@@ -1900,8 +2127,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "Wonder_Squid",
@@ -1913,7 +2140,8 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [
+                "candidateKeys": [
+                  "blog_loc_discarded_from_board",
                   "blog_loc_discarded_from_hand"
                 ],
                 "groups": {
@@ -1921,13 +2149,15 @@
                   "cardName": "2 cards"
                 },
                 "raw": "Wonder_Squid discarded 2 cards.",
-                "templateKey": "blog_loc_discarded_from_board"
+                "templateKey": null
               },
               "subString": "Dunsparce, Redeemable Ticket"
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid",
                   "cardName": "Dudunsparce"
@@ -1939,7 +2169,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_deck"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid"
                 },
@@ -1952,7 +2184,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_applied_damage"
+            ],
             "groups": {
               "attackingPlayerName": "Wonder_Squid",
               "attackingPokemonCardName": "Beedrill ex",
@@ -1967,7 +2201,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_export_damage_breakdown_label"
+                ],
                 "groups": {},
                 "raw": "Damage breakdown:",
                 "templateKey": "blog_loc_export_damage_breakdown_label"
@@ -1978,7 +2214,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_knockout"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Smoochum"
@@ -1990,7 +2228,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_discarded_attachment"
+            ],
             "groups": {
               "cardName": "Telepathic Psychic Energy",
               "playerName": "cdierkens",
@@ -2003,7 +2243,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_took_single_prize_card"
+            ],
             "groups": {
               "playerName": "Wonder_Squid"
             },
@@ -2014,7 +2256,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_added_prize"
+            ],
             "groups": {
               "cardName": "A card",
               "playerName": "Wonder_Squid"
@@ -2026,7 +2270,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_promote_to_active"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Mega Kangaskhan ex"
@@ -2048,7 +2294,9 @@
       "mainEntries": [
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_drew_card"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Fezandipiti ex"
@@ -2060,8 +2308,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_play_to_bench"
+            "candidateKeys": [
+              "blog_loc_played_to_bench"
             ],
             "groups": {
               "playerName": "cdierkens",
@@ -2074,7 +2322,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_used_attack"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "attackingPokemonCardName": "Fezandipiti ex",
@@ -2086,7 +2336,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "3 cards"
@@ -2100,7 +2352,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_used_attack"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "attackingPokemonCardName": "Mega Kangaskhan ex",
@@ -2112,7 +2366,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "2 cards"
@@ -2126,8 +2382,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_play_to_bench"
+            "candidateKeys": [
+              "blog_loc_played_to_bench"
             ],
             "groups": {
               "playerName": "cdierkens",
@@ -2140,8 +2396,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "cdierkens",
@@ -2153,7 +2409,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_attach_card_bench"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "sourceCardName": "Basic Psychic Energy",
@@ -2168,7 +2426,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_attach_card_bench"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "sourceCardName": "Lucky Helmet",
@@ -2181,7 +2441,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_attach_card_bench"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "sourceCardName": "Brave Bangle",
@@ -2194,8 +2456,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "cdierkens",
@@ -2207,7 +2469,8 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [
+                "candidateKeys": [
+                  "blog_loc_discarded_from_board",
                   "blog_loc_discarded_from_hand"
                 ],
                 "groups": {
@@ -2215,13 +2478,15 @@
                   "cardName": "3 cards"
                 },
                 "raw": "cdierkens discarded 3 cards.",
-                "templateKey": "blog_loc_discarded_from_board"
+                "templateKey": null
               },
               "subString": "Metagross, Ciphermaniac's Codebreaking, Meowth ex"
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "3 cards"
@@ -2233,7 +2498,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_deck"
+                ],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -2246,7 +2513,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_played_to_stadium"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Academy at Night"
@@ -2257,7 +2526,8 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [
+                "candidateKeys": [
+                  "blog_loc_discarded_from_board",
                   "blog_loc_discarded_from_hand"
                 ],
                 "groups": {
@@ -2265,7 +2535,7 @@
                   "cardName": "Forest of Vitality"
                 },
                 "raw": "cdierkens discarded Forest of Vitality.",
-                "templateKey": "blog_loc_discarded_from_board"
+                "templateKey": null
               },
               "subString": null
             }
@@ -2273,8 +2543,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "cdierkens",
@@ -2286,7 +2556,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "Slowking"
@@ -2298,7 +2570,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_deck"
+                ],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -2311,7 +2585,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_evolved_bench"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "sourcePokemonCardName": "Slowpoke",
@@ -2324,8 +2600,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "cdierkens",
@@ -2337,7 +2613,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_deck"
+                ],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -2350,7 +2628,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_retreated"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Mega Kangaskhan ex"
@@ -2362,7 +2642,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_promote_to_active"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Slowking"
@@ -2374,7 +2656,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_applied_damage"
+            ],
             "groups": {
               "attackingPlayerName": "cdierkens",
               "attackingPokemonCardName": "Slowking",
@@ -2389,7 +2673,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_export_damage_breakdown_label"
+                ],
                 "groups": {},
                 "raw": "Damage breakdown:",
                 "templateKey": "blog_loc_export_damage_breakdown_label"
@@ -2398,7 +2684,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_selected_option"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "selectedOption": "Metallic Hammer"
@@ -2410,7 +2698,8 @@
             },
             {
               "event": {
-                "alternateKeys": [
+                "candidateKeys": [
+                  "blog_loc_discarded_from_board",
                   "blog_loc_discarded_from_hand"
                 ],
                 "groups": {
@@ -2418,7 +2707,7 @@
                   "cardName": "Metagross"
                 },
                 "raw": "cdierkens discarded Metagross.",
-                "templateKey": "blog_loc_discarded_from_board"
+                "templateKey": null
               },
               "subString": null
             }
@@ -2436,7 +2725,9 @@
       "mainEntries": [
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_drew_card"
+            ],
             "groups": {
               "playerName": "Wonder_Squid",
               "cardName": "a card"
@@ -2448,7 +2739,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_attach_card_bench"
+            ],
             "groups": {
               "playerName": "Wonder_Squid",
               "sourceCardName": "Basic Grass Energy",
@@ -2461,8 +2754,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "Wonder_Squid",
@@ -2474,7 +2767,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_prizes"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid"
                 },
@@ -2485,7 +2780,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_move_to_bottom_deck"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid",
                   "cardName": "4 cards"
@@ -2497,7 +2794,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_move_to_prizes"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid",
                   "targetPlayerName": "Wonder_Squid",
@@ -2512,8 +2811,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "Wonder_Squid",
@@ -2525,7 +2824,8 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [
+                "candidateKeys": [
+                  "blog_loc_discarded_from_board",
                   "blog_loc_discarded_from_hand"
                 ],
                 "groups": {
@@ -2533,13 +2833,15 @@
                   "cardName": "Dudunsparce"
                 },
                 "raw": "Wonder_Squid discarded Dudunsparce.",
-                "templateKey": "blog_loc_discarded_from_board"
+                "templateKey": null
               },
               "subString": null
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "Wonder_Squid",
                   "cardName": "5 cards"
@@ -2553,7 +2855,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_retreated"
+            ],
             "groups": {
               "playerName": "Wonder_Squid",
               "cardName": "Beedrill ex"
@@ -2564,7 +2868,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_discarded_attachment"
+                ],
                 "groups": {
                   "cardName": "Basic Grass Energy",
                   "playerName": "Wonder_Squid",
@@ -2579,7 +2885,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_promote_to_active"
+            ],
             "groups": {
               "playerName": "Wonder_Squid",
               "cardName": "Beedrill ex"
@@ -2591,7 +2899,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_applied_damage"
+            ],
             "groups": {
               "attackingPlayerName": "Wonder_Squid",
               "attackingPokemonCardName": "Beedrill ex",
@@ -2606,7 +2916,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_export_damage_breakdown_label"
+                ],
                 "groups": {},
                 "raw": "Damage breakdown:",
                 "templateKey": "blog_loc_export_damage_breakdown_label"
@@ -2617,7 +2929,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_knockout"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Slowking"
@@ -2628,7 +2942,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_discarded_attachment_multi"
+                ],
                 "groups": {
                   "numCards": "4",
                   "playerName": "cdierkens",
@@ -2643,7 +2959,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_card_activated"
+            ],
             "groups": {
               "cardName": "Lucky Helmet"
             },
@@ -2653,7 +2971,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "2 cards"
@@ -2667,7 +2987,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_took_single_prize_card"
+            ],
             "groups": {
               "playerName": "Wonder_Squid"
             },
@@ -2678,7 +3000,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_added_prize"
+            ],
             "groups": {
               "cardName": "A card",
               "playerName": "Wonder_Squid"
@@ -2690,7 +3014,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_promote_to_active"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Mega Kangaskhan ex"
@@ -2712,7 +3038,9 @@
       "mainEntries": [
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_drew_card"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Lana's Aid"
@@ -2724,7 +3052,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_used_attack"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "attackingPokemonCardName": "Mega Kangaskhan ex",
@@ -2736,7 +3066,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "2 cards"
@@ -2750,7 +3082,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_attach_card_bench"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "sourceCardName": "Boomerang Energy",
@@ -2763,7 +3097,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_used_attack"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "attackingPokemonCardName": "Fezandipiti ex",
@@ -2775,7 +3111,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "3 cards"
@@ -2789,8 +3127,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "cdierkens",
@@ -2802,7 +3140,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_move_to_hand"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "targetPlayerName": "cdierkens",
@@ -2817,7 +3157,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_evolved_bench"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "sourcePokemonCardName": "Slowpoke",
@@ -2830,8 +3172,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "cdierkens",
@@ -2843,7 +3185,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_move_to_hand"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "targetPlayerName": "cdierkens",
@@ -2858,8 +3202,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_play_to_bench"
+            "candidateKeys": [
+              "blog_loc_played_to_bench"
             ],
             "groups": {
               "playerName": "cdierkens",
@@ -2872,8 +3216,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "cdierkens",
@@ -2885,7 +3229,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_attach_card_bench"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "sourceCardName": "Basic Psychic Energy",
@@ -2900,7 +3246,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_retreated"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Mega Kangaskhan ex"
@@ -2912,7 +3260,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_promote_to_active"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Slowking"
@@ -2924,8 +3274,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "cdierkens",
@@ -2937,7 +3287,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_move_on_top_deck"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "Kyurem"
@@ -2951,7 +3303,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_applied_damage"
+            ],
             "groups": {
               "attackingPlayerName": "cdierkens",
               "attackingPokemonCardName": "Slowking",
@@ -2966,7 +3320,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_export_damage_breakdown_label"
+                ],
                 "groups": {},
                 "raw": "Damage breakdown:",
                 "templateKey": "blog_loc_export_damage_breakdown_label"
@@ -2975,7 +3331,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_export_damage_breakdown_label"
+                ],
                 "groups": {},
                 "raw": "Damage breakdown:",
                 "templateKey": "blog_loc_export_damage_breakdown_label"
@@ -2984,7 +3342,8 @@
             },
             {
               "event": {
-                "alternateKeys": [
+                "candidateKeys": [
+                  "blog_loc_discarded_from_board",
                   "blog_loc_discarded_from_hand"
                 ],
                 "groups": {
@@ -2992,13 +3351,15 @@
                   "cardName": "Kyurem"
                 },
                 "raw": "cdierkens discarded Kyurem.",
-                "templateKey": "blog_loc_discarded_from_board"
+                "templateKey": null
               },
               "subString": null
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_selected_option"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "selectedOption": "Trifrost"
@@ -3010,7 +3371,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_discarded_attachment_multi"
+                ],
                 "groups": {
                   "numCards": "2",
                   "playerName": "cdierkens",
@@ -3023,7 +3386,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_secondary_damage"
+                ],
                 "groups": {
                   "defendingPlayerName": "Wonder_Squid",
                   "targetPokemonCardName": "Beedrill ex",
@@ -3036,7 +3401,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_secondary_damage"
+                ],
                 "groups": {
                   "defendingPlayerName": "Wonder_Squid",
                   "targetPokemonCardName": "Kakuna",
@@ -3051,7 +3418,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_added_prize"
+            ],
             "groups": {
               "cardName": "Latias ex",
               "playerName": "cdierkens"
@@ -3063,7 +3432,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_added_prize"
+            ],
             "groups": {
               "cardName": "Slowking",
               "playerName": "cdierkens"
@@ -3075,7 +3446,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_took_prize_cards"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "numCards": "3"
@@ -3087,7 +3460,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_knockout"
+            ],
             "groups": {
               "playerName": "Wonder_Squid",
               "cardName": "Beedrill ex"
@@ -3098,7 +3473,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_discarded_attachment_multi"
+                ],
                 "groups": {
                   "numCards": "2",
                   "playerName": "Wonder_Squid",
@@ -3113,7 +3490,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_discarded_attachment"
+            ],
             "groups": {
               "cardName": "Weedle",
               "playerName": "Wonder_Squid",
@@ -3126,7 +3505,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_knockout"
+            ],
             "groups": {
               "playerName": "Wonder_Squid",
               "cardName": "Kakuna"
@@ -3138,7 +3519,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_added_prize"
+            ],
             "groups": {
               "cardName": "Academy at Night",
               "playerName": "cdierkens"
@@ -3150,7 +3533,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_end_game"
+            ],
             "groups": {
               "gameEndReason": "All Prize cards taken",
               "playerName": "cdierkens"
@@ -3162,7 +3547,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_card_activated"
+            ],
             "groups": {
               "cardName": "Boomerang Energy"
             },
@@ -3172,7 +3559,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_attach_card_active"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "sourceCardName": "Boomerang Energy",

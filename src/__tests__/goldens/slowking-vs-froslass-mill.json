@@ -5,7 +5,9 @@
       "mainEntries": [
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_selected_coinface"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "coinFace": "tails"
@@ -17,7 +19,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_won_coin_toss"
+            ],
             "groups": {
               "playerName": "TSLAUJ"
             },
@@ -28,7 +32,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_going_first"
+            ],
             "groups": {
               "playerName": "TSLAUJ"
             },
@@ -39,7 +45,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_draw_opening_hand"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "numCards": "7"
@@ -50,7 +58,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drawn_cards_grid_header"
+                ],
                 "groups": {
                   "numCards": "7"
                 },
@@ -63,7 +73,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_draw_opening_hand"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "numCards": "7"
@@ -74,7 +86,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drawn_cards_grid_header"
+                ],
                 "groups": {
                   "numCards": "7"
                 },
@@ -87,8 +101,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_active"
+            "candidateKeys": [
+              "blog_loc_play_to_active"
             ],
             "groups": {
               "playerName": "cdierkens",
@@ -101,8 +115,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_bench"
+            "candidateKeys": [
+              "blog_loc_play_to_bench"
             ],
             "groups": {
               "playerName": "cdierkens",
@@ -115,8 +129,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_active"
+            "candidateKeys": [
+              "blog_loc_play_to_active"
             ],
             "groups": {
               "playerName": "TSLAUJ",
@@ -136,7 +150,9 @@
       "mainEntries": [
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_drew_card"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "cardName": "a card"
@@ -148,8 +164,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "TSLAUJ",
@@ -161,7 +177,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "TSLAUJ",
                   "cardName": "Uxie"
@@ -173,7 +191,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_deck"
+                ],
                 "groups": {
                   "playerName": "TSLAUJ"
                 },
@@ -186,8 +206,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_play_to_bench"
+            "candidateKeys": [
+              "blog_loc_played_to_bench"
             ],
             "groups": {
               "playerName": "TSLAUJ",
@@ -200,7 +220,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_attach_card_active"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "sourceCardName": "Basic Psychic Energy",
@@ -213,7 +235,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_retreated"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "cardName": "Snorunt"
@@ -224,7 +248,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_discarded_attachment"
+                ],
                 "groups": {
                   "cardName": "Basic Psychic Energy",
                   "playerName": "TSLAUJ",
@@ -239,7 +265,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_promote_to_active"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "cardName": "Uxie"
@@ -251,7 +279,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_manual_end"
+            ],
             "groups": {
               "playerName": "TSLAUJ"
             },
@@ -272,7 +302,9 @@
       "mainEntries": [
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_drew_card"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Metagross"
@@ -284,8 +316,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "cdierkens",
@@ -297,7 +329,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "Slowpoke"
@@ -309,7 +343,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_deck"
+                ],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -322,8 +358,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_play_to_bench"
+            "candidateKeys": [
+              "blog_loc_played_to_bench"
             ],
             "groups": {
               "playerName": "cdierkens",
@@ -336,8 +372,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "cdierkens",
@@ -349,7 +385,8 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [
+                "candidateKeys": [
+                  "blog_loc_discarded_from_board",
                   "blog_loc_discarded_from_hand"
                 ],
                 "groups": {
@@ -357,13 +394,15 @@
                   "cardName": "2 cards"
                 },
                 "raw": "cdierkens discarded 2 cards.",
-                "templateKey": "blog_loc_discarded_from_board"
+                "templateKey": null
               },
               "subString": "Ciphermaniac's Codebreaking, Metagross"
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "Meowth ex"
@@ -375,7 +414,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_deck"
+                ],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -388,8 +429,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_play_to_bench"
+            "candidateKeys": [
+              "blog_loc_played_to_bench"
             ],
             "groups": {
               "playerName": "cdierkens",
@@ -402,7 +443,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_used_attack"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "attackingPokemonCardName": "Meowth ex",
@@ -414,7 +457,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "Lillie's Determination"
@@ -426,7 +471,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_deck"
+                ],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -439,8 +486,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "cdierkens",
@@ -452,7 +499,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_card_into_deck"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "2 cards"
@@ -464,7 +513,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "8 cards"
@@ -478,7 +529,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_attach_card_bench"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "sourceCardName": "Telepathic Psychic Energy",
@@ -491,7 +544,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_card_activated"
+            ],
             "groups": {
               "cardName": "Telepathic Psychic Energy"
             },
@@ -501,7 +556,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_then_play_bench"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "Slowpoke"
@@ -513,7 +570,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_deck"
+                ],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -526,7 +585,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_used_attack"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "attackingPokemonCardName": "Smoochum",
@@ -538,7 +599,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_attach_card_bench"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "sourceCardName": "Basic Psychic Energy",
@@ -551,7 +614,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_attach_card_bench"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "sourceCardName": "Basic Psychic Energy",
@@ -564,7 +629,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_deck"
+                ],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -587,7 +654,9 @@
       "mainEntries": [
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_drew_card"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "cardName": "a card"
@@ -599,7 +668,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_evolved_bench"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "sourcePokemonCardName": "Snorunt",
@@ -612,7 +683,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_attach_card_active"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "sourceCardName": "Basic Psychic Energy",
@@ -625,8 +698,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "TSLAUJ",
@@ -638,7 +711,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_switched_active"
+                ],
                 "groups": {
                   "targetPlayerName": "cdierkens",
                   "targetCardName": "Slowpoke",
@@ -654,7 +729,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_promote_to_active"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Slowpoke"
@@ -666,7 +743,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_used_attack"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "attackingPokemonCardName": "Uxie",
@@ -678,7 +757,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_placed_dc"
+                ],
                 "groups": {
                   "cardName": "TSLAUJ",
                   "numDamageCounters": "2",
@@ -692,7 +773,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_placed_dc"
+                ],
                 "groups": {
                   "cardName": "TSLAUJ",
                   "numDamageCounters": "2",
@@ -706,7 +789,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_placed_dc"
+                ],
                 "groups": {
                   "cardName": "TSLAUJ",
                   "numDamageCounters": "2",
@@ -720,7 +805,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_placed_dc"
+                ],
                 "groups": {
                   "cardName": "TSLAUJ",
                   "numDamageCounters": "2",
@@ -734,7 +821,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_placed_dc"
+                ],
                 "groups": {
                   "cardName": "TSLAUJ",
                   "numDamageCounters": "2",
@@ -759,7 +848,9 @@
       "mainEntries": [
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_used_attack"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "attackingPokemonCardName": "Froslass",
@@ -771,7 +862,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_placed_single_dc"
+                ],
                 "groups": {
                   "cardName": "TSLAUJ",
                   "targetPlayerName": "TSLAUJ",
@@ -793,7 +886,9 @@
       "mainEntries": [
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_drew_card"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Mega Kangaskhan ex"
@@ -805,7 +900,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_attach_card_bench"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "sourceCardName": "Basic Psychic Energy",
@@ -818,7 +915,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_played_to_stadium"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Academy at Night"
@@ -830,8 +929,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_play_to_bench"
+            "candidateKeys": [
+              "blog_loc_played_to_bench"
             ],
             "groups": {
               "playerName": "cdierkens",
@@ -844,7 +943,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_manual_end"
+            ],
             "groups": {
               "playerName": "cdierkens"
             },
@@ -864,7 +965,9 @@
       "mainEntries": [
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_used_attack"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "attackingPokemonCardName": "Froslass",
@@ -876,7 +979,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_placed_single_dc"
+                ],
                 "groups": {
                   "cardName": "cdierkens",
                   "targetPlayerName": "TSLAUJ",
@@ -889,7 +994,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_placed_single_dc"
+                ],
                 "groups": {
                   "cardName": "cdierkens",
                   "targetPlayerName": "TSLAUJ",
@@ -911,7 +1018,9 @@
       "mainEntries": [
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_drew_card"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "cardName": "a card"
@@ -923,8 +1032,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "TSLAUJ",
@@ -936,7 +1045,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_then_play_bench_multi"
+                ],
                 "groups": {
                   "playerName": "TSLAUJ",
                   "numCards": "2"
@@ -948,7 +1059,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_deck"
+                ],
                 "groups": {
                   "playerName": "TSLAUJ"
                 },
@@ -961,8 +1074,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "TSLAUJ",
@@ -974,7 +1087,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_move_to_hand"
+                ],
                 "groups": {
                   "playerName": "TSLAUJ",
                   "targetPlayerName": "TSLAUJ",
@@ -989,7 +1104,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_attach_card_bench"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "sourceCardName": "Basic Psychic Energy",
@@ -1002,8 +1119,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "TSLAUJ",
@@ -1015,7 +1132,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_card_into_deck"
+                ],
                 "groups": {
                   "playerName": "TSLAUJ",
                   "cardName": "a card"
@@ -1027,7 +1146,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "TSLAUJ",
                   "cardName": "8 cards"
@@ -1041,8 +1162,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "TSLAUJ",
@@ -1054,7 +1175,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "TSLAUJ",
                   "cardName": "Trevenant"
@@ -1066,7 +1189,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_deck"
+                ],
                 "groups": {
                   "playerName": "TSLAUJ"
                 },
@@ -1079,7 +1204,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_used_attack"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "attackingPokemonCardName": "Phantump",
@@ -1091,7 +1218,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_evolved_bench"
+                ],
                 "groups": {
                   "playerName": "TSLAUJ",
                   "sourcePokemonCardName": "Phantump",
@@ -1104,7 +1233,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_placed_dc"
+                ],
                 "groups": {
                   "cardName": "TSLAUJ",
                   "numDamageCounters": "2",
@@ -1120,8 +1251,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "TSLAUJ",
@@ -1133,7 +1264,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_then_play_bench"
+                ],
                 "groups": {
                   "playerName": "TSLAUJ",
                   "cardName": "Uxie"
@@ -1145,7 +1278,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_deck"
+                ],
                 "groups": {
                   "playerName": "TSLAUJ"
                 },
@@ -1158,7 +1293,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_retreated"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "cardName": "Uxie"
@@ -1169,7 +1306,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_discarded_attachment"
+                ],
                 "groups": {
                   "cardName": "Basic Psychic Energy",
                   "playerName": "TSLAUJ",
@@ -1184,7 +1323,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_promote_to_active"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "cardName": "Trevenant"
@@ -1196,8 +1337,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_play_to_bench"
+            "candidateKeys": [
+              "blog_loc_played_to_bench"
             ],
             "groups": {
               "playerName": "TSLAUJ",
@@ -1210,8 +1351,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "TSLAUJ",
@@ -1223,7 +1364,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "TSLAUJ",
                   "cardName": "Lillie's Determination"
@@ -1235,7 +1378,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_deck"
+                ],
                 "groups": {
                   "playerName": "TSLAUJ"
                 },
@@ -1248,7 +1393,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_applied_damage"
+            ],
             "groups": {
               "attackingPlayerName": "TSLAUJ",
               "attackingPokemonCardName": "Trevenant",
@@ -1273,7 +1420,9 @@
       "mainEntries": [
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_used_attack"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "attackingPokemonCardName": "Froslass",
@@ -1285,7 +1434,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_placed_single_dc"
+                ],
                 "groups": {
                   "cardName": "TSLAUJ",
                   "targetPlayerName": "TSLAUJ",
@@ -1298,7 +1449,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_placed_single_dc"
+                ],
                 "groups": {
                   "cardName": "TSLAUJ",
                   "targetPlayerName": "TSLAUJ",
@@ -1320,7 +1473,9 @@
       "mainEntries": [
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_drew_card"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Slowking"
@@ -1332,7 +1487,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_evolved_bench"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "sourcePokemonCardName": "Slowpoke",
@@ -1345,7 +1502,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_manual_end"
+            ],
             "groups": {
               "playerName": "cdierkens"
             },
@@ -1365,7 +1524,9 @@
       "mainEntries": [
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_used_attack"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "attackingPokemonCardName": "Froslass",
@@ -1377,7 +1538,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_placed_single_dc"
+                ],
                 "groups": {
                   "cardName": "cdierkens",
                   "targetPlayerName": "TSLAUJ",
@@ -1390,7 +1553,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_placed_single_dc"
+                ],
                 "groups": {
                   "cardName": "cdierkens",
                   "targetPlayerName": "TSLAUJ",
@@ -1412,7 +1577,9 @@
       "mainEntries": [
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_drew_card"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "cardName": "a card"
@@ -1424,7 +1591,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_evolved_bench"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "sourcePokemonCardName": "Snorunt",
@@ -1437,8 +1606,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "TSLAUJ",
@@ -1450,7 +1619,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_attach_card_bench"
+                ],
                 "groups": {
                   "playerName": "TSLAUJ",
                   "sourceCardName": "Basic Psychic Energy",
@@ -1465,8 +1636,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "TSLAUJ",
@@ -1478,7 +1649,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_card_into_deck"
+                ],
                 "groups": {
                   "playerName": "TSLAUJ",
                   "cardName": "3 cards"
@@ -1490,7 +1663,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "TSLAUJ",
                   "cardName": "8 cards"
@@ -1504,7 +1679,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_played_to_stadium"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "cardName": "Risky Ruins"
@@ -1515,7 +1692,8 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [
+                "candidateKeys": [
+                  "blog_loc_discarded_from_board",
                   "blog_loc_discarded_from_hand"
                 ],
                 "groups": {
@@ -1523,7 +1701,7 @@
                   "cardName": "Academy at Night"
                 },
                 "raw": "TSLAUJ discarded Academy at Night.",
-                "templateKey": "blog_loc_discarded_from_board"
+                "templateKey": null
               },
               "subString": null
             }
@@ -1531,7 +1709,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_attach_card_bench"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "sourceCardName": "Basic Psychic Energy",
@@ -1544,7 +1724,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_applied_damage"
+            ],
             "groups": {
               "attackingPlayerName": "TSLAUJ",
               "attackingPokemonCardName": "Trevenant",
@@ -1560,7 +1742,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_knockout"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Slowpoke"
@@ -1572,7 +1756,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_took_single_prize_card"
+            ],
             "groups": {
               "playerName": "TSLAUJ"
             },
@@ -1583,7 +1769,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_added_prize"
+            ],
             "groups": {
               "cardName": "A card",
               "playerName": "TSLAUJ"
@@ -1595,7 +1783,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_promote_to_active"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Mega Kangaskhan ex"
@@ -1616,7 +1806,9 @@
       "mainEntries": [
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_used_attack"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "attackingPokemonCardName": "Froslass",
@@ -1628,7 +1820,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_placed_single_dc"
+                ],
                 "groups": {
                   "cardName": "TSLAUJ",
                   "targetPlayerName": "TSLAUJ",
@@ -1641,7 +1835,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_placed_single_dc"
+                ],
                 "groups": {
                   "cardName": "TSLAUJ",
                   "targetPlayerName": "TSLAUJ",
@@ -1654,7 +1850,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_placed_single_dc"
+                ],
                 "groups": {
                   "cardName": "TSLAUJ",
                   "targetPlayerName": "TSLAUJ",
@@ -1667,7 +1865,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_placed_single_dc"
+                ],
                 "groups": {
                   "cardName": "TSLAUJ",
                   "targetPlayerName": "TSLAUJ",
@@ -1689,7 +1889,9 @@
       "mainEntries": [
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_drew_card"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Poké Pad"
@@ -1701,7 +1903,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_used_attack"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "attackingPokemonCardName": "Mega Kangaskhan ex",
@@ -1713,7 +1917,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "2 cards"
@@ -1727,8 +1933,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "cdierkens",
@@ -1740,7 +1946,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "Kyurem"
@@ -1752,7 +1960,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_deck"
+                ],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -1765,8 +1975,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_play_to_bench"
+            "candidateKeys": [
+              "blog_loc_played_to_bench"
             ],
             "groups": {
               "playerName": "cdierkens",
@@ -1779,7 +1989,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_card_activated"
+            ],
             "groups": {
               "cardName": "Risky Ruins"
             },
@@ -1789,7 +2001,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_placed_dc"
+                ],
                 "groups": {
                   "cardName": "cdierkens",
                   "numDamageCounters": "2",
@@ -1805,7 +2019,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_attach_card_bench"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "sourceCardName": "Telepathic Psychic Energy",
@@ -1818,7 +2034,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_attach_card_active"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "sourceCardName": "Lucky Helmet",
@@ -1831,7 +2049,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_manual_end"
+            ],
             "groups": {
               "playerName": "cdierkens"
             },
@@ -1851,7 +2071,9 @@
       "mainEntries": [
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_used_attack"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "attackingPokemonCardName": "Froslass",
@@ -1863,7 +2085,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_placed_single_dc"
+                ],
                 "groups": {
                   "cardName": "cdierkens",
                   "targetPlayerName": "TSLAUJ",
@@ -1876,7 +2100,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_placed_single_dc"
+                ],
                 "groups": {
                   "cardName": "cdierkens",
                   "targetPlayerName": "TSLAUJ",
@@ -1889,7 +2115,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_placed_single_dc"
+                ],
                 "groups": {
                   "cardName": "cdierkens",
                   "targetPlayerName": "TSLAUJ",
@@ -1902,7 +2130,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_placed_single_dc"
+                ],
                 "groups": {
                   "cardName": "cdierkens",
                   "targetPlayerName": "TSLAUJ",
@@ -1915,7 +2145,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_placed_single_dc"
+                ],
                 "groups": {
                   "cardName": "cdierkens",
                   "targetPlayerName": "TSLAUJ",
@@ -1928,7 +2160,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_placed_single_dc"
+                ],
                 "groups": {
                   "cardName": "cdierkens",
                   "targetPlayerName": "TSLAUJ",
@@ -1950,7 +2184,9 @@
       "mainEntries": [
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_drew_card"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "cardName": "a card"
@@ -1962,8 +2198,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "TSLAUJ",
@@ -1975,7 +2211,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_card_into_deck"
+                ],
                 "groups": {
                   "playerName": "TSLAUJ",
                   "cardName": "7 cards"
@@ -1987,7 +2225,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "TSLAUJ",
                   "cardName": "6 cards"
@@ -2001,8 +2241,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "TSLAUJ",
@@ -2014,7 +2254,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "TSLAUJ",
                   "cardName": "Froslass"
@@ -2026,7 +2268,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_deck"
+                ],
                 "groups": {
                   "playerName": "TSLAUJ"
                 },
@@ -2039,7 +2283,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_evolved_bench"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "sourcePokemonCardName": "Snorunt",
@@ -2052,7 +2298,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_applied_damage"
+            ],
             "groups": {
               "attackingPlayerName": "TSLAUJ",
               "attackingPokemonCardName": "Trevenant",
@@ -2068,7 +2316,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_card_activated"
+            ],
             "groups": {
               "cardName": "Lucky Helmet"
             },
@@ -2078,7 +2328,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "2 cards"
@@ -2101,7 +2353,9 @@
       "mainEntries": [
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_used_attack"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "attackingPokemonCardName": "Froslass",
@@ -2113,7 +2367,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_placed_single_dc"
+                ],
                 "groups": {
                   "cardName": "TSLAUJ",
                   "targetPlayerName": "TSLAUJ",
@@ -2126,7 +2382,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_placed_single_dc"
+                ],
                 "groups": {
                   "cardName": "TSLAUJ",
                   "targetPlayerName": "TSLAUJ",
@@ -2139,7 +2397,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_placed_single_dc"
+                ],
                 "groups": {
                   "cardName": "TSLAUJ",
                   "targetPlayerName": "TSLAUJ",
@@ -2152,7 +2412,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_placed_single_dc"
+                ],
                 "groups": {
                   "cardName": "TSLAUJ",
                   "targetPlayerName": "TSLAUJ",
@@ -2165,7 +2427,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_placed_single_dc"
+                ],
                 "groups": {
                   "cardName": "TSLAUJ",
                   "targetPlayerName": "TSLAUJ",
@@ -2178,7 +2442,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_placed_single_dc"
+                ],
                 "groups": {
                   "cardName": "TSLAUJ",
                   "targetPlayerName": "TSLAUJ",
@@ -2191,7 +2457,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_placed_single_dc"
+                ],
                 "groups": {
                   "cardName": "TSLAUJ",
                   "targetPlayerName": "TSLAUJ",
@@ -2204,7 +2472,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_placed_single_dc"
+                ],
                 "groups": {
                   "cardName": "TSLAUJ",
                   "targetPlayerName": "TSLAUJ",
@@ -2217,7 +2487,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_placed_single_dc"
+                ],
                 "groups": {
                   "cardName": "TSLAUJ",
                   "targetPlayerName": "TSLAUJ",
@@ -2239,7 +2511,9 @@
       "mainEntries": [
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_drew_card"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Academy at Night"
@@ -2251,7 +2525,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_played_to_stadium"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Academy at Night"
@@ -2262,7 +2538,8 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [
+                "candidateKeys": [
+                  "blog_loc_discarded_from_board",
                   "blog_loc_discarded_from_hand"
                 ],
                 "groups": {
@@ -2270,7 +2547,7 @@
                   "cardName": "Risky Ruins"
                 },
                 "raw": "cdierkens discarded Risky Ruins.",
-                "templateKey": "blog_loc_discarded_from_board"
+                "templateKey": null
               },
               "subString": null
             }
@@ -2278,7 +2555,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_used_attack"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "attackingPokemonCardName": "Mega Kangaskhan ex",
@@ -2290,7 +2569,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "2 cards"
@@ -2304,7 +2585,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_retreated"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Mega Kangaskhan ex"
@@ -2316,7 +2599,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_promote_to_active"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Slowking"
@@ -2328,8 +2613,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "cdierkens",
@@ -2341,7 +2626,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_move_on_top_deck"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "Kyurem"
@@ -2355,7 +2642,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_applied_damage"
+            ],
             "groups": {
               "attackingPlayerName": "cdierkens",
               "attackingPokemonCardName": "Slowking",
@@ -2370,7 +2659,8 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [
+                "candidateKeys": [
+                  "blog_loc_discarded_from_board",
                   "blog_loc_discarded_from_hand"
                 ],
                 "groups": {
@@ -2378,13 +2668,15 @@
                   "cardName": "Kyurem"
                 },
                 "raw": "cdierkens discarded Kyurem.",
-                "templateKey": "blog_loc_discarded_from_board"
+                "templateKey": null
               },
               "subString": null
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_selected_option"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "selectedOption": "Trifrost"
@@ -2396,7 +2688,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_discarded_attachment_multi"
+                ],
                 "groups": {
                   "numCards": "2",
                   "playerName": "cdierkens",
@@ -2409,7 +2703,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_secondary_damage"
+                ],
                 "groups": {
                   "defendingPlayerName": "TSLAUJ",
                   "targetPokemonCardName": "Froslass",
@@ -2422,7 +2718,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_secondary_damage"
+                ],
                 "groups": {
                   "defendingPlayerName": "TSLAUJ",
                   "targetPokemonCardName": "Froslass",
@@ -2437,7 +2735,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_added_prize"
+            ],
             "groups": {
               "cardName": "Slowking",
               "playerName": "cdierkens"
@@ -2449,7 +2749,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_added_prize"
+            ],
             "groups": {
               "cardName": "Lillie's Clefairy ex",
               "playerName": "cdierkens"
@@ -2461,7 +2763,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_took_prize_cards"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "numCards": "3"
@@ -2473,7 +2777,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_discarded_attachment"
+            ],
             "groups": {
               "cardName": "Snorunt",
               "playerName": "TSLAUJ",
@@ -2486,7 +2792,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_knockout"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "cardName": "Froslass"
@@ -2498,7 +2806,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_discarded_attachment"
+            ],
             "groups": {
               "cardName": "Snorunt",
               "playerName": "TSLAUJ",
@@ -2511,7 +2821,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_added_prize"
+            ],
             "groups": {
               "cardName": "Wondrous Patch",
               "playerName": "cdierkens"
@@ -2523,7 +2835,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_knockout"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "cardName": "Froslass"
@@ -2535,7 +2849,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_knockout"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "cardName": "Trevenant"
@@ -2546,7 +2862,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_discarded_attachment_multi"
+                ],
                 "groups": {
                   "numCards": "2",
                   "playerName": "TSLAUJ",
@@ -2561,7 +2879,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_promote_to_active"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "cardName": "Uxie"
@@ -2582,7 +2902,9 @@
       "mainEntries": [
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_used_attack"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "attackingPokemonCardName": "Froslass",
@@ -2594,7 +2916,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_placed_single_dc"
+                ],
                 "groups": {
                   "cardName": "cdierkens",
                   "targetPlayerName": "TSLAUJ",
@@ -2607,7 +2931,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_placed_single_dc"
+                ],
                 "groups": {
                   "cardName": "cdierkens",
                   "targetPlayerName": "TSLAUJ",
@@ -2620,7 +2946,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_placed_single_dc"
+                ],
                 "groups": {
                   "cardName": "cdierkens",
                   "targetPlayerName": "TSLAUJ",
@@ -2642,7 +2970,9 @@
       "mainEntries": [
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_drew_card"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "cardName": "a card"
@@ -2654,8 +2984,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_play_to_bench"
+            "candidateKeys": [
+              "blog_loc_played_to_bench"
             ],
             "groups": {
               "playerName": "TSLAUJ",
@@ -2668,8 +2998,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "TSLAUJ",
@@ -2681,7 +3011,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_attach_card_bench"
+                ],
                 "groups": {
                   "playerName": "TSLAUJ",
                   "sourceCardName": "Basic Psychic Energy",
@@ -2696,8 +3028,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "TSLAUJ",
@@ -2709,7 +3041,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "TSLAUJ",
                   "cardName": "Iris's Fighting Spirit"
@@ -2721,7 +3055,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_deck"
+                ],
                 "groups": {
                   "playerName": "TSLAUJ"
                 },
@@ -2734,8 +3070,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_play_to_bench"
+            "candidateKeys": [
+              "blog_loc_played_to_bench"
             ],
             "groups": {
               "playerName": "TSLAUJ",
@@ -2748,7 +3084,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_attach_card_bench"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "sourceCardName": "Basic Darkness Energy",
@@ -2761,8 +3099,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "TSLAUJ",
@@ -2774,7 +3112,8 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [
+                "candidateKeys": [
+                  "blog_loc_discarded_from_board",
                   "blog_loc_discarded_from_hand"
                 ],
                 "groups": {
@@ -2782,13 +3121,15 @@
                   "cardName": "Iris's Fighting Spirit"
                 },
                 "raw": "TSLAUJ discarded Iris's Fighting Spirit.",
-                "templateKey": "blog_loc_discarded_from_board"
+                "templateKey": null
               },
               "subString": null
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "TSLAUJ",
                   "cardName": "6 cards"
@@ -2802,8 +3143,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "TSLAUJ",
@@ -2815,7 +3156,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "TSLAUJ",
                   "cardName": "Trevenant"
@@ -2827,7 +3170,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_deck"
+                ],
                 "groups": {
                   "playerName": "TSLAUJ"
                 },
@@ -2840,7 +3185,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_used_attack"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "attackingPokemonCardName": "Phantump",
@@ -2852,7 +3199,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_evolved_bench"
+                ],
                 "groups": {
                   "playerName": "TSLAUJ",
                   "sourcePokemonCardName": "Phantump",
@@ -2865,7 +3214,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_placed_dc"
+                ],
                 "groups": {
                   "cardName": "TSLAUJ",
                   "numDamageCounters": "2",
@@ -2881,7 +3232,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_used_attack"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "attackingPokemonCardName": "Munkidori",
@@ -2893,7 +3246,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_moved_dc"
+                ],
                 "groups": {
                   "cardName": "TSLAUJ",
                   "numDamageCounters": "2",
@@ -2911,8 +3266,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "TSLAUJ",
@@ -2924,7 +3279,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "TSLAUJ",
                   "cardName": "Crispin"
@@ -2936,7 +3293,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_deck"
+                ],
                 "groups": {
                   "playerName": "TSLAUJ"
                 },
@@ -2949,7 +3308,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_retreated"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "cardName": "Uxie"
@@ -2960,7 +3321,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_discarded_attachment"
+                ],
                 "groups": {
                   "cardName": "Basic Psychic Energy",
                   "playerName": "TSLAUJ",
@@ -2975,7 +3338,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_promote_to_active"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "cardName": "Trevenant"
@@ -2987,7 +3352,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_applied_damage"
+            ],
             "groups": {
               "attackingPlayerName": "TSLAUJ",
               "attackingPokemonCardName": "Trevenant",
@@ -3012,7 +3379,9 @@
       "mainEntries": [
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_used_attack"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "attackingPokemonCardName": "Froslass",
@@ -3024,7 +3393,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_placed_single_dc"
+                ],
                 "groups": {
                   "cardName": "TSLAUJ",
                   "targetPlayerName": "TSLAUJ",
@@ -3037,7 +3408,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_placed_single_dc"
+                ],
                 "groups": {
                   "cardName": "TSLAUJ",
                   "targetPlayerName": "TSLAUJ",
@@ -3050,7 +3423,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_placed_single_dc"
+                ],
                 "groups": {
                   "cardName": "TSLAUJ",
                   "targetPlayerName": "TSLAUJ",
@@ -3063,7 +3438,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_player_placed_single_dc"
+                ],
                 "groups": {
                   "cardName": "TSLAUJ",
                   "targetPlayerName": "TSLAUJ",
@@ -3085,7 +3462,9 @@
       "mainEntries": [
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_drew_card"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Lillie's Determination"
@@ -3097,8 +3476,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "cdierkens",
@@ -3110,7 +3489,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_card_into_deck"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "11 cards"
@@ -3122,7 +3503,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "6 cards"
@@ -3136,7 +3519,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_evolved_bench"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "sourcePokemonCardName": "Slowpoke",
@@ -3149,8 +3534,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "cdierkens",
@@ -3162,7 +3547,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_switched_active"
+                ],
                 "groups": {
                   "targetPlayerName": "cdierkens",
                   "targetCardName": "Slowking",
@@ -3178,7 +3565,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_promote_to_active"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Slowking"
@@ -3190,8 +3579,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "cdierkens",
@@ -3203,7 +3592,8 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [
+                "candidateKeys": [
+                  "blog_loc_discarded_from_board",
                   "blog_loc_discarded_from_hand"
                 ],
                 "groups": {
@@ -3211,13 +3601,15 @@
                   "cardName": "2 cards"
                 },
                 "raw": "cdierkens discarded 2 cards.",
-                "templateKey": "blog_loc_discarded_from_board"
+                "templateKey": null
               },
               "subString": "Dawn, Ciphermaniac's Codebreaking"
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_drew_card"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "Kyurem"
@@ -3229,7 +3621,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_shuffled_deck"
+                ],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -3242,8 +3636,8 @@
         },
         {
           "event": {
-            "alternateKeys": [
-              "blog_loc_played_to_fallback"
+            "candidateKeys": [
+              "blog_loc_played_card"
             ],
             "groups": {
               "playerName": "cdierkens",
@@ -3255,7 +3649,9 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_move_on_top_deck"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "Kyurem"
@@ -3269,7 +3665,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_used_attack"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "attackingPokemonCardName": "Slowking",
@@ -3281,7 +3679,8 @@
           "subEntries": [
             {
               "event": {
-                "alternateKeys": [
+                "candidateKeys": [
+                  "blog_loc_discarded_from_board",
                   "blog_loc_discarded_from_hand"
                 ],
                 "groups": {
@@ -3289,13 +3688,15 @@
                   "cardName": "Kyurem"
                 },
                 "raw": "cdierkens discarded Kyurem.",
-                "templateKey": "blog_loc_discarded_from_board"
+                "templateKey": null
               },
               "subString": null
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_selected_option"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "selectedOption": "Trifrost"
@@ -3307,7 +3708,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_discarded_attachment_multi"
+                ],
                 "groups": {
                   "numCards": "2",
                   "playerName": "cdierkens",
@@ -3320,7 +3723,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_secondary_damage"
+                ],
                 "groups": {
                   "defendingPlayerName": "TSLAUJ",
                   "targetPokemonCardName": "Munkidori",
@@ -3333,7 +3738,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_secondary_damage"
+                ],
                 "groups": {
                   "defendingPlayerName": "TSLAUJ",
                   "targetPokemonCardName": "Froslass",
@@ -3346,7 +3753,9 @@
             },
             {
               "event": {
-                "alternateKeys": [],
+                "candidateKeys": [
+                  "blog_loc_secondary_damage"
+                ],
                 "groups": {
                   "defendingPlayerName": "TSLAUJ",
                   "targetPokemonCardName": "Uxie",
@@ -3361,7 +3770,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_added_prize"
+            ],
             "groups": {
               "cardName": "Latias ex",
               "playerName": "cdierkens"
@@ -3373,7 +3784,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_added_prize"
+            ],
             "groups": {
               "cardName": "Slowpoke",
               "playerName": "cdierkens"
@@ -3385,7 +3798,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_took_prize_cards"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "numCards": "3"
@@ -3397,7 +3812,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_discarded_attachment"
+            ],
             "groups": {
               "cardName": "Basic Darkness Energy",
               "playerName": "TSLAUJ",
@@ -3410,7 +3827,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_knockout"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "cardName": "Munkidori"
@@ -3422,7 +3841,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_discarded_attachment"
+            ],
             "groups": {
               "cardName": "Snorunt",
               "playerName": "TSLAUJ",
@@ -3435,7 +3856,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_knockout"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "cardName": "Froslass"
@@ -3447,7 +3870,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_discarded_attachment"
+            ],
             "groups": {
               "cardName": "Basic Psychic Energy",
               "playerName": "TSLAUJ",
@@ -3460,7 +3885,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_knockout"
+            ],
             "groups": {
               "playerName": "TSLAUJ",
               "cardName": "Uxie"
@@ -3472,7 +3899,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_added_prize"
+            ],
             "groups": {
               "cardName": "Telepathic Psychic Energy",
               "playerName": "cdierkens"
@@ -3484,7 +3913,9 @@
         },
         {
           "event": {
-            "alternateKeys": [],
+            "candidateKeys": [
+              "blog_loc_end_game"
+            ],
             "groups": {
               "gameEndReason": "All Prize cards taken",
               "playerName": "cdierkens"

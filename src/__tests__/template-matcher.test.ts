@@ -174,7 +174,7 @@ describe("createTemplateMatcher", () => {
       .toBe("blog_loc_specific");
   });
 
-  it("reports keys with identical template text as alternates", () => {
+  it("reports every key with identical template text and no single key", () => {
     const matcher = createTemplateMatcher({
       blog_loc_b: { placeholders: ["playerName"], template: "[playerName] discarded it." },
       blog_loc_a: { placeholders: ["playerName"], template: "[playerName] discarded it." },
@@ -182,15 +182,18 @@ describe("createTemplateMatcher", () => {
       blog_loc_other: { placeholders: ["playerName"], template: "[playerName] drew it." },
     });
     expect(matcher.match("cdierkens discarded it.")).toMatchObject({
-      alternateKeys: ["blog_loc_a", "blog_loc_c"],
-      templateKey: "blog_loc_b",
+      candidateKeys: ["blog_loc_a", "blog_loc_b", "blog_loc_c"],
+      templateKey: null,
     });
-    expect(matcher.match("cdierkens drew it.")?.alternateKeys).toEqual([]);
+    expect(matcher.match("cdierkens drew it.")).toMatchObject({
+      candidateKeys: ["blog_loc_other"],
+      templateKey: "blog_loc_other",
+    });
   });
 
-  it("does not report a specific template's overlapping fallback as an alternate", () => {
+  it("does not report a specific template's overlapping fallback as a candidate", () => {
     expect(defaultTemplateMatcher.match("cdierkens evolved Phantump to Trevenant on the Bench.")).toMatchObject({
-      alternateKeys: [],
+      candidateKeys: ["blog_loc_evolved_bench"],
       templateKey: "blog_loc_evolved_bench",
     });
   });
@@ -202,8 +205,8 @@ describe("identical templates in the shipped bundles", () => {
       const { template } = blogTemplateBundles[locale]["blog_loc_discarded_from_hand"] ?? { template: "" };
       const line = template.replace("[playerName]", "cdierkens").replace("[cardName]", "Kyurem");
       const result = blogTemplateMatchers[locale].match(line);
-      expect(result?.templateKey, locale).toBe("blog_loc_discarded_from_board");
-      expect(result?.alternateKeys, locale).toEqual(["blog_loc_discarded_from_hand"]);
+      expect(result?.templateKey, locale).toBeNull();
+      expect(result?.candidateKeys, locale).toEqual(["blog_loc_discarded_from_board", "blog_loc_discarded_from_hand"]);
     }
   });
 
@@ -211,10 +214,12 @@ describe("identical templates in the shipped bundles", () => {
     const render = (locale: "en" | "ptbr", key: string): string =>
       (blogTemplateBundles[locale][key]?.template ?? "").replace("[playerName]", "cdierkens").replace("[cardName]", "Kyurem");
 
-    expect(blogTemplateMatchers.ptbr.match(render("ptbr", "blog_loc_shuffled_card_into_hand"))?.alternateKeys)
-      .toContain("blog_loc_shuffled_card_into_hand");
+    expect(blogTemplateMatchers.ptbr.match(render("ptbr", "blog_loc_shuffled_card_into_hand"))).toMatchObject({
+      candidateKeys: ["blog_loc_shuffled_card_into_deck", "blog_loc_shuffled_card_into_hand"],
+      templateKey: null,
+    });
     expect(blogTemplateMatchers.en.match(render("en", "blog_loc_shuffled_card_into_hand"))).toMatchObject({
-      alternateKeys: [],
+      candidateKeys: ["blog_loc_shuffled_card_into_hand"],
       templateKey: "blog_loc_shuffled_card_into_hand",
     });
   });
@@ -266,7 +271,7 @@ describe("shipped bundles", () => {
   it("match representative lines from every major event category", () => {
     const cases: readonly {
       expectedGroup: readonly [string, string];
-      expectedKey: string;
+      expectedKey: null | string;
       line: string;
     }[] = [
       {
@@ -276,7 +281,8 @@ describe("shipped bundles", () => {
       },
       {
         expectedGroup: ["cardName", "Slowpoke"],
-        expectedKey: "blog_loc_play_to_bench",
+        // Identical to `played_to_bench`; only the parser's phase can decide.
+        expectedKey: null,
         line: "cdierkens played Slowpoke to the Bench.",
       },
       {

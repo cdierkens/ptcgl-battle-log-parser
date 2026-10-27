@@ -94,8 +94,8 @@ describe("parseBattleLog — golden regression", () => {
       const parsed = unwrap(parseBattleLog(readFixture(fixture), { playerName }));
       for (const phase of parsed.phases) {
         for (const main of phase.mainEntries) {
-          seen.add(main.event.templateKey);
-          for (const sub of main.subEntries) seen.add(sub.event.templateKey);
+          for (const key of main.event.candidateKeys) seen.add(key);
+          for (const sub of main.subEntries) for (const key of sub.event.candidateKeys) seen.add(key);
         }
       }
     }
@@ -227,26 +227,26 @@ describe("sideSource", () => {
 describe("phase-decided identical templates (ADR-0008)", () => {
   const keysOf = (raw: string) =>
     unwrap(parseBattleLog(raw)).phases.map((phase) =>
-      phase.mainEntries.map(({ event }) => [event.templateKey, event.alternateKeys]),
+      phase.mainEntries.map(({ event }) => [event.templateKey, event.candidateKeys]),
     );
 
   it("reads a Setup placement as the opening reveal and a Turn placement as played from hand", () => {
     const line = "Alice played Pikachu to the Bench.";
     expect(keysOf(`Setup\n${line}\n\nAlice's Turn\n${line}\n`)).toEqual([
-      [["blog_loc_play_to_bench", ["blog_loc_played_to_bench"]]],
-      [["blog_loc_played_to_bench", ["blog_loc_play_to_bench"]]],
+      [["blog_loc_play_to_bench", ["blog_loc_play_to_bench"]]],
+      [["blog_loc_played_to_bench", ["blog_loc_played_to_bench"]]],
     ]);
   });
 
   it("never reads a played card as the unreachable fallback", () => {
     expect(keysOf("Alice's Turn\nAlice played Nest Ball.\n")).toEqual([
-      [["blog_loc_played_card", ["blog_loc_played_to_fallback"]]],
+      [["blog_loc_played_card", ["blog_loc_played_card"]]],
     ]);
   });
 
-  it("leaves ties with no phase rule in bundle order", () => {
+  it("leaves ties with no phase rule undetermined", () => {
     expect(keysOf("Alice's Turn\nAlice discarded Nest Ball.\n")).toEqual([
-      [["blog_loc_discarded_from_board", ["blog_loc_discarded_from_hand"]]],
+      [[null, ["blog_loc_discarded_from_board", "blog_loc_discarded_from_hand"]]],
     ]);
   });
 });

@@ -1,7 +1,7 @@
 # 8. The phase decides placement keys
 
 Date: 2026-10-28
-Status: Accepted. Refines ADR-0007.
+Status: Accepted. Refines ADR-0007; since ADR-0009 the rule narrows `candidateKeys`.
 
 ## Context
 

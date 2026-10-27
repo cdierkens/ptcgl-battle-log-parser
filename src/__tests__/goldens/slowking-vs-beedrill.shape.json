@@ -89,7 +89,7 @@
     "blog_loc_card_activated": 4,
     "blog_loc_discarded_attachment": 4,
     "blog_loc_discarded_attachment_multi": 4,
-    "blog_loc_discarded_from_board": 9,
+    "blog_loc_discarded_from_board | blog_loc_discarded_from_hand": 9,
     "blog_loc_draw_opening_hand": 2,
     "blog_loc_drawn_cards_grid_header": 2,
     "blog_loc_drew_card": 36,

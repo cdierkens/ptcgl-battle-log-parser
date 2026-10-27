@@ -36,7 +36,7 @@ export interface LogShape {
 export function shapeOf(log: BattleLog): LogShape {
   const templateKeyCounts: Record<string, number> = {};
   for (const walked of walkEntries(log)) {
-    const key = walked.event.templateKey;
+    const key = walked.event.templateKey ?? walked.event.candidateKeys.join(" | ");
     templateKeyCounts[key] = (templateKeyCounts[key] ?? 0) + 1;
   }
   return {

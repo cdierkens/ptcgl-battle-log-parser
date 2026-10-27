@@ -112,7 +112,7 @@
     "blog_loc_attach_card_bench": 11,
     "blog_loc_discarded_attachment": 1,
     "blog_loc_discarded_attachment_multi": 3,
-    "blog_loc_discarded_from_board": 4,
+    "blog_loc_discarded_from_board | blog_loc_discarded_from_hand": 4,
     "blog_loc_draw_opening_hand": 2,
     "blog_loc_drawn_cards_grid_header": 2,
     "blog_loc_drew_card": 33,

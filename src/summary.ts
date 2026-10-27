@@ -131,6 +131,7 @@ export function deriveGameSummary(
         : "opponent";
 
   const applyEvent = (event: TemplateEvent): void => {
+    if (event.templateKey === null) return;
     const rule = summaryRules[event.templateKey];
     if (rule === undefined) return;
     const delta = rule(event.groups, { creditOf });

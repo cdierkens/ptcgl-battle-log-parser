@@ -163,7 +163,7 @@ describe("deriveGameSummary — unattributable names", () => {
     // Guards the silent-miscredit bug directly through the public interface.
     const log = { phases: [
       { displayTurnNumber: 1, kind: "Turn" as const, mainEntries: [
-        { event: { alternateKeys: [], groups: {}, raw: "x", templateKey: "blog_loc_took_single_prize_card" }, subEntries: [] },
+        { event: { candidateKeys: ["blog_loc_took_single_prize_card"] as const, groups: {}, raw: "x", templateKey: "blog_loc_took_single_prize_card" }, subEntries: [] },
       ], plainTextPhaseTitle: "Turn", playerName: "me", side: "self" as const, sideSource: "declared" as const },
     ] };
     const summary = deriveGameSummary(log, { playerName: "me" });

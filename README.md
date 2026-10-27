@@ -27,8 +27,8 @@ result.value.summary.turnCount; // 1
 
 Every line you feed it is matched back to the `blog_loc_*` localization
 template it was rendered from. Nothing is approximated. Where the game uses
-identical text for different keys, the parser says so (`alternateKeys`)
-rather than guessing; see [About the template bundles](#about-the-template-bundles).
+identical text for different keys and the line cannot say which, `templateKey`
+is `null` and `candidateKeys` lists them, rather than guessing; see [About the template bundles](#about-the-template-bundles).
 
 ---
 
@@ -110,8 +110,8 @@ interface SubEntry {
 }
 
 interface TemplateEvent {
-  templateKey: string;               // "blog_loc_play_to_bench"
-  alternateKeys: string[];           // keys whose text is identical; usually [] (ADR-0007/0008)
+  templateKey: string | null;        // "blog_loc_played_to_bench"; null when the line can't say
+  candidateKeys: [string, ...string[]]; // every key not ruled out; [templateKey] when decided (ADR-0009)
   groups: Record<string, string>;     // { playerName: "cdierkens", cardName: "Slowpoke" }
   raw: string;                       // the line as parsed: trailing whitespace stripped,
                                     // never carrying leading padding (see ADR-0004)
@@ -214,7 +214,8 @@ const benchKeys = new Set(["blog_loc_play_to_bench", "blog_loc_played_to_bench"]
 const log = unwrap(parseBattleLog(raw, { locale: "en" }));
 for (const phase of log.phases) {
   for (const main of phase.mainEntries) {
-    if (!benchKeys.has(main.event.templateKey)) continue;
+    const key = main.event.templateKey;
+    if (key === null || !benchKeys.has(key)) continue;
     console.log(main.event.groups["playerName"], "→", main.event.groups["cardName"]);
   }
 }
@@ -253,6 +254,11 @@ a major if anyone had adopted `1.0.0`. Nobody had, so nothing broke: with no
 consumers there is no migration for a version number to signal. The promise
 binds unconditionally from the first adopted version, and `1.1.0` is the last
 pre-adoption correction.
+
+**`2.0.0` replaced the key.** `templateKey: string` could name a key the line
+did not determine, so it became `null | string`, and `candidateKeys` replaced
+1.3.0's `alternateKeys` with no deprecation minor (ADR-0009). The only consumer
+is the author's own.
 
 The exports do not all carry the same promise, because they are not all the same
 kind of thing:
@@ -299,23 +305,23 @@ how the strings sit alongside the MIT grant.
 All seven bundles share the same 228 keys; only the values differ.
 
 A key does **not** always name a distinguishable line. Some keys share identical
-template text, so they print byte-identical lines. The parser says so:
-`alternateKeys` lists the other candidates. Where the phase decides the key, the
-parser picks it (ADR-0008); otherwise `templateKey` is just the first in bundle
-order. Every locale has:
+template text, so they print byte-identical lines. Where the phase decides the
+key, the parser picks it (ADR-0008). Otherwise `templateKey` is `null` and
+`candidateKeys` lists every key the line could be (ADR-0009). Every locale has:
 
 | Identical keys | `templateKey` |
 |---|---|
 | `play_to_active` · `played_to_active` | `play_to_*` in Setup (opening reveal), `played_to_*` elsewhere (played from hand) |
 | `play_to_bench` · `played_to_bench` | as above |
 | `played_card` · `played_to_fallback` | always `played_card`; the game never emits `played_to_fallback` |
-| `discarded_from_board` · `discarded_from_hand` | bundle order — undecided. `_hand` covers own hand **or deck**; `_board` covers Active, Bench or stadium |
-| `damage_blocked` · `effect_prevention_damage` · `effect_prevention_damagecounters` | bundle order — undecided |
-| `effect_prevention_allsubactions` · `effect_prevention_onlyeffects` | bundle order — undecided |
+| `discarded_from_board` · `discarded_from_hand` | `null` — undecided. `_hand` covers own hand **or deck**; `_board` covers Active, Bench or stadium |
+| `damage_blocked` · `effect_prevention_damage` · `effect_prevention_damagecounters` | `null` — undecided |
+| `effect_prevention_allsubactions` · `effect_prevention_onlyeffects` | `null` — undecided |
 
 `ptbr` also has `shuffled_card_into_deck` · `shuffled_card_into_hand`, which are
-distinct in every other locale. So a key's distinguishability depends on the
-locale; read `alternateKeys` rather than this table.
+distinct in every other locale, so `ptbr` reports them as `null`. A key's
+distinguishability depends on the locale; read `candidateKeys` rather than this
+table.
 
 ### What a line does not say
 
@@ -343,9 +349,8 @@ the derived facts are recorded here.
 The prefix is the battle-log vocabulary every key here uses: "blog" is short
 for **BattleLog**, not blogging.
 
-Keeping that naming means every `templateKey` in the AST refers to exactly one
-key in the game's bundle — though not always one the line could distinguish (see
-above).
+Keeping that naming means every key in the AST refers to exactly one key in the
+game's bundle. A non-null `templateKey` is one the line determines (see above).
 
 The convention has exactly one exception, and it used to break this parser: the
 string that marks a drawn rock-paper-scissors flip does not carry the prefix,
@@ -464,7 +469,8 @@ Four behavioural differences from the PokeDojo implementation, all fixes:
    bundle order, so every bench placement during a turn came back as the
    Setup reveal `play_to_bench`, and every discard as `discarded_from_board`.
    Placements are now `play_to_*` in Setup and `played_to_*` in a turn;
-   undecidable ties keep bundle order and list the rest in `alternateKeys`.
+   undecidable ties have a `null` `templateKey` and list every key in
+   `candidateKeys` (ADR-0009).
 
 ## Development
 

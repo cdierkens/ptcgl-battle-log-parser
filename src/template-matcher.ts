@@ -35,7 +35,7 @@ const PLACEHOLDER_TEST_RE = /^\[([a-zA-Z][a-zA-Z0-9_]*)\]$/;
 const REGEX_META_RE = /[.*+?^${}()|[\]\\]/g;
 
 interface CompiledEntry {
-  readonly alternateKeys: readonly string[];
+  readonly candidateKeys: readonly [string, ...string[]];
   readonly key: string;
   readonly literalLen: number;
   readonly regex: RegExp;
@@ -88,10 +88,10 @@ export function createTemplateMatcher(bundle: TemplateBundle): TemplateMatcher {
         const result = entry.regex.exec(line);
         if (result === null) continue;
         return {
-          alternateKeys: entry.alternateKeys,
+          candidateKeys: entry.candidateKeys,
           groups: { ...result.groups },
           template: entry.template,
-          templateKey: entry.key,
+          templateKey: entry.candidateKeys.length === 1 ? entry.key : null,
         };
       }
       return null;
@@ -109,15 +109,19 @@ function compileBundle(bundle: TemplateBundle): CompiledEntry[] {
   }
   return Object.entries(bundle)
     .map(([key, entry]) => ({
-      alternateKeys: Object.freeze(
-        (keysByTemplate.get(entry.template) ?? []).filter((other) => other !== key).sort(),
-      ),
+      candidateKeys: freezeKeys(key, keysByTemplate.get(entry.template) ?? []),
       key,
       literalLen: literalLength(entry),
       regex: compileTemplate(entry.template),
       template: entry.template,
     }))
     .sort((a, b) => b.literalLen - a.literalLen);
+}
+
+function freezeKeys(key: string, sameText: readonly string[]): readonly [string, ...string[]] {
+  const [first = key, ...rest] = [...new Set([key, ...sameText])].sort();
+  const keys: readonly [string, ...string[]] = [first, ...rest];
+  return Object.freeze(keys);
 }
 
 /**
