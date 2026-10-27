@@ -224,6 +224,7 @@ export function parseBattleLog(
       }
       mainEntry.subEntries.push({
         event: {
+          alternateKeys: match.alternateKeys,
           groups: match.groups,
           raw: classified.content,
           templateKey: match.templateKey,
@@ -239,6 +240,7 @@ export function parseBattleLog(
     }
     currentPhase.mainEntries.push({
       event: {
+        alternateKeys: match.alternateKeys,
         groups: match.groups,
         raw: classified.content,
         templateKey: match.templateKey,

@@ -32,6 +32,13 @@
  * participates and no key is ever present with an `undefined` value.
  */
 export interface TemplateEvent {
+  /**
+   * Other keys in this locale whose template text is identical to
+   * `templateKey`'s, sorted. Those keys render byte-identical lines, so the
+   * line cannot say which one the game used. When non-empty, `templateKey` is
+   * the first of them in bundle order — not a determination. Usually empty.
+   */
+  readonly alternateKeys: readonly string[];
   readonly groups: Readonly<Record<string, string>>;
   /** The exact source line this event was parsed from, prefixes stripped. */
   readonly raw: string;
@@ -202,6 +209,8 @@ export type BlogLocale = (typeof ALL_BLOG_LOCALES)[number];
 
 /** A successful template match: which key matched, and what it captured. */
 export interface TemplateMatch {
+  /** Keys with identical template text; see {@link TemplateEvent.alternateKeys}. */
+  readonly alternateKeys: readonly string[];
   readonly groups: Readonly<Record<string, string>>;
   readonly template: string;
   readonly templateKey: string;

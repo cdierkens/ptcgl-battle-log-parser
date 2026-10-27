@@ -5,6 +5,7 @@
       "mainEntries": [
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "coinFace": "tails"
@@ -16,6 +17,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Kingofslowbros"
             },
@@ -26,6 +28,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Kingofslowbros"
             },
@@ -36,6 +39,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "numCards": "7"
@@ -46,6 +50,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "numCards": "7"
                 },
@@ -58,6 +63,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Kingofslowbros",
               "numCards": "7"
@@ -68,6 +74,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "numCards": "7"
                 },
@@ -80,6 +87,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_active"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Slowpoke"
@@ -91,6 +101,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_bench"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Mega Kangaskhan ex"
@@ -102,6 +115,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_active"
+            ],
             "groups": {
               "playerName": "Kingofslowbros",
               "cardName": "Budew"
@@ -120,6 +136,7 @@
       "mainEntries": [
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Kingofslowbros",
               "cardName": "a card"
@@ -131,6 +148,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_bench"
+            ],
             "groups": {
               "playerName": "Kingofslowbros",
               "cardName": "Dreepy"
@@ -142,6 +162,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "Kingofslowbros",
               "cardName": "Buddy-Buddy Poffin"
@@ -152,6 +175,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Kingofslowbros",
                   "numCards": "2"
@@ -163,6 +187,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Kingofslowbros"
                 },
@@ -175,6 +200,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "Kingofslowbros",
               "cardName": "Poké Pad"
@@ -185,6 +213,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Kingofslowbros",
                   "cardName": "Drakloak"
@@ -196,6 +225,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Kingofslowbros"
                 },
@@ -208,6 +238,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Kingofslowbros",
               "sourceCardName": "Basic Water Energy",
@@ -220,6 +251,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Kingofslowbros"
             },
@@ -240,6 +272,7 @@
       "mainEntries": [
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Slowking"
@@ -251,6 +284,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "sourceCardName": "Telepathic Psychic Energy",
@@ -263,6 +297,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "cardName": "Telepathic Psychic Energy"
             },
@@ -272,6 +307,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens",
                   "numCards": "2"
@@ -283,6 +319,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -295,6 +332,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Slowpoke"
@@ -306,6 +344,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Mega Kangaskhan ex"
@@ -317,6 +356,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "attackingPokemonCardName": "Mega Kangaskhan ex",
@@ -328,6 +368,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "2 cards"
@@ -341,6 +382,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens"
             },
@@ -361,6 +403,7 @@
       "mainEntries": [
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Kingofslowbros",
               "cardName": "a card"
@@ -372,6 +415,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Kingofslowbros",
               "sourcePokemonCardName": "Dreepy",
@@ -384,6 +428,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Kingofslowbros",
               "attackingPokemonCardName": "Drakloak",
@@ -395,6 +440,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Kingofslowbros",
                   "cardName": "a card"
@@ -408,6 +454,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_bench"
+            ],
             "groups": {
               "playerName": "Kingofslowbros",
               "cardName": "Dreepy"
@@ -419,6 +468,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "Kingofslowbros",
               "cardName": "Poké Pad"
@@ -429,6 +481,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Kingofslowbros",
                   "cardName": "Frogadier"
@@ -440,6 +493,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Kingofslowbros"
                 },
@@ -452,6 +506,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Kingofslowbros",
               "sourcePokemonCardName": "Froakie",
@@ -464,6 +519,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "Kingofslowbros",
               "cardName": "Lillie's Determination"
@@ -474,6 +532,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Kingofslowbros",
                   "cardName": "2 cards"
@@ -485,6 +544,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Kingofslowbros",
                   "cardName": "8 cards"
@@ -498,6 +558,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Kingofslowbros",
               "sourcePokemonCardName": "Froakie",
@@ -510,6 +571,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_bench"
+            ],
             "groups": {
               "playerName": "Kingofslowbros",
               "cardName": "Froakie"
@@ -521,6 +585,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "attackingPlayerName": "Kingofslowbros",
               "attackingPokemonCardName": "Budew",
@@ -546,6 +611,7 @@
       "mainEntries": [
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Ultra Ball"
@@ -557,6 +623,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "sourcePokemonCardName": "Slowpoke",
@@ -569,6 +636,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "sourceCardName": "Boomerang Energy",
@@ -581,6 +649,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_bench"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Meowth ex"
@@ -592,6 +663,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "attackingPokemonCardName": "Meowth ex",
@@ -603,6 +675,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "Lillie's Determination"
@@ -614,6 +687,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -626,6 +700,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Lillie's Determination"
@@ -636,6 +713,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "5 cards"
@@ -647,6 +725,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "8 cards"
@@ -660,6 +739,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "attackingPokemonCardName": "Mega Kangaskhan ex",
@@ -671,6 +751,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "2 cards"
@@ -684,6 +765,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_bench"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Smoochum"
@@ -695,6 +779,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "sourcePokemonCardName": "Slowpoke",
@@ -707,6 +792,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Mega Kangaskhan ex"
@@ -718,6 +804,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Smoochum"
@@ -729,6 +816,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "attackingPokemonCardName": "Smoochum",
@@ -740,6 +828,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens",
                   "sourceCardName": "Basic Psychic Energy",
@@ -752,6 +841,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens",
                   "sourceCardName": "Basic Psychic Energy",
@@ -764,6 +854,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -786,6 +877,7 @@
       "mainEntries": [
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Kingofslowbros",
               "cardName": "a card"
@@ -797,6 +889,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Kingofslowbros",
               "cardName": "Budew"
@@ -808,6 +901,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Kingofslowbros",
               "cardName": "Frogadier"
@@ -819,6 +913,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Kingofslowbros",
               "attackingPokemonCardName": "Drakloak",
@@ -830,6 +925,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Kingofslowbros",
                   "cardName": "a card"
@@ -843,6 +939,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "Kingofslowbros",
               "cardName": "Hilda"
@@ -853,6 +952,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Kingofslowbros",
                   "cardName": "2 cards"
@@ -864,6 +964,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Kingofslowbros"
                 },
@@ -876,6 +977,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "Kingofslowbros",
               "cardName": "Ultra Ball"
@@ -886,6 +990,9 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [
+                  "blog_loc_discarded_from_hand"
+                ],
                 "groups": {
                   "playerName": "Kingofslowbros",
                   "cardName": "2 cards"
@@ -897,6 +1004,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Kingofslowbros",
                   "cardName": "Mega Greninja ex"
@@ -908,6 +1016,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Kingofslowbros"
                 },
@@ -920,6 +1029,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Kingofslowbros",
               "sourcePokemonCardName": "Frogadier",
@@ -932,6 +1042,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Kingofslowbros",
               "sourceCardName": "Neo Upper Energy",
@@ -944,6 +1055,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Kingofslowbros",
               "attackingPokemonCardName": "Mega Greninja ex",
@@ -955,6 +1067,9 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [
+                  "blog_loc_discarded_from_hand"
+                ],
                 "groups": {
                   "playerName": "Kingofslowbros",
                   "cardName": "Basic Water Energy"
@@ -966,6 +1081,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "cardName": "Kingofslowbros",
                   "numDamageCounters": "6",
@@ -981,6 +1097,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Smoochum"
@@ -992,6 +1109,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Kingofslowbros"
             },
@@ -1002,6 +1120,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "cardName": "A card",
               "playerName": "Kingofslowbros"
@@ -1013,6 +1132,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Slowking"
@@ -1024,6 +1144,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Kingofslowbros",
               "sourcePokemonCardName": "Frogadier",
@@ -1036,6 +1157,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "attackingPlayerName": "Kingofslowbros",
               "attackingPokemonCardName": "Mega Greninja ex",
@@ -1051,6 +1173,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Slowking"
@@ -1061,6 +1184,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "numCards": "3",
                   "playerName": "cdierkens",
@@ -1075,6 +1199,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Kingofslowbros"
             },
@@ -1085,6 +1210,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "cardName": "A card",
               "playerName": "Kingofslowbros"
@@ -1096,6 +1222,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Mega Kangaskhan ex"
@@ -1117,6 +1244,7 @@
       "mainEntries": [
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Lana's Aid"
@@ -1128,6 +1256,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_bench"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Slowpoke"
@@ -1139,6 +1270,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_bench"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Fezandipiti ex"
@@ -1150,6 +1284,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Wondrous Patch"
@@ -1160,6 +1297,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens",
                   "sourceCardName": "Basic Psychic Energy",
@@ -1174,6 +1312,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "sourceCardName": "Boomerang Energy",
@@ -1186,6 +1325,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "attackingPokemonCardName": "Mega Kangaskhan ex",
@@ -1197,6 +1337,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "2 cards"
@@ -1210,6 +1351,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Ciphermaniac's Codebreaking"
@@ -1220,6 +1364,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -1232,6 +1377,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Mega Kangaskhan ex"
@@ -1243,6 +1389,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Slowking"
@@ -1254,6 +1401,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "attackingPokemonCardName": "Slowking",
@@ -1265,6 +1413,9 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [
+                  "blog_loc_discarded_from_hand"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "Kyurem"
@@ -1276,6 +1427,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens",
                   "selectedOption": "Trifrost"
@@ -1287,6 +1439,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "numCards": "2",
                   "playerName": "cdierkens",
@@ -1299,6 +1452,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "defendingPlayerName": "Kingofslowbros",
                   "targetPokemonCardName": "Froakie",
@@ -1311,6 +1465,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "defendingPlayerName": "Kingofslowbros",
                   "targetPokemonCardName": "Dreepy",
@@ -1323,6 +1478,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "defendingPlayerName": "Kingofslowbros",
                   "targetPokemonCardName": "Drakloak",
@@ -1337,6 +1493,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Kingofslowbros",
               "cardName": "Drakloak"
@@ -1348,6 +1505,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "cardName": "Dreepy",
               "playerName": "Kingofslowbros",
@@ -1360,6 +1518,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Kingofslowbros",
               "cardName": "Dreepy"
@@ -1371,6 +1530,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Kingofslowbros",
               "cardName": "Froakie"
@@ -1382,6 +1542,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "cardName": "Boomerang Energy"
             },
@@ -1391,6 +1552,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens",
                   "sourceCardName": "Boomerang Energy",
@@ -1405,6 +1567,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "numCards": "3"
@@ -1416,6 +1579,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "cardName": "Night Stretcher",
               "playerName": "cdierkens"
@@ -1427,6 +1591,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "cardName": "Metagross",
               "playerName": "cdierkens"
@@ -1438,6 +1603,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "cardName": "Kyurem",
               "playerName": "cdierkens"
@@ -1459,6 +1625,7 @@
       "mainEntries": [
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Kingofslowbros",
               "cardName": "a card"
@@ -1470,6 +1637,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "Kingofslowbros",
               "cardName": "Hilda"
@@ -1480,6 +1650,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Kingofslowbros",
                   "cardName": "2 cards"
@@ -1491,6 +1662,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Kingofslowbros"
                 },
@@ -1503,6 +1675,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Kingofslowbros",
               "cardName": "Mega Greninja ex"
@@ -1513,6 +1686,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "cardName": "Neo Upper Energy",
                   "playerName": "Kingofslowbros",
@@ -1527,6 +1701,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Kingofslowbros",
               "cardName": "Greninja ex"
@@ -1538,6 +1713,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Kingofslowbros",
               "sourceCardName": "Ignition Energy",
@@ -1550,6 +1726,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "attackingPlayerName": "Kingofslowbros",
               "attackingPokemonCardName": "Greninja ex",
@@ -1566,6 +1743,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {},
                 "raw": "Damage breakdown:",
                 "templateKey": "blog_loc_export_damage_breakdown_label"
@@ -1574,6 +1752,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "defendingPlayerName": "cdierkens",
                   "targetPokemonCardName": "Slowpoke",
@@ -1586,6 +1765,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "cardName": "Ignition Energy",
                   "playerName": "Kingofslowbros",
@@ -1600,6 +1780,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Slowpoke"
@@ -1610,6 +1791,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "numCards": "2",
                   "playerName": "cdierkens",
@@ -1624,6 +1806,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Kingofslowbros"
             },
@@ -1634,6 +1817,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "cardName": "A card",
               "playerName": "Kingofslowbros"
@@ -1655,6 +1839,7 @@
       "mainEntries": [
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Slowking"
@@ -1666,6 +1851,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Ultra Ball"
@@ -1676,6 +1864,9 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [
+                  "blog_loc_discarded_from_hand"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "2 cards"
@@ -1687,6 +1878,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "Lillie's Clefairy ex"
@@ -1698,6 +1890,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -1710,6 +1903,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_bench"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Lillie's Clefairy ex"
@@ -1721,6 +1917,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "sourceCardName": "Telepathic Psychic Energy",
@@ -1733,6 +1930,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Lillie's Determination"
@@ -1743,6 +1943,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "5 cards"
@@ -1754,6 +1955,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "6 cards"
@@ -1767,6 +1969,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Secret Box"
@@ -1777,6 +1982,9 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [
+                  "blog_loc_discarded_from_hand"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "3 cards"
@@ -1788,6 +1996,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "4 cards"
@@ -1799,6 +2008,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -1811,6 +2021,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Wondrous Patch"
@@ -1821,6 +2034,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens",
                   "sourceCardName": "Basic Psychic Energy",
@@ -1835,6 +2049,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "sourceCardName": "Lucky Helmet",
@@ -1847,6 +2062,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Academy at Night"
@@ -1858,6 +2074,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "attackingPokemonCardName": "Fezandipiti ex",
@@ -1869,6 +2086,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "3 cards"
@@ -1882,6 +2100,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens"
             },
@@ -1902,6 +2121,7 @@
       "mainEntries": [
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Kingofslowbros",
               "cardName": "a card"
@@ -1913,6 +2133,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "Kingofslowbros",
               "cardName": "Boss's Orders"
@@ -1923,6 +2146,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "targetPlayerName": "cdierkens",
                   "targetCardName": "Mega Kangaskhan ex",
@@ -1938,6 +2162,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Mega Kangaskhan ex"
@@ -1949,6 +2174,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "attackingPlayerName": "Kingofslowbros",
               "attackingPokemonCardName": "Greninja ex",
@@ -1965,6 +2191,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {},
                 "raw": "Damage breakdown:",
                 "templateKey": "blog_loc_export_damage_breakdown_label"
@@ -1973,6 +2200,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Kingofslowbros",
                   "cardName": "a card"
@@ -1984,6 +2212,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Kingofslowbros"
                 },
@@ -1996,6 +2225,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Mega Kangaskhan ex"
@@ -2007,6 +2237,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Kingofslowbros",
               "numCards": "3"
@@ -2018,6 +2249,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "cardName": "A card",
               "playerName": "Kingofslowbros"
@@ -2029,6 +2261,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "cardName": "A card",
               "playerName": "Kingofslowbros"
@@ -2040,6 +2273,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "cardName": "A card",
               "playerName": "Kingofslowbros"
@@ -2051,6 +2285,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "gameEndReason": "Opponent took all of their Prize cards",
               "playerName": "Kingofslowbros"

@@ -9,7 +9,7 @@
 import { describe, expect, it } from "vitest";
 
 import { contentLine } from "../content-line.js";
-import { blogTemplateBundles, defaultTemplateMatcher } from "../locales.js";
+import { blogTemplateBundles, blogTemplateMatchers, defaultTemplateMatcher } from "../locales.js";
 import { compileTemplate, createTemplateMatcher } from "../template-matcher.js";
 import { ALL_BLOG_LOCALES } from "../types.js";
 
@@ -172,6 +172,51 @@ describe("createTemplateMatcher", () => {
     });
     expect(matcher.match("cdierkens's Smoochum is now in the Active Spot.")?.templateKey)
       .toBe("blog_loc_specific");
+  });
+
+  it("reports keys with identical template text as alternates", () => {
+    const matcher = createTemplateMatcher({
+      blog_loc_b: { placeholders: ["playerName"], template: "[playerName] discarded it." },
+      blog_loc_a: { placeholders: ["playerName"], template: "[playerName] discarded it." },
+      blog_loc_c: { placeholders: ["playerName"], template: "[playerName] discarded it." },
+      blog_loc_other: { placeholders: ["playerName"], template: "[playerName] drew it." },
+    });
+    expect(matcher.match("cdierkens discarded it.")).toMatchObject({
+      alternateKeys: ["blog_loc_a", "blog_loc_c"],
+      templateKey: "blog_loc_b",
+    });
+    expect(matcher.match("cdierkens drew it.")?.alternateKeys).toEqual([]);
+  });
+
+  it("does not report a specific template's overlapping fallback as an alternate", () => {
+    expect(defaultTemplateMatcher.match("cdierkens evolved Phantump to Trevenant on the Bench.")).toMatchObject({
+      alternateKeys: [],
+      templateKey: "blog_loc_evolved_bench",
+    });
+  });
+});
+
+describe("identical templates in the shipped bundles", () => {
+  it("are reported for the discard pair in every locale", () => {
+    for (const locale of ALL_BLOG_LOCALES) {
+      const { template } = blogTemplateBundles[locale]["blog_loc_discarded_from_hand"] ?? { template: "" };
+      const line = template.replace("[playerName]", "cdierkens").replace("[cardName]", "Kyurem");
+      const result = blogTemplateMatchers[locale].match(line);
+      expect(result?.templateKey, locale).toBe("blog_loc_discarded_from_board");
+      expect(result?.alternateKeys, locale).toEqual(["blog_loc_discarded_from_hand"]);
+    }
+  });
+
+  it("are reported per locale: ptbr's deck and hand shuffles collide, English's do not", () => {
+    const render = (locale: "en" | "ptbr", key: string): string =>
+      (blogTemplateBundles[locale][key]?.template ?? "").replace("[playerName]", "cdierkens").replace("[cardName]", "Kyurem");
+
+    expect(blogTemplateMatchers.ptbr.match(render("ptbr", "blog_loc_shuffled_card_into_hand"))?.alternateKeys)
+      .toContain("blog_loc_shuffled_card_into_hand");
+    expect(blogTemplateMatchers.en.match(render("en", "blog_loc_shuffled_card_into_hand"))).toMatchObject({
+      alternateKeys: [],
+      templateKey: "blog_loc_shuffled_card_into_hand",
+    });
   });
 });
 

@@ -35,6 +35,7 @@ const PLACEHOLDER_TEST_RE = /^\[([a-zA-Z][a-zA-Z0-9_]*)\]$/;
 const REGEX_META_RE = /[.*+?^${}()|[\]\\]/g;
 
 interface CompiledEntry {
+  readonly alternateKeys: readonly string[];
   readonly key: string;
   readonly literalLen: number;
   readonly regex: RegExp;
@@ -87,6 +88,7 @@ export function createTemplateMatcher(bundle: TemplateBundle): TemplateMatcher {
         const result = entry.regex.exec(line);
         if (result === null) continue;
         return {
+          alternateKeys: entry.alternateKeys,
           groups: { ...result.groups },
           template: entry.template,
           templateKey: entry.key,
@@ -99,8 +101,17 @@ export function createTemplateMatcher(bundle: TemplateBundle): TemplateMatcher {
 }
 
 function compileBundle(bundle: TemplateBundle): CompiledEntry[] {
+  const keysByTemplate = new Map<string, string[]>();
+  for (const [key, entry] of Object.entries(bundle)) {
+    const keys = keysByTemplate.get(entry.template) ?? [];
+    keys.push(key);
+    keysByTemplate.set(entry.template, keys);
+  }
   return Object.entries(bundle)
     .map(([key, entry]) => ({
+      alternateKeys: Object.freeze(
+        (keysByTemplate.get(entry.template) ?? []).filter((other) => other !== key).sort(),
+      ),
       key,
       literalLen: literalLength(entry),
       regex: compileTemplate(entry.template),

@@ -110,6 +110,7 @@ interface SubEntry {
 
 interface TemplateEvent {
   templateKey: string;               // "blog_loc_play_to_bench"
+  alternateKeys: string[];           // keys whose text is identical; usually [] (see ADR-0007)
   groups: Record<string, string>;     // { playerName: "cdierkens", cardName: "Slowpoke" }
   raw: string;                       // the line as parsed: trailing whitespace stripped,
                                     // never carrying leading padding (see ADR-0004)
@@ -292,8 +293,40 @@ parser cannot match a battle log without them, and they are checked in so that
 `npm install` gives you a package that works out of the box. See `LICENSE` for
 how the strings sit alongside the MIT grant.
 
-All seven bundles share the same 228 keys; only the values differ, which is what
-lets a `templateKey` mean the same thing in every locale.
+All seven bundles share the same 228 keys; only the values differ.
+
+A key does **not** always name a distinguishable line. Some keys share identical
+template text, so they print byte-identical lines and the parser cannot tell
+them apart. It says so: `alternateKeys` lists the other candidates, and
+`templateKey` is then just the first in bundle order. Every locale has:
+
+| Identical keys | |
+|---|---|
+| `discarded_from_board` · `discarded_from_hand` | the line does not say where the card came from |
+| `damage_blocked` · `effect_prevention_damage` · `effect_prevention_damagecounters` | damage vs damage counters is not recoverable |
+| `effect_prevention_allsubactions` · `effect_prevention_onlyeffects` | |
+| `play_to_active` · `played_to_active` | |
+| `play_to_bench` · `played_to_bench` | |
+| `played_card` · `played_to_fallback` | |
+
+`ptbr` also has `shuffled_card_into_deck` · `shuffled_card_into_hand`, which are
+distinct in every other locale. So a key's distinguishability depends on the
+locale; read `alternateKeys` rather than this table.
+
+### What a line does not say
+
+The parser reports the game's placeholder names as the game declares them. Some
+of those names do not describe what the game puts in them. Measured over 411
+stored English logs (2026-10-27):
+
+- **Placed damage counters** (`player_placed_dc`, `player_placed_single_dc`).
+  The leading `[cardName]` slot held the turn player in 5,370 of 5,370 lines.
+  `[targetPlayerName]` held the owner of the most recent `used` line in the same
+  phase in 5,192 of the 5,268 lines that had one; in a fixture, a stadium's
+  effect named the stadium's owner. It is the effect's owner, not the target's.
+  The line does not name the target's owner; the target may be on either side.
+- **`used_attack`** (`[player]'s [pokemon] used [attackName].`) also renders
+  Abilities. The line cannot tell an attack from an Ability.
 
 ### Why `blog_loc_`
 
@@ -301,7 +334,8 @@ The prefix is the battle-log vocabulary every key here uses: "blog" is short
 for **BattleLog**, not blogging.
 
 Keeping that naming means every `templateKey` in the AST refers to exactly one
-string, so a key means the same event in every locale.
+key in the game's bundle — though not always one the line could distinguish (see
+above).
 
 The convention has exactly one exception, and it used to break this parser: the
 string that marks a drawn rock-paper-scissors flip does not carry the prefix,

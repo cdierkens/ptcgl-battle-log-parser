@@ -5,6 +5,7 @@
       "mainEntries": [
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "coinFace": "heads"
@@ -16,6 +17,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens"
             },
@@ -26,6 +28,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens"
             },
@@ -36,6 +39,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "numCards": "7"
@@ -46,6 +50,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "numCards": "7"
                 },
@@ -58,6 +63,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Flyfrod",
               "numCards": "7"
@@ -68,6 +74,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "numCards": "7"
                 },
@@ -80,6 +87,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_active"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Goldeen"
@@ -91,6 +101,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_bench"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Grookey"
@@ -102,6 +115,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_active"
+            ],
             "groups": {
               "playerName": "Flyfrod",
               "cardName": "Drilbur"
@@ -120,6 +136,7 @@
       "mainEntries": [
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Flyfrod",
               "cardName": "a card"
@@ -131,6 +148,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Flyfrod"
             },
@@ -151,6 +169,7 @@
       "mainEntries": [
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Bug Catching Set"
@@ -162,6 +181,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Poké Pad"
@@ -172,6 +194,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "Applin"
@@ -183,6 +206,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -195,6 +219,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_bench"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Applin"
@@ -206,6 +233,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Bug Catching Set"
@@ -216,6 +246,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "2 cards"
@@ -227,6 +258,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -239,6 +271,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_bench"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Applin"
@@ -250,6 +285,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "sourceCardName": "Brave Bangle",
@@ -262,6 +298,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "sourceCardName": "Basic Grass Energy",
@@ -274,6 +311,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens"
             },
@@ -294,6 +332,7 @@
       "mainEntries": [
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Flyfrod",
               "cardName": "a card"
@@ -305,6 +344,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "Flyfrod",
               "cardName": "Team Rocket's Petrel"
@@ -315,6 +357,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Flyfrod",
                   "cardName": "Secret Box"
@@ -326,6 +369,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Flyfrod"
                 },
@@ -338,6 +382,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "Flyfrod",
               "cardName": "Secret Box"
@@ -348,6 +395,9 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [
+                  "blog_loc_discarded_from_hand"
+                ],
                 "groups": {
                   "playerName": "Flyfrod",
                   "cardName": "3 cards"
@@ -359,6 +409,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Flyfrod",
                   "cardName": "4 cards"
@@ -370,6 +421,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Flyfrod"
                 },
@@ -382,6 +434,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "Flyfrod",
               "cardName": "Buddy-Buddy Poffin"
@@ -392,6 +447,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Flyfrod",
                   "numCards": "2"
@@ -403,6 +459,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Flyfrod"
                 },
@@ -415,6 +472,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Flyfrod",
               "sourcePokemonCardName": "Drilbur",
@@ -427,6 +485,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Flyfrod"
             },
@@ -447,6 +506,7 @@
       "mainEntries": [
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Dipplin"
@@ -458,6 +518,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "sourcePokemonCardName": "Applin",
@@ -470,6 +531,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "sourcePokemonCardName": "Grookey",
@@ -482,6 +544,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Festival Grounds"
@@ -493,6 +556,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "attackingPokemonCardName": "Thwackey",
@@ -504,6 +568,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "Lillie's Determination"
@@ -515,6 +580,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -527,6 +593,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Lillie's Determination"
@@ -537,6 +606,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "Forest of Vitality"
@@ -548,6 +618,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "8 cards"
@@ -561,6 +632,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "sourcePokemonCardName": "Applin",
@@ -573,6 +645,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "sourcePokemonCardName": "Goldeen",
@@ -585,6 +658,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens"
             },
@@ -605,6 +679,7 @@
       "mainEntries": [
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Flyfrod",
               "cardName": "a card"
@@ -616,6 +691,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "Flyfrod",
               "cardName": "Buddy-Buddy Poffin"
@@ -626,6 +704,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Flyfrod",
                   "numCards": "2"
@@ -637,6 +716,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Flyfrod"
                 },
@@ -649,6 +729,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Flyfrod",
               "sourcePokemonCardName": "Beldum",
@@ -661,6 +742,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Flyfrod",
               "cardName": "Gravity Mountain"
@@ -671,6 +753,9 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [
+                  "blog_loc_discarded_from_hand"
+                ],
                 "groups": {
                   "playerName": "Flyfrod",
                   "cardName": "Festival Grounds"
@@ -684,6 +769,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "Flyfrod",
               "cardName": "Lillie's Determination"
@@ -694,6 +782,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Flyfrod",
                   "cardName": "3 cards"
@@ -705,6 +794,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Flyfrod",
                   "cardName": "8 cards"
@@ -718,6 +808,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Flyfrod",
               "sourceCardName": "Basic Metal Energy",
@@ -730,6 +821,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "Flyfrod",
               "cardName": "Night Stretcher"
@@ -740,6 +834,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Flyfrod",
                   "targetPlayerName": "Flyfrod",
@@ -754,6 +849,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Flyfrod",
               "sourcePokemonCardName": "Beldum",
@@ -766,6 +862,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Flyfrod",
               "attackingPokemonCardName": "Metang",
@@ -777,6 +874,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Flyfrod",
                   "sourceCardName": "Basic Metal Energy",
@@ -789,6 +887,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Flyfrod",
                   "sourceCardName": "Basic Metal Energy",
@@ -801,6 +900,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Flyfrod",
                   "sourceCardName": "Basic Metal Energy",
@@ -813,6 +913,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -825,6 +926,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Flyfrod",
               "attackingPokemonCardName": "Metang",
@@ -836,6 +938,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Flyfrod",
                   "sourceCardName": "Basic Metal Energy",
@@ -848,6 +951,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -860,6 +964,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "attackingPlayerName": "Flyfrod",
               "attackingPokemonCardName": "Mega Excadrill ex",
@@ -875,6 +980,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Seaking"
@@ -886,6 +992,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "cardName": "Goldeen",
               "playerName": "cdierkens",
@@ -898,6 +1005,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Flyfrod"
             },
@@ -908,6 +1016,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "cardName": "A card",
               "playerName": "Flyfrod"
@@ -919,6 +1028,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Dipplin"
@@ -940,6 +1050,7 @@
       "mainEntries": [
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Applin"
@@ -951,6 +1062,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_bench"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Applin"
@@ -962,6 +1076,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Lillie's Determination"
@@ -972,6 +1089,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "5 cards"
@@ -983,6 +1101,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "8 cards"
@@ -996,6 +1115,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Buddy-Buddy Poffin"
@@ -1006,6 +1128,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens",
                   "numCards": "2"
@@ -1017,6 +1140,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -1029,6 +1153,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "attackingPokemonCardName": "Thwackey",
@@ -1040,6 +1165,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "Brave Bangle"
@@ -1051,6 +1177,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -1063,6 +1190,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "sourceCardName": "Basic Grass Energy",
@@ -1075,6 +1203,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "sourceCardName": "Brave Bangle",
@@ -1087,6 +1216,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Switch"
@@ -1097,6 +1229,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "targetPlayerName": "cdierkens",
                   "targetCardName": "Applin",
@@ -1112,6 +1245,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Applin"
@@ -1123,6 +1257,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens"
             },
@@ -1143,6 +1278,7 @@
       "mainEntries": [
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Flyfrod",
               "cardName": "a card"
@@ -1154,6 +1290,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Flyfrod",
               "sourceCardName": "Basic Metal Energy",
@@ -1166,6 +1303,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "Flyfrod",
               "cardName": "Night Stretcher"
@@ -1176,6 +1316,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Flyfrod",
                   "targetPlayerName": "Flyfrod",
@@ -1190,6 +1331,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Flyfrod",
               "sourcePokemonCardName": "Drilbur",
@@ -1202,6 +1344,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "Flyfrod",
               "cardName": "Lillie's Determination"
@@ -1212,6 +1357,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Flyfrod",
                   "cardName": "5 cards"
@@ -1223,6 +1369,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Flyfrod",
                   "cardName": "6 cards"
@@ -1236,6 +1383,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_bench"
+            ],
             "groups": {
               "playerName": "Flyfrod",
               "cardName": "Genesect ex"
@@ -1247,6 +1397,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Flyfrod",
               "attackingPokemonCardName": "Genesect ex",
@@ -1258,6 +1409,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Flyfrod",
                   "cardName": "2 cards"
@@ -1269,6 +1421,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Flyfrod"
                 },
@@ -1281,6 +1434,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Flyfrod",
               "sourcePokemonCardName": "Beldum",
@@ -1293,6 +1447,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Flyfrod",
               "attackingPokemonCardName": "Metang",
@@ -1304,6 +1459,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Flyfrod",
                   "sourceCardName": "Basic Metal Energy",
@@ -1316,6 +1472,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -1328,6 +1485,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Flyfrod",
               "attackingPokemonCardName": "Metang",
@@ -1339,6 +1497,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -1351,6 +1510,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Flyfrod",
               "attackingPokemonCardName": "Metang",
@@ -1362,6 +1522,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -1374,6 +1535,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "attackingPlayerName": "Flyfrod",
               "attackingPokemonCardName": "Mega Excadrill ex",
@@ -1388,6 +1550,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Flyfrod",
                   "targetPlayerName": "cdierkens",
@@ -1402,6 +1565,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Applin"
@@ -1413,6 +1577,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Flyfrod"
             },
@@ -1423,6 +1588,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "cardName": "A card",
               "playerName": "Flyfrod"
@@ -1434,6 +1600,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Dipplin"
@@ -1455,6 +1622,7 @@
       "mainEntries": [
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Rellor"
@@ -1466,6 +1634,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_bench"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Rellor"
@@ -1477,6 +1648,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "sourcePokemonCardName": "Grookey",
@@ -1489,6 +1661,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "sourcePokemonCardName": "Applin",
@@ -1501,6 +1674,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "attackingPokemonCardName": "Thwackey",
@@ -1512,6 +1686,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "Gladion's Final Battle"
@@ -1523,6 +1698,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -1535,6 +1711,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Ultra Ball"
@@ -1545,6 +1724,9 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [
+                  "blog_loc_discarded_from_hand"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "2 cards"
@@ -1556,6 +1738,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -1568,6 +1751,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Gladion's Final Battle"
@@ -1579,6 +1765,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "attackingPokemonCardName": "Thwackey",
@@ -1590,6 +1777,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "Festival Grounds"
@@ -1601,6 +1789,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -1613,6 +1802,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Festival Grounds"
@@ -1623,6 +1813,9 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [
+                  "blog_loc_discarded_from_hand"
+                ],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "Gravity Mountain"
@@ -1636,6 +1829,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "attackingPlayerName": "cdierkens",
               "attackingPokemonCardName": "Dipplin",
@@ -1652,6 +1846,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {},
                 "raw": "Damage breakdown:",
                 "templateKey": "blog_loc_export_damage_breakdown_label"
@@ -1662,6 +1857,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "attackingPokemonCardName": "Dipplin",
@@ -1673,6 +1869,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {},
                 "raw": "Damage breakdown:",
                 "templateKey": "blog_loc_export_damage_breakdown_label"
@@ -1681,6 +1878,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "attackingPlayerName": "cdierkens",
                   "attackingPokemonCardName": "Dipplin",
@@ -1698,6 +1896,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens",
                   "selectedOption": "Do the Wave"
@@ -1711,6 +1910,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Flyfrod",
               "cardName": "Mega Excadrill ex"
@@ -1721,6 +1921,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "numCards": "5",
                   "playerName": "Flyfrod",
@@ -1735,6 +1936,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "numCards": "3"
@@ -1746,6 +1948,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "cardName": "Boss's Orders",
               "playerName": "cdierkens"
@@ -1757,6 +1960,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "cardName": "Night Stretcher",
               "playerName": "cdierkens"
@@ -1768,6 +1972,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "cardName": "Buddy-Buddy Poffin",
               "playerName": "cdierkens"
@@ -1779,6 +1984,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Flyfrod",
               "cardName": "Mega Excadrill ex"
@@ -1800,6 +2006,7 @@
       "mainEntries": [
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Flyfrod",
               "cardName": "a card"
@@ -1811,6 +2018,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "Flyfrod",
               "cardName": "Energy Recycler"
@@ -1821,6 +2031,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Flyfrod",
                   "cardName": "4 cards"
@@ -1834,6 +2045,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_bench"
+            ],
             "groups": {
               "playerName": "Flyfrod",
               "cardName": "Fezandipiti ex"
@@ -1845,6 +2059,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Flyfrod",
               "attackingPokemonCardName": "Fezandipiti ex",
@@ -1856,6 +2071,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Flyfrod",
                   "cardName": "3 cards"
@@ -1869,6 +2085,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Flyfrod",
               "sourceCardName": "Basic Metal Energy",
@@ -1881,6 +2098,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "Flyfrod",
               "cardName": "Lillie's Determination"
@@ -1891,6 +2111,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Flyfrod",
                   "cardName": "7 cards"
@@ -1902,6 +2123,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Flyfrod",
                   "cardName": "6 cards"
@@ -1915,6 +2137,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "attackingPlayerName": "Flyfrod",
               "attackingPokemonCardName": "Mega Excadrill ex",
@@ -1929,6 +2152,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Flyfrod",
                   "targetPlayerName": "cdierkens",
@@ -1943,6 +2167,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Dipplin"
@@ -1953,6 +2178,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "numCards": "3",
                   "playerName": "cdierkens",
@@ -1967,6 +2193,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Flyfrod"
             },
@@ -1977,6 +2204,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "cardName": "A card",
               "playerName": "Flyfrod"
@@ -1988,6 +2216,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Dipplin"
@@ -2009,6 +2238,7 @@
       "mainEntries": [
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Lillie's Determination"
@@ -2020,6 +2250,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Buddy-Buddy Poffin"
@@ -2030,6 +2263,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -2042,6 +2276,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Night Stretcher"
@@ -2052,6 +2289,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens",
                   "targetPlayerName": "cdierkens",
@@ -2066,6 +2304,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_bench"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Applin"
@@ -2077,6 +2318,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "attackingPokemonCardName": "Thwackey",
@@ -2088,6 +2330,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "Sacred Ash"
@@ -2099,6 +2342,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -2111,6 +2355,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Sacred Ash"
@@ -2121,6 +2368,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "5 cards"
@@ -2134,6 +2382,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "attackingPokemonCardName": "Thwackey",
@@ -2145,6 +2394,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "Rabsca"
@@ -2156,6 +2406,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -2168,6 +2419,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "sourcePokemonCardName": "Rellor",
@@ -2180,6 +2432,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Boss's Orders"
@@ -2190,6 +2445,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "targetPlayerName": "Flyfrod",
                   "targetCardName": "Fezandipiti ex",
@@ -2205,6 +2461,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Flyfrod",
               "cardName": "Fezandipiti ex"
@@ -2216,6 +2473,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "attackingPlayerName": "cdierkens",
               "attackingPokemonCardName": "Dipplin",
@@ -2230,6 +2488,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {},
                 "raw": "Damage breakdown:",
                 "templateKey": "blog_loc_export_damage_breakdown_label"
@@ -2240,6 +2499,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "attackingPokemonCardName": "Dipplin",
@@ -2251,6 +2511,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {},
                 "raw": "Damage breakdown:",
                 "templateKey": "blog_loc_export_damage_breakdown_label"
@@ -2259,6 +2520,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "attackingPlayerName": "cdierkens",
                   "attackingPokemonCardName": "Dipplin",
@@ -2274,6 +2536,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens",
                   "selectedOption": "Do the Wave"
@@ -2287,6 +2550,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Flyfrod",
               "cardName": "Fezandipiti ex"
@@ -2298,6 +2562,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "numCards": "2"
@@ -2309,6 +2574,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "cardName": "Festival Grounds",
               "playerName": "cdierkens"
@@ -2320,6 +2586,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "cardName": "Grookey",
               "playerName": "cdierkens"
@@ -2331,6 +2598,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Flyfrod",
               "cardName": "Mega Excadrill ex"
@@ -2352,6 +2620,7 @@
       "mainEntries": [
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Flyfrod",
               "cardName": "a card"
@@ -2363,6 +2632,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "Flyfrod",
               "cardName": "Team Rocket's Petrel"
@@ -2373,6 +2645,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Flyfrod",
                   "cardName": "Special Red Card"
@@ -2384,6 +2657,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Flyfrod"
                 },
@@ -2396,6 +2670,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "Flyfrod",
               "cardName": "Special Red Card"
@@ -2406,6 +2683,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -2416,6 +2694,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Flyfrod",
                   "cardName": "3 cards"
@@ -2427,6 +2706,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Flyfrod",
                   "cardName": "3 cards"
@@ -2440,6 +2720,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Flyfrod",
               "sourceCardName": "Basic Metal Energy",
@@ -2452,6 +2733,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Flyfrod",
               "attackingPokemonCardName": "Genesect ex",
@@ -2463,6 +2745,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Flyfrod",
                   "cardName": "Metagross"
@@ -2474,6 +2757,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Flyfrod"
                 },
@@ -2486,6 +2770,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Flyfrod",
               "sourcePokemonCardName": "Metang",
@@ -2498,6 +2783,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "Flyfrod",
               "cardName": "Buddy-Buddy Poffin"
@@ -2508,6 +2796,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Flyfrod"
                 },
@@ -2520,6 +2809,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Flyfrod",
               "attackingPokemonCardName": "Metang",
@@ -2531,6 +2821,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Flyfrod",
                   "sourceCardName": "Basic Metal Energy",
@@ -2543,6 +2834,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Flyfrod",
                   "sourceCardName": "Basic Metal Energy",
@@ -2555,6 +2847,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -2567,6 +2860,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "attackingPlayerName": "Flyfrod",
               "attackingPokemonCardName": "Mega Excadrill ex",
@@ -2581,6 +2875,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "Flyfrod",
                   "targetPlayerName": "cdierkens",
@@ -2595,6 +2890,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Dipplin"
@@ -2605,6 +2901,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "numCards": "3",
                   "playerName": "cdierkens",
@@ -2619,6 +2916,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Flyfrod"
             },
@@ -2629,6 +2927,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "cardName": "A card",
               "playerName": "Flyfrod"
@@ -2640,6 +2939,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Dipplin"
@@ -2661,6 +2961,7 @@
       "mainEntries": [
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Basic Grass Energy"
@@ -2672,6 +2973,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "sourceCardName": "Basic Grass Energy",
@@ -2684,6 +2986,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Buddy-Buddy Poffin"
@@ -2694,6 +2999,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "Applin"
@@ -2705,6 +3011,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -2717,6 +3024,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "sourcePokemonCardName": "Applin",
@@ -2729,6 +3037,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "cdierkens",
               "attackingPokemonCardName": "Thwackey",
@@ -2740,6 +3049,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens",
                   "cardName": "Boss's Orders"
@@ -2751,6 +3061,7 @@
             },
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "playerName": "cdierkens"
                 },
@@ -2763,6 +3074,9 @@
         },
         {
           "event": {
+            "alternateKeys": [
+              "blog_loc_played_to_fallback"
+            ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Boss's Orders"
@@ -2773,6 +3087,7 @@
           "subEntries": [
             {
               "event": {
+                "alternateKeys": [],
                 "groups": {
                   "targetPlayerName": "Flyfrod",
                   "targetCardName": "Metang",
@@ -2788,6 +3103,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "playerName": "Flyfrod",
               "cardName": "Metang"
@@ -2799,6 +3115,7 @@
         },
         {
           "event": {
+            "alternateKeys": [],
             "groups": {
               "gameEndReason": "Opponent conceded",
               "playerName": "cdierkens"
