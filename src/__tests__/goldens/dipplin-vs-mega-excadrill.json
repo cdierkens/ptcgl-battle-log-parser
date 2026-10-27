@@ -220,14 +220,14 @@
         {
           "event": {
             "alternateKeys": [
-              "blog_loc_played_to_bench"
+              "blog_loc_play_to_bench"
             ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Applin"
             },
             "raw": "cdierkens played Applin to the Bench.",
-            "templateKey": "blog_loc_play_to_bench"
+            "templateKey": "blog_loc_played_to_bench"
           },
           "subEntries": []
         },
@@ -272,14 +272,14 @@
         {
           "event": {
             "alternateKeys": [
-              "blog_loc_played_to_bench"
+              "blog_loc_play_to_bench"
             ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Applin"
             },
             "raw": "cdierkens played Applin to the Bench.",
-            "templateKey": "blog_loc_play_to_bench"
+            "templateKey": "blog_loc_played_to_bench"
           },
           "subEntries": []
         },
@@ -1063,14 +1063,14 @@
         {
           "event": {
             "alternateKeys": [
-              "blog_loc_played_to_bench"
+              "blog_loc_play_to_bench"
             ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Applin"
             },
             "raw": "cdierkens played Applin to the Bench.",
-            "templateKey": "blog_loc_play_to_bench"
+            "templateKey": "blog_loc_played_to_bench"
           },
           "subEntries": []
         },
@@ -1384,14 +1384,14 @@
         {
           "event": {
             "alternateKeys": [
-              "blog_loc_played_to_bench"
+              "blog_loc_play_to_bench"
             ],
             "groups": {
               "playerName": "Flyfrod",
               "cardName": "Genesect ex"
             },
             "raw": "Flyfrod played Genesect ex to the Bench.",
-            "templateKey": "blog_loc_play_to_bench"
+            "templateKey": "blog_loc_played_to_bench"
           },
           "subEntries": []
         },
@@ -1635,14 +1635,14 @@
         {
           "event": {
             "alternateKeys": [
-              "blog_loc_played_to_bench"
+              "blog_loc_play_to_bench"
             ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Rellor"
             },
             "raw": "cdierkens played Rellor to the Bench.",
-            "templateKey": "blog_loc_play_to_bench"
+            "templateKey": "blog_loc_played_to_bench"
           },
           "subEntries": []
         },
@@ -2046,14 +2046,14 @@
         {
           "event": {
             "alternateKeys": [
-              "blog_loc_played_to_bench"
+              "blog_loc_play_to_bench"
             ],
             "groups": {
               "playerName": "Flyfrod",
               "cardName": "Fezandipiti ex"
             },
             "raw": "Flyfrod played Fezandipiti ex to the Bench.",
-            "templateKey": "blog_loc_play_to_bench"
+            "templateKey": "blog_loc_played_to_bench"
           },
           "subEntries": []
         },
@@ -2305,14 +2305,14 @@
         {
           "event": {
             "alternateKeys": [
-              "blog_loc_played_to_bench"
+              "blog_loc_play_to_bench"
             ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Applin"
             },
             "raw": "cdierkens played Applin to the Bench.",
-            "templateKey": "blog_loc_play_to_bench"
+            "templateKey": "blog_loc_played_to_bench"
           },
           "subEntries": []
         },

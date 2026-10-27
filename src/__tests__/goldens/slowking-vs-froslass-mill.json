@@ -187,14 +187,14 @@
         {
           "event": {
             "alternateKeys": [
-              "blog_loc_played_to_bench"
+              "blog_loc_play_to_bench"
             ],
             "groups": {
               "playerName": "TSLAUJ",
               "cardName": "Uxie"
             },
             "raw": "TSLAUJ played Uxie to the Bench.",
-            "templateKey": "blog_loc_play_to_bench"
+            "templateKey": "blog_loc_played_to_bench"
           },
           "subEntries": []
         },
@@ -323,14 +323,14 @@
         {
           "event": {
             "alternateKeys": [
-              "blog_loc_played_to_bench"
+              "blog_loc_play_to_bench"
             ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Slowpoke"
             },
             "raw": "cdierkens played Slowpoke to the Bench.",
-            "templateKey": "blog_loc_play_to_bench"
+            "templateKey": "blog_loc_played_to_bench"
           },
           "subEntries": []
         },
@@ -389,14 +389,14 @@
         {
           "event": {
             "alternateKeys": [
-              "blog_loc_played_to_bench"
+              "blog_loc_play_to_bench"
             ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Meowth ex"
             },
             "raw": "cdierkens played Meowth ex to the Bench.",
-            "templateKey": "blog_loc_play_to_bench"
+            "templateKey": "blog_loc_played_to_bench"
           },
           "subEntries": []
         },
@@ -831,14 +831,14 @@
         {
           "event": {
             "alternateKeys": [
-              "blog_loc_played_to_bench"
+              "blog_loc_play_to_bench"
             ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Mega Kangaskhan ex"
             },
             "raw": "cdierkens played Mega Kangaskhan ex to the Bench.",
-            "templateKey": "blog_loc_play_to_bench"
+            "templateKey": "blog_loc_played_to_bench"
           },
           "subEntries": []
         },
@@ -1197,14 +1197,14 @@
         {
           "event": {
             "alternateKeys": [
-              "blog_loc_played_to_bench"
+              "blog_loc_play_to_bench"
             ],
             "groups": {
               "playerName": "TSLAUJ",
               "cardName": "Snorunt"
             },
             "raw": "TSLAUJ played Snorunt to the Bench.",
-            "templateKey": "blog_loc_play_to_bench"
+            "templateKey": "blog_loc_played_to_bench"
           },
           "subEntries": []
         },
@@ -1766,14 +1766,14 @@
         {
           "event": {
             "alternateKeys": [
-              "blog_loc_played_to_bench"
+              "blog_loc_play_to_bench"
             ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Latias ex"
             },
             "raw": "cdierkens played Latias ex to the Bench.",
-            "templateKey": "blog_loc_play_to_bench"
+            "templateKey": "blog_loc_played_to_bench"
           },
           "subEntries": []
         },
@@ -2655,14 +2655,14 @@
         {
           "event": {
             "alternateKeys": [
-              "blog_loc_played_to_bench"
+              "blog_loc_play_to_bench"
             ],
             "groups": {
               "playerName": "TSLAUJ",
               "cardName": "Phantump"
             },
             "raw": "TSLAUJ played Phantump to the Bench.",
-            "templateKey": "blog_loc_play_to_bench"
+            "templateKey": "blog_loc_played_to_bench"
           },
           "subEntries": []
         },
@@ -2735,14 +2735,14 @@
         {
           "event": {
             "alternateKeys": [
-              "blog_loc_played_to_bench"
+              "blog_loc_play_to_bench"
             ],
             "groups": {
               "playerName": "TSLAUJ",
               "cardName": "Munkidori"
             },
             "raw": "TSLAUJ played Munkidori to the Bench.",
-            "templateKey": "blog_loc_play_to_bench"
+            "templateKey": "blog_loc_played_to_bench"
           },
           "subEntries": []
         },

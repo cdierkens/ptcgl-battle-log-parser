@@ -33,6 +33,7 @@
 
 import { contentLine } from "./content-line.js";
 import { UnmatchedBattleLogLineError } from "./errors.js";
+import { preferKey } from "./key-preference.js";
 import { blogTemplateMatchers, defaultTemplateMatcher } from "./locales.js";
 import { err, ok, type Result } from "./result.js";
 import { templateKeys } from "./template-keys.js";
@@ -222,12 +223,13 @@ export function parseBattleLog(
       if (match === null) {
         return err(new UnmatchedBattleLogLineError(classified.content, lineNumber));
       }
+      const { alternateKeys, templateKey } = preferKey(match, currentPhase.kind);
       mainEntry.subEntries.push({
         event: {
-          alternateKeys: match.alternateKeys,
+          alternateKeys,
           groups: match.groups,
           raw: classified.content,
-          templateKey: match.templateKey,
+          templateKey,
         },
         subString: null,
       });
@@ -238,12 +240,13 @@ export function parseBattleLog(
     if (match === null) {
       return err(new UnmatchedBattleLogLineError(classified.content, lineNumber));
     }
+    const { alternateKeys, templateKey } = preferKey(match, currentPhase.kind);
     currentPhase.mainEntries.push({
       event: {
-        alternateKeys: match.alternateKeys,
+        alternateKeys,
         groups: match.groups,
         raw: classified.content,
-        templateKey: match.templateKey,
+        templateKey,
       },
       subEntries: [],
     });

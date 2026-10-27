@@ -149,14 +149,14 @@
         {
           "event": {
             "alternateKeys": [
-              "blog_loc_played_to_bench"
+              "blog_loc_play_to_bench"
             ],
             "groups": {
               "playerName": "Kingofslowbros",
               "cardName": "Dreepy"
             },
             "raw": "Kingofslowbros played Dreepy to the Bench.",
-            "templateKey": "blog_loc_play_to_bench"
+            "templateKey": "blog_loc_played_to_bench"
           },
           "subEntries": []
         },
@@ -455,14 +455,14 @@
         {
           "event": {
             "alternateKeys": [
-              "blog_loc_played_to_bench"
+              "blog_loc_play_to_bench"
             ],
             "groups": {
               "playerName": "Kingofslowbros",
               "cardName": "Dreepy"
             },
             "raw": "Kingofslowbros played Dreepy to the Bench.",
-            "templateKey": "blog_loc_play_to_bench"
+            "templateKey": "blog_loc_played_to_bench"
           },
           "subEntries": []
         },
@@ -572,14 +572,14 @@
         {
           "event": {
             "alternateKeys": [
-              "blog_loc_played_to_bench"
+              "blog_loc_play_to_bench"
             ],
             "groups": {
               "playerName": "Kingofslowbros",
               "cardName": "Froakie"
             },
             "raw": "Kingofslowbros played Froakie to the Bench.",
-            "templateKey": "blog_loc_play_to_bench"
+            "templateKey": "blog_loc_played_to_bench"
           },
           "subEntries": []
         },
@@ -650,14 +650,14 @@
         {
           "event": {
             "alternateKeys": [
-              "blog_loc_played_to_bench"
+              "blog_loc_play_to_bench"
             ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Meowth ex"
             },
             "raw": "cdierkens played Meowth ex to the Bench.",
-            "templateKey": "blog_loc_play_to_bench"
+            "templateKey": "blog_loc_played_to_bench"
           },
           "subEntries": []
         },
@@ -766,14 +766,14 @@
         {
           "event": {
             "alternateKeys": [
-              "blog_loc_played_to_bench"
+              "blog_loc_play_to_bench"
             ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Smoochum"
             },
             "raw": "cdierkens played Smoochum to the Bench.",
-            "templateKey": "blog_loc_play_to_bench"
+            "templateKey": "blog_loc_played_to_bench"
           },
           "subEntries": []
         },
@@ -1257,28 +1257,28 @@
         {
           "event": {
             "alternateKeys": [
-              "blog_loc_played_to_bench"
+              "blog_loc_play_to_bench"
             ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Slowpoke"
             },
             "raw": "cdierkens played Slowpoke to the Bench.",
-            "templateKey": "blog_loc_play_to_bench"
+            "templateKey": "blog_loc_played_to_bench"
           },
           "subEntries": []
         },
         {
           "event": {
             "alternateKeys": [
-              "blog_loc_played_to_bench"
+              "blog_loc_play_to_bench"
             ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Fezandipiti ex"
             },
             "raw": "cdierkens played Fezandipiti ex to the Bench.",
-            "templateKey": "blog_loc_play_to_bench"
+            "templateKey": "blog_loc_played_to_bench"
           },
           "subEntries": []
         },
@@ -1904,14 +1904,14 @@
         {
           "event": {
             "alternateKeys": [
-              "blog_loc_played_to_bench"
+              "blog_loc_play_to_bench"
             ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Lillie's Clefairy ex"
             },
             "raw": "cdierkens played Lillie's Clefairy ex to the Bench.",
-            "templateKey": "blog_loc_play_to_bench"
+            "templateKey": "blog_loc_played_to_bench"
           },
           "subEntries": []
         },

@@ -224,6 +224,33 @@ describe("sideSource", () => {
   });
 });
 
+describe("phase-decided identical templates (ADR-0008)", () => {
+  const keysOf = (raw: string) =>
+    unwrap(parseBattleLog(raw)).phases.map((phase) =>
+      phase.mainEntries.map(({ event }) => [event.templateKey, event.alternateKeys]),
+    );
+
+  it("reads a Setup placement as the opening reveal and a Turn placement as played from hand", () => {
+    const line = "Alice played Pikachu to the Bench.";
+    expect(keysOf(`Setup\n${line}\n\nAlice's Turn\n${line}\n`)).toEqual([
+      [["blog_loc_play_to_bench", ["blog_loc_played_to_bench"]]],
+      [["blog_loc_played_to_bench", ["blog_loc_play_to_bench"]]],
+    ]);
+  });
+
+  it("never reads a played card as the unreachable fallback", () => {
+    expect(keysOf("Alice's Turn\nAlice played Nest Ball.\n")).toEqual([
+      [["blog_loc_played_card", ["blog_loc_played_to_fallback"]]],
+    ]);
+  });
+
+  it("leaves ties with no phase rule in bundle order", () => {
+    expect(keysOf("Alice's Turn\nAlice discarded Nest Ball.\n")).toEqual([
+      [["blog_loc_discarded_from_board", ["blog_loc_discarded_from_hand"]]],
+    ]);
+  });
+});
+
 describe("a turn header that captures no name", () => {
   it("fails rather than silently becoming one side", () => {
     // Only a caller-supplied matcher can reach this: every shipped bundle

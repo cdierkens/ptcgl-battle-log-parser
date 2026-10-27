@@ -1,7 +1,7 @@
 # 7. Identical templates are reported, not resolved
 
 Date: 2026-10-27
-Status: Accepted.
+Status: Accepted. Refined by ADR-0008 (the phase decides placement keys).
 
 ## Context
 

@@ -35,8 +35,10 @@ export interface TemplateEvent {
   /**
    * Other keys in this locale whose template text is identical to
    * `templateKey`'s, sorted. Those keys render byte-identical lines, so the
-   * line cannot say which one the game used. When non-empty, `templateKey` is
-   * the first of them in bundle order — not a determination. Usually empty.
+   * line alone cannot say which one the game used. When non-empty,
+   * `templateKey` is the key the phase decides where a rule exists (opening
+   * reveal vs played from hand; see ADR 0008), otherwise the first in bundle
+   * order — not a determination. Usually empty.
    */
   readonly alternateKeys: readonly string[];
   readonly groups: Readonly<Record<string, string>>;

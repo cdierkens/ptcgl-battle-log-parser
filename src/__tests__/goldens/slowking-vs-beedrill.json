@@ -346,14 +346,14 @@
         {
           "event": {
             "alternateKeys": [
-              "blog_loc_played_to_bench"
+              "blog_loc_play_to_bench"
             ],
             "groups": {
               "playerName": "Wonder_Squid",
               "cardName": "Weedle"
             },
             "raw": "Wonder_Squid played Weedle to the Bench.",
-            "templateKey": "blog_loc_play_to_bench"
+            "templateKey": "blog_loc_played_to_bench"
           },
           "subEntries": []
         },
@@ -398,14 +398,14 @@
         {
           "event": {
             "alternateKeys": [
-              "blog_loc_played_to_bench"
+              "blog_loc_play_to_bench"
             ],
             "groups": {
               "playerName": "Wonder_Squid",
               "cardName": "Dunsparce"
             },
             "raw": "Wonder_Squid played Dunsparce to the Bench.",
-            "templateKey": "blog_loc_play_to_bench"
+            "templateKey": "blog_loc_played_to_bench"
           },
           "subEntries": []
         },
@@ -1131,14 +1131,14 @@
         {
           "event": {
             "alternateKeys": [
-              "blog_loc_played_to_bench"
+              "blog_loc_play_to_bench"
             ],
             "groups": {
               "playerName": "Wonder_Squid",
               "cardName": "Meowth ex"
             },
             "raw": "Wonder_Squid played Meowth ex to the Bench.",
-            "templateKey": "blog_loc_play_to_bench"
+            "templateKey": "blog_loc_played_to_bench"
           },
           "subEntries": []
         },
@@ -1693,14 +1693,14 @@
         {
           "event": {
             "alternateKeys": [
-              "blog_loc_played_to_bench"
+              "blog_loc_play_to_bench"
             ],
             "groups": {
               "playerName": "Wonder_Squid",
               "cardName": "Weedle"
             },
             "raw": "Wonder_Squid played Weedle to the Bench.",
-            "templateKey": "blog_loc_play_to_bench"
+            "templateKey": "blog_loc_played_to_bench"
           },
           "subEntries": []
         },
@@ -2061,14 +2061,14 @@
         {
           "event": {
             "alternateKeys": [
-              "blog_loc_played_to_bench"
+              "blog_loc_play_to_bench"
             ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Fezandipiti ex"
             },
             "raw": "cdierkens played Fezandipiti ex to the Bench.",
-            "templateKey": "blog_loc_play_to_bench"
+            "templateKey": "blog_loc_played_to_bench"
           },
           "subEntries": []
         },
@@ -2127,14 +2127,14 @@
         {
           "event": {
             "alternateKeys": [
-              "blog_loc_played_to_bench"
+              "blog_loc_play_to_bench"
             ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Slowpoke"
             },
             "raw": "cdierkens played Slowpoke to the Bench.",
-            "templateKey": "blog_loc_play_to_bench"
+            "templateKey": "blog_loc_played_to_bench"
           },
           "subEntries": []
         },
@@ -2859,14 +2859,14 @@
         {
           "event": {
             "alternateKeys": [
-              "blog_loc_played_to_bench"
+              "blog_loc_play_to_bench"
             ],
             "groups": {
               "playerName": "cdierkens",
               "cardName": "Slowpoke"
             },
             "raw": "cdierkens played Slowpoke to the Bench.",
-            "templateKey": "blog_loc_play_to_bench"
+            "templateKey": "blog_loc_played_to_bench"
           },
           "subEntries": []
         },
