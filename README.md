@@ -348,10 +348,25 @@ for where each claim comes from:
 - **`used_attack`** (`[player]'s [pokemon] used [attackName].`) also renders
   Abilities, and the header of a modified or blocked action. The line cannot
   tell an attack from an Ability.
+- **Moved damage counters** (`moved [n] damage counters from …'s [a] to …'s
+  [b]`). Both owner slots hold the acting player (558 of 558 lines, in 171
+  logs), so either end may be on the other side. The counts are real: the
+  client prints them from per-Pokémon damage deltas.
+- **A bare `played [card].`** is the client's fallback for any main entry that
+  is not classified as an attack or an Ability. It also prints some attacks
+  and Abilities, without their target or damage: Meowth ex's Tuck Tail prints
+  as `played Meowth ex.` followed by the move to hand, and Dudunsparce's Run
+  Away Draw as `played Dudunsparce.`. A Pokémon named on this line is not
+  necessarily being put into play.
+- **`healed`** (`[pokemonCardName] healed [numDamage] damage.`) prints the
+  amount the effect heals, not the damage it removed. It can exceed the damage
+  on the Pokémon, and has been printed for a Pokémon with no damage. Read it as
+  "up to `numDamage`".
 
-Corpus counts are over 411 stored English logs (2026-10-27). The client
-behaviour is from reading the client's battle-log code and key mapping; only
-the derived facts are recorded here.
+Corpus counts are over the stored English logs: 411 games on 2026-10-27, and
+304 distinct logs on 2026-10-29. The client behaviour is from reading the
+client's battle-log code and key mapping; only the derived facts are recorded
+here.
 
 ### Why `blog_loc_`
 
